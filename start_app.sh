@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "🚴‍♂️ Fast Bike Flow Prediction System"
-echo "====================================="
+echo "🚴‍♂️ Bike Flow Prediction System - All Stations"
+echo "=============================================="
 
 # Check if data directory exists
 if [ ! -d "data" ] || [ ! -f "data/trips_8days_flat.csv" ]; then
@@ -23,24 +23,30 @@ echo "🔄 Activating virtual environment..."
 source venv/bin/activate
 
 # Install requirements if needed
-if [ ! -f ".fast_requirements_installed" ]; then
-    echo "📦 Installing optimized dependencies..."
-    pip install -r requirements_fast.txt
+if [ ! -f ".requirements_installed" ]; then
+    echo "📦 Installing dependencies..."
+    
+    # Fix the requests warning first
+    pip install --upgrade requests urllib3 chardet charset-normalizer
+    
+    # Install other requirements
+    pip install -r requirements.txt
     
     # Mark requirements as installed
-    touch .fast_requirements_installed
+    touch .requirements_installed
     echo "✅ Dependencies installed and cached"
 else
     echo "✅ Dependencies already cached"
 fi
 
 echo ""
-echo "🚀 Starting Fast Bike Flow Prediction System..."
-echo "⚡ Optimized for speed with smart caching"
+echo "🚀 Starting Bike Flow Prediction System..."
+echo "📍 All stations displayed (may take 15-30 seconds to load)"
 echo ""
 echo "📍 The app will open at: http://localhost:8501"
-echo "🔄 Loading may take 10-15 seconds on first run (then cached)"
+echo "🔄 First load may take 15-30 seconds (then cached)"
+echo "🎯 Click any station to see predictions!"
 echo ""
 
 # Start the app
-streamlit run fast_app.py --server.port 8501 --server.address localhost
+streamlit run app.py --server.port 8501 --server.address localhost
