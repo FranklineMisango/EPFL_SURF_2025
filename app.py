@@ -13,6 +13,10 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
 import warnings
 import os
+import requests
+import hashlib
+import json
+import time
 import time
 import requests
 import hashlib
@@ -96,6 +100,8 @@ def load_bike_data():
         trips_df['start_datetime'] = pd.to_datetime(trips_df['start_time'], format='%Y%m%d_%H%M%S')
         trips_df['end_datetime'] = pd.to_datetime(trips_df['end_time'], format='%Y%m%d_%H%M%S')
         trips_df['hour'] = trips_df['start_datetime'].dt.hour
+        trips_df['day_of_week'] = trips_df['start_datetime'].dt.dayofweek  # 0=Monday, 6=Sunday
+        trips_df['is_weekend'] = trips_df['day_of_week'].isin([5, 6])  # Saturday, Sunday
         
         # Extract coordinates
         trips_df['start_lat'] = trips_df['start_coords'].apply(lambda x: ast.literal_eval(x)[0])
@@ -410,11 +416,23 @@ class FastBikeFlowPredictor:
             self.station_coords[station_id] = (row['start_lat'], row['start_lon'])
     
     def _compute_hourly_flows(self):
-        """Compute flow volumes by hour"""
+        """Compute flow volumes by hour and day of week"""
+        # Store flows by hour (keeping backward compatibility)
         for hour in range(24):
             hour_trips = self.trips_df[self.trips_df['hour'] == hour]
             flows = hour_trips.groupby(['start_station_id', 'end_station_id']).size().reset_index(name='flow_count')
             self.hourly_flows[hour] = flows
+        
+        # Store flows by hour and day of week for enhanced modeling
+        self.hourly_flows_by_dow = {}
+        for hour in range(24):
+            for dow in range(7):  # 0=Monday, 6=Sunday
+                hour_dow_trips = self.trips_df[
+                    (self.trips_df['hour'] == hour) & 
+                    (self.trips_df['day_of_week'] == dow)
+                ]
+                flows = hour_dow_trips.groupby(['start_station_id', 'end_station_id']).size().reset_index(name='flow_count')
+                self.hourly_flows_by_dow[(hour, dow)] = flows
     
     def _engineer_features(self):
         """Engineer features for ML model"""
@@ -445,31 +463,80 @@ class FastBikeFlowPredictor:
                 features[f'outflow_hour_{hour}'] = outflow
                 features[f'inflow_hour_{hour}'] = inflow
             
+            # Day of week patterns
+            for dow in range(7):  # 0=Monday, 6=Sunday
+                dow_outflow = len(station_trips[
+                    (station_trips['start_station_id'] == station_id) & 
+                    (station_trips['day_of_week'] == dow)
+                ])
+                dow_inflow = len(station_trips[
+                    (station_trips['end_station_id'] == station_id) & 
+                    (station_trips['day_of_week'] == dow)
+                ])
+                
+                features[f'outflow_dow_{dow}'] = dow_outflow
+                features[f'inflow_dow_{dow}'] = dow_inflow
+            
+            # Weekend vs weekday patterns
+            weekend_outflow = len(station_trips[
+                (station_trips['start_station_id'] == station_id) & 
+                (station_trips['is_weekend'] == True)
+            ])
+            weekday_outflow = len(station_trips[
+                (station_trips['start_station_id'] == station_id) & 
+                (station_trips['is_weekend'] == False)
+            ])
+            
+            features['weekend_outflow'] = weekend_outflow
+            features['weekday_outflow'] = weekday_outflow
+            features['weekend_ratio'] = weekend_outflow / (weekend_outflow + weekday_outflow + 1)  # +1 to avoid division by zero
+            
             self.station_features[station_id] = features
     
     def _train_model(self):
-        """Train ML model for flow prediction"""
+        """Train ML model for flow prediction with day of week features"""
         training_data = []
         
-        # Sample data for faster training
+        # Sample data for faster training - include different days of week
         sample_hours = [6, 8, 12, 17, 20]  # Focus on key hours
+        sample_days = [0, 1, 4, 5, 6]  # Monday, Tuesday, Friday, Saturday, Sunday
         
+        # Use enhanced hourly flows by day of week when available
         for hour in sample_hours:
-            if hour in self.hourly_flows:
-                flows = self.hourly_flows[hour]
-                
-                # Sample flows for faster training
-                if len(flows) > 1000:
-                    flows = flows.sample(n=1000, random_state=42)
-                
-                for _, row in flows.iterrows():
-                    start_station = row['start_station_id']
-                    end_station = row['end_station_id']
-                    flow_count = row['flow_count']
+            for dow in sample_days:
+                if (hour, dow) in self.hourly_flows_by_dow:
+                    flows = self.hourly_flows_by_dow[(hour, dow)]
                     
-                    if start_station in self.station_features and end_station in self.station_features:
-                        feature_vector = self._create_feature_vector(start_station, end_station, hour)
-                        training_data.append(feature_vector + [flow_count])
+                    # Sample flows for faster training
+                    if len(flows) > 500:
+                        flows = flows.sample(n=500, random_state=42)
+                    
+                    for _, row in flows.iterrows():
+                        start_station = row['start_station_id']
+                        end_station = row['end_station_id']
+                        flow_count = row['flow_count']
+                        
+                        if start_station in self.station_features and end_station in self.station_features:
+                            feature_vector = self._create_feature_vector(start_station, end_station, hour, dow)
+                            training_data.append(feature_vector + [flow_count])
+                
+                # Fallback to hourly flows if day-of-week specific data is insufficient
+                elif hour in self.hourly_flows:
+                    flows = self.hourly_flows[hour]
+                    
+                    # Sample flows for faster training
+                    if len(flows) > 200:
+                        flows = flows.sample(n=200, random_state=42)
+                    
+                    for _, row in flows.iterrows():
+                        start_station = row['start_station_id']
+                        end_station = row['end_station_id']
+                        flow_count = row['flow_count']
+                        
+                        if start_station in self.station_features and end_station in self.station_features:
+                            # Use default day of week (Tuesday = 1) for compatibility
+                            feature_vector = self._create_feature_vector(start_station, end_station, hour, 1)
+                            training_data.append(feature_vector + [flow_count])
         
         if training_data:
             training_data = np.array(training_data)
@@ -483,8 +550,8 @@ class FastBikeFlowPredictor:
             self.model = RandomForestRegressor(n_estimators=50, random_state=42, n_jobs=-1)
             self.model.fit(X_scaled, y)
     
-    def _create_feature_vector(self, start_station, end_station, hour):
-        """Create feature vector for prediction"""
+    def _create_feature_vector(self, start_station, end_station, hour, day_of_week=1):
+        """Create feature vector for prediction with day of week features"""
         start_features = self.station_features[start_station]
         end_features = self.station_features[end_station]
         
@@ -492,14 +559,21 @@ class FastBikeFlowPredictor:
             hour,
             np.sin(2 * np.pi * hour / 24),
             np.cos(2 * np.pi * hour / 24),
+            day_of_week,
+            np.sin(2 * np.pi * day_of_week / 7),  # Cyclical encoding for day of week
+            np.cos(2 * np.pi * day_of_week / 7),
+            1 if day_of_week in [5, 6] else 0,  # Weekend indicator (Saturday=5, Sunday=6)
             start_features['lat'],
             start_features['lon'],
             start_features['total_trips'],
             start_features[f'outflow_hour_{hour}'],
+            start_features.get(f'outflow_dow_{day_of_week}', 0),  # Day of week specific outflow
+            start_features.get('weekend_ratio', 0.5),  # Weekend activity ratio
             end_features['lat'],
             end_features['lon'],
             end_features['total_trips'],
             end_features[f'inflow_hour_{hour}'],
+            end_features.get(f'inflow_dow_{day_of_week}', 0),  # Day of week specific inflow
             np.sqrt((start_features['lat'] - end_features['lat'])**2 + 
                    (start_features['lon'] - end_features['lon'])**2),
             (start_features['avg_temperature'] + end_features['avg_temperature']) / 2
@@ -507,17 +581,21 @@ class FastBikeFlowPredictor:
         
         return feature_vector
     
-    def predict_destinations(self, station_id, hour, top_k=5):
-        """Predict top destinations from a station with confidence levels"""
+    def predict_destinations(self, station_id, hour, day_of_week=1, top_k=5):
+        """Predict top destinations from a station with confidence levels including day of week"""
         if station_id not in self.station_features or not self.model:
             # Fallback: return top stations by distance for testing
             return self._get_fallback_predictions(station_id, top_k)
         
         predictions = []
         
-        # Only check active destinations for this hour to speed up
+        # Try to use day-of-week specific flows first, fallback to hourly flows
         active_destinations = set()
-        if hour in self.hourly_flows:
+        if (hour, day_of_week) in self.hourly_flows_by_dow:
+            hour_dow_flows = self.hourly_flows_by_dow[(hour, day_of_week)]
+            station_flows = hour_dow_flows[hour_dow_flows['start_station_id'] == station_id]
+            active_destinations = set(station_flows['end_station_id'].values)
+        elif hour in self.hourly_flows:
             hour_flows = self.hourly_flows[hour]
             station_flows = hour_flows[hour_flows['start_station_id'] == station_id]
             active_destinations = set(station_flows['end_station_id'].values)
@@ -547,7 +625,7 @@ class FastBikeFlowPredictor:
                 continue
             
             try:
-                feature_vector = self._create_feature_vector(station_id, dest_station, hour)
+                feature_vector = self._create_feature_vector(station_id, dest_station, hour, day_of_week)
                 X_pred = self.scaler.transform([feature_vector])
                 predicted_flow = self.model.predict(X_pred)[0]
                 
@@ -655,7 +733,7 @@ class FastBikeFlowPredictor:
             st.warning(f"Route info error for {start_station} -> {end_station}: {e}")
             return None
 
-def create_interactive_map(predictor, selected_hour=17, selected_station=None):
+def create_interactive_map(predictor, selected_hour=17, selected_day_of_week=1, selected_station=None):
     """Create interactive satellite map with predictions"""
     
     # Get center coordinates
@@ -718,8 +796,9 @@ def create_interactive_map(predictor, selected_hour=17, selected_station=None):
     
     # Add prediction routes if station is selected
     if selected_station and selected_station in predictor.station_coords:
-        st.sidebar.write(f"🔍 Debug: Getting predictions for station {selected_station} at hour {selected_hour}")
-        predictions = predictor.predict_destinations(selected_station, selected_hour, top_k=10)  # Show more predictions
+        day_names = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        st.sidebar.write(f"🔍 Debug: Getting predictions for station {selected_station} at {selected_hour}:00 on {day_names[selected_day_of_week]}")
+        predictions = predictor.predict_destinations(selected_station, selected_hour, day_of_week=selected_day_of_week, top_k=10)  # Show more predictions
         st.sidebar.write(f"🔍 Debug: Found {len(predictions)} predictions")
         
         if predictions:
@@ -892,6 +971,22 @@ def main():
             help="Select the hour of day for predictions"
         )
         
+        # Day of week selector
+        day_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        selected_day_name = st.selectbox(
+            "📅 Select Day of Week",
+            options=day_names,
+            index=1,  # Default to Tuesday
+            help="Select the day of week for predictions (affects bike usage patterns)"
+        )
+        selected_day_of_week = day_names.index(selected_day_name)
+        
+        # Show weekend indicator
+        if selected_day_of_week in [5, 6]:  # Saturday, Sunday
+            st.markdown("🎉 **Weekend** - Leisure patterns expected")
+        else:
+            st.markdown("💼 **Weekday** - Commuter patterns expected")
+        
         # Station selection (including session state)
         available_stations = sorted(list(predictor.station_coords.keys()))
         
@@ -925,7 +1020,7 @@ def main():
         with st.container():
             st.markdown('<div class="sidebar-content">', unsafe_allow_html=True)
             st.markdown("### ⚡ System Status")
-            st.markdown(f'<p class="translucent-text"><strong>Stations:</strong> {len(predictor.station_coords)}<br><strong>Routes:</strong> {len(routing_network)}<br><strong>Model:</strong> Random Forest<br><strong>Cache:</strong> 24h retention</p>', unsafe_allow_html=True)
+            st.markdown(f'<p class="translucent-text"><strong>Stations:</strong> {len(predictor.station_coords)}<br><strong>Routes:</strong> {len(routing_network)}<br><strong>Model:</strong> Random Forest + Day-of-Week<br><strong>Features:</strong> {len(predictor.station_features[list(predictor.station_features.keys())[0]])} per station<br><strong>Cache:</strong> 24h retention</p>', unsafe_allow_html=True)
             st.markdown('</div>', unsafe_allow_html=True)
     
     # Main content area - full width for map
@@ -946,7 +1041,7 @@ def main():
         
         # Create and display map with container styling
         st.markdown('<div class="map-container">', unsafe_allow_html=True)
-        map_obj = create_interactive_map(predictor, selected_hour, selected_station)
+        map_obj = create_interactive_map(predictor, selected_hour, selected_day_of_week, selected_station)
         map_data = st_folium(map_obj, width=None, height=700, returned_objects=["last_object_clicked"])
         st.markdown('</div>', unsafe_allow_html=True)
         
@@ -971,17 +1066,20 @@ def main():
         
         if selected_station:
             # Show station info
+            day_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+            weekend_indicator = "🎉 Weekend" if selected_day_of_week in [5, 6] else "💼 Weekday"
             st.markdown(f"""
             <div class="metric-card">
                 <h4>🚉 Station {selected_station}</h4>
-                <p><strong>Time:</strong> {selected_hour:02d}:00</p>
+                <p><strong>Time:</strong> {selected_hour:02d}:00 on {day_names[selected_day_of_week]}</p>
+                <p><strong>Pattern:</strong> {weekend_indicator}</p>
                 <p><strong>Historical Trips:</strong> {predictor.station_features[selected_station]['total_trips']}</p>
             </div>
             """, unsafe_allow_html=True)
             
             # Get and display predictions
             with st.spinner("Calculating..."):
-                predictions = predictor.predict_destinations(selected_station, selected_hour, top_k=10)  # Get more predictions
+                predictions = predictor.predict_destinations(selected_station, selected_hour, day_of_week=selected_day_of_week, top_k=10)  # Get more predictions
             
             if predictions:
                 st.markdown("**🎯 Top Destinations**")
@@ -1064,14 +1162,15 @@ def main():
             st.markdown("""
             **🎯 Quick Start:**
             1. Use hour slider in sidebar (try 8, 12, 17, 20)
-            2. Click any station marker on map
-            3. View predictions as colored route lines
-            4. Click lines/markers for route details
+            2. Select day of week (weekdays vs weekends differ!)
+            3. Click any station marker on map
+            4. View predictions as colored route lines
+            5. Click lines/markers for route details
             
             **🎨 Visual Legend:**
             - 🔵 Blue markers: Available stations
             - ⭐ Red star: Selected station  
-            - 🔴🔵🟢 Colored lines: Top 3 predictions with real bike paths
+            - 🔴🔵🟢 Colored lines: Top predictions with real bike paths
             - Line thickness: Flow volume
             - Line opacity: Confidence level
             """)
@@ -1089,9 +1188,10 @@ def main():
             
             **⚡ System Status:**
             - Stations: {total_stations:,} | Routes: {total_routes:,}
-            - Model: Random Forest with temporal features
+            - Model: Random Forest with temporal + day-of-week features
+            - Features: Hour, Day-of-Week, Weekend/Weekday patterns
             - Cache: 24h retention | Real-time routing
-            - Peak accuracy hours: 8, 12, 17, 20
+            - Peak accuracy hours: 8, 12, 17, 20 (varies by day type)
             """)
 
 if __name__ == "__main__":
