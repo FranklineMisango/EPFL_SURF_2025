@@ -8,6 +8,9 @@ osmnx
 scikit-learn
 plotly
 pickle-mixin
-requests
+requests>=2.28.0
+urllib3>=1.26.0
+chardet>=4.0.0
+charset-normalizer>=2.0.0
 geopandas
 shapely
