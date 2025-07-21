@@ -24,34 +24,64 @@ st.set_page_config(
     page_title="Bike Flow Prediction System",
     page_icon="🚴‍♂️",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 # Custom CSS for better styling
 st.markdown("""
 <style>
     .main-header {
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: #1f77b4;
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
     }
     .metric-card {
-        background-color: #f0f2f6;
+        background-color: rgba(240, 242, 246, 0.8);
         padding: 1rem;
         border-radius: 10px;
         margin: 0.5rem 0;
+        backdrop-filter: blur(10px);
     }
     .prediction-box {
-        background-color: #e1f5fe;
+        background-color: rgba(225, 245, 254, 0.9);
         padding: 1rem;
         border-radius: 8px;
         border-left: 4px solid #2196f3;
         margin: 0.5rem 0;
+        backdrop-filter: blur(5px);
     }
     .loading-spinner {
         text-align: center;
         padding: 2rem;
+    }
+    .stApp > header {
+        background-color: transparent;
+    }
+    .main-content {
+        padding: 0 !important;
+    }
+    .block-container {
+        padding-top: 1rem;
+        padding-bottom: 0rem;
+        max-width: none !important;
+    }
+    .sidebar-content {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+    .translucent-text {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 0.9rem;
+    }
+    .map-container {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 </style>
 """, unsafe_allow_html=True)
@@ -689,14 +719,14 @@ def create_interactive_map(predictor, selected_hour=17, selected_station=None):
     # Add prediction routes if station is selected
     if selected_station and selected_station in predictor.station_coords:
         st.sidebar.write(f"🔍 Debug: Getting predictions for station {selected_station} at hour {selected_hour}")
-        predictions = predictor.predict_destinations(selected_station, selected_hour, top_k=5)
+        predictions = predictor.predict_destinations(selected_station, selected_hour, top_k=10)  # Show more predictions
         st.sidebar.write(f"🔍 Debug: Found {len(predictions)} predictions")
         
         if predictions:
             for i, pred in enumerate(predictions):
                 st.sidebar.write(f"Pred {i+1}: Station {pred['destination']}, Flow: {pred['predicted_flow']:.2f}")
         
-        colors = ['red', 'blue', 'green', 'purple', 'orange']
+        colors = ['red', 'blue', 'green', 'purple', 'orange', 'darkred', 'lightred', 'beige', 'darkblue', 'darkgreen', 'cadetblue', 'darkpurple', 'white', 'pink', 'lightblue']
         lines_added = 0
         
         for i, pred in enumerate(predictions):
@@ -827,100 +857,98 @@ def main():
     
     # Header
     st.markdown('<h1 class="main-header">🚴‍♂️ Bike Flow Prediction System</h1>', unsafe_allow_html=True)
-    st.markdown("*⚡ Optimized for fast loading with intelligent caching*")
     
     # Sidebar controls
-    st.sidebar.header("🎛️ Controls")
-    
-    # Load data
-    with st.spinner("Loading bike data..."):
-        trips_df = load_bike_data()
-        if trips_df is None:
-            st.error("Failed to load bike data. Please check the data file.")
-            return
-    
-    # Create routing network
-    routing_network = create_simple_routing_network(trips_df)
-    
-    # Initialize predictor
-    @st.cache_resource
-    def get_predictor():
-        return FastBikeFlowPredictor(trips_df, routing_network)
-    
-    st.markdown("### 🔄 Initializing Prediction System...")
-    predictor = get_predictor()
-    
-    # Initialize session state for selected station
-    if 'selected_station' not in st.session_state:
-        st.session_state.selected_station = None
-    
-    # Time slider
-    selected_hour = st.sidebar.slider(
-        "🕐 Select Hour",
-        min_value=0,
-        max_value=23,
-        value=17,
-        help="Select the hour of day for predictions"
-    )
-    
-    # Station selection (including session state)
-    available_stations = sorted(list(predictor.station_coords.keys()))
-    
-    # Use session state if available, otherwise use sidebar selection
-    if st.session_state.selected_station is not None:
-        selected_station = st.session_state.selected_station
-        # Update sidebar to match
-        if selected_station in available_stations:
-            station_index = available_stations.index(selected_station) + 1  # +1 for None option
+    with st.sidebar:
+        st.header("🎛️ Controls")
+        
+        # Load data
+        with st.spinner("Loading bike data..."):
+            trips_df = load_bike_data()
+            if trips_df is None:
+                st.error("Failed to load bike data. Please check the data file.")
+                return
+        
+        # Create routing network
+        routing_network = create_simple_routing_network(trips_df)
+        
+        # Initialize predictor
+        @st.cache_resource
+        def get_predictor():
+            return FastBikeFlowPredictor(trips_df, routing_network)
+        
+        predictor = get_predictor()
+        
+        # Initialize session state for selected station
+        if 'selected_station' not in st.session_state:
+            st.session_state.selected_station = None
+        
+        # Time slider
+        selected_hour = st.slider(
+            "🕐 Select Hour",
+            min_value=0,
+            max_value=23,
+            value=17,
+            help="Select the hour of day for predictions"
+        )
+        
+        # Station selection (including session state)
+        available_stations = sorted(list(predictor.station_coords.keys()))
+        
+        # Use session state if available, otherwise use sidebar selection
+        if st.session_state.selected_station is not None:
+            selected_station = st.session_state.selected_station
+            # Update sidebar to match
+            if selected_station in available_stations:
+                station_index = available_stations.index(selected_station) + 1  # +1 for None option
+            else:
+                station_index = 0
         else:
             station_index = 0
-    else:
-        station_index = 0
-        selected_station = None
+            selected_station = None
+        
+        # Sidebar station selection
+        sidebar_selected = st.selectbox(
+            "🚉 Select Station (or click on map)",
+            options=[None] + available_stations,
+            index=station_index,
+            help="Select a station to see its predicted destinations"
+        )
+        
+        # Update selected station if changed via sidebar
+        if sidebar_selected != selected_station:
+            selected_station = sidebar_selected
+            st.session_state.selected_station = selected_station
+        
+        # Performance info
+        st.markdown("---")
+        with st.container():
+            st.markdown('<div class="sidebar-content">', unsafe_allow_html=True)
+            st.markdown("### ⚡ System Status")
+            st.markdown(f'<p class="translucent-text"><strong>Stations:</strong> {len(predictor.station_coords)}<br><strong>Routes:</strong> {len(routing_network)}<br><strong>Model:</strong> Random Forest<br><strong>Cache:</strong> 24h retention</p>', unsafe_allow_html=True)
+            st.markdown('</div>', unsafe_allow_html=True)
     
-    # Sidebar station selection
-    sidebar_selected = st.sidebar.selectbox(
-        "🚉 Select Station (or click on map)",
-        options=[None] + available_stations,
-        index=station_index,
-        help="Select a station to see its predicted destinations"
-    )
-    
-    # Update selected station if changed via sidebar
-    if sidebar_selected != selected_station:
-        selected_station = sidebar_selected
-        st.session_state.selected_station = selected_station
-    
-    # Performance info
-    st.sidebar.markdown("---")
-    st.sidebar.markdown("### ⚡ Performance")
-    st.sidebar.info(f"""
-    **Total Stations**: {len(predictor.station_coords)}
-    **Showing**: All stations
-    **Active Routes**: {len(routing_network)}
-    **Model**: Fast Random Forest
-    **Cache**: 24h data retention
-    """)
-    
-    # Main content area
-    col1, col2 = st.columns([2, 1])
+    # Main content area - full width for map
+    col1, col2 = st.columns([3, 1])
     
     with col1:
-        st.subheader("🗺️ Interactive Satellite Map")
-        if selected_station:
-            st.success(f"🎯 Station {selected_station} selected! Predictions shown as colored lines.")
-        else:
-            st.info("💡 Click on any blue station marker to see flow predictions!")
-        
         # Add clear button for selected station
         if selected_station:
-            if st.button("🔄 Clear Selection", help="Clear selected station"):
-                st.session_state.selected_station = None
-                st.rerun()
+            col_btn1, col_btn2, col_btn3 = st.columns([1, 1, 4])
+            with col_btn1:
+                if st.button("� Clear Selection", help="Clear selected station"):
+                    st.session_state.selected_station = None
+                    st.rerun()
+            with col_btn2:
+                st.markdown(f'<p style="color: #1f77b4; font-weight: bold; margin-top: 8px;">🎯 Station {selected_station}</p>', unsafe_allow_html=True)
+        else:
+            st.markdown('<p class="translucent-text">💡 Click on any station marker to see flow predictions</p>', unsafe_allow_html=True)
         
-        # Create and display map
+        # Create and display map with container styling
+        st.markdown('<div class="map-container">', unsafe_allow_html=True)
         map_obj = create_interactive_map(predictor, selected_hour, selected_station)
-        map_data = st_folium(map_obj, width=800, height=600, returned_objects=["last_object_clicked"])
+        map_data = st_folium(map_obj, width=None, height=700, returned_objects=["last_object_clicked"])
+        st.markdown('</div>', unsafe_allow_html=True)
         
         # Handle map clicks
         if map_data['last_object_clicked']:
@@ -939,7 +967,7 @@ def main():
                         st.sidebar.error(f"Error processing click: {e}")
     
     with col2:
-        st.subheader("📊 Prediction Details")
+        st.subheader("📊 Predictions")
         
         if selected_station:
             # Show station info
@@ -947,19 +975,19 @@ def main():
             <div class="metric-card">
                 <h4>🚉 Station {selected_station}</h4>
                 <p><strong>Time:</strong> {selected_hour:02d}:00</p>
-                <p><strong>Total Historical Trips:</strong> {predictor.station_features[selected_station]['total_trips']}</p>
+                <p><strong>Historical Trips:</strong> {predictor.station_features[selected_station]['total_trips']}</p>
             </div>
             """, unsafe_allow_html=True)
             
             # Get and display predictions
-            with st.spinner("Calculating predictions..."):
-                predictions = predictor.predict_destinations(selected_station, selected_hour, top_k=8)
+            with st.spinner("Calculating..."):
+                predictions = predictor.predict_destinations(selected_station, selected_hour, top_k=10)  # Get more predictions
             
             if predictions:
-                st.subheader("🎯 Top Predicted Destinations")
-                st.info(f"Found {len(predictions)} predictions for Station {selected_station} at {selected_hour:02d}:00")
+                st.markdown("**🎯 Top Destinations**")
                 
-                for i, pred in enumerate(predictions[:5]):
+                # Show all predictions, not just top 3
+                for i, pred in enumerate(predictions):  # Show all predictions
                     dest = pred['destination']
                     flow = pred['predicted_flow']
                     confidence = pred['confidence']
@@ -973,135 +1001,98 @@ def main():
                             distance_km = route_info.get('distance_km', 0)
                             duration_min = route_info.get('duration_min', 0)
                             source = route_info.get('source', 'unknown')
+                            distance_m = route_info.get('distance_m', 0)
+                            duration_s = route_info.get('duration_s', 0)
                             
+                            # Show real calculated values with more detail and debug info
                             route_details = f"""
-                            <p><strong>🚴 Distance:</strong> {distance_km:.2f} km</p>
-                            <p><strong>⏱️ Duration:</strong> {duration_min:.1f} min</p>
-                            <p><strong>🗺️ Route Type:</strong> {source.replace('_', ' ').title()}</p>
+                            <p><strong>🚴 Distance:</strong> {distance_km:.2f} km ({distance_m:.0f}m)</p>
+                            <p><strong>⏱️ Duration:</strong> {duration_min:.1f} min ({duration_s:.0f}s)</p>
+                            <p class="translucent-text">Route Source: {source.replace('_', ' ').title()}</p>
                             """
+                            
+                            # Add debug info to sidebar
+                            st.sidebar.write(f"Route {i+1}: {distance_km:.2f}km, {duration_min:.1f}min via {source}")
+                        else:
+                            st.sidebar.write(f"Route {i+1}: No route info available")
                         
                         st.markdown(f"""
                         <div class="prediction-box">
                             <h5>#{i+1} Station {dest}</h5>
-                            <p><strong>Predicted Flow:</strong> {flow:.1f} trips</p>
-                            <p><strong>Confidence:</strong> {confidence:.1%}</p>
+                            <p><strong>Flow:</strong> {flow:.1f} trips</p>
+                            <p><strong>Confidence:</strong> {confidence:.0%}</p>
                             {route_details}
                         </div>
                         """, unsafe_allow_html=True)
-                
-                # Create confidence chart
-                if len(predictions) > 0:
-                    fig = go.Figure()
-                    
-                    destinations = [f"Station {p['destination']}" for p in predictions[:5]]
-                    flows = [p['predicted_flow'] for p in predictions[:5]]
-                    
-                    fig.add_trace(go.Bar(
-                        x=destinations,
-                        y=flows,
-                        name='Predicted Flow',
-                        marker_color='lightblue'
-                    ))
-                    
-                    fig.update_layout(
-                        title="Predicted Flows by Destination",
-                        xaxis_title="Destination",
-                        yaxis_title="Predicted Flow (trips)",
-                        height=300
-                    )
-                    
-                    st.plotly_chart(fig, use_container_width=True)
             else:
-                st.warning(f"⚠️ No significant predictions found for Station {selected_station} at {selected_hour:02d}:00")
-                st.info("Try a different hour (peak hours: 8:00, 12:00, 17:00, 20:00) or another station.")
-                
-                # Debug information
-                with st.expander("🔍 Debug Information"):
-                    if selected_station in predictor.hourly_flows.get(selected_hour, pd.DataFrame()).get('start_station_id', []).values:
-                        st.write("✅ Station has historical data for this hour")
-                    else:
-                        st.write("❌ No historical data for this station at this hour")
-                    
-                    nearby_hours = [(selected_hour-1) % 24, selected_hour, (selected_hour+1) % 24]
-                    for h in nearby_hours:
-                        if h in predictor.hourly_flows:
-                            count = len(predictor.hourly_flows[h][predictor.hourly_flows[h]['start_station_id'] == selected_station])
-                            st.write(f"Hour {h:02d}: {count} outbound trips")
-                        else:
-                            st.write(f"Hour {h:02d}: No data")
+                st.warning(f"⚠️ No predictions for Station {selected_station} at {selected_hour:02d}:00")
+                st.markdown('<p class="translucent-text">Try peak hours: 8:00, 12:00, 17:00, 20:00</p>', unsafe_allow_html=True)
         else:
-            st.info("👆 Click on a station on the map to see predictions!")
-            
-            # Show overall statistics
-            st.subheader("📈 System Overview")
+            # Show overall statistics when no station selected
+            st.markdown("**📈 System Overview**")
             
             total_stations = len(predictor.station_coords)
             total_trips = len(trips_df)
             
-            col_a, col_b = st.columns(2)
-            with col_a:
-                st.metric("Total Stations", total_stations)
-            with col_b:
-                st.metric("Total Trips", f"{total_trips:,}")
+            st.markdown(f"""
+            <div class="metric-card">
+                <p><strong>Total Stations:</strong> {total_stations}</p>
+                <p><strong>Total Trips:</strong> {total_trips:,}</p>
+                <p class="translucent-text">Click any station to see predictions</p>
+            </div>
+            """, unsafe_allow_html=True)
             
-            # Hourly activity chart
+            # Compact hourly activity chart
             hourly_activity = trips_df.groupby('hour').size()
             
             fig = px.line(
                 x=hourly_activity.index,
                 y=hourly_activity.values,
-                title="Bike Activity Throughout the Day",
-                labels={'x': 'Hour', 'y': 'Number of Trips'}
+                title="Daily Activity Pattern",
+                labels={'x': 'Hour', 'y': 'Trips'}
             )
-            fig.add_vline(x=selected_hour, line_dash="dash", line_color="red", 
-                         annotation_text=f"Selected: {selected_hour}:00")
+            fig.add_vline(x=selected_hour, line_dash="dash", line_color="red")
+            fig.update_layout(height=300, margin=dict(l=0, r=0, t=30, b=0))
             
             st.plotly_chart(fig, use_container_width=True)
     
-    # Instructions
-    st.markdown("---")
-    
-    # Get system stats
-    total_stations = len(predictor.station_coords)
-    total_routes = len(routing_network)
-    
-    st.markdown(f"""
-    ### 📋 How to Use:
-    1. **Select Time**: Use the hour slider in the sidebar (try peak hours: 8, 12, 17, 20)
-    2. **Click Station**: Click on any blue bike station marker on the map
-    3. **View Predictions**: Colored lines show predicted destinations with actual bike paths
-    4. **Route Details**: Click on lines/markers to see distance, duration, and route type
-    5. **Explore**: Try different times and stations to see varying patterns!
-    
-    ### 🎨 Visual Legend:
-    - **🔵 Blue Markers**: Available bike stations (click to select)
-    - **⭐ Red Star**: Currently selected station
-    - **🔴 Red Lines**: Top predicted destination (#1) - follows actual roads/bike paths
-    - **🔵 Blue Lines**: Second predicted destination (#2) - real routing
-    - **🟢 Green Lines**: Third predicted destination (#3) - actual paths
-    - **Line Thickness**: Represents predicted flow volume
-    - **Line Opacity**: Represents prediction confidence
-    - **Route Paths**: Now show actual bicycle/road routes, not straight lines!
-    
-    ### 🗺️ NEW: Real Route Information:
-    - **🚴 Distance**: Actual cycling distance in kilometers
-    - **⏱️ Duration**: Estimated cycling time in minutes
-    - **🗺️ Route Type**: Shows routing source (OpenRouteService, OSRM, or fallback)
-    - **Path Following**: Routes follow actual roads and bicycle paths where available
-    
-    ### ⚡ System Status:
-    - **Total Stations**: {total_stations:,} stations displayed
-    - **Active Routes**: {total_routes:,} route combinations
-    - **Peak Hours**: 8:00, 12:00, 17:00, 20:00 (best prediction accuracy)
-    - **Cache Status**: 24-hour data retention for fast reloading
-    - **Routing**: Real-time path calculation with intelligent caching
-    
-    ### 🔧 Troubleshooting:
-    - **No predictions showing?** Try peak hours (8, 12, 17, 20) or busier stations
-    - **Lines not visible?** Check if station has historical data for selected hour
-    - **Route loading slow?** Routes are cached after first load for faster subsequent use
-    - **Straight lines appearing?** This happens when routing service is unavailable - paths will update
-    """)
+    # Compact instructions in expandable section
+    with st.expander("📋 How to Use & Technical Details", expanded=False):
+        col_left, col_right = st.columns(2)
+        
+        with col_left:
+            st.markdown("""
+            **🎯 Quick Start:**
+            1. Use hour slider in sidebar (try 8, 12, 17, 20)
+            2. Click any station marker on map
+            3. View predictions as colored route lines
+            4. Click lines/markers for route details
+            
+            **🎨 Visual Legend:**
+            - 🔵 Blue markers: Available stations
+            - ⭐ Red star: Selected station  
+            - 🔴🔵🟢 Colored lines: Top 3 predictions with real bike paths
+            - Line thickness: Flow volume
+            - Line opacity: Confidence level
+            """)
+        
+        with col_right:
+            total_stations = len(predictor.station_coords)
+            total_routes = len(routing_network)
+            
+            st.markdown(f"""
+            **🗺️ Route Features:**
+            - Real bicycle/road paths (not straight lines)
+            - Actual cycling distances & durations
+            - Multiple routing services with smart fallbacks
+            - Intelligent caching for fast performance
+            
+            **⚡ System Status:**
+            - Stations: {total_stations:,} | Routes: {total_routes:,}
+            - Model: Random Forest with temporal features
+            - Cache: 24h retention | Real-time routing
+            - Peak accuracy hours: 8, 12, 17, 20
+            """)
 
 if __name__ == "__main__":
     main()
