@@ -355,16 +355,11 @@ def create_interactive_map(predictor, selected_hour=17, selected_station=None):
         control=True
     ).add_to(m)
     
-    # Sample stations for performance (show top 30 most active)
-    station_activity = {}
-    for station_id in predictor.station_coords.keys():
-        activity = predictor.station_features[station_id]['total_trips']
-        station_activity[station_id] = activity
+    # Show all stations (user requested to see all stations)
+    all_stations = list(predictor.station_coords.keys())
     
-    top_stations = sorted(station_activity.items(), key=lambda x: x[1], reverse=True)[:30]
-    
-    # Add station markers
-    for station_id, _ in top_stations:
+    # Add station markers for all stations
+    for station_id in all_stations:
         lat, lon = predictor.station_coords[station_id]
         
         # Determine marker color based on selection
@@ -400,17 +395,17 @@ def create_interactive_map(predictor, selected_hour=17, selected_station=None):
             flow = pred['predicted_flow']
             confidence = pred['confidence']
             
-            if dest_station in predictor.station_coords and flow > 0.5:
+            if dest_station in predictor.station_coords and flow > 0.1:  # Lower threshold to show more predictions
                 # Get route path
                 route_coords = predictor.get_route_path(selected_station, dest_station)
                 
                 if route_coords:
-                    # Calculate line properties
-                    weight = max(2, min(8, flow))
-                    opacity = max(0.3, confidence)
+                    # Calculate line properties - make lines more visible
+                    weight = max(3, min(10, flow * 2))  # Increased line weight
+                    opacity = max(0.6, min(0.9, confidence))  # Higher opacity
                     color = colors[i % len(colors)]
                     
-                    # Add route line
+                    # Add route line with better styling
                     folium.PolyLine(
                         locations=route_coords,
                         color=color,
@@ -421,18 +416,21 @@ def create_interactive_map(predictor, selected_hour=17, selected_station=None):
                         Predicted Flow: {flow:.1f} trips<br>
                         Confidence: {confidence:.2%}<br>
                         Rank: #{i+1}
-                        """
+                        """,
+                        tooltip=f"To Station {dest_station}: {flow:.1f} trips"
                     ).add_to(m)
                     
-                    # Add destination marker
+                    # Add destination marker with better visibility
                     dest_lat, dest_lon = predictor.station_coords[dest_station]
                     folium.CircleMarker(
                         location=[dest_lat, dest_lon],
-                        radius=max(5, flow),
-                        popup=f"Destination {dest_station}<br>Flow: {flow:.1f}",
+                        radius=max(8, min(15, flow * 2)),  # Larger circles
+                        popup=f"<b>Destination {dest_station}</b><br>Flow: {flow:.1f} trips<br>Confidence: {confidence:.1%}",
+                        tooltip=f"Dest {dest_station}",
                         color=color,
                         fillColor=color,
-                        fillOpacity=0.7
+                        fillOpacity=0.8,
+                        weight=2
                     ).add_to(m)
     
     # Add layer control
@@ -468,6 +466,10 @@ def main():
     st.markdown("### 🔄 Initializing Prediction System...")
     predictor = get_predictor()
     
+    # Initialize session state for selected station
+    if 'selected_station' not in st.session_state:
+        st.session_state.selected_station = None
+    
     # Time slider
     selected_hour = st.sidebar.slider(
         "🕐 Select Hour",
@@ -477,19 +479,40 @@ def main():
         help="Select the hour of day for predictions"
     )
     
-    # Station selection
+    # Station selection (including session state)
     available_stations = sorted(list(predictor.station_coords.keys()))
-    selected_station = st.sidebar.selectbox(
-        "🚉 Select Station (Optional)",
-        options=[None] + available_stations[:20],  # Limit options for performance
+    
+    # Use session state if available, otherwise use sidebar selection
+    if st.session_state.selected_station is not None:
+        selected_station = st.session_state.selected_station
+        # Update sidebar to match
+        if selected_station in available_stations:
+            station_index = available_stations.index(selected_station) + 1  # +1 for None option
+        else:
+            station_index = 0
+    else:
+        station_index = 0
+        selected_station = None
+    
+    # Sidebar station selection
+    sidebar_selected = st.sidebar.selectbox(
+        "🚉 Select Station (or click on map)",
+        options=[None] + available_stations,
+        index=station_index,
         help="Select a station to see its predicted destinations"
     )
+    
+    # Update selected station if changed via sidebar
+    if sidebar_selected != selected_station:
+        selected_station = sidebar_selected
+        st.session_state.selected_station = selected_station
     
     # Performance info
     st.sidebar.markdown("---")
     st.sidebar.markdown("### ⚡ Performance")
     st.sidebar.info(f"""
-    **Stations**: {len(predictor.station_coords)}
+    **Total Stations**: {len(predictor.station_coords)}
+    **Showing**: All stations
     **Active Routes**: {len(routing_network)}
     **Model**: Fast Random Forest
     **Cache**: 24h data retention
@@ -500,7 +523,16 @@ def main():
     
     with col1:
         st.subheader("🗺️ Interactive Satellite Map")
-        st.info("💡 Click on any blue station marker to see flow predictions!")
+        if selected_station:
+            st.success(f"🎯 Station {selected_station} selected! Predictions shown as colored lines.")
+        else:
+            st.info("💡 Click on any blue station marker to see flow predictions!")
+        
+        # Add clear button for selected station
+        if selected_station:
+            if st.button("🔄 Clear Selection", help="Clear selected station"):
+                st.session_state.selected_station = None
+                st.rerun()
         
         # Create and display map
         map_obj = create_interactive_map(predictor, selected_hour, selected_station)
@@ -515,10 +547,12 @@ def main():
                     try:
                         clicked_station_id = float(tooltip.split('Station ')[1])
                         if clicked_station_id in predictor.station_coords:
-                            st.session_state.selected_station = clicked_station_id
-                            st.rerun()
-                    except:
-                        pass
+                            # Update session state and rerun to show predictions
+                            if st.session_state.selected_station != clicked_station_id:
+                                st.session_state.selected_station = clicked_station_id
+                                st.rerun()
+                    except Exception as e:
+                        st.sidebar.error(f"Error processing click: {e}")
     
     with col2:
         st.subheader("📊 Prediction Details")
@@ -539,6 +573,7 @@ def main():
             
             if predictions:
                 st.subheader("🎯 Top Predicted Destinations")
+                st.info(f"Found {len(predictions)} predictions for Station {selected_station} at {selected_hour:02d}:00")
                 
                 for i, pred in enumerate(predictions[:5]):
                     dest = pred['destination']
@@ -577,7 +612,23 @@ def main():
                     
                     st.plotly_chart(fig, use_container_width=True)
             else:
-                st.info("No significant predictions for this station at this time.")
+                st.warning(f"⚠️ No significant predictions found for Station {selected_station} at {selected_hour:02d}:00")
+                st.info("Try a different hour (peak hours: 8:00, 12:00, 17:00, 20:00) or another station.")
+                
+                # Debug information
+                with st.expander("🔍 Debug Information"):
+                    if selected_station in predictor.hourly_flows.get(selected_hour, pd.DataFrame()).get('start_station_id', []).values:
+                        st.write("✅ Station has historical data for this hour")
+                    else:
+                        st.write("❌ No historical data for this station at this hour")
+                    
+                    nearby_hours = [(selected_hour-1) % 24, selected_hour, (selected_hour+1) % 24]
+                    for h in nearby_hours:
+                        if h in predictor.hourly_flows:
+                            count = len(predictor.hourly_flows[h][predictor.hourly_flows[h]['start_station_id'] == selected_station])
+                            st.write(f"Hour {h:02d}: {count} outbound trips")
+                        else:
+                            st.write(f"Hour {h:02d}: No data")
         else:
             st.info("👆 Click on a station on the map to see predictions!")
             
@@ -609,19 +660,37 @@ def main():
     
     # Instructions
     st.markdown("---")
-    st.markdown("""
-    ### 📋 How to Use:
-    1. **Select Time**: Use the hour slider in the sidebar
-    2. **Click Station**: Click on any blue bike station marker
-    3. **View Predictions**: See predicted destinations with confidence levels
-    4. **Explore**: Try different times and stations!
     
-    ### ⚡ Performance Optimizations:
-    - **Smart Caching**: 24-hour data retention for fast reloading
-    - **Focused Training**: ML model trained on key hours only
-    - **Limited Stations**: Top 30 most active stations shown
-    - **Efficient Routing**: Simplified path calculation
-    - **Progressive Loading**: Step-by-step initialization with progress tracking
+    # Get system stats
+    total_stations = len(predictor.station_coords)
+    total_routes = len(routing_network)
+    
+    st.markdown(f"""
+    ### 📋 How to Use:
+    1. **Select Time**: Use the hour slider in the sidebar (try peak hours: 8, 12, 17, 20)
+    2. **Click Station**: Click on any blue bike station marker on the map
+    3. **View Predictions**: Colored lines show predicted destinations with flow volumes
+    4. **Explore**: Try different times and stations to see varying patterns!
+    
+    ### 🎨 Visual Legend:
+    - **🔵 Blue Markers**: Available bike stations (click to select)
+    - **⭐ Red Star**: Currently selected station
+    - **🔴 Red Lines**: Top predicted destination (#1)
+    - **🔵 Blue Lines**: Second predicted destination (#2)
+    - **🟢 Green Lines**: Third predicted destination (#3)
+    - **Line Thickness**: Represents predicted flow volume
+    - **Line Opacity**: Represents prediction confidence
+    
+    ### ⚡ System Status:
+    - **Total Stations**: {total_stations:,} stations displayed
+    - **Active Routes**: {total_routes:,} route combinations
+    - **Peak Hours**: 8:00, 12:00, 17:00, 20:00 (best prediction accuracy)
+    - **Cache Status**: 24-hour data retention for fast reloading
+    
+    ### 🔧 Troubleshooting:
+    - **No predictions showing?** Try peak hours (8, 12, 17, 20) or busier stations
+    - **Lines not visible?** Check if station has historical data for selected hour
+    - **App slow?** All {total_stations} stations are now displayed - performance may vary
     """)
 
 if __name__ == "__main__":
