@@ -19,8 +19,9 @@ import json
 
 # Import our custom modules
 from osm_feature_extractor import OSMFeatureExtractor, FeatureInfluenceAnalyzer
-from multi_path_router import MultiPathRouter
+from multi_path_router import ImprovedMultiPathRouter as MultiPathRouter
 from ml_evaluation_system import MLEvaluationSystem
+from optimized_map import create_optimized_map
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
 
@@ -392,33 +393,32 @@ class EnhancedBikeFlowPredictor:
     
     def predict_with_multiple_paths(self, station_id, hour, day_of_week=1, top_k=5):
         """Predict destinations with multiple path options"""
-        if station_id not in self.station_features or not self.model:
+        if station_id not in self.station_features or not self.model or not self.scaler:
+            st.warning(f"Missing data for station {station_id}: model={self.model is not None}, scaler={self.scaler is not None}")
             return []
         
         predictions = []
         
         # Get basic predictions
-        for dest_station in list(self.station_coords.keys())[:20]:  # Limit for demo
-            if dest_station == station_id or dest_station not in self.station_features:
-                continue
-            
+        available_stations = [s for s in self.station_coords.keys() if s != station_id and s in self.station_features]
+        
+        # Limit for demo but ensure we have some stations
+        demo_stations = available_stations[:min(20, len(available_stations))]
+        
+        for dest_station in demo_stations:
             try:
                 feature_vector = self._create_enhanced_feature_vector(
                     station_id, dest_station, hour, day_of_week
                 )
+                
+                if len(feature_vector) == 0:
+                    continue
+                    
                 X_pred = self.scaler.transform([feature_vector])
                 predicted_flow = self.model.predict(X_pred)[0]
                 
-                # Get confidence
-                confidence_metrics = self.ml_evaluator.predict_with_confidence(
-                    self.model, X_pred, confidence_level=0.95
-                )
-                
-                if confidence_metrics:
-                    confidence = 1 - (confidence_metrics[0].uncertainty / max(1, predicted_flow))
-                    confidence = max(0.1, min(0.95, confidence))
-                else:
-                    confidence = 0.5
+                # Simple confidence calculation
+                confidence = min(0.9, max(0.3, abs(predicted_flow) / 10.0))
                 
                 # Get multiple paths
                 start_lat, start_lon = self.station_coords[station_id]
@@ -436,6 +436,7 @@ class EnhancedBikeFlowPredictor:
                 })
                 
             except Exception as e:
+                st.warning(f"Prediction failed for {dest_station}: {e}")
                 continue
         
         # Sort by predicted flow
@@ -668,8 +669,8 @@ def main():
         else:
             st.markdown('<p class="translucent-text">💡 Select a station to see enhanced predictions with multiple paths</p>', unsafe_allow_html=True)
         
-        # Create and display enhanced map
-        map_obj = create_enhanced_map(predictor, selected_hour, selected_day_of_week, selected_station)
+        # Create and display optimized map
+        map_obj = create_optimized_map(predictor, selected_hour, selected_day_of_week, selected_station)
         map_data = st_folium(map_obj, width=None, height=700)
     
     with col2:
@@ -774,11 +775,13 @@ def main():
             - Transportation hubs
             
             **🛣️ Multi-Path Routing:**
+            - OSRM free routing service
+            - GraphHopper free tier
             - Shortest distance paths
             - Fastest time routes
-            - Safest cycling routes
             - Alternative path options
-            - Real cycling infrastructure
+            - Waypoint-based routing
+            - Grid-based fallback paths
             """)
         
         with col_right:
