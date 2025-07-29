@@ -6,6 +6,102 @@ import folium
 from folium.plugins import MarkerCluster
 import numpy as np
 import streamlit as st
+from geopy.distance import geodesic
+
+def _simplify_path_coordinates(coordinates, max_points=50):
+    """
+    Smart coordinate simplification that preserves road shape using Douglas-Peucker-like algorithm
+    """
+    if len(coordinates) <= max_points:
+        return coordinates
+    
+    # Always keep start and end points
+    if len(coordinates) <= 2:
+        return coordinates
+    
+    # Use a simplified version of Douglas-Peucker algorithm
+    def perpendicular_distance(point, line_start, line_end):
+        """Calculate perpendicular distance from point to line"""
+        if line_start == line_end:
+            return geodesic(point, line_start).meters
+        
+        # Convert to approximate cartesian for calculation
+        x0, y0 = point[1], point[0]  # lon, lat
+        x1, y1 = line_start[1], line_start[0]
+        x2, y2 = line_end[1], line_end[0]
+        
+        # Calculate perpendicular distance
+        A = x0 - x1
+        B = y0 - y1
+        C = x2 - x1
+        D = y2 - y1
+        
+        dot = A * C + B * D
+        len_sq = C * C + D * D
+        
+        if len_sq == 0:
+            return np.sqrt(A * A + B * B)
+        
+        param = dot / len_sq
+        
+        if param < 0:
+            xx, yy = x1, y1
+        elif param > 1:
+            xx, yy = x2, y2
+        else:
+            xx = x1 + param * C
+            yy = y1 + param * D
+        
+        dx = x0 - xx
+        dy = y0 - yy
+        return np.sqrt(dx * dx + dy * dy) * 111000  # Approximate meters per degree
+    
+    def douglas_peucker_simplified(coords, epsilon):
+        """Simplified Douglas-Peucker algorithm"""
+        if len(coords) <= 2:
+            return coords
+        
+        # Find the point with maximum distance
+        dmax = 0
+        index = 0
+        end = len(coords) - 1
+        
+        for i in range(1, end):
+            d = perpendicular_distance(coords[i], coords[0], coords[end])
+            if d > dmax:
+                index = i
+                dmax = d
+        
+        # If max distance is greater than epsilon, recursively simplify
+        if dmax > epsilon:
+            # Recursive call
+            rec_results1 = douglas_peucker_simplified(coords[:index+1], epsilon)
+            rec_results2 = douglas_peucker_simplified(coords[index:], epsilon)
+            
+            # Build the result list
+            result = rec_results1[:-1] + rec_results2
+        else:
+            result = [coords[0], coords[end]]
+        
+        return result
+    
+    # Start with a reasonable epsilon and adjust if needed
+    epsilon = 50  # 50 meters tolerance
+    simplified = douglas_peucker_simplified(coordinates, epsilon)
+    
+    # If still too many points, use adaptive sampling
+    if len(simplified) > max_points:
+        # Use adaptive sampling that keeps important turns
+        step = len(coordinates) // max_points
+        result = [coordinates[0]]  # Always keep start
+        
+        for i in range(step, len(coordinates) - step, step):
+            result.append(coordinates[i])
+        
+        result.append(coordinates[-1])  # Always keep end
+        return result
+    
+    return simplified
 
 def create_optimized_map(predictor, selected_hour=17, selected_day_of_week=1, selected_station=None):
     """Create optimized map with better performance for zooming"""
@@ -115,12 +211,8 @@ def create_optimized_map(predictor, selected_hour=17, selected_day_of_week=1, se
                 best_path = paths[0]
                 
                 if best_path.coordinates and len(best_path.coordinates) > 1:
-                    # Simplify coordinates for better performance
-                    coords = best_path.coordinates
-                    if len(coords) > 20:
-                        # Take every nth point to reduce complexity
-                        step = len(coords) // 20
-                        coords = coords[::step]
+                    # Smart coordinate simplification that preserves road shape
+                    coords = _simplify_path_coordinates(best_path.coordinates, max_points=50)
                     
                     # Simplified popup
                     popup_content = f"""
