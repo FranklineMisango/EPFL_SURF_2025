@@ -1,7 +1,7 @@
 """
-Multi-Path Router for Bike Flow Prediction
-Generates multiple possible paths between stations, not just the shortest route.
-Considers various routing preferences and path alternatives.
+Improved Multi-Path Router for Bike Flow Prediction
+Prioritizes real road-following routing services to avoid paths through buildings.
+Uses multiple routing APIs and intelligent fallbacks.
 """
 
 import requests
@@ -13,7 +13,6 @@ from typing import Dict, List, Tuple, Optional, Union
 import logging
 from dataclasses import dataclass
 from geopy.distance import geodesic
-import networkx as nx
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -36,9 +35,10 @@ class PathInfo:
     bike_infrastructure: float = 0.0  # 0-1 score for bike lanes/paths
     confidence: float = 1.0
     source: str = 'unknown'
+    follows_roads: bool = True  # Whether this path follows actual roads
 
-class MultiPathRouter:
-    """Generate multiple routing options between bike stations"""
+class ImprovedMultiPathRouter:
+    """Generate multiple routing options that follow actual roads and bike paths"""
     
     def __init__(self, cache_dir: str = "cache/multi_paths"):
         self.cache_dir = cache_dir
@@ -56,7 +56,7 @@ class MultiPathRouter:
         """Define different cycling routing profiles"""
         return {
             'cycling-regular': {
-                'description': 'Standard cycling route',
+                'description': 'Standard cycling route following roads',
                 'preference': 'balanced',
                 'avoid': [],
                 'priority': 'time'
@@ -68,22 +68,16 @@ class MultiPathRouter:
                 'priority': 'safety'
             },
             'cycling-fast': {
-                'description': 'Fastest cycling route',
+                'description': 'Fastest cycling route on roads',
                 'preference': 'speed',
                 'avoid': [],
                 'priority': 'time'
             },
             'cycling-scenic': {
-                'description': 'Scenic route through parks and quiet areas',
+                'description': 'Scenic route through parks and quiet roads',
                 'preference': 'scenery',
                 'avoid': ['highways', 'industrial'],
                 'priority': 'experience'
-            },
-            'cycling-direct': {
-                'description': 'Most direct route',
-                'preference': 'distance',
-                'avoid': [],
-                'priority': 'distance'
             }
         }
     
@@ -91,12 +85,12 @@ class MultiPathRouter:
         """Define different types of paths to generate"""
         return {
             'shortest': {
-                'description': 'Shortest distance path',
+                'description': 'Shortest distance path on roads',
                 'weight': 'distance',
                 'alternatives': False
             },
             'fastest': {
-                'description': 'Fastest time path',
+                'description': 'Fastest time path on roads',
                 'weight': 'time',
                 'alternatives': False
             },
@@ -125,10 +119,10 @@ class MultiPathRouter:
     def get_multiple_paths(self, start_lat: float, start_lon: float, 
                           end_lat: float, end_lon: float,
                           max_paths: int = 5) -> List[PathInfo]:
-        """Get multiple path options between two points"""
+        """Get multiple path options that follow actual roads"""
         
         # Generate cache key
-        cache_key = f"multi_{start_lat:.6f}_{start_lon:.6f}_{end_lat:.6f}_{end_lon:.6f}_{max_paths}"
+        cache_key = f"improved_{start_lat:.6f}_{start_lon:.6f}_{end_lat:.6f}_{end_lon:.6f}_{max_paths}"
         
         # Try to load from cache
         cached_paths = self._load_paths_from_cache(cache_key)
@@ -137,30 +131,31 @@ class MultiPathRouter:
         
         paths = []
         
-        # 1. Try OpenRouteService for multiple routes
-        ors_paths = self._get_openrouteservice_alternatives(start_lat, start_lon, end_lat, end_lon)
-        paths.extend(ors_paths)
+        # 1. Try OSRM for cycling routes (FREE, RELIABLE)
+        osrm_paths = self._get_osrm_cycling_routes(start_lat, start_lon, end_lat, end_lon)
+        paths.extend(osrm_paths)
         
-        # 2. Try OSRM for alternatives
+        # 2. Try GraphHopper (FREE tier available)
         if len(paths) < max_paths:
-            osrm_paths = self._get_osrm_alternatives(start_lat, start_lon, end_lat, end_lon)
-            paths.extend(osrm_paths)
+            graphhopper_paths = self._get_graphhopper_routes(start_lat, start_lon, end_lat, end_lon)
+            paths.extend(graphhopper_paths)
         
-        # 3. Generate synthetic alternatives if needed
+        # 3. Generate road-following alternatives using waypoints
         if len(paths) < max_paths:
-            synthetic_paths = self._generate_synthetic_alternatives(
+            waypoint_paths = self._generate_waypoint_road_routes(
                 start_lat, start_lon, end_lat, end_lon, 
                 existing_paths=paths,
                 needed_count=max_paths - len(paths)
             )
-            paths.extend(synthetic_paths)
+            paths.extend(waypoint_paths)
         
-        # 4. Ensure we have at least one path (fallback)
+        # 4. Ensure we have at least one path (improved fallback that follows roads)
         if not paths:
-            fallback_path = self._create_fallback_path(start_lat, start_lon, end_lat, end_lon)
+            fallback_path = self._create_road_following_fallback(start_lat, start_lon, end_lat, end_lon)
             paths.append(fallback_path)
         
-        # Sort by preference (shortest first, then alternatives)
+        # Remove duplicates and sort by preference
+        paths = self._remove_duplicate_paths(paths)
         paths = self._sort_paths_by_preference(paths)
         
         # Cache the results
@@ -168,12 +163,74 @@ class MultiPathRouter:
         
         return paths[:max_paths]
     
-    def _get_openrouteservice_alternatives(self, start_lat: float, start_lon: float, 
-                                         end_lat: float, end_lon: float) -> List[PathInfo]:
-        """Get alternative routes from OpenRouteService"""
+    def _get_osrm_cycling_routes(self, start_lat: float, start_lon: float, 
+                                end_lat: float, end_lon: float) -> List[PathInfo]:
+        """Get cycling routes from OSRM (follows actual roads)"""
         paths = []
         
-        # Try different profiles
+        try:
+            # OSRM cycling profile with alternatives
+            url = f"https://router.project-osrm.org/route/v1/bike/{start_lon},{start_lat};{end_lon},{end_lat}"
+            
+            params = {
+                'overview': 'full',
+                'geometries': 'geojson',
+                'alternatives': 'true',
+                'alternatives.max_paths': '3',
+                'steps': 'false'
+            }
+            
+            response = requests.get(url, params=params, timeout=10)
+            
+            if response.status_code == 200:
+                data = response.json()
+                
+                if 'routes' in data and len(data['routes']) > 0:
+                    for i, route in enumerate(data['routes']):
+                        if 'geometry' in route and 'coordinates' in route['geometry']:
+                            coordinates = route['geometry']['coordinates']
+                            
+                            # Convert coordinates from [lon, lat] to [lat, lon]
+                            path_coords = [(coord[1], coord[0]) for coord in coordinates]
+                            
+                            # Determine path type
+                            if i == 0:
+                                path_type = 'fastest'
+                            else:
+                                path_type = f'alternative_{i}'
+                            
+                            path_info = PathInfo(
+                                path_id=f"osrm_bike_{i}",
+                                coordinates=path_coords,
+                                distance_m=route.get('distance', 0),
+                                duration_s=route.get('duration', 0),
+                                path_type=path_type,
+                                routing_profile='cycling-regular',
+                                source='osrm_bike',
+                                confidence=0.95 - (i * 0.05),  # High confidence for real roads
+                                follows_roads=True
+                            )
+                            
+                            paths.append(path_info)
+                            logger.info(f"OSRM: Generated {path_type} path with {len(path_coords)} points")
+        
+        except Exception as e:
+            logger.warning(f"OSRM cycling routes failed: {e}")
+        
+        return paths
+    
+    def _get_openrouteservice_routes(self, start_lat: float, start_lon: float, 
+                                   end_lat: float, end_lon: float) -> List[PathInfo]:
+        """Get cycling routes from OpenRouteService"""
+        paths = []
+        
+        # Check for API key
+        import os
+        api_key = os.environ.get('OPENROUTESERVICE_API_KEY')
+        if not api_key:
+            logger.info("OpenRouteService API key not found, skipping")
+            return paths
+        
         profiles = ['cycling-regular', 'cycling-safe']
         
         for profile in profiles:
@@ -185,15 +242,12 @@ class MultiPathRouter:
                     'end': f"{end_lon},{end_lat}",
                     'format': 'geojson',
                     'alternative_routes': 'true',
-                    'alternative_routes.target_count': '3',
+                    'alternative_routes.target_count': '2',
                     'alternative_routes.weight_factor': '1.4',
                     'alternative_routes.share_factor': '0.6'
                 }
                 
-                # Add API key if available
-                import os
-                api_key = os.environ.get('OPENROUTESERVICE_API_KEY')
-                headers = {'Authorization': api_key} if api_key else {}
+                headers = {'Authorization': api_key}
                 
                 response = requests.get(url, params=params, headers=headers, timeout=15)
                 
@@ -212,7 +266,7 @@ class MultiPathRouter:
                             if i == 0:
                                 path_type = 'shortest' if profile == 'cycling-regular' else 'safest'
                             else:
-                                path_type = f'alternative_{i}'
+                                path_type = f'alternative_{i + 10}'  # Offset to avoid conflicts
                             
                             # Extract route information
                             segments = properties.get('segments', [{}])
@@ -226,13 +280,15 @@ class MultiPathRouter:
                                 path_type=path_type,
                                 routing_profile=profile,
                                 source='openrouteservice',
-                                confidence=0.9 - (i * 0.1)  # Decrease confidence for alternatives
+                                confidence=0.9 - (i * 0.05),
+                                follows_roads=True
                             )
                             
                             paths.append(path_info)
+                            logger.info(f"ORS: Generated {path_type} path with {len(path_coords)} points")
                 
                 # Rate limiting
-                time.sleep(0.5)
+                time.sleep(1.0)
                 
             except Exception as e:
                 logger.warning(f"OpenRouteService {profile} failed: {e}")
@@ -240,20 +296,205 @@ class MultiPathRouter:
         
         return paths
     
-    def _get_osrm_alternatives(self, start_lat: float, start_lon: float, 
-                             end_lat: float, end_lon: float) -> List[PathInfo]:
-        """Get alternative routes from OSRM"""
+    def _get_graphhopper_routes(self, start_lat: float, start_lon: float, 
+                              end_lat: float, end_lon: float) -> List[PathInfo]:
+        """Get cycling routes from GraphHopper"""
         paths = []
         
         try:
-            # OSRM with alternatives
-            url = f"https://router.project-osrm.org/route/v1/bike/{start_lon},{start_lat};{end_lon},{end_lat}"
+            # GraphHopper cycling profile
+            url = "https://graphhopper.com/api/1/route"
+            
+            params = {
+                'point': [f"{start_lat},{start_lon}", f"{end_lat},{end_lon}"],
+                'vehicle': 'bike',
+                'locale': 'en',
+                'calc_points': 'true',
+                'debug': 'false',
+                'elevation': 'false',
+                'points_encoded': 'false',
+                'type': 'json',
+                'alternative_route.max_paths': '2',
+                'alternative_route.max_weight_factor': '1.4'
+            }
+            
+            # Add API key if available
+            import os
+            api_key = os.environ.get('GRAPHHOPPER_API_KEY')
+            if api_key:
+                params['key'] = api_key
+            
+            response = requests.get(url, params=params, timeout=15)
+            
+            if response.status_code == 200:
+                data = response.json()
+                
+                if 'paths' in data:
+                    for i, path_data in enumerate(data['paths']):
+                        if 'points' in path_data and 'coordinates' in path_data['points']:
+                            coordinates = path_data['points']['coordinates']
+                            
+                            # Convert coordinates from [lon, lat] to [lat, lon]
+                            path_coords = [(coord[1], coord[0]) for coord in coordinates]
+                            
+                            path_type = 'shortest' if i == 0 else f'alternative_{i + 20}'
+                            
+                            path_info = PathInfo(
+                                path_id=f"graphhopper_{i}",
+                                coordinates=path_coords,
+                                distance_m=path_data.get('distance', 0),
+                                duration_s=path_data.get('time', 0) / 1000,  # Convert from ms
+                                path_type=path_type,
+                                routing_profile='cycling-regular',
+                                source='graphhopper',
+                                confidence=0.85 - (i * 0.05),
+                                follows_roads=True
+                            )
+                            
+                            paths.append(path_info)
+                            logger.info(f"GraphHopper: Generated {path_type} path with {len(path_coords)} points")
+        
+        except Exception as e:
+            logger.warning(f"GraphHopper routes failed: {e}")
+        
+        return paths
+    
+    def _get_mapbox_routes(self, start_lat: float, start_lon: float, 
+                         end_lat: float, end_lon: float) -> List[PathInfo]:
+        """Get cycling routes from Mapbox"""
+        paths = []
+        
+        # Check for API key
+        import os
+        api_key = os.environ.get('MAPBOX_API_KEY')
+        if not api_key:
+            logger.info("Mapbox API key not found, skipping")
+            return paths
+        
+        try:
+            # Mapbox cycling profile
+            url = f"https://api.mapbox.com/directions/v5/mapbox/cycling/{start_lon},{start_lat};{end_lon},{end_lat}"
+            
+            params = {
+                'alternatives': 'true',
+                'geometries': 'geojson',
+                'overview': 'full',
+                'steps': 'false',
+                'access_token': api_key
+            }
+            
+            response = requests.get(url, params=params, timeout=15)
+            
+            if response.status_code == 200:
+                data = response.json()
+                
+                if 'routes' in data:
+                    for i, route in enumerate(data['routes']):
+                        if 'geometry' in route and 'coordinates' in route['geometry']:
+                            coordinates = route['geometry']['coordinates']
+                            
+                            # Convert coordinates from [lon, lat] to [lat, lon]
+                            path_coords = [(coord[1], coord[0]) for coord in coordinates]
+                            
+                            path_type = 'fastest' if i == 0 else f'alternative_{i + 30}'
+                            
+                            path_info = PathInfo(
+                                path_id=f"mapbox_{i}",
+                                coordinates=path_coords,
+                                distance_m=route.get('distance', 0),
+                                duration_s=route.get('duration', 0),
+                                path_type=path_type,
+                                routing_profile='cycling-regular',
+                                source='mapbox',
+                                confidence=0.9 - (i * 0.05),
+                                follows_roads=True
+                            )
+                            
+                            paths.append(path_info)
+                            logger.info(f"Mapbox: Generated {path_type} path with {len(path_coords)} points")
+        
+        except Exception as e:
+            logger.warning(f"Mapbox routes failed: {e}")
+        
+        return paths
+    
+    def _generate_waypoint_road_routes(self, start_lat: float, start_lon: float, 
+                                     end_lat: float, end_lon: float,
+                                     existing_paths: List[PathInfo],
+                                     needed_count: int) -> List[PathInfo]:
+        """Generate alternative routes using waypoints and routing services"""
+        paths = []
+        
+        if needed_count <= 0:
+            return paths
+        
+        # Generate strategic waypoints that might lead to different roads
+        waypoints = self._generate_strategic_waypoints(start_lat, start_lon, end_lat, end_lon, needed_count)
+        
+        for i, waypoint in enumerate(waypoints):
+            try:
+                # Try to route through the waypoint using OSRM
+                waypoint_path = self._route_through_waypoint(
+                    start_lat, start_lon, waypoint[0], waypoint[1], end_lat, end_lon
+                )
+                
+                if waypoint_path:
+                    waypoint_path.path_id = f"waypoint_{i}"
+                    waypoint_path.path_type = f'alternative_{len(existing_paths) + i + 40}'
+                    waypoint_path.source = 'waypoint_routing'
+                    waypoint_path.confidence = 0.7 - (i * 0.1)
+                    paths.append(waypoint_path)
+                    
+            except Exception as e:
+                logger.warning(f"Waypoint routing {i} failed: {e}")
+                continue
+        
+        return paths
+    
+    def _generate_strategic_waypoints(self, start_lat: float, start_lon: float, 
+                                    end_lat: float, end_lon: float, count: int) -> List[Tuple[float, float]]:
+        """Generate strategic waypoints that might lead to different road routes"""
+        waypoints = []
+        
+        # Calculate midpoint
+        mid_lat = (start_lat + end_lat) / 2
+        mid_lon = (start_lon + end_lon) / 2
+        
+        # Calculate perpendicular direction
+        bearing = np.arctan2(end_lon - start_lon, end_lat - start_lat)
+        perp_bearing = bearing + np.pi / 2
+        
+        # Generate waypoints at different offsets and positions
+        offsets = [0.003, -0.003, 0.005, -0.005]  # Larger offsets for more distinct routes
+        positions = [0.3, 0.7, 0.4, 0.6]  # Different positions along the route
+        
+        for i in range(min(count, len(offsets))):
+            # Position along the direct route
+            position = positions[i % len(positions)]
+            base_lat = start_lat + (end_lat - start_lat) * position
+            base_lon = start_lon + (end_lon - start_lon) * position
+            
+            # Offset perpendicular to the route
+            offset = offsets[i]
+            waypoint_lat = base_lat + offset * np.cos(perp_bearing)
+            waypoint_lon = base_lon + offset * np.sin(perp_bearing)
+            
+            waypoints.append((waypoint_lat, waypoint_lon))
+        
+        return waypoints
+    
+    def _route_through_waypoint(self, start_lat: float, start_lon: float,
+                              waypoint_lat: float, waypoint_lon: float,
+                              end_lat: float, end_lon: float) -> Optional[PathInfo]:
+        """Route through a waypoint using OSRM"""
+        try:
+            # Route from start to waypoint to end
+            url = f"https://router.project-osrm.org/route/v1/bike/{start_lon},{start_lat};{waypoint_lon},{waypoint_lat};{end_lon},{end_lat}"
             
             params = {
                 'overview': 'full',
                 'geometries': 'geojson',
-                'alternatives': 'true',
-                'alternatives.max_paths': '3'
+                'steps': 'false'
             }
             
             response = requests.get(url, params=params, timeout=10)
@@ -261,163 +502,167 @@ class MultiPathRouter:
             if response.status_code == 200:
                 data = response.json()
                 
-                if 'routes' in data:
-                    for i, route in enumerate(data['routes']):
+                if 'routes' in data and len(data['routes']) > 0:
+                    route = data['routes'][0]
+                    
+                    if 'geometry' in route and 'coordinates' in route['geometry']:
                         coordinates = route['geometry']['coordinates']
                         
                         # Convert coordinates from [lon, lat] to [lat, lon]
                         path_coords = [(coord[1], coord[0]) for coord in coordinates]
                         
-                        path_type = 'fastest' if i == 0 else f'alternative_{i + 2}'  # Offset to avoid conflicts
-                        
                         path_info = PathInfo(
-                            path_id=f"osrm_{i}",
+                            path_id="waypoint_temp",
                             coordinates=path_coords,
                             distance_m=route.get('distance', 0),
                             duration_s=route.get('duration', 0),
-                            path_type=path_type,
+                            path_type='alternative',
                             routing_profile='cycling-regular',
-                            source='osrm',
-                            confidence=0.85 - (i * 0.1)
+                            source='waypoint_routing',
+                            confidence=0.7,
+                            follows_roads=True
                         )
                         
-                        paths.append(path_info)
+                        return path_info
         
         except Exception as e:
-            logger.warning(f"OSRM alternatives failed: {e}")
+            logger.warning(f"Waypoint routing failed: {e}")
         
-        return paths
+        return None
     
-    def _generate_synthetic_alternatives(self, start_lat: float, start_lon: float, 
-                                       end_lat: float, end_lon: float,
-                                       existing_paths: List[PathInfo],
-                                       needed_count: int) -> List[PathInfo]:
-        """Generate synthetic alternative paths using waypoints"""
-        paths = []
+    def _create_road_following_fallback(self, start_lat: float, start_lon: float, 
+                                      end_lat: float, end_lon: float) -> PathInfo:
+        """Create a fallback path that attempts to follow roads using grid approximation"""
         
-        if needed_count <= 0:
-            return paths
+        # Try a simple grid-based approach to approximate road following
+        path_coords = self._generate_grid_based_path(start_lat, start_lon, end_lat, end_lon)
         
-        # Calculate midpoint and perpendicular offsets
-        mid_lat = (start_lat + end_lat) / 2
-        mid_lon = (start_lon + end_lon) / 2
+        # Calculate distance along the path
+        total_distance = 0
+        for i in range(len(path_coords) - 1):
+            total_distance += geodesic(path_coords[i], path_coords[i + 1]).meters
         
-        # Calculate bearing and perpendicular direction
-        bearing = np.arctan2(end_lon - start_lon, end_lat - start_lat)
-        perp_bearing = bearing + np.pi / 2
-        
-        # Generate waypoints for alternative routes
-        waypoint_offsets = [0.002, -0.002, 0.004, -0.004]  # Different offset distances
-        
-        for i in range(min(needed_count, len(waypoint_offsets))):
-            offset = waypoint_offsets[i]
-            
-            # Create waypoint perpendicular to direct route
-            waypoint_lat = mid_lat + offset * np.cos(perp_bearing)
-            waypoint_lon = mid_lon + offset * np.sin(perp_bearing)
-            
-            # Generate path through waypoint
-            path_coords = self._generate_path_through_waypoint(
-                start_lat, start_lon, waypoint_lat, waypoint_lon, end_lat, end_lon
-            )
-            
-            # Calculate approximate distance and duration
-            total_distance = 0
-            for j in range(len(path_coords) - 1):
-                total_distance += geodesic(path_coords[j], path_coords[j + 1]).meters
-            
-            duration = total_distance / 4.17  # Assume 15 km/h cycling speed
-            
-            path_info = PathInfo(
-                path_id=f"synthetic_{i}",
-                coordinates=path_coords,
-                distance_m=total_distance,
-                duration_s=duration,
-                path_type=f'alternative_{len(existing_paths) + i + 1}',
-                routing_profile='cycling-regular',
-                source='synthetic',
-                confidence=0.6 - (i * 0.1)
-            )
-            
-            paths.append(path_info)
-        
-        return paths
-    
-    def _generate_path_through_waypoint(self, start_lat: float, start_lon: float,
-                                      waypoint_lat: float, waypoint_lon: float,
-                                      end_lat: float, end_lon: float) -> List[Tuple[float, float]]:
-        """Generate a smooth path through a waypoint"""
-        path_coords = []
-        
-        # First segment: start to waypoint
-        segment1_points = 8
-        for i in range(segment1_points):
-            ratio = i / (segment1_points - 1)
-            lat = start_lat + (waypoint_lat - start_lat) * ratio
-            lon = start_lon + (waypoint_lon - start_lon) * ratio
-            
-            # Add some curvature
-            if i > 0 and i < segment1_points - 1:
-                curve_offset = 0.0005 * np.sin(ratio * np.pi)
-                lat += curve_offset * np.random.uniform(-1, 1)
-                lon += curve_offset * np.random.uniform(-1, 1)
-            
-            path_coords.append((lat, lon))
-        
-        # Second segment: waypoint to end
-        segment2_points = 8
-        for i in range(1, segment2_points):  # Skip first point to avoid duplication
-            ratio = i / (segment2_points - 1)
-            lat = waypoint_lat + (end_lat - waypoint_lat) * ratio
-            lon = waypoint_lon + (end_lon - waypoint_lon) * ratio
-            
-            # Add some curvature
-            if i > 0 and i < segment2_points - 1:
-                curve_offset = 0.0005 * np.sin(ratio * np.pi)
-                lat += curve_offset * np.random.uniform(-1, 1)
-                lon += curve_offset * np.random.uniform(-1, 1)
-            
-            path_coords.append((lat, lon))
-        
-        return path_coords
-    
-    def _create_fallback_path(self, start_lat: float, start_lon: float, 
-                            end_lat: float, end_lon: float) -> PathInfo:
-        """Create a fallback path when all routing services fail"""
-        
-        # Create a simple path with intermediate points
-        num_points = 6
-        path_coords = []
-        
-        for i in range(num_points):
-            ratio = i / (num_points - 1)
-            lat = start_lat + (end_lat - start_lat) * ratio
-            lon = start_lon + (end_lon - start_lon) * ratio
-            
-            # Add slight randomization for middle points
-            if 0 < i < num_points - 1:
-                lat += np.random.normal(0, 0.0002)
-                lon += np.random.normal(0, 0.0002)
-            
-            path_coords.append((lat, lon))
-        
-        # Calculate distance
-        total_distance = geodesic((start_lat, start_lon), (end_lat, end_lon)).meters
-        duration = total_distance / 4.17  # 15 km/h
+        duration = total_distance / 4.17  # 15 km/h cycling speed
         
         return PathInfo(
-            path_id="fallback",
+            path_id="grid_fallback",
             coordinates=path_coords,
             distance_m=total_distance,
             duration_s=duration,
             path_type='shortest',
             routing_profile='cycling-regular',
-            source='fallback',
-            confidence=0.5
+            source='grid_fallback',
+            confidence=0.5,
+            follows_roads=False  # This is still an approximation
         )
     
+    def _generate_grid_based_path(self, start_lat: float, start_lon: float, 
+                                end_lat: float, end_lon: float) -> List[Tuple[float, float]]:
+        """Generate a path that follows a grid pattern (approximating city streets)"""
+        path_coords = []
+        
+        # Calculate differences
+        lat_diff = end_lat - start_lat
+        lon_diff = end_lon - start_lon
+        
+        # Determine if we should go more north-south or east-west first
+        if abs(lat_diff) > abs(lon_diff):
+            # Go north-south first, then east-west
+            mid_lat = end_lat
+            mid_lon = start_lon
+        else:
+            # Go east-west first, then north-south
+            mid_lat = start_lat
+            mid_lon = end_lon
+        
+        # Create path: start -> intermediate corner -> end
+        path_coords.append((start_lat, start_lon))
+        
+        # Add intermediate points along the first leg
+        num_intermediate = 3
+        for i in range(1, num_intermediate):
+            ratio = i / num_intermediate
+            if abs(lat_diff) > abs(lon_diff):
+                # Moving north-south first
+                intermediate_lat = start_lat + lat_diff * ratio
+                intermediate_lon = start_lon
+            else:
+                # Moving east-west first
+                intermediate_lat = start_lat
+                intermediate_lon = start_lon + lon_diff * ratio
+            
+            path_coords.append((intermediate_lat, intermediate_lon))
+        
+        # Add the corner point
+        path_coords.append((mid_lat, mid_lon))
+        
+        # Add intermediate points along the second leg
+        for i in range(1, num_intermediate):
+            ratio = i / num_intermediate
+            if abs(lat_diff) > abs(lon_diff):
+                # Moving east-west second
+                intermediate_lat = mid_lat
+                intermediate_lon = mid_lon + (end_lon - mid_lon) * ratio
+            else:
+                # Moving north-south second
+                intermediate_lat = mid_lat + (end_lat - mid_lat) * ratio
+                intermediate_lon = mid_lon
+            
+            path_coords.append((intermediate_lat, intermediate_lon))
+        
+        # Add the end point
+        path_coords.append((end_lat, end_lon))
+        
+        return path_coords
+    
+    def _remove_duplicate_paths(self, paths: List[PathInfo]) -> List[PathInfo]:
+        """Remove duplicate or very similar paths"""
+        if len(paths) <= 1:
+            return paths
+        
+        unique_paths = []
+        
+        for path in paths:
+            is_duplicate = False
+            
+            for existing_path in unique_paths:
+                # Check if paths are very similar
+                if self._paths_are_similar(path, existing_path):
+                    is_duplicate = True
+                    # Keep the one with higher confidence
+                    if path.confidence > existing_path.confidence:
+                        unique_paths.remove(existing_path)
+                        unique_paths.append(path)
+                    break
+            
+            if not is_duplicate:
+                unique_paths.append(path)
+        
+        return unique_paths
+    
+    def _paths_are_similar(self, path1: PathInfo, path2: PathInfo, threshold: float = 0.1) -> bool:
+        """Check if two paths are very similar"""
+        # Check distance similarity
+        if abs(path1.distance_m - path2.distance_m) / max(path1.distance_m, path2.distance_m) < threshold:
+            # Check coordinate similarity (sample a few points)
+            if len(path1.coordinates) > 2 and len(path2.coordinates) > 2:
+                # Compare start, middle, and end points
+                start_dist = geodesic(path1.coordinates[0], path2.coordinates[0]).meters
+                end_dist = geodesic(path1.coordinates[-1], path2.coordinates[-1]).meters
+                
+                mid1_idx = len(path1.coordinates) // 2
+                mid2_idx = len(path2.coordinates) // 2
+                mid_dist = geodesic(path1.coordinates[mid1_idx], path2.coordinates[mid2_idx]).meters
+                
+                avg_dist = (start_dist + end_dist + mid_dist) / 3
+                
+                # If average distance between corresponding points is small, they're similar
+                return avg_dist < 100  # 100 meters threshold
+        
+        return False
+    
     def _sort_paths_by_preference(self, paths: List[PathInfo]) -> List[PathInfo]:
-        """Sort paths by preference (shortest first, then by confidence)"""
+        """Sort paths by preference (real roads first, then by type and confidence)"""
         
         # Define path type priority
         type_priority = {
@@ -429,8 +674,9 @@ class MultiPathRouter:
             'scenic': 6
         }
         
-        # Sort by type priority, then by confidence
+        # Sort by: follows_roads (True first), type priority, confidence, distance
         return sorted(paths, key=lambda p: (
+            not p.follows_roads,  # False (follows roads) comes first
             type_priority.get(p.path_type, 99),
             -p.confidence,
             p.distance_m
@@ -460,7 +706,8 @@ class MultiPathRouter:
                         traffic_level=item.get('traffic_level', 'unknown'),
                         bike_infrastructure=item.get('bike_infrastructure', 0.0),
                         confidence=item.get('confidence', 1.0),
-                        source=item.get('source', 'unknown')
+                        source=item.get('source', 'unknown'),
+                        follows_roads=item.get('follows_roads', True)
                     )
                     paths.append(path_info)
                 
@@ -491,7 +738,8 @@ class MultiPathRouter:
                     'traffic_level': path.traffic_level,
                     'bike_infrastructure': path.bike_infrastructure,
                     'confidence': path.confidence,
-                    'source': path.source
+                    'source': path.source,
+                    'follows_roads': path.follows_roads
                 })
             
             with open(cache_file, 'w') as f:
@@ -500,94 +748,51 @@ class MultiPathRouter:
         except Exception as e:
             logger.warning(f"Failed to save cache {cache_key}: {e}")
     
-    def analyze_path_diversity(self, paths: List[PathInfo]) -> Dict[str, float]:
-        """Analyze the diversity of generated paths"""
-        if len(paths) < 2:
-            return {'diversity_score': 0.0, 'avg_distance_diff': 0.0, 'path_overlap': 1.0}
+    def analyze_path_quality(self, paths: List[PathInfo]) -> Dict[str, float]:
+        """Analyze the quality of generated paths"""
+        if not paths:
+            return {'road_following_ratio': 0.0, 'avg_confidence': 0.0, 'diversity_score': 0.0}
         
-        # Calculate distance differences
-        distances = [path.distance_m for path in paths]
-        avg_distance_diff = np.std(distances) / np.mean(distances) if np.mean(distances) > 0 else 0
+        # Calculate road-following ratio
+        road_following_count = sum(1 for path in paths if path.follows_roads)
+        road_following_ratio = road_following_count / len(paths)
         
-        # Calculate path overlap (simplified - based on start/end point differences)
-        overlaps = []
-        for i in range(len(paths)):
-            for j in range(i + 1, len(paths)):
-                path1, path2 = paths[i], paths[j]
-                
-                # Sample points from each path for comparison
-                sample_size = min(10, len(path1.coordinates), len(path2.coordinates))
-                
-                if sample_size > 1:
-                    # Calculate average distance between corresponding points
-                    total_distance = 0
-                    for k in range(sample_size):
-                        idx1 = int(k * (len(path1.coordinates) - 1) / (sample_size - 1))
-                        idx2 = int(k * (len(path2.coordinates) - 1) / (sample_size - 1))
-                        
-                        coord1 = path1.coordinates[idx1]
-                        coord2 = path2.coordinates[idx2]
-                        
-                        total_distance += geodesic(coord1, coord2).meters
-                    
-                    avg_distance = total_distance / sample_size
-                    # Normalize by path length
-                    path_length = (path1.distance_m + path2.distance_m) / 2
-                    overlap = 1 - min(1, avg_distance / (path_length * 0.1))  # 10% threshold
-                    overlaps.append(overlap)
+        # Calculate average confidence
+        avg_confidence = np.mean([path.confidence for path in paths])
         
-        avg_overlap = np.mean(overlaps) if overlaps else 1.0
-        
-        # Diversity score combines distance variation and path separation
-        diversity_score = (avg_distance_diff * 0.5) + ((1 - avg_overlap) * 0.5)
+        # Calculate diversity (distance variation)
+        if len(paths) > 1:
+            distances = [path.distance_m for path in paths]
+            diversity_score = np.std(distances) / np.mean(distances) if np.mean(distances) > 0 else 0
+        else:
+            diversity_score = 0.0
         
         return {
+            'road_following_ratio': road_following_ratio,
+            'avg_confidence': avg_confidence,
             'diversity_score': diversity_score,
-            'avg_distance_diff': avg_distance_diff,
-            'path_overlap': avg_overlap,
-            'num_paths': len(paths)
+            'num_paths': len(paths),
+            'real_road_paths': road_following_count
         }
-    
-    def get_path_summary(self, paths: List[PathInfo]) -> pd.DataFrame:
-        """Get a summary of all paths as a DataFrame"""
-        data = []
-        
-        for path in paths:
-            data.append({
-                'path_id': path.path_id,
-                'path_type': path.path_type,
-                'distance_km': path.distance_m / 1000,
-                'duration_min': path.duration_s / 60,
-                'routing_profile': path.routing_profile,
-                'confidence': path.confidence,
-                'source': path.source,
-                'speed_kmh': (path.distance_m / 1000) / (path.duration_s / 3600) if path.duration_s > 0 else 0
-            })
-        
-        return pd.DataFrame(data)
 
 if __name__ == "__main__":
     # Example usage
-    router = MultiPathRouter()
+    router = ImprovedMultiPathRouter()
     
     # Example coordinates (Lausanne area)
     start_lat, start_lon = 46.5197, 6.6323
     end_lat, end_lon = 46.5238, 6.6356
     
-    print("Generating multiple paths...")
+    print("🚴‍♂️ Generating improved road-following paths...")
     paths = router.get_multiple_paths(start_lat, start_lon, end_lat, end_lon, max_paths=5)
     
-    print(f"\nGenerated {len(paths)} paths:")
+    print(f"\n📊 Generated {len(paths)} paths:")
     for i, path in enumerate(paths, 1):
-        print(f"{i}. {path.path_type} ({path.source}): {path.distance_m:.0f}m, {path.duration_s/60:.1f}min, confidence: {path.confidence:.2f}")
+        road_status = "🛣️ " if path.follows_roads else "⚠️ "
+        print(f"{i}. {road_status}{path.path_type} ({path.source}): {path.distance_m:.0f}m, {path.duration_s/60:.1f}min, confidence: {path.confidence:.2f}")
     
-    # Analyze diversity
-    diversity = router.analyze_path_diversity(paths)
-    print(f"\nPath diversity analysis:")
-    for key, value in diversity.items():
+    # Analyze quality
+    quality = router.analyze_path_quality(paths)
+    print(f"\n🎯 Path Quality Analysis:")
+    for key, value in quality.items():
         print(f"{key}: {value:.3f}")
-    
-    # Get summary
-    summary = router.get_path_summary(paths)
-    print(f"\nPath summary:")
-    print(summary.to_string(index=False))
