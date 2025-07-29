@@ -1,37 +1,40 @@
+"""
+Enhanced Bike Flow Prediction System
+Integrates OSM feature extraction, multi-path routing, and robust ML evaluation
+"""
+
 import streamlit as st
 import pandas as pd
 import numpy as np
 import folium
 from streamlit_folium import st_folium
-import networkx as nx
-import pickle
-import ast
-from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import ast
+from datetime import datetime
+import warnings
+import time
+import json
+
+# Import our custom modules
+from osm_feature_extractor import OSMFeatureExtractor, FeatureInfluenceAnalyzer
+from multi_path_router import MultiPathRouter
+from ml_evaluation_system import MLEvaluationSystem
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
-import warnings
-import os
-import requests
-import hashlib
-import json
-import time
-import time
-import requests
-import hashlib
-import json
+
 warnings.filterwarnings('ignore')
 
 # Set page config
 st.set_page_config(
-    page_title="Bike Flow Prediction System",
+    page_title="Enhanced Bike Flow Prediction System",
     page_icon="🚴‍♂️",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded"
 )
 
-# Custom CSS for better styling
+# Custom CSS
 st.markdown("""
 <style>
     .main-header {
@@ -48,49 +51,27 @@ st.markdown("""
         margin: 0.5rem 0;
         backdrop-filter: blur(10px);
     }
-    .prediction-box {
+    .feature-card {
         background-color: rgba(225, 245, 254, 0.9);
-        padding: 1rem;
+        padding: 0.8rem;
         border-radius: 8px;
         border-left: 4px solid #2196f3;
-        margin: 0.5rem 0;
-        backdrop-filter: blur(5px);
+        margin: 0.3rem 0;
     }
-    .loading-spinner {
-        text-align: center;
-        padding: 2rem;
-    }
-    .stApp > header {
-        background-color: transparent;
-    }
-    .main-content {
-        padding: 0 !important;
-    }
-    .block-container {
-        padding-top: 1rem;
-        padding-bottom: 0rem;
-        max-width: none !important;
-    }
-    .sidebar-content {
-        background-color: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-radius: 10px;
+    .evaluation-card {
+        background-color: rgba(232, 245, 233, 0.9);
         padding: 1rem;
+        border-radius: 8px;
+        border-left: 4px solid #4caf50;
         margin: 0.5rem 0;
     }
-    .translucent-text {
-        color: rgba(0, 0, 0, 0.6);
-        font-size: 0.9rem;
-    }
-    .map-container {
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
+    .confidence-high { color: #4caf50; font-weight: bold; }
+    .confidence-medium { color: #ff9800; font-weight: bold; }
+    .confidence-low { color: #f44336; font-weight: bold; }
 </style>
 """, unsafe_allow_html=True)
 
-@st.cache_data(ttl=3600)  # Cache for 1 hour
+@st.cache_data(ttl=3600)
 def load_bike_data():
     """Load and preprocess bike trip data"""
     try:
@@ -100,8 +81,8 @@ def load_bike_data():
         trips_df['start_datetime'] = pd.to_datetime(trips_df['start_time'], format='%Y%m%d_%H%M%S')
         trips_df['end_datetime'] = pd.to_datetime(trips_df['end_time'], format='%Y%m%d_%H%M%S')
         trips_df['hour'] = trips_df['start_datetime'].dt.hour
-        trips_df['day_of_week'] = trips_df['start_datetime'].dt.dayofweek  # 0=Monday, 6=Sunday
-        trips_df['is_weekend'] = trips_df['day_of_week'].isin([5, 6])  # Saturday, Sunday
+        trips_df['day_of_week'] = trips_df['start_datetime'].dt.dayofweek
+        trips_df['is_weekend'] = trips_df['day_of_week'].isin([5, 6])
         
         # Extract coordinates
         trips_df['start_lat'] = trips_df['start_coords'].apply(lambda x: ast.literal_eval(x)[0])
@@ -114,298 +95,64 @@ def load_bike_data():
         st.error(f"Error loading data: {e}")
         return None
 
-@st.cache_data(ttl=86400)  # Cache for 24 hours
-def create_simple_routing_network(trips_df):
-    """Create a simplified routing network from actual trip data"""
-    try:
-        # Create routing lookup from actual trips
-        routing_network = {}
-        
-        # Group trips to find common routes
-        route_counts = trips_df.groupby(['start_station_id', 'end_station_id']).agg({
-            'start_lat': 'first',
-            'start_lon': 'first', 
-            'end_lat': 'first',
-            'end_lon': 'first'
-        }).reset_index()
-        
-        for _, row in route_counts.iterrows():
-            start_station = row['start_station_id']
-            end_station = row['end_station_id']
-            
-            if start_station != end_station:  # Skip self-loops
-                # Create simple route (can be enhanced with actual path finding)
-                start_coords = [row['start_lat'], row['start_lon']]
-                end_coords = [row['end_lat'], row['end_lon']]
-                
-                # For now, create a simple 2-point route (can be enhanced)
-                route_key = f"{start_station}_{end_station}"
-                routing_network[route_key] = [start_coords, end_coords]
-        
-        return routing_network
-    except Exception as e:
-        st.warning(f"Could not create routing network: {e}")
-        return {}
-
-class RealPathRouter:
-    """Advanced router that fetches actual road/bicycle paths"""
+class EnhancedBikeFlowPredictor:
+    """Enhanced predictor with OSM features and multi-path routing"""
     
-    def __init__(self):
-        self.cache_dir = "cache"
-        self.ensure_cache_dir()
-        
-    def ensure_cache_dir(self):
-        """Ensure cache directory exists"""
-        if not os.path.exists(self.cache_dir):
-            os.makedirs(self.cache_dir)
-    
-    def get_cache_key(self, start_lat, start_lon, end_lat, end_lon, profile='cycling'):
-        """Generate cache key for route"""
-        coord_str = f"{start_lat:.6f},{start_lon:.6f}_{end_lat:.6f},{end_lon:.6f}_{profile}"
-        return hashlib.md5(coord_str.encode()).hexdigest()
-    
-    def load_from_cache(self, cache_key):
-        """Load route from cache"""
-        cache_file = os.path.join(self.cache_dir, f"{cache_key}.json")
-        if os.path.exists(cache_file):
-            try:
-                with open(cache_file, 'r') as f:
-                    return json.load(f)
-            except:
-                return None
-        return None
-    
-    def save_to_cache(self, cache_key, route_data):
-        """Save route to cache"""
-        cache_file = os.path.join(self.cache_dir, f"{cache_key}.json")
-        try:
-            with open(cache_file, 'w') as f:
-                json.dump(route_data, f)
-        except Exception as e:
-            st.warning(f"Could not save to cache: {e}")
-    
-    def get_openrouteservice_route(self, start_lat, start_lon, end_lat, end_lon):
-        """Get route from OpenRouteService (free service)"""
-        try:
-            # OpenRouteService API (free tier - no API key needed for basic usage)
-            url = "https://api.openrouteservice.org/v2/directions/cycling-regular"
-            
-            # Note: For production, you should get a free API key from openrouteservice.org
-            # For now, we'll try without one (limited requests)
-            
-            params = {
-                'start': f"{start_lon},{start_lat}",
-                'end': f"{end_lon},{end_lat}",
-                'format': 'geojson'
-            }
-            
-            # Add API key if available in environment
-            api_key = os.environ.get('OPENROUTESERVICE_API_KEY')
-            if api_key:
-                headers = {'Authorization': api_key}
-            else:
-                headers = {}
-            
-            response = requests.get(url, params=params, headers=headers, timeout=10)
-            
-            if response.status_code == 200:
-                data = response.json()
-                
-                if 'features' in data and len(data['features']) > 0:
-                    coordinates = data['features'][0]['geometry']['coordinates']
-                    # Convert from [lon, lat] to [lat, lon] format
-                    route_points = [[coord[1], coord[0]] for coord in coordinates]
-                    
-                    return {
-                        'success': True,
-                        'route': route_points,
-                        'source': 'openrouteservice',
-                        'distance': data['features'][0]['properties'].get('segments', [{}])[0].get('distance', 0),
-                        'duration': data['features'][0]['properties'].get('segments', [{}])[0].get('duration', 0)
-                    }
-            
-            return None
-            
-        except Exception as e:
-            st.warning(f"OpenRouteService error: {e}")
-            return None
-    
-    def get_osrm_route(self, start_lat, start_lon, end_lat, end_lon):
-        """Get route from OSRM (Open Source Routing Machine)"""
-        try:
-            # Free OSRM demo server (cycling profile)
-            url = f"https://router.project-osrm.org/route/v1/bike/{start_lon},{start_lat};{end_lon},{end_lat}"
-            
-            params = {
-                'overview': 'full',
-                'geometries': 'geojson'
-            }
-            
-            response = requests.get(url, params=params, timeout=10)
-            
-            if response.status_code == 200:
-                data = response.json()
-                
-                if 'routes' in data and len(data['routes']) > 0:
-                    route = data['routes'][0]
-                    coordinates = route['geometry']['coordinates']
-                    
-                    # Convert from [lon, lat] to [lat, lon] format
-                    route_points = [[coord[1], coord[0]] for coord in coordinates]
-                    
-                    return {
-                        'success': True,
-                        'route': route_points,
-                        'source': 'osrm',
-                        'distance': route.get('distance', 0),
-                        'duration': route.get('duration', 0)
-                    }
-            
-            return None
-            
-        except Exception as e:
-            st.warning(f"OSRM error: {e}")
-            return None
-    
-    def get_fallback_route(self, start_lat, start_lon, end_lat, end_lon):
-        """Generate enhanced fallback route with intermediate points"""
-        try:
-            # Create a more realistic path with intermediate points
-            num_points = 5  # Number of intermediate points
-            route_points = []
-            
-            for i in range(num_points + 1):
-                ratio = i / num_points
-                # Linear interpolation
-                lat = start_lat + (end_lat - start_lat) * ratio
-                lon = start_lon + (end_lon - start_lon) * ratio
-                
-                # Add small random variations to simulate road curvature
-                if i > 0 and i < num_points:
-                    lat_noise = np.random.normal(0, 0.0001)  # Small variation
-                    lon_noise = np.random.normal(0, 0.0001)
-                    lat += lat_noise
-                    lon += lon_noise
-                
-                route_points.append([lat, lon])
-            
-            # Calculate approximate distance (Haversine formula)
-            distance = self.calculate_distance(start_lat, start_lon, end_lat, end_lon)
-            
-            return {
-                'success': True,
-                'route': route_points,
-                'source': 'fallback',
-                'distance': distance * 1000,  # Convert to meters
-                'duration': distance * 1000 / 4.17  # Assume 15 km/h cycling speed
-            }
-            
-        except Exception as e:
-            st.warning(f"Fallback route error: {e}")
-            return {
-                'success': True,
-                'route': [[start_lat, start_lon], [end_lat, end_lon]],
-                'source': 'simple_fallback',
-                'distance': 0,
-                'duration': 0
-            }
-    
-    def calculate_distance(self, lat1, lon1, lat2, lon2):
-        """Calculate distance between two points using Haversine formula"""
-        R = 6371  # Earth's radius in kilometers
-        
-        lat1_rad = np.radians(lat1)
-        lat2_rad = np.radians(lat2)
-        delta_lat = np.radians(lat2 - lat1)
-        delta_lon = np.radians(lon2 - lon1)
-        
-        a = (np.sin(delta_lat/2) * np.sin(delta_lat/2) + 
-             np.cos(lat1_rad) * np.cos(lat2_rad) * 
-             np.sin(delta_lon/2) * np.sin(delta_lon/2))
-        c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1-a))
-        
-        return R * c
-    
-    def get_route(self, start_lat, start_lon, end_lat, end_lon, profile='cycling'):
-        """Get the best available route between two points"""
-        
-        # Generate cache key
-        cache_key = self.get_cache_key(start_lat, start_lon, end_lat, end_lon, profile)
-        
-        # Try to load from cache first
-        cached_route = self.load_from_cache(cache_key)
-        if cached_route:
-            return cached_route
-        
-        # Try different routing services in order of preference
-        route_result = None
-        
-        # 1. Try OpenRouteService (good for cycling routes)
-        route_result = self.get_openrouteservice_route(start_lat, start_lon, end_lat, end_lon)
-        
-        # 2. If that fails, try OSRM
-        if not route_result:
-            route_result = self.get_osrm_route(start_lat, start_lon, end_lat, end_lon)
-        
-        # 3. If all else fails, use enhanced fallback
-        if not route_result:
-            route_result = self.get_fallback_route(start_lat, start_lon, end_lat, end_lon)
-        
-        # Save successful route to cache
-        if route_result and route_result.get('success'):
-            self.save_to_cache(cache_key, route_result)
-        
-        return route_result
-
-class FastBikeFlowPredictor:
-    """Optimized bike flow predictor with fast loading and real path routing"""
-    
-    def __init__(self, trips_df, routing_network=None):
+    def __init__(self, trips_df):
         self.trips_df = trips_df
-        self.routing_network = routing_network or {}
         self.station_coords = {}
-        self.hourly_flows = {}
+        self.station_features = {}
+        self.osm_features = {}
         self.model = None
         self.scaler = None
-        self.station_features = {}
+        self.evaluation_results = None
         
-        # Initialize real path router
-        self.path_router = RealPathRouter()
+        # Initialize components
+        self.osm_extractor = OSMFeatureExtractor()
+        self.multi_router = MultiPathRouter()
+        self.ml_evaluator = MLEvaluationSystem()
+        self.feature_analyzer = FeatureInfluenceAnalyzer()
         
-        # Initialize with progress tracking
-        self._initialize_predictor()
+        self._initialize_system()
     
-    def _initialize_predictor(self):
-        """Initialize predictor with progress tracking"""
+    def _initialize_system(self):
+        """Initialize the enhanced prediction system"""
         progress_bar = st.progress(0)
         status_text = st.empty()
         
+        # Build station network
         status_text.text("Building station network...")
         self._build_station_network()
-        progress_bar.progress(25)
+        progress_bar.progress(20)
         
-        status_text.text("Computing hourly flows...")
-        self._compute_hourly_flows()
-        progress_bar.progress(50)
+        # Extract OSM features (sample for demo)
+        status_text.text("Extracting OSM features...")
+        self._extract_osm_features_sample()
+        progress_bar.progress(40)
         
-        status_text.text("Engineering features...")
-        self._engineer_features()
-        progress_bar.progress(75)
+        # Engineer enhanced features
+        status_text.text("Engineering enhanced features...")
+        self._engineer_enhanced_features()
+        progress_bar.progress(60)
         
-        status_text.text("Training ML model...")
-        self._train_model()
+        # Train enhanced model
+        status_text.text("Training enhanced ML model...")
+        self._train_enhanced_model()
+        progress_bar.progress(80)
+        
+        # Evaluate model
+        status_text.text("Evaluating model performance...")
+        self._evaluate_model()
         progress_bar.progress(100)
         
-        status_text.text("✅ Ready!")
+        status_text.text("✅ Enhanced system ready!")
         time.sleep(0.5)
         
-        # Clear progress indicators
         progress_bar.empty()
         status_text.empty()
     
     def _build_station_network(self):
         """Build station coordinate mapping"""
-        # Get unique stations
         start_stations = self.trips_df.groupby('start_station_id').agg({
             'start_lat': 'first',
             'start_lon': 'first'
@@ -415,30 +162,37 @@ class FastBikeFlowPredictor:
             station_id = row['start_station_id']
             self.station_coords[station_id] = (row['start_lat'], row['start_lon'])
     
-    def _compute_hourly_flows(self):
-        """Compute flow volumes by hour and day of week"""
-        # Store flows by hour (keeping backward compatibility)
-        for hour in range(24):
-            hour_trips = self.trips_df[self.trips_df['hour'] == hour]
-            flows = hour_trips.groupby(['start_station_id', 'end_station_id']).size().reset_index(name='flow_count')
-            self.hourly_flows[hour] = flows
+    def _extract_osm_features_sample(self):
+        """Extract OSM features for a sample of stations (for demo)"""
+        # Sample a few stations for demonstration
+        sample_stations = list(self.station_coords.keys())[:5]  # First 5 stations
         
-        # Store flows by hour and day of week for enhanced modeling
-        self.hourly_flows_by_dow = {}
-        for hour in range(24):
-            for dow in range(7):  # 0=Monday, 6=Sunday
-                hour_dow_trips = self.trips_df[
-                    (self.trips_df['hour'] == hour) & 
-                    (self.trips_df['day_of_week'] == dow)
-                ]
-                flows = hour_dow_trips.groupby(['start_station_id', 'end_station_id']).size().reset_index(name='flow_count')
-                self.hourly_flows_by_dow[(hour, dow)] = flows
+        for station_id in sample_stations:
+            lat, lon = self.station_coords[station_id]
+            
+            try:
+                # Extract features around this station
+                features = self.osm_extractor.extract_features_around_station(
+                    lat, lon, radius_m=500
+                )
+                
+                # Compute metrics
+                metrics = self.osm_extractor.compute_feature_metrics(features)
+                self.osm_features[station_id] = metrics
+                
+                # Rate limiting
+                time.sleep(0.1)
+                
+            except Exception as e:
+                st.warning(f"Failed to extract OSM features for station {station_id}: {e}")
+                self.osm_features[station_id] = {}
     
-    def _engineer_features(self):
-        """Engineer features for ML model"""
+    def _engineer_enhanced_features(self):
+        """Engineer enhanced features including OSM data"""
         for station_id in self.station_coords.keys():
             features = {}
             
+            # Basic trip features
             station_trips = self.trips_df[
                 (self.trips_df['start_station_id'] == station_id) | 
                 (self.trips_df['end_station_id'] == station_id)
@@ -449,94 +203,59 @@ class FastBikeFlowPredictor:
             features['lat'] = self.station_coords[station_id][0]
             features['lon'] = self.station_coords[station_id][1]
             
-            # Hourly patterns
+            # Temporal features
             for hour in range(24):
                 outflow = len(station_trips[
                     (station_trips['start_station_id'] == station_id) & 
                     (station_trips['hour'] == hour)
                 ])
-                inflow = len(station_trips[
-                    (station_trips['end_station_id'] == station_id) & 
-                    (station_trips['hour'] == hour)
-                ])
-                
                 features[f'outflow_hour_{hour}'] = outflow
-                features[f'inflow_hour_{hour}'] = inflow
             
-            # Day of week patterns
-            for dow in range(7):  # 0=Monday, 6=Sunday
+            for dow in range(7):
                 dow_outflow = len(station_trips[
                     (station_trips['start_station_id'] == station_id) & 
                     (station_trips['day_of_week'] == dow)
                 ])
-                dow_inflow = len(station_trips[
-                    (station_trips['end_station_id'] == station_id) & 
-                    (station_trips['day_of_week'] == dow)
-                ])
-                
                 features[f'outflow_dow_{dow}'] = dow_outflow
-                features[f'inflow_dow_{dow}'] = dow_inflow
             
-            # Weekend vs weekday patterns
-            weekend_outflow = len(station_trips[
-                (station_trips['start_station_id'] == station_id) & 
-                (station_trips['is_weekend'] == True)
-            ])
-            weekday_outflow = len(station_trips[
-                (station_trips['start_station_id'] == station_id) & 
-                (station_trips['is_weekend'] == False)
-            ])
-            
-            features['weekend_outflow'] = weekend_outflow
-            features['weekday_outflow'] = weekday_outflow
-            features['weekend_ratio'] = weekend_outflow / (weekend_outflow + weekday_outflow + 1)  # +1 to avoid division by zero
+            # OSM features (if available)
+            osm_data = self.osm_features.get(station_id, {})
+            for osm_feature, value in osm_data.items():
+                features[f'osm_{osm_feature}'] = value
             
             self.station_features[station_id] = features
     
-    def _train_model(self):
-        """Train ML model for flow prediction with day of week features"""
+    def _train_enhanced_model(self):
+        """Train enhanced model with all features"""
         training_data = []
         
-        # Sample data for faster training - include different days of week
-        sample_hours = [6, 8, 12, 17, 20]  # Focus on key hours
-        sample_days = [0, 1, 4, 5, 6]  # Monday, Tuesday, Friday, Saturday, Sunday
+        # Sample training data
+        sample_hours = [6, 8, 12, 17, 20]
+        sample_days = [0, 1, 4, 5, 6]
         
-        # Use enhanced hourly flows by day of week when available
         for hour in sample_hours:
             for dow in sample_days:
-                if (hour, dow) in self.hourly_flows_by_dow:
-                    flows = self.hourly_flows_by_dow[(hour, dow)]
-                    
-                    # Sample flows for faster training
-                    if len(flows) > 500:
-                        flows = flows.sample(n=500, random_state=42)
-                    
-                    for _, row in flows.iterrows():
-                        start_station = row['start_station_id']
-                        end_station = row['end_station_id']
-                        flow_count = row['flow_count']
-                        
-                        if start_station in self.station_features and end_station in self.station_features:
-                            feature_vector = self._create_feature_vector(start_station, end_station, hour, dow)
-                            training_data.append(feature_vector + [flow_count])
+                hour_trips = self.trips_df[
+                    (self.trips_df['hour'] == hour) & 
+                    (self.trips_df['day_of_week'] == dow)
+                ]
                 
-                # Fallback to hourly flows if day-of-week specific data is insufficient
-                elif hour in self.hourly_flows:
-                    flows = self.hourly_flows[hour]
+                flows = hour_trips.groupby(['start_station_id', 'end_station_id']).size().reset_index(name='flow_count')
+                
+                # Sample for performance
+                if len(flows) > 200:
+                    flows = flows.sample(n=200, random_state=42)
+                
+                for _, row in flows.iterrows():
+                    start_station = row['start_station_id']
+                    end_station = row['end_station_id']
+                    flow_count = row['flow_count']
                     
-                    # Sample flows for faster training
-                    if len(flows) > 200:
-                        flows = flows.sample(n=200, random_state=42)
-                    
-                    for _, row in flows.iterrows():
-                        start_station = row['start_station_id']
-                        end_station = row['end_station_id']
-                        flow_count = row['flow_count']
-                        
-                        if start_station in self.station_features and end_station in self.station_features:
-                            # Use default day of week (Tuesday = 1) for compatibility
-                            feature_vector = self._create_feature_vector(start_station, end_station, hour, 1)
-                            training_data.append(feature_vector + [flow_count])
+                    if start_station in self.station_features and end_station in self.station_features:
+                        feature_vector = self._create_enhanced_feature_vector(
+                            start_station, end_station, hour, dow
+                        )
+                        training_data.append(feature_vector + [flow_count])
         
         if training_data:
             training_data = np.array(training_data)
@@ -546,202 +265,192 @@ class FastBikeFlowPredictor:
             self.scaler = StandardScaler()
             X_scaled = self.scaler.fit_transform(X)
             
-            # Use fewer estimators for faster training
-            self.model = RandomForestRegressor(n_estimators=50, random_state=42, n_jobs=-1)
+            self.model = RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1)
             self.model.fit(X_scaled, y)
     
-    def _create_feature_vector(self, start_station, end_station, hour, day_of_week=1):
-        """Create feature vector for prediction with day of week features"""
+    def _create_enhanced_feature_vector(self, start_station, end_station, hour, day_of_week):
+        """Create enhanced feature vector with OSM features"""
         start_features = self.station_features[start_station]
         end_features = self.station_features[end_station]
         
+        # Basic features
         feature_vector = [
             hour,
             np.sin(2 * np.pi * hour / 24),
             np.cos(2 * np.pi * hour / 24),
             day_of_week,
-            np.sin(2 * np.pi * day_of_week / 7),  # Cyclical encoding for day of week
+            np.sin(2 * np.pi * day_of_week / 7),
             np.cos(2 * np.pi * day_of_week / 7),
-            1 if day_of_week in [5, 6] else 0,  # Weekend indicator (Saturday=5, Sunday=6)
+            1 if day_of_week in [5, 6] else 0,
             start_features['lat'],
             start_features['lon'],
             start_features['total_trips'],
             start_features[f'outflow_hour_{hour}'],
-            start_features.get(f'outflow_dow_{day_of_week}', 0),  # Day of week specific outflow
-            start_features.get('weekend_ratio', 0.5),  # Weekend activity ratio
+            start_features.get(f'outflow_dow_{day_of_week}', 0),
             end_features['lat'],
             end_features['lon'],
             end_features['total_trips'],
-            end_features[f'inflow_hour_{hour}'],
-            end_features.get(f'inflow_dow_{day_of_week}', 0),  # Day of week specific inflow
             np.sqrt((start_features['lat'] - end_features['lat'])**2 + 
                    (start_features['lon'] - end_features['lon'])**2),
             (start_features['avg_temperature'] + end_features['avg_temperature']) / 2
         ]
         
+        # Add OSM features
+        osm_feature_names = [
+            'hotels_count', 'restaurants_count', 'banks_count', 'shops_count',
+            'schools_count', 'parks_count', 'offices_count', 'residential_count'
+        ]
+        
+        for osm_feature in osm_feature_names:
+            start_value = start_features.get(f'osm_{osm_feature}', 0)
+            end_value = end_features.get(f'osm_{osm_feature}', 0)
+            feature_vector.extend([start_value, end_value])
+        
         return feature_vector
     
-    def predict_destinations(self, station_id, hour, day_of_week=1, top_k=5):
-        """Predict top destinations from a station with confidence levels including day of week"""
+    def _evaluate_model(self):
+        """Evaluate the enhanced model"""
+        if self.model is None:
+            return
+        
+        # Prepare evaluation data
+        training_data = []
+        for hour in [8, 12, 17]:
+            for dow in [1, 5]:
+                hour_trips = self.trips_df[
+                    (self.trips_df['hour'] == hour) & 
+                    (self.trips_df['day_of_week'] == dow)
+                ]
+                
+                flows = hour_trips.groupby(['start_station_id', 'end_station_id']).size().reset_index(name='flow_count')
+                
+                if len(flows) > 100:
+                    flows = flows.sample(n=100, random_state=42)
+                
+                for _, row in flows.iterrows():
+                    start_station = row['start_station_id']
+                    end_station = row['end_station_id']
+                    flow_count = row['flow_count']
+                    
+                    if start_station in self.station_features and end_station in self.station_features:
+                        feature_vector = self._create_enhanced_feature_vector(
+                            start_station, end_station, hour, dow
+                        )
+                        training_data.append(feature_vector + [flow_count])
+        
+        if training_data:
+            training_data = np.array(training_data)
+            X = training_data[:, :-1]
+            y = training_data[:, -1]
+            
+            X_scaled = self.scaler.transform(X)
+            
+            # Get feature names
+            feature_names = self._get_feature_names()
+            
+            # Comprehensive evaluation
+            self.evaluation_results = self.ml_evaluator.comprehensive_evaluation(
+                self.model, X_scaled, y, feature_names
+            )
+            
+            # Feature influence analysis
+            station_features_df = pd.DataFrame.from_dict(self.station_features, orient='index')
+            station_features_df['station_id'] = station_features_df.index
+            
+            # Create flow data for analysis
+            flow_data = []
+            for _, row in flows.iterrows():
+                flow_data.append({
+                    'destination_station': row['end_station_id'],
+                    'flow_volume': row['flow_count']
+                })
+            flow_df = pd.DataFrame(flow_data)
+            
+            if len(flow_df) > 0:
+                self.feature_influence = self.feature_analyzer.analyze_feature_influence(
+                    station_features_df, flow_df
+                )
+    
+    def _get_feature_names(self):
+        """Get feature names for evaluation"""
+        base_features = [
+            'hour', 'hour_sin', 'hour_cos', 'day_of_week', 'dow_sin', 'dow_cos', 'is_weekend',
+            'start_lat', 'start_lon', 'start_total_trips', 'start_outflow_hour', 'start_outflow_dow',
+            'end_lat', 'end_lon', 'end_total_trips', 'distance', 'avg_temperature'
+        ]
+        
+        osm_features = []
+        osm_feature_names = [
+            'hotels_count', 'restaurants_count', 'banks_count', 'shops_count',
+            'schools_count', 'parks_count', 'offices_count', 'residential_count'
+        ]
+        
+        for osm_feature in osm_feature_names:
+            osm_features.extend([f'start_osm_{osm_feature}', f'end_osm_{osm_feature}'])
+        
+        return base_features + osm_features
+    
+    def predict_with_multiple_paths(self, station_id, hour, day_of_week=1, top_k=5):
+        """Predict destinations with multiple path options"""
         if station_id not in self.station_features or not self.model:
-            # Fallback: return top stations by distance for testing
-            return self._get_fallback_predictions(station_id, top_k)
+            return []
         
         predictions = []
         
-        # Try to use day-of-week specific flows first, fallback to hourly flows
-        active_destinations = set()
-        if (hour, day_of_week) in self.hourly_flows_by_dow:
-            hour_dow_flows = self.hourly_flows_by_dow[(hour, day_of_week)]
-            station_flows = hour_dow_flows[hour_dow_flows['start_station_id'] == station_id]
-            active_destinations = set(station_flows['end_station_id'].values)
-        elif hour in self.hourly_flows:
-            hour_flows = self.hourly_flows[hour]
-            station_flows = hour_flows[hour_flows['start_station_id'] == station_id]
-            active_destinations = set(station_flows['end_station_id'].values)
-        
-        # If no active destinations, use top destinations from nearby hours
-        if not active_destinations:
-            nearby_hours = [(hour-1) % 24, hour, (hour+1) % 24]
-            for h in nearby_hours:
-                if h in self.hourly_flows:
-                    hour_flows = self.hourly_flows[h]
-                    station_flows = hour_flows[hour_flows['start_station_id'] == station_id]
-                    active_destinations.update(station_flows['end_station_id'].values)
-                if len(active_destinations) >= 20:  # Limit for performance
-                    break
-        
-        # If still no destinations, use all stations as fallback
-        if not active_destinations:
-            # Take top 10 stations by total trips as fallback
-            station_activity = [(s, self.station_features[s]['total_trips']) 
-                              for s in self.station_features.keys() if s != station_id]
-            station_activity.sort(key=lambda x: x[1], reverse=True)
-            active_destinations = set([s[0] for s in station_activity[:10]])
-        
-        # Predict for active destinations only
-        for dest_station in active_destinations:
+        # Get basic predictions
+        for dest_station in list(self.station_coords.keys())[:20]:  # Limit for demo
             if dest_station == station_id or dest_station not in self.station_features:
                 continue
             
             try:
-                feature_vector = self._create_feature_vector(station_id, dest_station, hour, day_of_week)
+                feature_vector = self._create_enhanced_feature_vector(
+                    station_id, dest_station, hour, day_of_week
+                )
                 X_pred = self.scaler.transform([feature_vector])
                 predicted_flow = self.model.predict(X_pred)[0]
                 
-                # Calculate confidence based on prediction and historical data
-                confidence = min(0.95, max(0.1, predicted_flow / 10))
+                # Get confidence
+                confidence_metrics = self.ml_evaluator.predict_with_confidence(
+                    self.model, X_pred, confidence_level=0.95
+                )
+                
+                if confidence_metrics:
+                    confidence = 1 - (confidence_metrics[0].uncertainty / max(1, predicted_flow))
+                    confidence = max(0.1, min(0.95, confidence))
+                else:
+                    confidence = 0.5
+                
+                # Get multiple paths
+                start_lat, start_lon = self.station_coords[station_id]
+                end_lat, end_lon = self.station_coords[dest_station]
+                
+                paths = self.multi_router.get_multiple_paths(
+                    start_lat, start_lon, end_lat, end_lon, max_paths=3
+                )
                 
                 predictions.append({
                     'destination': dest_station,
-                    'predicted_flow': max(1.0, abs(predicted_flow)),  # Ensure minimum flow of 1.0 for visibility
-                    'confidence': confidence
+                    'predicted_flow': max(1.0, abs(predicted_flow)),
+                    'confidence': confidence,
+                    'paths': paths
                 })
+                
             except Exception as e:
-                # Skip problematic predictions but don't fail entirely
                 continue
         
-        # If no valid predictions, return fallback
-        if not predictions:
-            return self._get_fallback_predictions(station_id, top_k)
-        
-        # Sort by predicted flow and return top k
+        # Sort by predicted flow
         predictions.sort(key=lambda x: x['predicted_flow'], reverse=True)
         return predictions[:top_k]
-    
-    def _get_fallback_predictions(self, station_id, top_k=5):
-        """Generate fallback predictions based on nearest stations"""
-        if station_id not in self.station_coords:
-            return []
-        
-        start_lat, start_lon = self.station_coords[station_id]
-        distances = []
-        
-        for other_station, (lat, lon) in self.station_coords.items():
-            if other_station != station_id:
-                distance = np.sqrt((start_lat - lat)**2 + (start_lon - lon)**2)
-                distances.append((other_station, distance))
-        
-        # Sort by distance and take closest stations
-        distances.sort(key=lambda x: x[1])
-        closest_stations = distances[:top_k]
-        
-        fallback_predictions = []
-        for i, (dest_station, distance) in enumerate(closest_stations):
-            # Create artificial flow based on inverse distance
-            flow = max(1.0, 10.0 / (distance + 0.01))  # Ensure visible flow
-            confidence = max(0.3, 1.0 - distance)  # Distance-based confidence
-            
-            fallback_predictions.append({
-                'destination': dest_station,
-                'predicted_flow': flow,
-                'confidence': min(0.9, confidence)
-            })
-        
-        return fallback_predictions
-    
-    def get_route_path(self, start_station, end_station):
-        """Get actual road/bicycle path between stations"""
-        
-        # Check if we have coordinates for both stations
-        if start_station not in self.station_coords or end_station not in self.station_coords:
-            return []
-        
-        start_lat, start_lon = self.station_coords[start_station]
-        end_lat, end_lon = self.station_coords[end_station]
-        
-        # Try to get real path using routing service
-        try:
-            route_result = self.path_router.get_route(start_lat, start_lon, end_lat, end_lon)
-            
-            if route_result and route_result.get('success') and route_result.get('route'):
-                return route_result['route']
-            else:
-                # Fallback to straight line if routing fails
-                return [[start_lat, start_lon], [end_lat, end_lon]]
-                
-        except Exception as e:
-            st.warning(f"Routing error for {start_station} -> {end_station}: {e}")
-            # Return straight line as ultimate fallback
-            return [[start_lat, start_lon], [end_lat, end_lon]]
-    
-    def get_route_info(self, start_station, end_station):
-        """Get detailed route information including distance and duration"""
-        
-        if start_station not in self.station_coords or end_station not in self.station_coords:
-            return None
-        
-        start_lat, start_lon = self.station_coords[start_station]
-        end_lat, end_lon = self.station_coords[end_station]
-        
-        try:
-            route_result = self.path_router.get_route(start_lat, start_lon, end_lat, end_lon)
-            
-            if route_result and route_result.get('success'):
-                return {
-                    'route': route_result.get('route', []),
-                    'distance_m': route_result.get('distance', 0),
-                    'duration_s': route_result.get('duration', 0),
-                    'source': route_result.get('source', 'unknown'),
-                    'distance_km': route_result.get('distance', 0) / 1000,
-                    'duration_min': route_result.get('duration', 0) / 60
-                }
-            
-            return None
-            
-        except Exception as e:
-            st.warning(f"Route info error for {start_station} -> {end_station}: {e}")
-            return None
 
-def create_interactive_map(predictor, selected_hour=17, selected_day_of_week=1, selected_station=None):
-    """Create interactive satellite map with predictions"""
+def create_enhanced_map(predictor, selected_hour=17, selected_day_of_week=1, selected_station=None):
+    """Create enhanced map with OSM features and multiple paths"""
     
     # Get center coordinates
     all_coords = list(predictor.station_coords.values())
     center_lat = np.mean([coord[0] for coord in all_coords])
     center_lon = np.mean([coord[1] for coord in all_coords])
     
-    # Create map with satellite imagery
+    # Create map
     m = folium.Map(
         location=[center_lat, center_lon],
         zoom_start=12,
@@ -757,7 +466,7 @@ def create_interactive_map(predictor, selected_hour=17, selected_day_of_week=1, 
         control=True
     ).add_to(m)
     
-    # Add OpenStreetMap overlay for reference
+    # Add OpenStreetMap
     folium.TileLayer(
         tiles='OpenStreetMap',
         name='Street Map',
@@ -765,434 +474,336 @@ def create_interactive_map(predictor, selected_hour=17, selected_day_of_week=1, 
         control=True
     ).add_to(m)
     
-    # Show all stations (user requested to see all stations)
-    all_stations = list(predictor.station_coords.keys())
-    
-    # Add station markers for all stations
-    for station_id in all_stations:
+    # Add station markers
+    for station_id in predictor.station_coords.keys():
         lat, lon = predictor.station_coords[station_id]
         
-        # Determine marker color based on selection
-        if station_id == selected_station:
-            color = 'red'
-            icon = 'star'
-        else:
-            color = 'blue'
-            icon = 'bicycle'
+        # Get OSM features for this station
+        osm_features = predictor.osm_features.get(station_id, {})
         
-        # Create popup with basic info
-        popup_text = f"""
+        # Create popup with OSM feature info
+        popup_content = f"""
         <b>Station {station_id}</b><br>
         Total Trips: {predictor.station_features[station_id]['total_trips']}<br>
-        Click to see predictions!
         """
+        
+        if osm_features:
+            popup_content += "<br><b>Nearby Features:</b><br>"
+            for feature, count in list(osm_features.items())[:5]:
+                if 'count' in feature and count > 0:
+                    feature_name = feature.replace('_count', '').replace('_', ' ').title()
+                    popup_content += f"{feature_name}: {count}<br>"
+        
+        color = 'red' if station_id == selected_station else 'blue'
+        icon = 'star' if station_id == selected_station else 'bicycle'
         
         folium.Marker(
             location=[lat, lon],
-            popup=folium.Popup(popup_text, max_width=300),
+            popup=folium.Popup(popup_content, max_width=300),
             tooltip=f"Station {station_id}",
             icon=folium.Icon(color=color, icon=icon, prefix='fa')
         ).add_to(m)
     
-    # Add prediction routes if station is selected
+    # Add predictions with multiple paths
     if selected_station and selected_station in predictor.station_coords:
-        day_names = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-        st.sidebar.write(f"🔍 Debug: Getting predictions for station {selected_station} at {selected_hour}:00 on {day_names[selected_day_of_week]}")
-        predictions = predictor.predict_destinations(selected_station, selected_hour, day_of_week=selected_day_of_week, top_k=10)  # Show more predictions
-        st.sidebar.write(f"🔍 Debug: Found {len(predictions)} predictions")
+        predictions = predictor.predict_with_multiple_paths(
+            selected_station, selected_hour, day_of_week=selected_day_of_week, top_k=5
+        )
         
-        if predictions:
-            for i, pred in enumerate(predictions):
-                st.sidebar.write(f"Pred {i+1}: Station {pred['destination']}, Flow: {pred['predicted_flow']:.2f}")
-        
-        colors = ['red', 'blue', 'green', 'purple', 'orange', 'darkred', 'lightred', 'beige', 'darkblue', 'darkgreen', 'cadetblue', 'darkpurple', 'white', 'pink', 'lightblue']
-        lines_added = 0
+        colors = ['red', 'blue', 'green', 'purple', 'orange']
         
         for i, pred in enumerate(predictions):
             dest_station = pred['destination']
             flow = pred['predicted_flow']
             confidence = pred['confidence']
+            paths = pred['paths']
             
-            st.sidebar.write(f"Processing pred {i+1}: {dest_station}, flow: {flow:.2f}")
-            
-            # Always add lines if destination exists (no threshold)
             if dest_station in predictor.station_coords:
-                # Get route path and detailed info
-                route_coords = predictor.get_route_path(selected_station, dest_station)
-                route_info = predictor.get_route_info(selected_station, dest_station)
+                # Add multiple paths for this destination
+                for j, path in enumerate(paths):
+                    if path.coordinates:
+                        # Different line styles for different path types
+                        if path.path_type == 'shortest':
+                            line_style = {'weight': 6, 'opacity': 0.9}
+                        elif path.path_type == 'fastest':
+                            line_style = {'weight': 4, 'opacity': 0.8, 'dashArray': '5, 5'}
+                        else:
+                            line_style = {'weight': 3, 'opacity': 0.6, 'dashArray': '10, 5'}
+                        
+                        popup_content = f"""
+                        <b>Route to Station {dest_station}</b><br>
+                        Path Type: {path.path_type.title()}<br>
+                        Distance: {path.distance_m/1000:.2f} km<br>
+                        Duration: {path.duration_s/60:.1f} min<br>
+                        Predicted Flow: {flow:.1f} trips<br>
+                        Confidence: {confidence:.1%}<br>
+                        Source: {path.source}
+                        """
+                        
+                        folium.PolyLine(
+                            locations=path.coordinates,
+                            color=colors[i % len(colors)],
+                            popup=folium.Popup(popup_content, max_width=300),
+                            tooltip=f"{path.path_type.title()} to {dest_station}",
+                            **line_style
+                        ).add_to(m)
                 
-                st.sidebar.write(f"Route coords length: {len(route_coords) if route_coords else 0}")
-                
-                # Prepare route details for popup
-                route_details = ""
-                if route_info:
-                    distance_km = route_info.get('distance_km', 0)
-                    duration_min = route_info.get('duration_min', 0)
-                    source = route_info.get('source', 'unknown')
-                    
-                    route_details = f"""
-                    <br><b>Route Details:</b><br>
-                    🚴 Distance: {distance_km:.2f} km<br>
-                    ⏱️ Duration: {duration_min:.1f} min<br>
-                    🗺️ Route Type: {source.replace('_', ' ').title()}
-                    """
-                    
-                    st.sidebar.write(f"Route info: {distance_km:.2f}km, {duration_min:.1f}min, {source}")
-                
-                if route_coords:
-                    # Calculate line properties - make lines very visible
-                    weight = max(6, min(12, max(flow * 2, 6)))  # Always thick lines
-                    opacity = max(0.8, min(1.0, max(confidence, 0.8)))  # Always high opacity
-                    color = colors[i % len(colors)]
-                    
-                    st.sidebar.write(f"Adding line: color={color}, weight={weight}, opacity={opacity}")
-                    
-                    # Enhanced popup with route information
-                    popup_content = f"""
-                    <div style="width: 250px;">
-                        <b>🎯 Route to Station {dest_station}</b><br>
-                        <hr style="margin: 5px 0;">
-                        📊 <b>Predicted Flow:</b> {flow:.1f} trips<br>
-                        🎯 <b>Confidence:</b> {confidence:.2%}<br>
-                        🏆 <b>Rank:</b> #{i+1}<br>
-                        {route_details}
-                    </div>
-                    """
-                    
-                    # Add route line with enhanced visibility and information
-                    folium.PolyLine(
-                        locations=route_coords,
-                        color=color,
-                        weight=weight,
-                        opacity=opacity,
-                        popup=folium.Popup(popup_content, max_width=300),
-                        tooltip=f"🚴 To Station {dest_station}: {flow:.1f} trips" + 
-                               (f" | {route_info.get('distance_km', 0):.1f}km" if route_info else "")
-                    ).add_to(m)
-                    
-                    # Add destination marker with enhanced information
-                    dest_lat, dest_lon = predictor.station_coords[dest_station]
-                    
-                    dest_popup_content = f"""
-                    <div style="width: 250px;">
-                        <b>🎯 Destination: Station {dest_station}</b><br>
-                        <hr style="margin: 5px 0;">
-                        📊 <b>Predicted Flow:</b> {flow:.1f} trips<br>
-                        🎯 <b>Confidence:</b> {confidence:.1%}<br>
-                        🏆 <b>Rank:</b> #{i+1}<br>
-                        {route_details}
-                    </div>
-                    """
-                    
-                    folium.CircleMarker(
-                        location=[dest_lat, dest_lon],
-                        radius=max(12, min(25, max(flow * 2, 12))),  # Always large circles
-                        popup=folium.Popup(dest_popup_content, max_width=300),
-                        tooltip=f"🎯 Dest {dest_station}" + 
-                               (f" | {route_info.get('distance_km', 0):.1f}km" if route_info else ""),
-                        color=color,
-                        fillColor=color,
-                        fillOpacity=0.9,
-                        weight=4
-                    ).add_to(m)
-                    
-                    lines_added += 1
-                else:
-                    st.sidebar.write(f"❌ No route coordinates for {selected_station} -> {dest_station}")
-            else:
-                st.sidebar.write(f"❌ Destination {dest_station} not in station coords")
-        
-        st.sidebar.write(f"🔍 Total lines added to map: {lines_added}")
-        
-        # If no predictions, add a test line to verify map is working
-        if lines_added == 0:
-            st.sidebar.write("🔧 Adding test line to verify map functionality...")
-            start_lat, start_lon = predictor.station_coords[selected_station]
-            
-            # Find any other station for test line
-            other_stations = [s for s in predictor.station_coords.keys() if s != selected_station]
-            if other_stations:
-                test_dest = other_stations[0]
-                test_lat, test_lon = predictor.station_coords[test_dest]
-                
-                folium.PolyLine(
-                    locations=[[start_lat, start_lon], [test_lat, test_lon]],
-                    color='yellow',
-                    weight=8,
-                    opacity=1.0,
-                    popup=f"TEST LINE from {selected_station} to {test_dest}",
-                    tooltip="TEST LINE - Map is working!"
+                # Add destination marker
+                dest_lat, dest_lon = predictor.station_coords[dest_station]
+                folium.CircleMarker(
+                    location=[dest_lat, dest_lon],
+                    radius=max(8, min(20, flow * 2)),
+                    popup=f"Destination {dest_station}<br>Flow: {flow:.1f}<br>Confidence: {confidence:.1%}",
+                    color=colors[i % len(colors)],
+                    fillColor=colors[i % len(colors)],
+                    fillOpacity=0.7,
+                    weight=3
                 ).add_to(m)
-                
-                st.sidebar.write(f"✅ Added test line from {selected_station} to {test_dest}")
     
-    # Add layer control
     folium.LayerControl().add_to(m)
-    
     return m
 
 def main():
-    """Main Streamlit app"""
+    """Main enhanced Streamlit app"""
     
-    # Header
-    st.markdown('<h1 class="main-header">🚴‍♂️ Bike Flow Prediction System</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header">🚴‍♂️ Enhanced Bike Flow Prediction System</h1>', unsafe_allow_html=True)
     
-    # Sidebar controls
+    # Sidebar
     with st.sidebar:
-        st.header("🎛️ Controls")
+        st.header("🎛️ Enhanced Controls")
         
         # Load data
         with st.spinner("Loading bike data..."):
             trips_df = load_bike_data()
             if trips_df is None:
-                st.error("Failed to load bike data. Please check the data file.")
+                st.error("Failed to load bike data.")
                 return
         
-        # Create routing network
-        routing_network = create_simple_routing_network(trips_df)
-        
-        # Initialize predictor
+        # Initialize enhanced predictor
         @st.cache_resource
-        def get_predictor():
-            return FastBikeFlowPredictor(trips_df, routing_network)
+        def get_enhanced_predictor():
+            return EnhancedBikeFlowPredictor(trips_df)
         
-        predictor = get_predictor()
+        predictor = get_enhanced_predictor()
         
-        # Initialize session state for selected station
+        # Controls
+        selected_hour = st.slider("🕐 Hour", 0, 23, 17)
+        
+        day_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        selected_day_name = st.selectbox("📅 Day of Week", day_names, index=1)
+        selected_day_of_week = day_names.index(selected_day_name)
+        
+        # Station selection
         if 'selected_station' not in st.session_state:
             st.session_state.selected_station = None
         
-        # Time slider
-        selected_hour = st.slider(
-            "🕐 Select Hour",
-            min_value=0,
-            max_value=23,
-            value=17,
-            help="Select the hour of day for predictions"
-        )
-        
-        # Day of week selector
-        day_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-        selected_day_name = st.selectbox(
-            "📅 Select Day of Week",
-            options=day_names,
-            index=1,  # Default to Tuesday
-            help="Select the day of week for predictions (affects bike usage patterns)"
-        )
-        selected_day_of_week = day_names.index(selected_day_name)
-        
-        # Show weekend indicator
-        if selected_day_of_week in [5, 6]:  # Saturday, Sunday
-            st.markdown("🎉 **Weekend** - Leisure patterns expected")
-        else:
-            st.markdown("💼 **Weekday** - Commuter patterns expected")
-        
-        # Station selection (including session state)
         available_stations = sorted(list(predictor.station_coords.keys()))
-        
-        # Use session state if available, otherwise use sidebar selection
-        if st.session_state.selected_station is not None:
-            selected_station = st.session_state.selected_station
-            # Update sidebar to match
-            if selected_station in available_stations:
-                station_index = available_stations.index(selected_station) + 1  # +1 for None option
-            else:
-                station_index = 0
-        else:
-            station_index = 0
-            selected_station = None
-        
-        # Sidebar station selection
-        sidebar_selected = st.selectbox(
-            "🚉 Select Station (or click on map)",
-            options=[None] + available_stations,
-            index=station_index,
-            help="Select a station to see its predicted destinations"
+        selected_station = st.selectbox(
+            "🚉 Select Station",
+            [None] + available_stations,
+            index=0
         )
         
-        # Update selected station if changed via sidebar
-        if sidebar_selected != selected_station:
-            selected_station = sidebar_selected
+        if selected_station != st.session_state.selected_station:
             st.session_state.selected_station = selected_station
         
-        # Performance info
+        # Model evaluation display
         st.markdown("---")
-        with st.container():
-            st.markdown('<div class="sidebar-content">', unsafe_allow_html=True)
-            st.markdown("### ⚡ System Status")
-            st.markdown(f'<p class="translucent-text"><strong>Stations:</strong> {len(predictor.station_coords)}<br><strong>Routes:</strong> {len(routing_network)}<br><strong>Model:</strong> Random Forest + Day-of-Week<br><strong>Features:</strong> {len(predictor.station_features[list(predictor.station_features.keys())[0]])} per station<br><strong>Cache:</strong> 24h retention</p>', unsafe_allow_html=True)
-            st.markdown('</div>', unsafe_allow_html=True)
+        st.subheader("🎯 Model Performance")
+        
+        if predictor.evaluation_results:
+            summary = predictor.evaluation_results.get('summary', {})
+            score = summary.get('overall_score', 0)
+            grade = summary.get('confidence_grade', 'Unknown')
+            
+            # Color code confidence
+            if grade == 'High':
+                grade_class = 'confidence-high'
+            elif grade == 'Medium':
+                grade_class = 'confidence-medium'
+            else:
+                grade_class = 'confidence-low'
+            
+            st.markdown(f"""
+            <div class="evaluation-card">
+                <p><strong>Overall Score:</strong> {score:.1f}/100</p>
+                <p><strong>Confidence:</strong> <span class="{grade_class}">{grade}</span></p>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            # Cross-validation metrics
+            cv_results = predictor.evaluation_results.get('cross_validation', {})
+            if cv_results:
+                r2_mean = cv_results.get('r2', {}).get('mean', 0)
+                rmse_mean = cv_results.get('rmse', {}).get('mean', 0)
+                
+                st.markdown(f"""
+                <div class="metric-card">
+                    <p><strong>R² Score:</strong> {r2_mean:.3f}</p>
+                    <p><strong>RMSE:</strong> {rmse_mean:.3f}</p>
+                </div>
+                """, unsafe_allow_html=True)
+        
+        # Feature influence
+        if hasattr(predictor, 'feature_influence') and predictor.feature_influence:
+            st.subheader("📊 Top Influential Features")
+            top_features = list(predictor.feature_influence.items())[:5]
+            
+            for feature, importance in top_features:
+                # Clean feature name
+                clean_name = feature.replace('osm_', '').replace('_', ' ').title()
+                st.markdown(f"""
+                <div class="feature-card">
+                    <p><strong>{clean_name}</strong></p>
+                    <p>Importance: {importance:.3f}</p>
+                </div>
+                """, unsafe_allow_html=True)
     
-    # Main content area - full width for map
+    # Main content
     col1, col2 = st.columns([3, 1])
     
     with col1:
-        # Add clear button for selected station
         if selected_station:
-            col_btn1, col_btn2, col_btn3 = st.columns([1, 1, 4])
-            with col_btn1:
-                if st.button("� Clear Selection", help="Clear selected station"):
-                    st.session_state.selected_station = None
-                    st.rerun()
-            with col_btn2:
-                st.markdown(f'<p style="color: #1f77b4; font-weight: bold; margin-top: 8px;">🎯 Station {selected_station}</p>', unsafe_allow_html=True)
+            st.markdown(f'<p style="color: #1f77b4; font-weight: bold;">🎯 Station {selected_station} - Enhanced Analysis</p>', unsafe_allow_html=True)
         else:
-            st.markdown('<p class="translucent-text">💡 Click on any station marker to see flow predictions</p>', unsafe_allow_html=True)
+            st.markdown('<p class="translucent-text">💡 Select a station to see enhanced predictions with multiple paths</p>', unsafe_allow_html=True)
         
-        # Create and display map with container styling
-        st.markdown('<div class="map-container">', unsafe_allow_html=True)
-        map_obj = create_interactive_map(predictor, selected_hour, selected_day_of_week, selected_station)
-        map_data = st_folium(map_obj, width=None, height=700, returned_objects=["last_object_clicked"])
-        st.markdown('</div>', unsafe_allow_html=True)
-        
-        # Handle map clicks
-        if map_data['last_object_clicked']:
-            clicked_data = map_data['last_object_clicked']
-            if 'tooltip' in clicked_data:
-                tooltip = clicked_data['tooltip']
-                if 'Station' in tooltip:
-                    try:
-                        clicked_station_id = float(tooltip.split('Station ')[1])
-                        if clicked_station_id in predictor.station_coords:
-                            # Update session state and rerun to show predictions
-                            if st.session_state.selected_station != clicked_station_id:
-                                st.session_state.selected_station = clicked_station_id
-                                st.rerun()
-                    except Exception as e:
-                        st.sidebar.error(f"Error processing click: {e}")
+        # Create and display enhanced map
+        map_obj = create_enhanced_map(predictor, selected_hour, selected_day_of_week, selected_station)
+        map_data = st_folium(map_obj, width=None, height=700)
     
     with col2:
-        st.subheader("📊 Predictions")
+        st.subheader("🔮 Enhanced Predictions")
         
         if selected_station:
-            # Show station info
-            day_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-            weekend_indicator = "🎉 Weekend" if selected_day_of_week in [5, 6] else "💼 Weekday"
+            # Station info with OSM features
+            osm_features = predictor.osm_features.get(selected_station, {})
+            
             st.markdown(f"""
             <div class="metric-card">
                 <h4>🚉 Station {selected_station}</h4>
                 <p><strong>Time:</strong> {selected_hour:02d}:00 on {day_names[selected_day_of_week]}</p>
-                <p><strong>Pattern:</strong> {weekend_indicator}</p>
                 <p><strong>Historical Trips:</strong> {predictor.station_features[selected_station]['total_trips']}</p>
             </div>
             """, unsafe_allow_html=True)
             
-            # Get and display predictions
-            with st.spinner("Calculating..."):
-                predictions = predictor.predict_destinations(selected_station, selected_hour, day_of_week=selected_day_of_week, top_k=10)  # Get more predictions
+            # OSM features summary
+            if osm_features:
+                st.markdown("**🗺️ Nearby Features:**")
+                feature_summary = []
+                for feature, count in osm_features.items():
+                    if 'count' in feature and count > 0:
+                        feature_name = feature.replace('_count', '').replace('_', ' ').title()
+                        feature_summary.append(f"{feature_name}: {count}")
+                
+                if feature_summary:
+                    for summary in feature_summary[:5]:
+                        st.markdown(f"- {summary}")
+                else:
+                    st.markdown("- No significant features found")
+            
+            # Enhanced predictions
+            with st.spinner("Calculating enhanced predictions..."):
+                predictions = predictor.predict_with_multiple_paths(
+                    selected_station, selected_hour, day_of_week=selected_day_of_week, top_k=5
+                )
             
             if predictions:
-                st.markdown("**🎯 Top Destinations**")
+                st.markdown("**🎯 Top Destinations with Multiple Paths**")
                 
-                # Show all predictions, not just top 3
-                for i, pred in enumerate(predictions):  # Show all predictions
+                for i, pred in enumerate(predictions):
                     dest = pred['destination']
                     flow = pred['predicted_flow']
                     confidence = pred['confidence']
+                    paths = pred['paths']
                     
-                    if flow > 0.1:
-                        # Get route information for this destination
-                        route_info = predictor.get_route_info(selected_station, dest)
-                        
-                        route_details = ""
-                        if route_info:
-                            distance_km = route_info.get('distance_km', 0)
-                            duration_min = route_info.get('duration_min', 0)
-                            source = route_info.get('source', 'unknown')
-                            distance_m = route_info.get('distance_m', 0)
-                            duration_s = route_info.get('duration_s', 0)
-                            
-                            # Show real calculated values with more detail and debug info
-                            route_details = f"""
-                            <p><strong>🚴 Distance:</strong> {distance_km:.2f} km ({distance_m:.0f}m)</p>
-                            <p><strong>⏱️ Duration:</strong> {duration_min:.1f} min ({duration_s:.0f}s)</p>
-                            <p class="translucent-text">Route Source: {source.replace('_', ' ').title()}</p>
-                            """
-                            
-                            # Add debug info to sidebar
-                            st.sidebar.write(f"Route {i+1}: {distance_km:.2f}km, {duration_min:.1f}min via {source}")
-                        else:
-                            st.sidebar.write(f"Route {i+1}: No route info available")
-                        
-                        st.markdown(f"""
-                        <div class="prediction-box">
-                            <h5>#{i+1} Station {dest}</h5>
-                            <p><strong>Flow:</strong> {flow:.1f} trips</p>
-                            <p><strong>Confidence:</strong> {confidence:.0%}</p>
-                            {route_details}
-                        </div>
-                        """, unsafe_allow_html=True)
+                    # Confidence color
+                    if confidence > 0.7:
+                        conf_class = 'confidence-high'
+                    elif confidence > 0.4:
+                        conf_class = 'confidence-medium'
+                    else:
+                        conf_class = 'confidence-low'
+                    
+                    st.markdown(f"""
+                    <div class="feature-card">
+                        <h5>#{i+1} Station {dest}</h5>
+                        <p><strong>Flow:</strong> {flow:.1f} trips</p>
+                        <p><strong>Confidence:</strong> <span class="{conf_class}">{confidence:.0%}</span></p>
+                        <p><strong>Paths Available:</strong> {len(paths)}</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                    
+                    # Path details
+                    if paths:
+                        for j, path in enumerate(paths[:2]):  # Show top 2 paths
+                            st.markdown(f"""
+                            <div style="margin-left: 1rem; font-size: 0.9rem;">
+                                <p><strong>{path.path_type.title()}:</strong> {path.distance_m/1000:.2f}km, {path.duration_s/60:.1f}min</p>
+                            </div>
+                            """, unsafe_allow_html=True)
             else:
-                st.warning(f"⚠️ No predictions for Station {selected_station} at {selected_hour:02d}:00")
-                st.markdown('<p class="translucent-text">Try peak hours: 8:00, 12:00, 17:00, 20:00</p>', unsafe_allow_html=True)
+                st.warning("⚠️ No enhanced predictions available")
         else:
-            # Show overall statistics when no station selected
             st.markdown("**📈 System Overview**")
             
             total_stations = len(predictor.station_coords)
             total_trips = len(trips_df)
+            osm_stations = len(predictor.osm_features)
             
             st.markdown(f"""
             <div class="metric-card">
                 <p><strong>Total Stations:</strong> {total_stations}</p>
                 <p><strong>Total Trips:</strong> {total_trips:,}</p>
-                <p class="translucent-text">Click any station to see predictions</p>
+                <p><strong>OSM Enhanced:</strong> {osm_stations} stations</p>
             </div>
             """, unsafe_allow_html=True)
-            
-            # Compact hourly activity chart
-            hourly_activity = trips_df.groupby('hour').size()
-            
-            fig = px.line(
-                x=hourly_activity.index,
-                y=hourly_activity.values,
-                title="Daily Activity Pattern",
-                labels={'x': 'Hour', 'y': 'Trips'}
-            )
-            fig.add_vline(x=selected_hour, line_dash="dash", line_color="red")
-            fig.update_layout(height=300, margin=dict(l=0, r=0, t=30, b=0))
-            
-            st.plotly_chart(fig, use_container_width=True)
     
-    # Compact instructions in expandable section
-    with st.expander("📋 How to Use & Technical Details", expanded=False):
+    # Expandable sections
+    with st.expander("📋 Enhanced Features & Evaluation Details", expanded=False):
         col_left, col_right = st.columns(2)
         
         with col_left:
             st.markdown("""
-            **🎯 Quick Start:**
-            1. Use hour slider in sidebar (try 8, 12, 17, 20)
-            2. Select day of week (weekdays vs weekends differ!)
-            3. Click any station marker on map
-            4. View predictions as colored route lines
-            5. Click lines/markers for route details
+            **🗺️ OpenStreetMap Features:**
+            - Hotels, restaurants, cafes
+            - Banks, shops, supermarkets
+            - Schools, universities, libraries
+            - Parks, sports centers
+            - Offices, residential areas
+            - Transportation hubs
             
-            **🎨 Visual Legend:**
-            - 🔵 Blue markers: Available stations
-            - ⭐ Red star: Selected station  
-            - 🔴🔵🟢 Colored lines: Top predictions with real bike paths
-            - Line thickness: Flow volume
-            - Line opacity: Confidence level
+            **🛣️ Multi-Path Routing:**
+            - Shortest distance paths
+            - Fastest time routes
+            - Safest cycling routes
+            - Alternative path options
+            - Real cycling infrastructure
             """)
         
         with col_right:
-            total_stations = len(predictor.station_coords)
-            total_routes = len(routing_network)
+            st.markdown("""
+            **🎯 ML Evaluation Metrics:**
+            - Cross-validation (5-fold)
+            - Hold-out testing
+            - Time series validation
+            - Feature importance analysis
+            - Residual analysis
+            - Confidence intervals
+            - Bootstrap uncertainty
+            - Model stability testing
             
-            st.markdown(f"""
-            **🗺️ Route Features:**
-            - Real bicycle/road paths (not straight lines)
-            - Actual cycling distances & durations
-            - Multiple routing services with smart fallbacks
-            - Intelligent caching for fast performance
-            
-            **⚡ System Status:**
-            - Stations: {total_stations:,} | Routes: {total_routes:,}
-            - Model: Random Forest with temporal + day-of-week features
-            - Features: Hour, Day-of-Week, Weekend/Weekday patterns
-            - Cache: 24h retention | Real-time routing
-            - Peak accuracy hours: 8, 12, 17, 20 (varies by day type)
+            **📊 Confidence Estimation:**
+            - Prediction intervals
+            - Uncertainty quantification
+            - Calibration analysis
             """)
+    
+    # Model evaluation report
+    if predictor.evaluation_results:
+        with st.expander("📊 Detailed Model Evaluation Report", expanded=False):
+            report = predictor.ml_evaluator.generate_evaluation_report(predictor.evaluation_results)
+            st.markdown(report)
 
 if __name__ == "__main__":
     main()

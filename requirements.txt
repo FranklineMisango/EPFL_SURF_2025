@@ -1,3 +1,5 @@
+osmnx
+geopandas
 streamlit
 pandas
 numpy
