@@ -14,4 +14,7 @@ requests>=2.31.0
 networkx>=3.1
 dataclasses
 typing
-osmnx>=1.6.0  
+osmnx>=1.6.0
+geopandas>=0.13.0
+shapely>=2.0.0
+pyogrio>=0.5.0

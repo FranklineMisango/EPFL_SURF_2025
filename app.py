@@ -612,14 +612,15 @@ class EnhancedBikeFlowPredictor:
                     paths = []
                     try:
                         # Get multiple routing options
-                        routing_result = self.multi_router.get_multiple_routes(
+                        routing_result = self.multi_router.get_multiple_paths(
                             start_coords[0], start_coords[1],
                             end_coords[0], end_coords[1],
-                            max_routes=3
+                            max_paths=3
                         )
                         
-                        if routing_result.get('success') and routing_result.get('routes'):
-                            paths = routing_result['routes']
+                        # The method returns a list of PathInfo objects directly
+                        if routing_result:
+                            paths = routing_result
                     except Exception as e:
                         logger.warning(f"Failed to get routes for {station_id} -> {dest_station}: {e}")
                         # Create a simple fallback PathInfo object
@@ -667,7 +668,7 @@ def main():
         
         # Initialize enhanced predictor
         @st.cache_resource
-        def get_enhanced_predictor(_version="v1.2"):  # Version parameter to force cache refresh
+        def get_enhanced_predictor(_version="v1.3"):  # Updated version to force cache refresh after routing fix
             return EnhancedBikeFlowPredictor(trips_df)
         
         predictor = get_enhanced_predictor()
