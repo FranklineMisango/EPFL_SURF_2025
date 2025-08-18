@@ -12,8 +12,6 @@ geopy
 overpy
 requests
 networkx
-dataclasses
-typing
 osmnx
 geopandas
 shapely
@@ -26,3 +24,11 @@ torch-scatter
 torch-sparse
 torch-cluster
 torch-spline-conv
+python-dateutil
+joblib
+tqdm
+xgboost
+lightgbm
+contextily
+rasterio
+fiona
