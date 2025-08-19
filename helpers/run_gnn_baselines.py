@@ -23,6 +23,51 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 class GNNBaselineRunner:
+    def run_xgboost_baseline(self, radius):
+        """Run XGBoost regression using OSM features and aggregated flows."""
+        try:
+            import xgboost as xgb
+            from sklearn.model_selection import train_test_split, GridSearchCV
+            from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+        except ImportError:
+            logger.error("XGBoost not installed. Please install with: pip install xgboost")
+            return None
+        if not hasattr(self, 'flow_df') or self.flow_df is None:
+            logger.error("Aggregated flow data not available.")
+            return None
+        if radius not in self.osm_features:
+            logger.error(f"No OSM features for radius {radius}")
+            return None
+        # Merge OSM features for start and end stations
+        osm = self.osm_features[radius]
+        flows = self.flow_df.copy()
+        # Merge start features
+        flows = flows.merge(osm.add_prefix('start_'), left_on='start_station_id', right_on='start_station_id')
+        # Merge end features
+        flows = flows.merge(osm.add_prefix('end_'), left_on='end_station_id', right_on='end_station_id')
+        # Drop non-feature columns
+        drop_cols = [c for c in flows.columns if 'coords' in c or c.endswith('_id')]
+        X = flows.drop(columns=drop_cols + ['flow'])
+        y = flows['flow']
+        # Train/val split
+        X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
+        # Hyperparameter grid
+        param_grid = {
+            'max_depth': [3, 5, 7],
+            'learning_rate': [0.01, 0.1, 0.2],
+            'n_estimators': [100, 200],
+            'subsample': [0.8, 1.0],
+        }
+        model = xgb.XGBRegressor(objective='reg:squarederror', random_state=42, n_jobs=-1)
+        grid = GridSearchCV(model, param_grid, cv=3, scoring='neg_mean_squared_error', verbose=0)
+        grid.fit(X_train, y_train)
+        best_model = grid.best_estimator_
+        y_pred = best_model.predict(X_val)
+        rmse = mean_squared_error(y_val, y_pred, squared=False)
+        mae = mean_absolute_error(y_val, y_pred)
+        r2 = r2_score(y_val, y_pred)
+        logger.info(f"XGBoost (radius={radius}m): RMSE={rmse:.2f}, MAE={mae:.2f}, R²={r2:.3f}")
+        return {'model': best_model, 'rmse': rmse, 'mae': mae, 'r2': r2, 'radius': radius}
     def prepare_basic_flow_samples(self, radius):
         """Prepare training samples from aggregated flows (no time granularity)."""
         if not hasattr(self, 'flow_df') or self.flow_df is None:
