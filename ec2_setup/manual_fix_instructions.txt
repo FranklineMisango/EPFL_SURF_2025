@@ -1,0 +1,69 @@
+"""
+Manual Fix for Time Features in run_gnn_baselines.py
+
+The issue is that the evaluate_gnn_model function in run_gnn_baselines.py is not 
+passing time_feats to the model, but the model's forward method in gnn_flow_predictor.py 
+expects these features.
+
+Follow these steps to fix the issue:
+
+1. Open the file /home/ubuntu/code/EPFL_SURF_2025/helpers/run_gnn_baselines.py
+2. Find the evaluate_gnn_model function
+3. Locate the section where pred_flows is calculated
+4. Add time feature extraction and pass it to the model as shown below
+"""
+
+# FIND THIS CODE (around line 210-220):
+'''
+            # Get predictions
+            pred_flows = gnn_predictor.model(
+                graph_data.x,
+                graph_data.edge_index,
+                graph_data.edge_attr,
+                source_indices,
+                target_indices
+            )
+'''
+
+# REPLACE WITH THIS CODE:
+'''
+            # Extract time features
+            time_vecs = [sample.get("time_vec", [0.5, 0.5]) for sample in test_samples]
+            time_feats = torch.tensor(time_vecs, dtype=torch.float32).to(gnn_predictor.device)
+            
+            # Get predictions with time features
+            pred_flows = gnn_predictor.model(
+                graph_data.x,
+                graph_data.edge_index,
+                graph_data.edge_attr,
+                source_indices,
+                target_indices,
+                time_feats
+            )
+'''
+
+# ALTERNATIVELY, if the above doesn't work, you can modify the BikeFlowGNN.forward method
+# in gnn_flow_predictor.py to make time_feats optional:
+
+"""
+In gnn_flow_predictor.py, find the forward method of BikeFlowGNN class and make time_feats parameter optional:
+"""
+
+# FIND THIS CODE:
+'''
+    def forward(self, x, edge_index, edge_attr=None, source_nodes=None, target_nodes=None, time_feats=None):
+'''
+
+# Keep it the same, but modify the code below to handle missing time_feats:
+
+# FIND THIS CODE:
+'''
+            # Concatenate source and target embeddings
+            if time_feats is not None:
+                # time_feats expected shape: [batch_size, time_emb_dim]
+                flow_input = torch.cat([source_embeddings, target_embeddings, time_feats], dim=1)
+            else:
+                flow_input = torch.cat([source_embeddings, target_embeddings], dim=1)
+'''
+
+# Make sure this code handles the case when time_feats is None correctly
