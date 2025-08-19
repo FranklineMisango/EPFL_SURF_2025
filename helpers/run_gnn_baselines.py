@@ -374,10 +374,27 @@ class GNNBaselineRunner:
                         if device.type == 'cuda':
                             torch.cuda.empty_cache()
         
+        # Run XGBoost baselines for each radius
+        for radius in radii:
+            if radius in self.osm_features:
+                xgb_result = self.run_xgboost_baseline(radius)
+                if xgb_result:
+                    all_results.append({
+                        'config_name': 'XGBoost_Baseline',
+                        'radius': radius,
+                        'gnn_type': 'XGBoost',
+                        'training_samples': None,
+                        'test_rmse': xgb_result['rmse'],
+                        'test_mae': xgb_result['mae'],
+                        'test_r2': xgb_result['r2'],
+                        'num_stations': None,
+                        'num_features': None,
+                        'config': None
+                    })
+
         # Save results
         self.save_results(all_results)
         self.print_summary(all_results)
-        
         return all_results
     
     def save_results(self, results: List[Dict]):
