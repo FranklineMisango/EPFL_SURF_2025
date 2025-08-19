@@ -23,6 +23,79 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 class GNNBaselineRunner:
+    def prepare_basic_flow_samples(self, radius):
+        """Prepare training samples from aggregated flows (no time granularity)."""
+        if not hasattr(self, 'flow_df') or self.flow_df is None:
+            logger.error("Aggregated flow data not available.")
+            return []
+        if radius not in self.osm_features:
+            logger.error(f"No OSM features for radius {radius}")
+            return []
+        osm_features_df = self.osm_features[radius]
+        station_ids = list(osm_features_df['station_id'])
+        station_to_idx = {station_id: idx for idx, station_id in enumerate(station_ids)}
+        samples = []
+        for _, row in self.flow_df.iterrows():
+            s = row['start_station_id']
+            t = row['end_station_id']
+            flow = row['flow']
+            if s in station_to_idx and t in station_to_idx:
+                samples.append({
+                    'source_idx': station_to_idx[s],
+                    'target_idx': station_to_idx[t],
+                    'flow': flow,
+                    'time_vec': [0.5, 0.5]  # dummy if not using time
+                })
+        logger.info(f"Prepared {len(samples)} basic flow samples for radius {radius}")
+        return samples
+    def aggregate_flows(self, by_time=False):
+        """Aggregate trips to compute flows between station pairs. Optionally by hour/day."""
+        if self.trips_df is None:
+            logger.error("Trip data not loaded.")
+            return None
+        df = self.trips_df.copy()
+        # Parse time columns if needed
+        if by_time:
+            df['start_time_dt'] = pd.to_datetime(df['start_time'], format='%Y%m%d_%H%M%S', errors='coerce')
+            df['hour'] = df['start_time_dt'].dt.hour
+            df['dayofweek'] = df['start_time_dt'].dt.dayofweek
+            group_cols = ['start_station_id', 'end_station_id', 'hour', 'dayofweek']
+        else:
+            group_cols = ['start_station_id', 'end_station_id']
+        # Count trips (flows)
+        flow_df = df.groupby(group_cols).size().reset_index(name='flow')
+        logger.info(f"Aggregated flows: {len(flow_df)} rows (by_time={by_time})")
+        return flow_df
+    def check_data_quality(self):
+        """Analyze data quality: missing values, variance, outliers, and feature-target correlation."""
+        logger.info("\n===== DATA QUALITY CHECK =====")
+        if self.trips_df is None:
+            logger.error("Trip data not loaded.")
+            return
+        df = self.trips_df
+        # Missing values
+        missing = df.isnull().sum()
+        logger.info(f"Missing values per column:\n{missing[missing > 0] if missing.sum() > 0 else 'None'}")
+        # Low variance features
+        numeric = df.select_dtypes(include=[np.number])
+        low_var = numeric.var()[numeric.var() < 1e-5]
+        logger.info(f"Low variance features:\n{low_var if not low_var.empty else 'None'}")
+        # Outliers (z-score > 4)
+        zscores = np.abs((numeric - numeric.mean()) / numeric.std(ddof=0))
+        outlier_counts = (zscores > 4).sum()
+        logger.info(f"Outlier counts per feature (z-score > 4):\n{outlier_counts[outlier_counts > 0] if outlier_counts.sum() > 0 else 'None'}")
+        # Feature-target correlation
+        target_col = None
+        for col in ['flow', 'target', 'label', 'y']:
+            if col in numeric.columns:
+                target_col = col
+                break
+        if target_col:
+            corrs = numeric.corr()[target_col].drop(target_col)
+            logger.info(f"Feature-target correlations (Pearson):\n{corrs}")
+        else:
+            logger.warning("No target column found for correlation analysis.")
+        logger.info("===== END DATA QUALITY CHECK =====\n")
     """Run GNN baselines with OSM features"""
     
     def __init__(self):
@@ -49,6 +122,8 @@ class GNNBaselineRunner:
             except FileNotFoundError:
                 logger.warning(f"OSM features file not found for {radius}m radius")
         
+        # Aggregate flows and store as attribute for use as target
+        self.flow_df = self.aggregate_flows(by_time=False)
         return True
     
     def create_gnn_configs(self, device: torch.device = None) -> List[GNNConfig]:
@@ -169,8 +244,12 @@ class GNNBaselineRunner:
                 
                 # Prepare training data
                 logger.info("Preparing training data...")
-                training_samples = gnn_predictor.prepare_training_data()
-                
+                # Use aggregated flows for basic baseline, else fallback to time-aware
+                if hasattr(self, 'flow_df') and self.flow_df is not None:
+                    training_samples = self.prepare_basic_flow_samples(radius)
+                else:
+                    training_samples = gnn_predictor.prepare_training_data()
+
                 if len(training_samples) == 0:
                     logger.warning("No training samples generated")
                     return None
@@ -272,6 +351,7 @@ class GNNBaselineRunner:
         if not self.load_data():
             logger.error("Failed to load data")
             return
+        self.check_data_quality()
         
         configs = self.create_gnn_configs(device)
         radii = [500, 1000, 1500]  # Test all radii
