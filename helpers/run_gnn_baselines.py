@@ -51,9 +51,17 @@ class GNNBaselineRunner:
         
         return True
     
-    def create_gnn_configs(self) -> List[GNNConfig]:
+    def create_gnn_configs(self, device: torch.device = None) -> List[GNNConfig]:
         """Create different GNN configurations to test"""
         configs = []
+        
+        # Adjust batch size based on device
+        if device is None:
+            device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        
+        # Use larger batch sizes for GPU
+        batch_size = 64 if device.type == 'cuda' else 32
+        epochs = 150 if device.type == 'cuda' else 100  # More epochs on GPU
         
         # GCN Baseline - Simple and robust
         gcn_config = GNNConfig(
@@ -61,8 +69,8 @@ class GNNBaselineRunner:
             num_layers=2,
             dropout=0.2,
             learning_rate=0.01,
-            batch_size=32,
-                epochs=100,  # Increased to improve training
+            batch_size=batch_size,
+            epochs=epochs,
             gnn_type="GCN",
             edge_features=True,
             use_batch_norm=True,
@@ -76,8 +84,8 @@ class GNNBaselineRunner:
             num_layers=2,
             dropout=0.2,
             learning_rate=0.01,
-            batch_size=32,
-                epochs=100,  # Increased to improve training
+            batch_size=batch_size,
+            epochs=epochs,
             gnn_type="GraphSAGE",
             edge_features=True,
             use_batch_norm=True,
@@ -91,8 +99,8 @@ class GNNBaselineRunner:
             num_layers=2,
             dropout=0.3,
             learning_rate=0.01,
-            batch_size=32,
-                epochs=100,  # Increased to improve training
+            batch_size=batch_size // 2,  # Smaller batch for GAT due to memory usage
+            epochs=epochs,
             attention_heads=4,
             gnn_type="GAT",
             edge_features=True,
@@ -103,16 +111,23 @@ class GNNBaselineRunner:
         
         return configs
     
-    def run_gnn_baseline(self, config_name: str, config: GNNConfig, radius: int) -> Dict:
+    def run_gnn_baseline(self, config_name: str, config: GNNConfig, radius: int, device: torch.device = None) -> Dict:
         """Run a single GNN configuration"""
         logger.info(f"\\n{'='*60}")
         logger.info(f"TESTING {config_name} with {radius}m OSM features")
         logger.info(f"{'='*60}")
         
         try:
+            # Set default device if not provided
+            if device is None:
+                device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+                
             # Create GNN predictor and instruct it to load the explicit per-radius cache file
             cache_file = f'cache/ml_ready/switzerland_station_features_{radius}m.csv'
             gnn_predictor = GNNFlowPredictor(self.trips_df, config, use_cached_features=True, cache_file=cache_file)
+            
+            # Set device on the predictor
+            gnn_predictor.device = device
             
             # Add OSM features if available
             if radius in self.osm_features:
@@ -224,6 +239,11 @@ class GNNBaselineRunner:
             
             predictions = pred_flows.cpu().numpy().flatten()
             actuals = flows.numpy().flatten()
+            
+            # Clear GPU memory
+            if gnn_predictor.device.type == 'cuda':
+                del graph_data, source_indices, target_indices, pred_flows
+                torch.cuda.empty_cache()
         
         # Calculate metrics
         rmse = np.sqrt(mean_squared_error(actuals, predictions))
@@ -236,15 +256,21 @@ class GNNBaselineRunner:
             'r2': r2
         }
     
-    def run_all_baselines(self):
+    def run_all_baselines(self, device: torch.device = None):
         """Run all GNN baselines with different OSM radii"""
         logger.info("🚀 Starting GNN Baseline Testing with OSM Features")
+        
+        # Set default device if not provided
+        if device is None:
+            device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        
+        logger.info(f"Using device: {device}")
         
         if not self.load_data():
             logger.error("Failed to load data")
             return
         
-        configs = self.create_gnn_configs()
+        configs = self.create_gnn_configs(device)
         radii = [500, 1000, 1500]  # Test all radii
         
         all_results = []
@@ -253,13 +279,17 @@ class GNNBaselineRunner:
         for config_name, config in configs:
             for radius in radii:
                 if radius in self.osm_features:
-                    result = self.run_gnn_baseline(config_name, config, radius)
+                    result = self.run_gnn_baseline(config_name, config, radius, device)
                     if result:
                         all_results.append(result)
                         
                         # Store in class results
                         key = f"{config_name}_{radius}m"
                         self.results[key] = result
+                        
+                        # Clear GPU cache after each run to prevent memory issues
+                        if device.type == 'cuda':
+                            torch.cuda.empty_cache()
         
         # Save results
         self.save_results(all_results)
@@ -321,9 +351,13 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f"Using device: {device}")
     
+    if torch.cuda.is_available():
+        logger.info(f"GPU: {torch.cuda.get_device_name(0)}")
+        logger.info(f"GPU Memory: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB")
+    
     # Run baselines
     runner = GNNBaselineRunner()
-    runner.run_all_baselines()
+    runner.run_all_baselines(device)
     
     logger.info("🎉 GNN baseline testing completed!")
 
