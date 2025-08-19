@@ -1,0 +1,183 @@
+[
+  {
+    "feature_type": "restaurants",
+    "lat": 46.9436093,
+    "lon": 7.4505679,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "5",
+      "addr:postcode": "3005",
+      "addr:street": "Thunstrasse",
+      "amenity": "restaurant",
+      "cuisine": "regional",
+      "email": "restaurant@kirchenfeld.ch",
+      "name": "Kirchenfeld",
+      "opening_hours": "Mo off; Tu-Sa 08:00-23:30; Su off",
+      "operator": "Charlotte & Maurice Rota",
+      "phone": "+41 31 351 02 78",
+      "website": "https://www.kirchenfeld.ch"
+    },
+    "distance_to_station": 261.8080988548771
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.9432228,
+    "lon": 7.4504174,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "2",
+      "addr:postcode": "3005",
+      "addr:street": "Thunstrasse",
+      "amenity": "restaurant",
+      "cuisine": "french",
+      "name": "Moules-Edy Ambassador",
+      "opening_hours": "Tu-Sa 11:30-14:00,17:30-22:30",
+      "operator": "Elsa Kipfer",
+      "phone": "+41 31 311 38 93",
+      "website": "https://www.moules-edy.ch/bern"
+    },
+    "distance_to_station": 219.73412075926353
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.940558,
+    "lon": 7.4442865,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housename": "Dampfzentrale",
+      "addr:housenumber": "47",
+      "addr:postcode": "3005",
+      "addr:street": "Marzilistrasse",
+      "amenity": "restaurant",
+      "contact:email": "dampfzentrale@taberna.ch",
+      "contact:phone": "+41 31 3123300",
+      "diet:gluten_free": "yes",
+      "diet:vegan": "yes",
+      "diet:vegetarian": "yes",
+      "name": "Dampfzentrale",
+      "opening_hours": "Apr-Sep: Mo-Fr 11:00-14:00,17:30-23:30, Sa 14:00-00:30, Su 10:00-23:00; Oct-Mar: Mo-Fr 11:00-14:00,17:30-23:30, Sa 16:00-00:30",
+      "operator": "taBerna Gastro-Kultur AG",
+      "outdoor_seating": "yes",
+      "payment:american_express": "yes",
+      "payment:cash": "yes",
+      "payment:diners_club": "yes",
+      "payment:discover_card": "yes",
+      "payment:jcb": "yes",
+      "payment:maestro": "yes",
+      "payment:mastercard": "yes",
+      "payment:postfinance_card": "yes",
+      "payment:visa": "yes",
+      "payment:visa_electron": "yes",
+      "website": "https://www.taberna.ch/dampfzentrale/das-restaurant/",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 493.8072694199158
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.9429595,
+    "lon": 7.4487291,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "5",
+      "addr:postcode": "3000",
+      "addr:street": "Helvetiaplatz",
+      "alt_name": "Bistro Steinhalle",
+      "amenity": "restaurant",
+      "contact:addr": "Helvetiaplatz 5, 3005 Bern",
+      "contact:email": "info@steinhalle.ch",
+      "contact:facebook": "https://www.facebook.com/steinhallebern/",
+      "contact:fax": "+41 31 3515300",
+      "contact:instagram": "https://www.instagram.com/steinhallebern/",
+      "diet:vegetarian": "yes",
+      "name": "Steinhalle",
+      "opening_hours": "Tu-Sa 11:00-24:00; Su 10:00-24:00",
+      "operator": "Lime Concepts AG",
+      "phone": "+41 31 351 51 00",
+      "website": "https://www.steinhalle.ch",
+      "wheelchair": "limited",
+      "wikidata": "Q90254517"
+    },
+    "distance_to_station": 241.78388746117858
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.9440292,
+    "lon": 7.4479979,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "4",
+      "addr:postcode": "3005",
+      "addr:street": "Helvetiaplatz",
+      "alt_name": "Restaurant las alps",
+      "amenity": "restaurant",
+      "email": "lasalps@alpinesmuseum.ch",
+      "name": "las alps",
+      "opening_hours": "Mo 09:30-14:00; Tu-Fr 09:30-17:00; Sa-Su 10:00-17:00",
+      "phone": "+41 31 331 22 22",
+      "website": "https://www.alpinesmuseum.ch/de/restaurant"
+    },
+    "distance_to_station": 370.7061360812223
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.9401955,
+    "lon": 7.4558181,
+    "tags": {
+      "amenity": "restaurant",
+      "contact:email": "info@elpatron-tapas.ch",
+      "contact:phone": "+41 31 333 83 30",
+      "contact:website": "https://elpatron-tapas.ch",
+      "cuisine": "tapas",
+      "name": "El Patr\u00f3n",
+      "opening_hours": "We,Th 17:00-23:00; Fr,Sa 17:00-00:30; Su 17:00-21:00"
+    },
+    "distance_to_station": 405.36673701695315
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.9450191,
+    "lon": 7.4495233,
+    "tags": {
+      "amenity": "restaurant",
+      "contact:addr": "Dalmaziquai 13, 3005 Bern",
+      "contact:email": "info@schwellenmaetteli.ch",
+      "contact:fax": "+41 31 3505002",
+      "contact:phone": "+41 31 3505001",
+      "name": "Casa Schwellenm\u00e4tteli",
+      "opening_hours": "Mo-Fr 11:45-14:30,18:00-23:30; Sa 18:00-23:30; Su 11:45-23:00",
+      "operator": "Remimag Gastronomie AG",
+      "source": "survey and website",
+      "website": "https://www.schwellenmaetteli.ch"
+    },
+    "distance_to_station": 427.93719481346346
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.9454472,
+    "lon": 7.4496905,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "11",
+      "addr:postcode": "3005",
+      "addr:street": "Dalmaziquai",
+      "amenity": "restaurant",
+      "building": "yes",
+      "contact:email": "info@schwellenmaetteli.ch",
+      "contact:fax": "+41 31 3505002",
+      "contact:phone": "+41 31 3505001",
+      "name": "Terrasse Schwellenm\u00e4tteli",
+      "opening_hours": "Mo-Sa 09:00-00:30; Su 09:00-23:30",
+      "operator": "Remimag Gastronomie AG",
+      "payment:credit_cards": "yes",
+      "payment:debit_cards": "yes",
+      "source": "Orthofotos Bern;survey and website",
+      "type": "multipolygon",
+      "website": "https://www.schwellenmaetteli.ch/restaurants/restaurant_terrasse",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 472.33401691588335
+  }
+]

@@ -1,0 +1,75 @@
+[
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.944587,
+    "lon": 7.463755,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool",
+      "source": "Orthofotos Bern"
+    },
+    "distance_to_station": 332.1232123363446
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9459858,
+    "lon": 7.4649855,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool",
+      "source": "Orthofotos Bern"
+    },
+    "distance_to_station": 503.64332753591873
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.944777,
+    "lon": 7.4640734,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool",
+      "source": "Orthofotos Bern"
+    },
+    "distance_to_station": 356.81446835713075
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9397428,
+    "lon": 7.4599263,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 324.500340630614
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9371234,
+    "lon": 7.4636379,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 501.6828349210872
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9372675,
+    "lon": 7.4641493,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 489.9312886880215
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9431979,
+    "lon": 7.458156,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 420.4885219056834
+  }
+]

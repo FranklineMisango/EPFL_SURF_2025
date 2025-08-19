@@ -1,0 +1,44 @@
+[
+  {
+    "feature_type": "residential",
+    "lat": 46.5273153,
+    "lon": 6.5697043,
+    "tags": {
+      "landuse": "residential",
+      "source": "Orthophoto Ville de Lausanne 2008"
+    },
+    "distance_to_station": 1132.430319173114
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.52621,
+    "lon": 6.5750547,
+    "tags": {
+      "landuse": "residential",
+      "source": "Orthophoto Ville de Lausanne 2008",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 795.402811243555
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.5324504,
+    "lon": 6.5854542,
+    "tags": {
+      "landuse": "residential",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 1473.9375742637123
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.513378,
+    "lon": 6.5631747,
+    "tags": {
+      "landuse": "residential",
+      "source": "Orthophoto Ville de Lausanne 2008",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 1453.93435926995
+  }
+]

@@ -1,0 +1,163 @@
+[
+  {
+    "feature_type": "universities",
+    "lat": 46.9536691,
+    "lon": 7.4405644,
+    "tags": {
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Engehaldenstrasse 4, 3012 Bern",
+      "contact:email": "iuc@iuc.unibe.ch",
+      "contact:phone": "+41 31 6313761",
+      "name": "Institut f\u00fcr Unternehmensrechnung und Controlling",
+      "operator": "Universit\u00e4t Bern",
+      "operator:wikidata": "Q659080",
+      "short_name": "IUC",
+      "website": "https://www.iuc.unibe.ch/"
+    },
+    "distance_to_station": 968.0068853643853
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9539396,
+    "lon": 7.4397015,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "8",
+      "addr:postcode": "3012",
+      "addr:street": "Engehaldenstrasse",
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Engehaldenstrasse 8, 3012 Bern",
+      "contact:fax": "+41 31 6314682",
+      "contact:phone": "+41 31 6314785",
+      "name": "Institut f\u00fcr Wirtschaftsinformatik",
+      "operator": "Universit\u00e4t Bern",
+      "operator:wikidata": "Q659080",
+      "short_name": "IWI",
+      "website": "https://www.iwi.unibe.ch/"
+    },
+    "distance_to_station": 975.8103489979028
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9540558,
+    "lon": 7.4401582,
+    "tags": {
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Engehaldenstrasse 4, 3012 Bern",
+      "contact:phone": "+41 31 6313775",
+      "name": "Abteilung Finanzmanagement",
+      "name:en": "Institute for Financial Management",
+      "operator": "Universit\u00e4t Bern",
+      "operator:wikidata": "Q659080",
+      "short_name": "IFM",
+      "website": "https://www.ifm.unibe.ch/"
+    },
+    "distance_to_station": 946.3355432010187
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9539591,
+    "lon": 7.4402597,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "4",
+      "addr:postcode": "3012",
+      "addr:street": "Engehaldenstrasse",
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Engehaldenstrasse 4, 3012 Bern",
+      "contact:phone": "+41 31 6318031",
+      "name": "Institut f\u00fcr Marketing und Unternehmensf\u00fchrung",
+      "operator": "Universit\u00e4t Bern",
+      "operator:wikidata": "Q659080",
+      "short_name": "IMU",
+      "website": "https://www.imu.unibe.ch/"
+    },
+    "distance_to_station": 951.5277667296132
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9537658,
+    "lon": 7.4404628,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "4",
+      "addr:postcode": "3012",
+      "addr:street": "Engehaldenstrasse",
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Engehaldenstrasse 4, 3012 Bern",
+      "contact:email": "iop@iop.unibe.ch",
+      "contact:phone": "+41 31 6318069",
+      "name": "Institut f\u00fcr Organisation und Personal",
+      "operator": "Universit\u00e4t Bern",
+      "operator:wikidata": "Q659080",
+      "short_name": "IOP",
+      "website": "https://www.iop.unibe.ch/"
+    },
+    "distance_to_station": 962.3611355516895
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9535814,
+    "lon": 7.4402725,
+    "tags": {
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Sch\u00fctzenmattstrasse 14, 3012 Bern",
+      "contact:email": "fdn@inf.unibe.ch",
+      "contact:facebook": "https://www.facebook.com/digitalenachhaltigkeit/",
+      "contact:phone": "+41 31 6314771",
+      "contact:twitter": "https://twitter.com/researchdigisus",
+      "name": "Forschungsstelle Digitale Nachhaltigkeit",
+      "name:de": "Forschungsstelle Digitale Nachhaltigkeit",
+      "name:en": "Research center for digital sustainability",
+      "name:fr": "Centre de recherche sur la durabilit\u00e9 num\u00e9rique",
+      "short_name": "FDN",
+      "source": "survey and website",
+      "website": "https://www.digitale-nachhaltigkeit.unibe.ch",
+      "wikidata": "Q63558709"
+    },
+    "distance_to_station": 987.334860831126
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9538625,
+    "lon": 7.4403613,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:postcode": "3012",
+      "addr:street": "Engehaldenstrasse 4",
+      "amenity": "university",
+      "name": "Departement Betriebswirtschaftslehre",
+      "operator": "Universit\u00e4t Bern",
+      "phone": "+41 31 684 80 50",
+      "website": "https://www.bwl.unibe.ch/index_ger.html"
+    },
+    "distance_to_station": 956.8615301796509
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.953557,
+    "lon": 7.4451529,
+    "tags": {
+      "amenity": "university",
+      "name": "Institut f\u00fcr Pflanzenwissenschaften",
+      "name:en": "Institute of Plant Sciences",
+      "website": "https://www.ips.unibe.ch/"
+    },
+    "distance_to_station": 869.3827984033668
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9537197,
+    "lon": 7.4402815,
+    "tags": {
+      "amenity": "university"
+    },
+    "distance_to_station": 973.6456556464636
+  }
+]

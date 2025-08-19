@@ -1,0 +1,384 @@
+[
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5246395,
+    "lon": 6.5664402,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 997.160223345799
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5345024,
+    "lon": 6.5802815,
+    "tags": {
+      "access": "private",
+      "leisure": "playground"
+    },
+    "distance_to_station": 939.5821400105599
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5285435,
+    "lon": 6.573385,
+    "tags": {
+      "access": "permissive",
+      "leisure": "playground"
+    },
+    "distance_to_station": 528.001989648683
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5345574,
+    "lon": 6.5759383,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 976.4796668338794
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.524849,
+    "lon": 6.5866103,
+    "tags": {
+      "leisure": "playground",
+      "playground": "climbingframe"
+    },
+    "distance_to_station": 579.7058636568939
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5265878,
+    "lon": 6.5676213,
+    "tags": {
+      "access": "private",
+      "leisure": "playground"
+    },
+    "distance_to_station": 895.3872976189028
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5247832,
+    "lon": 6.5865082,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 573.8884559065926
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5274397,
+    "lon": 6.5676322,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground",
+      "source": "Orthophoto Ville de Lausanne 2008"
+    },
+    "distance_to_station": 905.4788466164649
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5271458,
+    "lon": 6.5692549,
+    "tags": {
+      "leisure": "playground",
+      "source": "Orthophoto Ville de Lausanne 2008"
+    },
+    "distance_to_station": 777.3550408320547
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5269074,
+    "lon": 6.5701779,
+    "tags": {
+      "leisure": "playground",
+      "source": "Orthophoto Ville de Lausanne 2008"
+    },
+    "distance_to_station": 703.4936724163389
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5270728,
+    "lon": 6.5709245,
+    "tags": {
+      "leisure": "playground",
+      "source": "Orthophoto Ville de Lausanne 2008"
+    },
+    "distance_to_station": 649.6188033146688
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5327397,
+    "lon": 6.5856787,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground",
+      "name": "Place de jeux",
+      "playground:theme": "playground",
+      "surface": "ground"
+    },
+    "distance_to_station": 888.8851265553836
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5294243,
+    "lon": 6.5837421,
+    "tags": {
+      "access": "customers",
+      "covered": "no",
+      "leisure": "playground",
+      "min_age": "3",
+      "sport": "swimming"
+    },
+    "distance_to_station": 506.08296777567705
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5308347,
+    "lon": 6.5789195,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground",
+      "name": "Place de jeu du Parc Robinson"
+    },
+    "distance_to_station": 529.3271403497869
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5331235,
+    "lon": 6.5743693,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 868.5976924959859
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5350479,
+    "lon": 6.5783774,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 999.3365335775168
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5286043,
+    "lon": 6.5862945,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 607.8096797711165
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.519565,
+    "lon": 6.5710259,
+    "tags": {
+      "access": "private",
+      "leisure": "playground"
+    },
+    "distance_to_station": 961.3974721296541
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5309581,
+    "lon": 6.5717387,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 792.3776027078643
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5287146,
+    "lon": 6.5875964,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 702.9523620213372
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5249772,
+    "lon": 6.5667537,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 967.9603715807318
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5249083,
+    "lon": 6.5666734,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 975.0655558234246
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5248843,
+    "lon": 6.566589,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 981.8412480255583
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5242061,
+    "lon": 6.575687,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 344.7289860380978
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5313556,
+    "lon": 6.5686246,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground",
+      "name": "Place de jeux",
+      "playground:theme": "playground",
+      "surface": "dirt"
+    },
+    "distance_to_station": 1005.4143517165847
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5324326,
+    "lon": 6.5844754,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground",
+      "name": "Place de jeux",
+      "playground:theme": "playground",
+      "surface": "concrete"
+    },
+    "distance_to_station": 811.4445479702337
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5301056,
+    "lon": 6.5902019,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 950.827051555779
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5307092,
+    "lon": 6.5832909,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 600.1499560576846
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5313187,
+    "lon": 6.58357,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 669.4707905897371
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5238402,
+    "lon": 6.589868,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 850.5353862971219
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.526453,
+    "lon": 6.5749495,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 333.93765720892003
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5257937,
+    "lon": 6.573585,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 437.1861703671559
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5253223,
+    "lon": 6.5672667,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 924.6507264072236
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.53058,
+    "lon": 6.583444,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 594.1304523102629
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5336242,
+    "lon": 6.5804877,
+    "tags": {
+      "access": "private",
+      "leisure": "playground"
+    },
+    "distance_to_station": 843.940903828431
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5335606,
+    "lon": 6.5804957,
+    "tags": {
+      "access": "private",
+      "leisure": "playground"
+    },
+    "distance_to_station": 836.9838324424246
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5270095,
+    "lon": 6.5759336,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 275.9516258554939
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5308365,
+    "lon": 6.5747293,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 633.1993931454933
+  }
+]

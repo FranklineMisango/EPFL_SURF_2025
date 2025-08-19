@@ -1,0 +1,133 @@
+[
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9339207,
+    "lon": 7.4718081,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 409.1533102933404
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9337518,
+    "lon": 7.4714383,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 379.1265551612267
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9363285,
+    "lon": 7.4702209,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 429.99935154606186
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9350716,
+    "lon": 7.4607672,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 469.565890579573
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9348956,
+    "lon": 7.4612132,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 430.78992941807365
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9352894,
+    "lon": 7.4606678,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 486.30511014321115
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9350507,
+    "lon": 7.4605165,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 486.3012765571688
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.935053,
+    "lon": 7.467344,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 192.04942087966236
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.935145,
+    "lon": 7.4629861,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 325.7182411381836
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9371234,
+    "lon": 7.4636379,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 463.17481213939914
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9372675,
+    "lon": 7.4641493,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 461.26394097961287
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9361907,
+    "lon": 7.4698381,
+    "tags": {
+      "access": "private",
+      "building": "yes",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 399.4297415750486
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9375173,
+    "lon": 7.4662222,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 454.53362205312914
+  }
+]

@@ -1,0 +1,943 @@
+[
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9639097,
+    "lon": 7.4576869,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Markuskirche",
+      "network": "Libero",
+      "operator": "SVB;RBS",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Markuskirche",
+      "uic_ref": "8576997"
+    },
+    "distance_to_station": 887.1122776909083
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9546207,
+    "lon": 7.4511477,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "559",
+      "highway": "bus_stop",
+      "local_ref": "D",
+      "name": "Viktoriaplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Viktoriaplatz",
+      "uic_ref": "8590021"
+    },
+    "distance_to_station": 817.9159184704176
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9545787,
+    "lon": 7.4513322,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "559",
+      "highway": "bus_stop",
+      "local_ref": "C",
+      "name": "Viktoriaplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Viktoriaplatz",
+      "uic_ref": "8590021"
+    },
+    "distance_to_station": 828.0852439890189
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9548554,
+    "lon": 7.4462766,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Gewerbeschule",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Gewerbeschule",
+      "uic_ref": "8588994",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 717.9759638614668
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9576012,
+    "lon": 7.4469838,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Lorraine",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Lorraine",
+      "uic_ref": "8588996",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 412.80820852883375
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9604201,
+    "lon": 7.4478583,
+    "tags": {
+      "bench": "yes",
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "name": "Wyleregg",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Wyleregg",
+      "uic_ref": "8589008",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 134.00213550186544
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9610393,
+    "lon": 7.4490165,
+    "tags": {
+      "bench": "yes",
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "name": "Wyleregg",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Wyleregg",
+      "uic_ref": "8589008",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 181.23683898312152
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9622972,
+    "lon": 7.4515594,
+    "tags": {
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "name": "Breitfeld",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Breitfeld",
+      "uic_ref": "8588991",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 388.1886749870266
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9627237,
+    "lon": 7.452915,
+    "tags": {
+      "bench": "yes",
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "name": "Breitfeld",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Breitfeld",
+      "uic_ref": "8588991",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 500.829844475723
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9634454,
+    "lon": 7.4556969,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Markuskirche",
+      "network": "Libero",
+      "operator": "SVB;RBS",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Markuskirche",
+      "uic_ref": "8576997"
+    },
+    "distance_to_station": 727.105552945784
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9594032,
+    "lon": 7.4547688,
+    "tags": {
+      "bus": "yes",
+      "ele": "564",
+      "highway": "bus_stop",
+      "name": "Breitenrain",
+      "network": "Libero",
+      "operator": "Bernmobil;RBS",
+      "public_transport": "stop_position",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Breitenrain",
+      "uic_ref": "8508075",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 651.9342739709178
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9633089,
+    "lon": 7.4516081,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "554",
+      "highway": "bus_stop",
+      "name": "Wylerhuus",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Wylerhuus",
+      "uic_ref": "8590085",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 436.85554393488127
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9648518,
+    "lon": 7.4509698,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "553",
+      "highway": "bus_stop",
+      "name": "Wylerbad",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Wylerbad",
+      "uic_ref": "8590078",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 512.2385734129032
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9661212,
+    "lon": 7.4508777,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "553",
+      "highway": "bus_stop",
+      "name": "Scheibenrain",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Scheibenrain",
+      "uic_ref": "8590086",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 623.6550160034591
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9690128,
+    "lon": 7.4504792,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "524",
+      "highway": "bus_stop",
+      "name": "Wylergut",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Wylergut",
+      "uic_ref": "8590031",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 904.3032962812983
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9660702,
+    "lon": 7.4549742,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "departures_board": "timetable",
+      "ele": "540",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Stauffacherbr\u00fccke",
+      "network": "Libero",
+      "operator": "RBS Auto",
+      "public_transport": "platform",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Stauffacherbr\u00fccke",
+      "uic_ref": "8576988",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 824.55883079866
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9592193,
+    "lon": 7.4548086,
+    "tags": {
+      "bus": "yes",
+      "ele": "564",
+      "highway": "bus_stop",
+      "name": "Breitenrain",
+      "network": "Libero",
+      "operator": "Bernmobil;RBS",
+      "public_transport": "stop_position",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Breitenrain",
+      "uic_ref": "8508075",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 661.6960040698624
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9626847,
+    "lon": 7.4548165,
+    "tags": {
+      "bench": "no",
+      "bin": "yes",
+      "bus": "yes",
+      "departures_board": "timetable",
+      "ele": "554",
+      "highway": "bus_stop",
+      "lit": "no",
+      "name": "Winkelriedstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Auto",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Winkelriedstrasse",
+      "uic_ref": "8576989",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 638.7890948816644
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9661371,
+    "lon": 7.4558108,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "departures_board": "timetable",
+      "ele": "540",
+      "highway": "bus_stop",
+      "lit": "no",
+      "name": "Stauffacherbr\u00fccke",
+      "network": "Libero",
+      "operator": "RBS Auto",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Stauffacherbr\u00fccke",
+      "uic_ref": "8576988",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 878.8533603337609
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9656731,
+    "lon": 7.4418919,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "\u00c4ussere Enge",
+      "public_transport": "stop_position"
+    },
+    "distance_to_station": 606.2917879645308
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9539845,
+    "lon": 7.4390618,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Henkerbr\u00fcnnli",
+      "public_transport": "stop_position",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 999.0302087506444
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9605999,
+    "lon": 7.4343339,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Br\u00fcckfeld",
+      "public_transport": "stop_position",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 942.0544529929487
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9681914,
+    "lon": 7.4437975,
+    "tags": {
+      "bus": "yes",
+      "description": "Linie 34 ab 21:00 Uhr",
+      "ele": "534",
+      "highway": "bus_stop",
+      "name": "Bern Felsenau, Bahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "opening_hours": "21:00-01:00",
+      "operator": "RBS Auto",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "uic_name": "Bern Felsenau, Bahnhof",
+      "uic_ref": "8507638",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 795.778414847564
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9683918,
+    "lon": 7.4440982,
+    "tags": {
+      "bus": "yes",
+      "ele": "534",
+      "highway": "bus_stop",
+      "name": "Bern Felsenau, Bahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Auto",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "uic_name": "Bern Felsenau, Bahnhof",
+      "uic_ref": "8507638",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 811.406075257576
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9637415,
+    "lon": 7.4547254,
+    "tags": {
+      "bench": "no",
+      "bus": "yes",
+      "departures_board": "timetable",
+      "ele": "554",
+      "highway": "bus_stop",
+      "name": "Winkelriedstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Auto",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Winkelriedstrasse",
+      "uic_ref": "8576989",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 670.2617476126615
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.962866,
+    "lon": 7.4519266,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "name": "Breitfeld",
+      "network": "Libero",
+      "operator": "SVB;RBS",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Breitfeld",
+      "uic_ref": "8588991",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 436.0991260097624
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.963856,
+    "lon": 7.4458877,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "534",
+      "highway": "bus_stop",
+      "name": "D\u00e4ndlikerweg",
+      "name:etymology:wikidata": "Q94731721",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, D\u00e4ndlikerweg",
+      "uic_ref": "8590039",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 289.396735917101
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9639056,
+    "lon": 7.4473203,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "544",
+      "highway": "bus_stop",
+      "name": "Grimselstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Grimselstrasse",
+      "uic_ref": "8590018",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 292.99131893582336
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9628521,
+    "lon": 7.4452086,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Haldenstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Haldenstrasse",
+      "uic_ref": "8590017",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 204.4373606112846
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9679266,
+    "lon": 7.448235,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "524",
+      "highway": "bus_stop",
+      "name": "Jaunweg",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Jaunweg",
+      "uic_ref": "8590024",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 745.3721963990816
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9672192,
+    "lon": 7.4477486,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "524",
+      "highway": "bus_stop",
+      "name": "Pillonweg",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Pillonweg",
+      "uic_ref": "8590008"
+    },
+    "distance_to_station": 662.253990087403
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.964649,
+    "lon": 7.4494821,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "546",
+      "highway": "bus_stop",
+      "name": "Schulhaus Wylergut",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Schulhaus Wylergut",
+      "uic_ref": "8590080",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 428.73169918436776
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.965068,
+    "lon": 7.4466575,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "527",
+      "highway": "bus_stop",
+      "name": "Sustenweg",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Sustenweg",
+      "uic_ref": "8590026",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 417.9781794986231
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9613593,
+    "lon": 7.4393188,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Innere Enge",
+      "public_transport": "stop_position"
+    },
+    "distance_to_station": 559.3750937522658
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.952869,
+    "lon": 7.4495934,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "551",
+      "highway": "bus_stop",
+      "name": "Kursaal",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Kursaal",
+      "uic_ref": "8590020"
+    },
+    "distance_to_station": 964.2505506539221
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9531751,
+    "lon": 7.4497437,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "551",
+      "highway": "bus_stop",
+      "name": "Kursaal",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Kursaal",
+      "uic_ref": "8590020"
+    },
+    "distance_to_station": 933.9761684765211
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9585041,
+    "lon": 7.4362587,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Engeried",
+      "public_transport": "stop_position",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 851.3959813405196
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9563192,
+    "lon": 7.4380395,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Bierh\u00fcbeli",
+      "public_transport": "stop_position",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 859.6082641267329
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9659881,
+    "lon": 7.442025,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "\u00c4ussere Enge",
+      "public_transport": "stop_position"
+    },
+    "distance_to_station": 628.9188687141278
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9583803,
+    "lon": 7.4544867,
+    "tags": {
+      "bus": "yes",
+      "ele": "564",
+      "highway": "bus_stop",
+      "name": "Breitenrain",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "uic_name": "Bern, Breitenrain",
+      "uic_ref": "8508075",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 678.310548410329
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9585416,
+    "lon": 7.4545673,
+    "tags": {
+      "bus": "yes",
+      "ele": "564",
+      "highway": "bus_stop",
+      "name": "Breitenrain",
+      "network": "Libero",
+      "operator": "RBS;SVB",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "survey and BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Breitenrain",
+      "uic_ref": "8508075",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 675.3455416733254
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9622139,
+    "lon": 7.4525372,
+    "tags": {
+      "bench": "no",
+      "bin": "no",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "no",
+      "name": "Breitfeld",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Breitfeld",
+      "uic_ref": "8588991"
+    },
+    "distance_to_station": 457.92039788310103
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9607481,
+    "lon": 7.4537851,
+    "tags": {
+      "bench": "no",
+      "bin": "no",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Sch\u00fctzenweg",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Sch\u00fctzenweg",
+      "uic_ref": "8590079"
+    },
+    "distance_to_station": 545.2661283828415
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9610043,
+    "lon": 7.4536751,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "no",
+      "name": "Sch\u00fctzenweg",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Sch\u00fctzenweg",
+      "uic_ref": "8590079"
+    },
+    "distance_to_station": 534.3947163021094
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9683467,
+    "lon": 7.4436757,
+    "tags": {
+      "bench": "no",
+      "bin": "no",
+      "bus": "yes",
+      "departures_board": "timetable",
+      "highway": "bus_stop",
+      "lit": "no",
+      "name": "Rossfeld",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 814.9351692783937
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9681847,
+    "lon": 7.4434124,
+    "tags": {
+      "bus": "yes",
+      "departures_board": "timetable",
+      "highway": "bus_stop",
+      "name": "Rossfeld",
+      "public_transport": "platform",
+      "shelter": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 803.6093840931908
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.962552,
+    "lon": 7.4523666,
+    "tags": {
+      "bench": "no",
+      "bin": "yes",
+      "highway": "bus_stop",
+      "name": "Breitfeld",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 455.2357331929756
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9633972,
+    "lon": 7.4516068,
+    "tags": {
+      "bench": "no",
+      "bin": "no",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Wylerhus",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no"
+    },
+    "distance_to_station": 441.8496962128486
+  }
+]

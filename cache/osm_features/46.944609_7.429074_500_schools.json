@@ -1,0 +1,93 @@
+[
+  {
+    "feature_type": "schools",
+    "lat": 46.9448108,
+    "lon": 7.4324567,
+    "tags": {
+      "amenity": "school",
+      "check_date": "2024-03-21",
+      "name": "Berner Fachhochschule BFH, Departement Wirtschaft, Gesundheit, Soziale Arbeit"
+    },
+    "distance_to_station": 257.77960739111774
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.9413632,
+    "lon": 7.4325651,
+    "tags": {
+      "alt_name": "BFF - Unterrichtsr\u00e4ume SB",
+      "amenity": "school",
+      "contact:addr": "Sulgenbachstrasse 18, 3007 Bern",
+      "name": "BFF - Berufs- Fach- und Fortbildungsschule",
+      "source": "Survey",
+      "website": "https://www.bffbern.ch"
+    },
+    "distance_to_station": 447.76010413190187
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.9427347,
+    "lon": 7.4300982,
+    "tags": {
+      "addr:housenumber": "64",
+      "addr:street": "Zieglerstrasse",
+      "amenity": "school",
+      "check_date": "2024-11-06",
+      "contact:website": "https://csbe.ch/",
+      "name": "Computerschule Bern",
+      "short_name": "csbe"
+    },
+    "distance_to_station": 222.42546536845978
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.9428632,
+    "lon": 7.4299204,
+    "tags": {
+      "amenity": "school",
+      "name": "Webedu",
+      "website": "https://webedu.ch/"
+    },
+    "distance_to_station": 204.4629516020134
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.9410091,
+    "lon": 7.4295512,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "10",
+      "addr:postcode": "3007",
+      "addr:street": "Tscharnerstrasse",
+      "alt_name": "Heilp\u00e4dagogische Schule Bern",
+      "amenity": "school",
+      "contact:email": "info@hpsbern.ch",
+      "contact:fax": "+41 31 3212050",
+      "contact:phone": "+41 31 3212040",
+      "isced:level": "2",
+      "name": "Heilp\u00e4dagogische Schule",
+      "operator": "Stadt Bern",
+      "operator:type": "government",
+      "social_facility": "ambulatory_care",
+      "social_facility:for": "juvenile",
+      "source": "survey and Orthofotos Stadt Bern",
+      "website": "https://www.hpsbern.ch/"
+    },
+    "distance_to_station": 401.90511851446274
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.9458609,
+    "lon": 7.4256433,
+    "tags": {
+      "alt_name": "Brunnmattschule",
+      "amenity": "school",
+      "check_date": "2024-05-16",
+      "isced:level": "0;1",
+      "name": "Schulstandort Brunnmatt",
+      "website": "http://mawe-bern.ch/brunnmattsteigerhubel/"
+    },
+    "distance_to_station": 295.3058119363137
+  }
+]

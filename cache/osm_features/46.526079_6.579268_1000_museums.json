@@ -1,0 +1,21 @@
+[
+  {
+    "feature_type": "museums",
+    "lat": 46.5341317,
+    "lon": 6.577296,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:housenumber": "34",
+      "addr:postcode": "1022",
+      "addr:street": "Avenue de la Gare",
+      "fee": "yes",
+      "museum": "technology",
+      "name": "Atelier-Mus\u00e9e Encre & Plomb",
+      "opening_hours": "\"Sur rendez-vous\"",
+      "toilets:wheelchair": "limited",
+      "tourism": "museum",
+      "website": "https://encretplomb.ch/"
+    },
+    "distance_to_station": 907.846750200218
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.516761,
+    "lon": 6.5688875,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 894.3578398346008
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5176529,
+    "lon": 6.5741172,
+    "tags": {
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 489.0663095648364
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5164794,
+    "lon": 6.5720945,
+    "tags": {
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 689.298537088152
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5183597,
+    "lon": 6.5762791,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 306.19876985015173
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5166632,
+    "lon": 6.5748331,
+    "tags": {
+      "access": "no",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 509.9821451346506
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5139283,
+    "lon": 6.5730719,
+    "tags": {
+      "access": "no",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 826.7942781378235
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5151752,
+    "lon": 6.5719582,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool",
+      "location": "outdoor",
+      "swimming_pool": "inground"
+    },
+    "distance_to_station": 784.6196808784331
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5155776,
+    "lon": 6.5719577,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool",
+      "location": "outdoor",
+      "swimming_pool": "inground"
+    },
+    "distance_to_station": 756.0617468404827
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5155225,
+    "lon": 6.5735314,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool",
+      "location": "outdoor",
+      "swimming_pool": "inground"
+    },
+    "distance_to_station": 670.0418622697719
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5168284,
+    "lon": 6.5760879,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool",
+      "location": "outdoor",
+      "swimming_pool": "inground"
+    },
+    "distance_to_station": 430.45954112956
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5167593,
+    "lon": 6.5757995,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool",
+      "location": "outdoor",
+      "swimming_pool": "inground"
+    },
+    "distance_to_station": 450.68227737662875
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5175986,
+    "lon": 6.5750595,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool",
+      "location": "outdoor",
+      "swimming_pool": "inground"
+    },
+    "distance_to_station": 430.8722494623738
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5177956,
+    "lon": 6.5748651,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool",
+      "location": "outdoor",
+      "swimming_pool": "inground"
+    },
+    "distance_to_station": 431.4852983485175
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.5169922,
+    "lon": 6.5729839,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool",
+      "location": "outdoor",
+      "swimming_pool": "inground"
+    },
+    "distance_to_station": 601.2306503686913
+  }
+]

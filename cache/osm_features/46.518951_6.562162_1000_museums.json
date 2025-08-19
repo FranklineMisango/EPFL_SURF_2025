@@ -1,0 +1,22 @@
+[
+  {
+    "feature_type": "museums",
+    "lat": 46.5187352,
+    "lon": 6.5637197,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:housenumber": "Station 14",
+      "addr:postcode": "1015",
+      "addr:street": "EPFL \u2013 B\u00e2timent INF",
+      "fee": "no",
+      "level": "0",
+      "name": "Mus\u00e9e Bolo",
+      "opening_hours": "Mo-Fr 08:00-19:00",
+      "tourism": "museum",
+      "website": "https://www.museebolo.ch/",
+      "wikidata": "Q3329097",
+      "wikipedia": "en:Mus\u00e9e Bolo"
+    },
+    "distance_to_station": 121.91513737682143
+  }
+]

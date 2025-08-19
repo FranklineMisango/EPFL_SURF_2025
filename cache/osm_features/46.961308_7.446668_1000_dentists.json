@@ -1,0 +1,35 @@
+[
+  {
+    "feature_type": "dentists",
+    "lat": 46.9567619,
+    "lon": 7.4373757,
+    "tags": {
+      "alt_name": "Dr. med. dent. Markus Salm",
+      "amenity": "dentist",
+      "contact:addr": "Mittelstrasse 70, 3012 Bern",
+      "contact:email": "zahnarztpraxis.salm@bluewin.ch",
+      "contact:fax": "+41 31 3026364",
+      "contact:phone": "+41 31 3014389",
+      "healthcare": "dentist",
+      "name": "Markus Salm"
+    },
+    "distance_to_station": 869.292249860592
+  },
+  {
+    "feature_type": "dentists",
+    "lat": 46.9587187,
+    "lon": 7.4566724,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "44",
+      "addr:postcode": "3014",
+      "addr:street": "Milit\u00e4rstrasse",
+      "amenity": "dentist",
+      "healthcare": "dentist",
+      "healthcare:speciality": "dentist",
+      "name": "Gruppenpraxis Dr. Keller / Dr. Keller",
+      "operator": "Daniel Keller, Peter Keller"
+    },
+    "distance_to_station": 814.0688496110461
+  }
+]

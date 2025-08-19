@@ -1,0 +1,122 @@
+[
+  {
+    "feature_type": "offices",
+    "lat": 46.52396,
+    "lon": 6.5838847,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:postcode": "1015",
+      "addr:street": "B\u00e2timent Antrhopole",
+      "email": "fsle@unil.ch",
+      "level": "0",
+      "name": "Fondation Solidarit\u00e9 Logements pour les \u00c9tudiant-e-s",
+      "office": "association",
+      "opening_hours": "online",
+      "website": "https://www.fsle.ch",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 173.1443506216851
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.5274786,
+    "lon": 6.5914857,
+    "tags": {
+      "addr:city": "Renens",
+      "addr:country": "CH",
+      "addr:housenumber": "33",
+      "addr:postcode": "1020",
+      "addr:street": "Rue du Lac",
+      "email": "stucky@stucky.ch",
+      "name": "Stucky SA",
+      "name:wikidata": "Q120734",
+      "name:wikipedia": "fr:Alfred Stucky",
+      "office": "company",
+      "phone": "+41 21 637 15 13",
+      "website": "https://www.gruner.ch/fr/stucky",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 738.7913758439936
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.5305626,
+    "lon": 6.5818532,
+    "tags": {
+      "addr:city": "Renens",
+      "addr:housenumber": "26",
+      "addr:postcode": "1020",
+      "addr:street": "Avenue de la Piscine",
+      "name": "ARCHITRAM Architecture et Urbanisme",
+      "office": "architect",
+      "phone": "+41 21 631 35 35",
+      "website": "https://architram.ch/"
+    },
+    "distance_to_station": 917.6565021440026
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.5288248,
+    "lon": 6.5923004,
+    "tags": {
+      "addr:city": "Renens",
+      "addr:housenumber": "1",
+      "addr:postcode": "1020",
+      "addr:street": "Avenue de Longemalle",
+      "government": "yes",
+      "name": "Direction g\u00e9n\u00e9rale du num\u00e9rique et des syst\u00e8mes d'information",
+      "office": "government",
+      "opening_hours": "Mo-Fr 07:45-12:00,13:15-17:00",
+      "operator": "Canton de Vaud",
+      "phone": "+41 21 316 26 00",
+      "short_name": "DGNSI",
+      "website": "https://www.vd.ch/toutes-les-autorites/departements/departement-des-infrastructures-et-des-ressources-humaines-dirh/direction-generale-du-numerique-et-des-systemes-dinformation-dgnsi/"
+    },
+    "distance_to_station": 892.9182230365258
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.5269103,
+    "lon": 6.5741544,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:housenumber": "8",
+      "addr:postcode": "1022",
+      "addr:street": "Rue de la Mouline",
+      "name": "Picterra",
+      "office": "company",
+      "website": "https://picterra.ch/"
+    },
+    "distance_to_station": 958.1498129198266
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.5272109,
+    "lon": 6.5935002,
+    "tags": {
+      "alt_name": "Electro-Mat\u00e9riel SA",
+      "name": "EM",
+      "office": "yes",
+      "website": "https://www.elektro-material.ch/fr/cms/page/lausanne"
+    },
+    "distance_to_station": 832.475474562673
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.5180223,
+    "lon": 6.597041,
+    "tags": {
+      "alt_name": "CIO",
+      "alt_name:en": "IOC",
+      "name": "Comit\u00e9 International Olympique",
+      "name:de": "Internationales Olympisches Komitee",
+      "name:en": "International Olympic Committee",
+      "name:fr": "Comit\u00e9 International Olympique",
+      "name:it": "Comitato Olimpico Internazionale",
+      "office": "ngo",
+      "wikidata": "Q40970",
+      "wikipedia": "en:International Olympic Committee"
+    },
+    "distance_to_station": 1056.9558834456184
+  }
+]

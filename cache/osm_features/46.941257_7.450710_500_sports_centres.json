@@ -1,0 +1,102 @@
+[
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.9435087,
+    "lon": 7.4508596,
+    "tags": {
+      "alt_name": "The White Rabbit - Health Club",
+      "contact:addr": "Thunstrasse 7, 3005 Bern",
+      "contact:email": "carrots@the-white-rabbit.ch",
+      "contact:phone": "+41 31 3515052",
+      "leisure": "sports_centre",
+      "name": "The White Rabbit",
+      "opening_hours": "Mo 06:00-21:30; Tu 08:30-21:30; We 06:00-21:30; Th 08:30-21:30; Fr 08:30-20:00; Sa-Su 08:30-16:00",
+      "source": "survey and website",
+      "sport": "fitness",
+      "website": "https://www.the-white-rabbit.ch"
+    },
+    "distance_to_station": 250.6576229468097
+  },
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.9413425,
+    "lon": 7.4514455,
+    "tags": {
+      "alt_name": "Iyengar-Yoga-Schule-Bern",
+      "contact:addr": "Haus Rosaria, Hallwylstrasse 21, 3005 Bern",
+      "contact:email": "info@yogabern.ch",
+      "contact:phone": "+41 31 3515954",
+      "leisure": "sports_centre",
+      "name": "yogabern",
+      "operator": "Schichl Wilfrid",
+      "sport": "yoga",
+      "website": "http://www.yogabern.ch"
+    },
+    "distance_to_station": 56.6525176984817
+  },
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.9398075,
+    "lon": 7.4462742,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "46",
+      "addr:postcode": "3005",
+      "addr:street": "Aegertenstrasse",
+      "alt_name": "Turnhalle",
+      "building": "public",
+      "leisure": "sports_centre",
+      "name": "Turnhalle Kirchenfeld",
+      "ref": "?",
+      "source": "Orthofotos Bern",
+      "website": "https://www.bern.ch/leben_in_bern/freizeit/sport/sportanlagen"
+    },
+    "distance_to_station": 373.3288531164808
+  },
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.937082,
+    "lon": 7.4503965,
+    "tags": {
+      "leisure": "sports_centre",
+      "name": "Tennisclub Bellevue Bern",
+      "sport": "tennis"
+    },
+    "distance_to_station": 464.8259578685041
+  },
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.9449374,
+    "lon": 7.4478416,
+    "tags": {
+      "leisure": "sports_centre",
+      "name": "Sportanlage Schwellenm\u00e4tteli"
+    },
+    "distance_to_station": 463.58539669650344
+  },
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.9418844,
+    "lon": 7.44372,
+    "tags": {
+      "access": "yes",
+      "addr:city": "Bern",
+      "addr:housenumber": "29",
+      "addr:postcode": "3005",
+      "addr:street": "Marzilistrasse",
+      "alt_name": "Freibad Marzili;Marzili",
+      "fee": "no",
+      "leisure": "sports_centre",
+      "name": "Marzilibad",
+      "operator": "Sportamt der Stadt Bern",
+      "outdoor": "yes",
+      "phone": "+41 313110046",
+      "sport": "swimming",
+      "website": "https://www.sportamt-bern.ch/sportanlage/marzili",
+      "wikidata": "Q1515399",
+      "wikipedia": "de:Marzilibad"
+    },
+    "distance_to_station": 535.225837052591
+  }
+]

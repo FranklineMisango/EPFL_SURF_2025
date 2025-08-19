@@ -1,0 +1,169 @@
+[
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5246395,
+    "lon": 6.5664402,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 712.4751558453822
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5247408,
+    "lon": 6.5580019,
+    "tags": {
+      "access": "private",
+      "leisure": "playground",
+      "playground:theme": "playground"
+    },
+    "distance_to_station": 718.4156871847802
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5244197,
+    "lon": 6.5583191,
+    "tags": {
+      "access": "private",
+      "leisure": "playground",
+      "playground:theme": "playground"
+    },
+    "distance_to_station": 675.6506144937615
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5265878,
+    "lon": 6.5676213,
+    "tags": {
+      "access": "private",
+      "leisure": "playground"
+    },
+    "distance_to_station": 946.6443083689807
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5131109,
+    "lon": 6.5635939,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 658.427618795442
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5266708,
+    "lon": 6.5576877,
+    "tags": {
+      "leisure": "playground",
+      "max_age": "0",
+      "surface": "tartan"
+    },
+    "distance_to_station": 924.2714871039825
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5271417,
+    "lon": 6.5580449,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 963.7374483623412
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5110608,
+    "lon": 6.5567732,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 969.6896271908873
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.519565,
+    "lon": 6.5710259,
+    "tags": {
+      "access": "private",
+      "leisure": "playground"
+    },
+    "distance_to_station": 683.5915785080875
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5249772,
+    "lon": 6.5667537,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 756.8862830249708
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5249083,
+    "lon": 6.5666734,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 747.2419609736443
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5248843,
+    "lon": 6.566589,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 741.8911843848927
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5249499,
+    "lon": 6.5529304,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 972.8583313734046
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.524134,
+    "lon": 6.556337,
+    "tags": {
+      "access": "permissive",
+      "leisure": "playground",
+      "name": "Place de jeux",
+      "playground:theme": "playground",
+      "surface": "ground"
+    },
+    "distance_to_station": 729.1961651583747
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5253223,
+    "lon": 6.5672667,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 809.339525204878
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5239506,
+    "lon": 6.5609966,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 562.9113664367377
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.5272878,
+    "lon": 6.5622625,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 926.763568815987
+  }
+]

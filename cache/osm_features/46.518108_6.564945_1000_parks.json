@@ -1,0 +1,96 @@
+[
+  {
+    "feature_type": "parks",
+    "lat": 46.513532,
+    "lon": 6.5723753,
+    "tags": {
+      "leisure": "park",
+      "name": "Parc du P\u00e9lican"
+    },
+    "distance_to_station": 764.1217042756375
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5154659,
+    "lon": 6.5754669,
+    "tags": {
+      "leisure": "park",
+      "name": "Parc des Pierrettes"
+    },
+    "distance_to_station": 859.1963294819853
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5091635,
+    "lon": 6.5615123,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 1028.589893084125
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5200074,
+    "lon": 6.5683476,
+    "tags": {
+      "access": "yes",
+      "fee": "yes",
+      "leisure": "park",
+      "name": "Piccard",
+      "opening_hours": "24/7",
+      "operator": "EPFL Campus Pi\u00e9ton",
+      "parking": "surface"
+    },
+    "distance_to_station": 335.78851528400486
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5128947,
+    "lon": 6.5631142,
+    "tags": {
+      "leisure": "park",
+      "name": "Parc du Russel"
+    },
+    "distance_to_station": 596.305394315599
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5227295,
+    "lon": 6.565989,
+    "tags": {
+      "description": "Cour & jardin",
+      "leisure": "park"
+    },
+    "distance_to_station": 519.9413575826752
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5194755,
+    "lon": 6.5634982,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 188.2389173375246
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5185479,
+    "lon": 6.5625326,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 191.46947429946462
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5234057,
+    "lon": 6.5595256,
+    "tags": {
+      "addr:city": "Ecublens (VD)",
+      "addr:postcode": "1024",
+      "leisure": "park",
+      "name": "Parc de Mon Repos"
+    },
+    "distance_to_station": 720.9256162816093
+  }
+]

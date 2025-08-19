@@ -1,0 +1,113 @@
+[
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9437592,
+    "lon": 7.422721,
+    "tags": {
+      "leisure": "playground",
+      "name": "Spielplatz Veielihubel"
+    },
+    "distance_to_station": 491.43944363518034
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9420636,
+    "lon": 7.4337807,
+    "tags": {
+      "alt_name": "Kindertreff Chinderch\u00fcbu",
+      "contact:addr": "Sulgenbachstrasse 5a, 3007 Bern",
+      "contact:email": "chinderchuebu@spieleninbern.ch",
+      "contact:facebook": "https://www.facebook.com/chuebu",
+      "contact:phone": "+41 31 3820510",
+      "leisure": "playground",
+      "name": "Chinderch\u00fcbu",
+      "opening_hours": "Tu-Fr 14:00-18:00",
+      "operator": "Verein Chinderch\u00fcbu",
+      "playground": "playhouse",
+      "social_facility:for": "children",
+      "website": "https://www.spieleninbern.ch/index.php/spielangebote/chinderchuebu"
+    },
+    "distance_to_station": 455.8204420095992
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9468311,
+    "lon": 7.4292887,
+    "tags": {
+      "leisure": "playground",
+      "playground:theme": "spiderweb"
+    },
+    "distance_to_station": 247.64588479261465
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9431671,
+    "lon": 7.4331276,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 346.98625046011
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9423884,
+    "lon": 7.4341859,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground",
+      "name": "Spielplatz Monbijoupark"
+    },
+    "distance_to_station": 459.95872868567056
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9421769,
+    "lon": 7.425588,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground",
+      "name": "Spielplatz Hopfgut",
+      "operator": "Stadt Bern"
+    },
+    "distance_to_station": 378.3576485232812
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9460347,
+    "lon": 7.425082,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 342.0071233859066
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9450531,
+    "lon": 7.4246182,
+    "tags": {
+      "leisure": "playground",
+      "surface": "fine_gravel"
+    },
+    "distance_to_station": 341.8345816723656
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9450985,
+    "lon": 7.4254102,
+    "tags": {
+      "leisure": "playground",
+      "surface": "fine_gravel"
+    },
+    "distance_to_station": 283.4027659300332
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9451107,
+    "lon": 7.4251187,
+    "tags": {
+      "leisure": "playground",
+      "surface": "fine_gravel"
+    },
+    "distance_to_station": 305.39368486029235
+  }
+]

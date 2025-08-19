@@ -1,0 +1,1332 @@
+[
+  {
+    "feature_type": "parking",
+    "lat": 46.5197686,
+    "lon": 6.5919793,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 623.2597341944287
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5257584,
+    "lon": 6.5888892,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "3",
+      "capacity:disabled": "no",
+      "fee": "no",
+      "parking": "surface"
+    },
+    "distance_to_station": 463.4809839853924
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5259064,
+    "lon": 6.5889102,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "3",
+      "capacity:disabled": "no",
+      "fee": "no",
+      "parking": "surface"
+    },
+    "distance_to_station": 477.12069229383405
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5310823,
+    "lon": 6.5827999,
+    "tags": {
+      "access": "private",
+      "amenity": "parking"
+    },
+    "distance_to_station": 958.3593008673133
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5261783,
+    "lon": 6.5821339,
+    "tags": {
+      "amenity": "parking",
+      "layer": "-1",
+      "parking": "underground"
+    },
+    "distance_to_station": 453.9504766831525
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5296867,
+    "lon": 6.5872173,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "yes",
+      "parking": "surface",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 807.5433983486604
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5189628,
+    "lon": 6.5898891,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "yes",
+      "parking": "surface"
+    },
+    "distance_to_station": 552.8661860857321
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5187006,
+    "lon": 6.5953963,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity:disabled": "2",
+      "fee": "no",
+      "fee:conditional": "yes @ (Mo-Sa 08:00-17:00)",
+      "parking": "surface"
+    },
+    "distance_to_station": 910.0573510477404
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5206108,
+    "lon": 6.5851163,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "yes",
+      "parking": "surface"
+    },
+    "distance_to_station": 220.44433278981344
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.519988,
+    "lon": 6.5809051,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "yes",
+      "parking": "surface"
+    },
+    "distance_to_station": 424.9507993534122
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5205781,
+    "lon": 6.5951949,
+    "tags": {
+      "amenity": "parking",
+      "name": "Bourdonnette",
+      "parking": "surface"
+    },
+    "distance_to_station": 816.5266774923628
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5185576,
+    "lon": 6.5727546,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 1038.4231852547487
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5217184,
+    "lon": 6.5847489,
+    "tags": {
+      "amenity": "parking",
+      "capacity:disabled": "8",
+      "parking": "surface"
+    },
+    "distance_to_station": 98.35536326949192
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5245192,
+    "lon": 6.5836258,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 237.56722542072367
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5213598,
+    "lon": 6.5725238,
+    "tags": {
+      "access": "permit",
+      "amenity": "parking",
+      "name": "Parking Cubotron",
+      "operator": "UNIL",
+      "parking": "surface"
+    },
+    "distance_to_station": 964.0909046791663
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5220576,
+    "lon": 6.574209,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity:disabled": "3",
+      "fee": "yes",
+      "name": "Parking AmphiMax",
+      "parking": "surface",
+      "source": "EPFL plan"
+    },
+    "distance_to_station": 827.1415017307845
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5243496,
+    "lon": 6.5823282,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 281.11441095842457
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.531012,
+    "lon": 6.5841381,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "50",
+      "capacity:disabled": "1",
+      "fee": "no",
+      "parking": "surface",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 938.2186838415295
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.524998,
+    "lon": 6.5738912,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "yes",
+      "parking": "surface"
+    },
+    "distance_to_station": 890.5227210711859
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5260598,
+    "lon": 6.5746834,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "maxstay": "5 hours",
+      "park_ride": "no",
+      "parking": "surface",
+      "supervised": "no",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 877.8091239529882
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5258808,
+    "lon": 6.5788027,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "yes",
+      "operator": "Universit\u00e9 de Lausanne",
+      "park_ride": "no",
+      "parking": "surface",
+      "supervised": "no",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 597.5016954948588
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5247152,
+    "lon": 6.576304,
+    "tags": {
+      "amenity": "parking",
+      "fee": "no",
+      "parking": "surface"
+    },
+    "distance_to_station": 704.9675259735942
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5225322,
+    "lon": 6.5868011,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 141.34362423687108
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5261251,
+    "lon": 6.5732653,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "EPFL ortho"
+    },
+    "distance_to_station": 979.6157171632284
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5226378,
+    "lon": 6.5817936,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "fee": "yes",
+      "parking": "surface"
+    },
+    "distance_to_station": 243.09268744467715
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5241295,
+    "lon": 6.5907511,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 476.0533249700396
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5248647,
+    "lon": 6.588313,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 360.5987678070832
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5253479,
+    "lon": 6.5872251,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 352.2751486275485
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5255799,
+    "lon": 6.5739287,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "EPFL ortho"
+    },
+    "distance_to_station": 909.3638148547121
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5265119,
+    "lon": 6.5743235,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "EPFL ortho"
+    },
+    "distance_to_station": 925.2791827915937
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5223618,
+    "lon": 6.5908121,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "yes",
+      "parking": "surface"
+    },
+    "distance_to_station": 449.6828505043962
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5283339,
+    "lon": 6.5916039,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "layer": "-1",
+      "parking": "underground"
+    },
+    "distance_to_station": 816.8987634072218
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5307695,
+    "lon": 6.5818205,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 940.5243663474182
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.518884,
+    "lon": 6.5937496,
+    "tags": {
+      "amenity": "parking",
+      "parking": "lane"
+    },
+    "distance_to_station": 790.3123601415518
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5277835,
+    "lon": 6.5738069,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 1032.2785128550659
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5279235,
+    "lon": 6.592787,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "30",
+      "fee": "no",
+      "parking": "surface"
+    },
+    "distance_to_station": 843.7620613034142
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5260263,
+    "lon": 6.5749398,
+    "tags": {
+      "access": "permissive",
+      "amenity": "parking",
+      "capacity": "5",
+      "fee": "no",
+      "maxstay": "1 hour",
+      "name": "Parking du cimeti\u00e8re",
+      "park_ride": "no",
+      "parking": "surface",
+      "supervised": "no",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 858.5164096413273
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5260713,
+    "lon": 6.5774245,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 695.7449248368035
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5270438,
+    "lon": 6.578209,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "name": "Parking du G\u00e9opolis",
+      "operator": "Universit\u00e9 de Lausanne",
+      "parking": "surface",
+      "supervised": "no",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 716.5172283300819
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5261979,
+    "lon": 6.5787585,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "amenity_1": "car_sharing",
+      "capacity": "1",
+      "operator": "Mobility",
+      "parking": "surface"
+    },
+    "distance_to_station": 622.2919578260937
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5298094,
+    "lon": 6.5812077,
+    "tags": {
+      "amenity": "parking",
+      "parking": "lane"
+    },
+    "distance_to_station": 852.5194180593086
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5275451,
+    "lon": 6.5739091,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 1011.1137234015353
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5258906,
+    "lon": 6.5809762,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 477.5097218733392
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5260378,
+    "lon": 6.581201,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 479.62138546597896
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5250359,
+    "lon": 6.5743529,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 858.1246064350918
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5311083,
+    "lon": 6.5877973,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 971.4835056353157
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5308967,
+    "lon": 6.5868916,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 935.0816559590189
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5246668,
+    "lon": 6.5932553,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 676.9568863907537
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5288414,
+    "lon": 6.592886,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "7",
+      "capacity:disabled": "7",
+      "fee": "yes",
+      "parking": "surface",
+      "payment:cash": "yes"
+    },
+    "distance_to_station": 923.3017063207196
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.529319,
+    "lon": 6.592427,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "no",
+      "maxstay": "3 hours",
+      "orientation": "parallel",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 942.0664218450925
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5293064,
+    "lon": 6.5926286,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "no",
+      "maxstay": "3 hours",
+      "orientation": "parallel",
+      "parking": "street_side",
+      "parking:orientation": "parallel",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 950.4507515618598
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.528988,
+    "lon": 6.5934227,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "no",
+      "maxstay": "3 hours",
+      "orientation": "parallel",
+      "parking": "street_side",
+      "parking:orientation": "parallel",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 962.8967069052454
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5296979,
+    "lon": 6.5918288,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "no",
+      "maxstay": "3 hours",
+      "orientation": "parallel",
+      "parking": "street_side",
+      "parking:orientation": "parallel",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 949.6239572227513
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5299909,
+    "lon": 6.5912067,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "no",
+      "maxstay": "3 hours",
+      "orientation": "parallel",
+      "parking": "street_side",
+      "parking:orientation": "parallel",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 951.9889763442718
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5303197,
+    "lon": 6.5907604,
+    "tags": {
+      "amenity": "parking",
+      "maxstay": "3 hours",
+      "orientation": "parallel",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 967.523988924232
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5308837,
+    "lon": 6.5897055,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "orientation": "parallel",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 991.1013884343472
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5282017,
+    "lon": 6.5903355,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 747.6912915814719
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5281233,
+    "lon": 6.5902695,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 737.6290241317183
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5293635,
+    "lon": 6.5919437,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "3",
+      "capacity:disabled": "3",
+      "fee": "no",
+      "parking": "surface",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 924.0152177808349
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5288332,
+    "lon": 6.5931536,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 936.2750923168187
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5283339,
+    "lon": 6.5916039,
+    "tags": {
+      "amenity": "parking",
+      "layer": "-1",
+      "parking": "underground",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 816.8987634072218
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5183863,
+    "lon": 6.5748323,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 906.930937092382
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5252544,
+    "lon": 6.5935703,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "no",
+      "maxstay": "3 hours",
+      "orientation": "parallel",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 723.8957283025701
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5264415,
+    "lon": 6.5924214,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "no",
+      "maxstay": "3 hours",
+      "orientation": "parallel",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 714.7550588854807
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5265787,
+    "lon": 6.5922363,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "no",
+      "maxstay": "3 hours",
+      "orientation": "parallel",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 712.8147273264958
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5273559,
+    "lon": 6.5912401,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "no",
+      "maxstay": "3 hours",
+      "orientation": "parallel",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 716.0066816783603
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5264132,
+    "lon": 6.5926047,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 724.2175213183112
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5280788,
+    "lon": 6.5936138,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 901.6133194616289
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5282255,
+    "lon": 6.5920455,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 829.3198177762968
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5298296,
+    "lon": 6.5851265,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 804.754511978242
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5297841,
+    "lon": 6.584724,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 799.8032078891063
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5295494,
+    "lon": 6.5843172,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 775.0824402013566
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5293702,
+    "lon": 6.5840395,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 756.8961414315513
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5292752,
+    "lon": 6.583915,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 747.3479955405181
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5293805,
+    "lon": 6.5843303,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 756.2813766210472
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5291485,
+    "lon": 6.5839972,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 732.6834386443549
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5291587,
+    "lon": 6.5837751,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 735.7241463890264
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5273901,
+    "lon": 6.5920637,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 762.6207378945918
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5271799,
+    "lon": 6.5925565,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 774.4991695124522
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5266544,
+    "lon": 6.5938569,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 818.4870384417342
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5265269,
+    "lon": 6.5941588,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 830.3480548570338
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5262991,
+    "lon": 6.5947011,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 853.4779998646777
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5261835,
+    "lon": 6.5949753,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 865.9597974735208
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5273436,
+    "lon": 6.5924441,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 780.2348973233405
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5274887,
+    "lon": 6.592104,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 772.51804269422
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5278816,
+    "lon": 6.5911807,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 757.3726802444245
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5287792,
+    "lon": 6.5914966,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 851.2627329453443
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5286384,
+    "lon": 6.591354,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "6",
+      "fee": "no",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 832.1703220253961
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5282766,
+    "lon": 6.5910279,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "6",
+      "fee": "no",
+      "orientation": "diagonal",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 784.9420929881031
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5281478,
+    "lon": 6.5909176,
+    "tags": {
+      "amenity": "parking",
+      "capacity:disabled": "1",
+      "parking": "street_side"
+    },
+    "distance_to_station": 768.3971845854297
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5284598,
+    "lon": 6.5911293,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "2",
+      "fee": "no",
+      "orientation": "perpendicular",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 805.9737671643503
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5289722,
+    "lon": 6.5915899,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 872.842768050659
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.529131,
+    "lon": 6.591812,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "no",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 897.1250991699237
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5284286,
+    "lon": 6.5910486,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 799.5361666064013
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5287244,
+    "lon": 6.5913164,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 838.2300846466569
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5288638,
+    "lon": 6.5914393,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 856.3204063858493
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5283789,
+    "lon": 6.5939347,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 942.3464012982186
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5279735,
+    "lon": 6.594431,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 941.249103582533
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5287014,
+    "lon": 6.5933961,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 938.2065580248664
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5260749,
+    "lon": 6.594685,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 840.6290890213988
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5264661,
+    "lon": 6.5938481,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 806.5544124435012
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5300885,
+    "lon": 6.5917637,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 983.3790878069026
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5304081,
+    "lon": 6.5908982,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 981.1241051423845
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5309312,
+    "lon": 6.5899428,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 1002.8117559668477
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5277304,
+    "lon": 6.5938001,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 886.7593615112221
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5289026,
+    "lon": 6.5928919,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 928.7283060780564
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5278452,
+    "lon": 6.5814942,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "50",
+      "capacity:disabled": "0",
+      "fee": "no",
+      "parking": "surface",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 641.7840529504333
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5291148,
+    "lon": 6.5939506,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 1000.8234196492787
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5291973,
+    "lon": 6.5934584,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface",
+      "surface": "gravel"
+    },
+    "distance_to_station": 982.0198844871454
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5271687,
+    "lon": 6.5765164,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 823.8694752695322
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5268565,
+    "lon": 6.577092,
+    "tags": {
+      "amenity": "parking"
+    },
+    "distance_to_station": 767.7022837484061
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5232879,
+    "lon": 6.5855515,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 89.74570568959884
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.5287694,
+    "lon": 6.5896941,
+    "tags": {
+      "amenity": "parking",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 776.9015606757948
+  }
+]

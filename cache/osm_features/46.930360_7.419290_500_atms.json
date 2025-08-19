@@ -1,0 +1,36 @@
+[
+  {
+    "feature_type": "atms",
+    "lat": 46.9311152,
+    "lon": 7.420445,
+    "tags": {
+      "amenity": "atm",
+      "brand": "Berner Kantonalbank",
+      "brand:de": "Berner Kantonalbank",
+      "brand:fr": "Banque Cantonale Bernoise",
+      "brand:wikidata": "Q824579",
+      "cash_in": "no",
+      "indoor": "no",
+      "name:de": "Berner Kantonalbank",
+      "name:fr": "Banque Cantonale Bernoise",
+      "operator": "Berner Kantonalbank",
+      "operator:wikidata": "Q824579",
+      "short_name": "BEKB",
+      "short_name:de": "BEKB",
+      "short_name:fr": "BCBE"
+    },
+    "distance_to_station": 121.42261721355055
+  },
+  {
+    "feature_type": "atms",
+    "lat": 46.9317056,
+    "lon": 7.4210292,
+    "tags": {
+      "amenity": "atm",
+      "currency:CHF": "yes",
+      "currency:EUR": "yes",
+      "operator:wikidata": "Q449233"
+    },
+    "distance_to_station": 199.56871364193776
+  }
+]

@@ -1,0 +1,115 @@
+[
+  {
+    "feature_type": "dentists",
+    "lat": 46.946876,
+    "lon": 7.4385817,
+    "tags": {
+      "amenity": "dentist",
+      "contact:addr": "Schwanengasse 4, 3011 Bern",
+      "contact:email": "info@zahnarzt-schwanengasse.ch",
+      "contact:phone": "+41 31 3112412",
+      "contact:website": "http://www.zahnarzt-schwanengasse.ch/kontakt",
+      "healthcare": "dentist",
+      "name": "Zahnarztpraxis Schwanengasse",
+      "opening_hours": "Mo-Fr 08:00-12:00, 13:00-17:00; Sa-Su off",
+      "operator": "Dr.med. Dr.med.dent. Oliver Lys & med.dent. He-Soo Kim",
+      "source": "survey and website",
+      "website": "https://www.zahnarzt-schwanengasse.ch/"
+    },
+    "distance_to_station": 469.6894242736624
+  },
+  {
+    "feature_type": "dentists",
+    "lat": 46.9467767,
+    "lon": 7.4386092,
+    "tags": {
+      "amenity": "dentist",
+      "contact:addr": "Schwanengasse 6, 3011 Bern",
+      "contact:email": "info@zahnaerztebern.ch",
+      "contact:phone": "+41 31 3112542",
+      "healthcare": "dentist",
+      "name": "Zahn\u00e4rzte Bern",
+      "opening_hours": "Mo-Th 07:30-18:30; Fr 07:00-15:30; Sa-Su off",
+      "operator": "Dr.med.dent C\u00e9cile Burri Schuler & Dr.med.dent. Christoph Schuler",
+      "source": "survey and website",
+      "website": "https://www.zahnaerztebern.ch/"
+    },
+    "distance_to_station": 480.72953359894325
+  },
+  {
+    "feature_type": "dentists",
+    "lat": 46.9477027,
+    "lon": 7.4416685,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "37",
+      "addr:postcode": "3011",
+      "addr:street": "Spitalgasse",
+      "alt_name": "Dr. med. dent. Marc Joos",
+      "amenity": "dentist",
+      "contact:addr": "Spitalgasse 37, 3011 Bern",
+      "contact:phone": "+41 31 3121220",
+      "email": "info@spitalgasse.ch",
+      "healthcare": "dentist",
+      "healthcare:speciality": "oralchirurgie",
+      "level": "2",
+      "name": "Zahnarztpraxis & Oralchirurgie Spitalgasse, Dr. Marc Joos",
+      "opening_hours": "Mo-Fr 08:00-12:00; Mo-Fr 13:00-17:00; ",
+      "operator": "Dr. med. dent. Marc Joos",
+      "source": "survey and website",
+      "website": "https://spitalgasse.ch/",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 443.7971319636789
+  },
+  {
+    "feature_type": "dentists",
+    "lat": 46.948994,
+    "lon": 7.4414189,
+    "tags": {
+      "amenity": "dentist",
+      "contact:phone": "+41 319411010",
+      "contact:website": "https://bestsmile.com",
+      "healthcare": "dentist",
+      "healthcare:speciality": "orthodontics",
+      "levels": "1",
+      "name": "bestsmile"
+    },
+    "distance_to_station": 317.20965249079126
+  },
+  {
+    "feature_type": "dentists",
+    "lat": 46.9469184,
+    "lon": 7.4391362,
+    "tags": {
+      "amenity": "dentist",
+      "description": "Marianne Br\u00fcgger: +41 31 312 70 65 Mustafa Saleh: +41 31 312 70 38",
+      "email": "brueggerundsaleh@bluewin.ch",
+      "healthcare": "dentist",
+      "name": "Praxisgemeinschaft Br\u00fcgger und Saleh",
+      "opening_hours": "Mo-Sa 10:00-23:00; Su,PH off",
+      "operator": "Dr. med. dent Marianne Br\u00fcgger;Dr. med. dent. Mustafa Saleh",
+      "phone": "+41 31 312 70 38;+41 31 312 70 65",
+      "website": "https://bern-zahnarzt-team.ch/"
+    },
+    "distance_to_station": 466.7507039065012
+  },
+  {
+    "feature_type": "dentists",
+    "lat": 46.9510019,
+    "lon": 7.4374434,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "4",
+      "addr:postcode": "3012",
+      "addr:street": "Sidlerstrasse",
+      "amenity": "dentist",
+      "healthcare": "dentist",
+      "name": "Dr. med. dent. Viktoria Tomas",
+      "opening_hours": "Mo-Th 07:30-12:00, Mo-Th 13:00-17:00, Fr 07:30-12:00, Fr 13:00-15:00",
+      "phone": "+41 31 302 72 82",
+      "website": "https://www.zahnaerztinnenbern.ch/"
+    },
+    "distance_to_station": 88.46589546002133
+  }
+]

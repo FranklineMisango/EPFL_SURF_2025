@@ -1,0 +1,39 @@
+[
+  {
+    "feature_type": "universities",
+    "lat": 46.5288516,
+    "lon": 6.5919006,
+    "tags": {
+      "addr:city": "Renens (VD)",
+      "addr:housenumber": "1",
+      "addr:postcode": "1020",
+      "addr:street": "Avenue de Longemalle",
+      "amenity": "university",
+      "name": "Haute \u00e9cole f\u00e9d\u00e9rale en formation professionnelle",
+      "old_name": "Institut f\u00e9d\u00e9ral des hautes \u00e9tudes en formation professionnelle IFFP",
+      "short_name": "HEFP",
+      "website": "https://www.hefp.swiss/la-hefp/nos-sites/site-hefp-renens-pres-de-lausanne"
+    },
+    "distance_to_station": 876.2610797028375
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.5225409,
+    "lon": 6.5798054,
+    "tags": {
+      "alt_name": "UNIL",
+      "amenity": "university",
+      "name": "Universit\u00e9 de Lausanne",
+      "name:de": "Universit\u00e4t Lausanne",
+      "name:en": "University of Lausanne",
+      "name:fr": "Universit\u00e9 de Lausanne",
+      "name:it": "Universit\u00e0 di Losanna",
+      "name:ru": "\u041b\u043e\u0437\u0430\u043d\u043d\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+      "website": "https://www.unil.ch/",
+      "wheelchair": "yes",
+      "wikidata": "Q658975",
+      "wikipedia": "fr:Universit\u00e9 de Lausanne"
+    },
+    "distance_to_station": 395.6326653542931
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "feature_type": "commercial",
+    "lat": 46.9373478,
+    "lon": 7.4467865,
+    "tags": {
+      "landuse": "commercial"
+    },
+    "distance_to_station": 526.9302223271576
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.9440941,
+    "lon": 7.4481377,
+    "tags": {
+      "landuse": "commercial",
+      "source": "Bing"
+    },
+    "distance_to_station": 371.03498956552954
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.9442633,
+    "lon": 7.4493274,
+    "tags": {
+      "landuse": "commercial"
+    },
+    "distance_to_station": 350.3952627119082
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.9441955,
+    "lon": 7.4478224,
+    "tags": {
+      "landuse": "commercial"
+    },
+    "distance_to_station": 393.48391750747066
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.9405729,
+    "lon": 7.4475391,
+    "tags": {
+      "landuse": "commercial",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 252.44883070348928
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.9452047,
+    "lon": 7.4498796,
+    "tags": {
+      "landuse": "commercial",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 443.48866542599677
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.9422735,
+    "lon": 7.4495032,
+    "tags": {
+      "landuse": "commercial",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 145.50954485580954
+  }
+]

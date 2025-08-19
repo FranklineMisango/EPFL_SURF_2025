@@ -1,0 +1,218 @@
+[
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5203721,
+    "lon": 6.5672157,
+    "tags": {
+      "amenity": "restaurant",
+      "diet:vegetarian": "yes",
+      "name": "Le Parmentier",
+      "opening_hours": "Mo-Fr 11:00-14:00; Mo-Th 18:00-20:00"
+    },
+    "distance_to_station": 958.2085248277101
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.520374,
+    "lon": 6.5675081,
+    "tags": {
+      "amenity": "restaurant",
+      "diet:vegetarian": "yes",
+      "name": "Le Native, Foodlab",
+      "opening_hours": "Mo-Fr 11:30-14:00"
+    },
+    "distance_to_station": 935.8354185288435
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.520333,
+    "lon": 6.5688234,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Le Copernic",
+      "opening_hours": "Mo-Fr 12:00-14:00"
+    },
+    "distance_to_station": 834.8329337235461
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5227635,
+    "lon": 6.5802756,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:housenumber": "109",
+      "addr:postcode": "1015",
+      "addr:street": "UNIL - B\u00e2timent Unith\u00e8que",
+      "amenity": "restaurant",
+      "cuisine": "regional;italian",
+      "diet:vegetarian": "yes",
+      "fax": "+41 21 692 26 85",
+      "name": "Da Nino",
+      "opening_hours": "Mo, Tu 08:00-15:00; We-Sa 08:00-15:00, 17:30-00:00",
+      "phone": "+41 21 692 26 88",
+      "website": "http://www.nino-dorigny.ch"
+    },
+    "distance_to_station": 332.07400808017104
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5211797,
+    "lon": 6.5740002,
+    "tags": {
+      "amenity": "restaurant",
+      "cuisine": "regional",
+      "name": "Caf\u00e9teria Amphimax"
+    },
+    "distance_to_station": 461.55650699556935
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5237719,
+    "lon": 6.5839948,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Caf\u00e9t\u00e9ria de l'Anthropole"
+    },
+    "distance_to_station": 551.6074295662496
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5221165,
+    "lon": 6.5842811,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Caf\u00e9t\u00e9ria de l'Internef"
+    },
+    "distance_to_station": 436.90845033660713
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5204437,
+    "lon": 6.567002,
+    "tags": {
+      "amenity": "restaurant",
+      "cuisine": "vietnamese",
+      "diet:vegetarian": "no",
+      "name": "L'Atlantide",
+      "opening_hours": "Mo-Fr 07:00-16:30"
+    },
+    "distance_to_station": 975.1182640341021
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.517884,
+    "lon": 6.5688787,
+    "tags": {
+      "amenity": "restaurant",
+      "check_date:opening_hours": "2023-05-18",
+      "diet:vegetarian": "yes",
+      "name": "La Table de Vallotton",
+      "opening_hours": "Mo-Fr 11:45-14:00,18:30-22:00",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 855.618054776039
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5169411,
+    "lon": 6.5768211,
+    "tags": {
+      "addr:housenumber": "11",
+      "addr:street": "Chemin du Petit-Port",
+      "amenity": "restaurant",
+      "cuisine": "french",
+      "indoor_seating": "yes",
+      "internet_access": "wlan",
+      "name": "Bistrot Du Petit Port",
+      "opening_hours": "PH,Mo-Su 09:00-23:00",
+      "outdoor_seating": "yes"
+    },
+    "distance_to_station": 386.4508114013996
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5241215,
+    "lon": 6.5887888,
+    "tags": {
+      "addr:housenumber": "201",
+      "addr:street": "Route de Chavannes",
+      "amenity": "restaurant",
+      "name": "Restaurant de la Bourdonnette",
+      "opening_hours": "Mo-Fr 08:00-00:00; Sa 09:00-00:00",
+      "phone": "+41 21 625 62 62",
+      "website": "http://www.restaurant-de-la-bourdonnette.com/"
+    },
+    "distance_to_station": 848.0405291195759
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5138873,
+    "lon": 6.5707702,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "L'Abordage",
+      "phone": "+41216919393",
+      "website": "https://abordage-restaurant.ch/"
+    },
+    "distance_to_station": 948.5733788276668
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5189326,
+    "lon": 6.57981,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:postcode": "1015",
+      "addr:street": "Route Cantonale",
+      "amenity": "restaurant",
+      "name": "Centre Sport et Sant\u00e9",
+      "operator": "Fit & Fun Saveurs S\u00e0rl",
+      "phone": "+41 21 692 48 75",
+      "self_service": "only",
+      "website": "https://www.unil.ch/restos/fr/home/menuinst/ou-se-restaurer/self-service-du-css.html"
+    },
+    "distance_to_station": 97.52086620824707
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5266133,
+    "lon": 6.5790251,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Restaurant self-service de G\u00e9opolis",
+      "website": "https://geopolis.sv-restaurant.ch/fr/plan-des-menus/"
+    },
+    "distance_to_station": 758.4672165316031
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5227383,
+    "lon": 6.579738,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Restaurant self-service de l'Unith\u00e8que, \"Le R\u00e9fectoire\"",
+      "website": "http://nino-unil.ch/menu-de-la-semaine/"
+    },
+    "distance_to_station": 326.104729198887
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5268058,
+    "lon": 6.5741632,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:country": "CH",
+      "addr:housenumber": "8",
+      "addr:postcode": "1022",
+      "addr:street": "Rue de la Mouline",
+      "amenity": "restaurant",
+      "building": "yes",
+      "cuisine": "indian",
+      "name": "Indian Zayeka",
+      "opening_hours": "Tu-Sa 11:30-14:30,18:30-23:00; Mo 18:30-23:00",
+      "phone": "+41 21 691 58 57",
+      "source": "EPFL ortho"
+    },
+    "distance_to_station": 885.7491176919272
+  }
+]

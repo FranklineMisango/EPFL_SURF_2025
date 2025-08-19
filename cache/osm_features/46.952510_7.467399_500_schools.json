@@ -1,0 +1,67 @@
+[
+  {
+    "feature_type": "schools",
+    "lat": 46.9536588,
+    "lon": 7.4693857,
+    "tags": {
+      "addr:full": "Nussbaumstrasse 29, 3006 Bern",
+      "alt_name": "Volksschule Baumgarten",
+      "amenity": "school",
+      "name": "Schulstandort Baumgarten"
+    },
+    "distance_to_station": 197.6265935936416
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.9512185,
+    "lon": 7.4620415,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "23",
+      "addr:postcode": "3006",
+      "addr:street": "Laubeggstrasse",
+      "alt_name": "Schulhaus Laubeggstrasse 23",
+      "amenity": "school",
+      "contact:email": "laubegg.schulleitung@kirchenfeld-schosshalde.ch",
+      "contact:phone": "+41 31 3517246",
+      "name": "Schule Laubeggstrasse 23",
+      "website": "https://kirchenfeld-schosshalde.ch/index.php?page=504"
+    },
+    "distance_to_station": 431.2633090347179
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.9512228,
+    "lon": 7.4666484,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "15",
+      "addr:postcode": "3006",
+      "addr:street": "Bitziusstrasse",
+      "amenity": "school",
+      "building": "public",
+      "name": "Schulhaus Bitzius"
+    },
+    "distance_to_station": 154.05236606724353
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.9512229,
+    "lon": 7.4664014,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "15",
+      "addr:postcode": "3006",
+      "addr:street": "Bitziusstrasse",
+      "alt_name": "Schule Bitzius",
+      "amenity": "school",
+      "contact:fax": "+41 31 3593938",
+      "contact:phone": "+41 31 3593939",
+      "name": "Schulstandort Altstadt/Schosshalde",
+      "website": "https://kirchenfeld-schosshalde.ch/index.php?page=426"
+    },
+    "distance_to_station": 161.91571042554423
+  }
+]

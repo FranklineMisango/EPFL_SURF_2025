@@ -1,0 +1,354 @@
+[
+  {
+    "feature_type": "shops",
+    "lat": 46.5291131,
+    "lon": 6.5901897,
+    "tags": {
+      "shop": "kiosk"
+    },
+    "distance_to_station": 828.6007309041895
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5290682,
+    "lon": 6.5902293,
+    "tags": {
+      "shop": "convenience"
+    },
+    "distance_to_station": 825.7203196502279
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5275236,
+    "lon": 6.592263,
+    "tags": {
+      "created_by": "Potlatch 0.10f",
+      "name": "adriatique & bleu",
+      "shop": "convenience"
+    },
+    "distance_to_station": 783.9288826212402
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5212828,
+    "lon": 6.5746839,
+    "tags": {
+      "name": "KramerKrieg",
+      "opening_hours": "Mo-Fr 08:15-10:30,11:00-14:45,15:15-17:30",
+      "shop": "kiosk"
+    },
+    "distance_to_station": 801.8759595891956
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5224108,
+    "lon": 6.5842893,
+    "tags": {
+      "shop": "kiosk"
+    },
+    "distance_to_station": 55.295943009881846
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5232919,
+    "lon": 6.5847081,
+    "tags": {
+      "shop": "kiosk"
+    },
+    "distance_to_station": 80.2932844252011
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5244476,
+    "lon": 6.5875933,
+    "tags": {
+      "addr:housenumber": "213",
+      "addr:street": "Route de Chavannes",
+      "name": "Best Foods",
+      "shop": "supermarket"
+    },
+    "distance_to_station": 288.76921155121767
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5266586,
+    "lon": 6.5814935,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:housenumber": "44",
+      "addr:postcode": "1022",
+      "addr:street": "Route de la Maladi\u00e8re",
+      "brand": "Ford",
+      "brand:wikidata": "Q44294",
+      "name": "Emil Frey Chavannes",
+      "opening_hours": "Mo-Fr 08:00-18:00",
+      "operator": "Emil Frey",
+      "phone": "+41 21 622 71 61",
+      "shop": "car"
+    },
+    "distance_to_station": 524.6276349917156
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5303225,
+    "lon": 6.5900585,
+    "tags": {
+      "addr:housenumber": "2C",
+      "addr:postcode": "1020",
+      "addr:street": "Chemin du Ch\u00eane",
+      "email": "supertrampeur@gmail.com",
+      "name": "Supertrampeur",
+      "name:fr": "Supertrampeur",
+      "shop": "photo",
+      "website": "https://www.supertrampeur.com/"
+    },
+    "distance_to_station": 944.2522636556142
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5281032,
+    "lon": 6.5926123,
+    "tags": {
+      "addr:city": "Renens VD",
+      "addr:housenumber": "9",
+      "addr:postcode": "1020",
+      "addr:street": "Rue de Longemalle",
+      "name": "PCL Presses Centrales",
+      "opening_hours": "Mo-Fr 07:00-12:00, 13:00-17:00",
+      "shop": "copyshop"
+    },
+    "distance_to_station": 848.5849677224926
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5249148,
+    "lon": 6.57481,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:housenumber": "29",
+      "addr:postcode": "1022",
+      "addr:street": "Route de Praz-V\u00e9guey",
+      "bulk_purchase": "yes",
+      "contact:facebook": "levorace.epicerie",
+      "contact:instagram": "le.vorace",
+      "email": "info@levorace.ch",
+      "membership": "yes",
+      "name": "Le Vorace",
+      "opening_hours": "Mo-Fr 14:00-19:00; Sa 14:00-18:00",
+      "operator": "Coop\u00e9rative Le Vorace",
+      "operator:governance": "volunteers",
+      "operator:type": "cooperative",
+      "shop": "convenience",
+      "website": "https://levorace.ch/",
+      "zero_waste": "yes"
+    },
+    "distance_to_station": 820.596265964902
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5272287,
+    "lon": 6.5738951,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:housenumber": "8",
+      "addr:postcode": "1022",
+      "addr:street": "Rue de la Mouline",
+      "contact:facebook": "associationgloryland",
+      "email": "info-gloryland@bluewin.ch",
+      "name": "Gloryland",
+      "opening_hours": "Mo-Fr 09:00-12:30,14:00-18:00; Sa 09:00-17:00",
+      "operator": "Association Gloryland",
+      "phone": "+41 21 691 41 50",
+      "second_hand": "yes",
+      "shop": "second_hand",
+      "website": "https://www.gloryland.ch/"
+    },
+    "distance_to_station": 993.3160592163298
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5239053,
+    "lon": 6.5753406,
+    "tags": {
+      "name": "Kiosque du vortex",
+      "opening_hours": "Mo-Fr 10:00-22:00; Sa 12:00-22:00; Su 12:00-20:00",
+      "shop": "kiosk"
+    },
+    "distance_to_station": 752.4912272795286
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5239106,
+    "lon": 6.575484,
+    "tags": {
+      "name": "Tonton grain",
+      "opening_hours": "Tu-Fr 07:30-20:00; Mo 08:00-14:30; Sa 08:00-18:00; Su 09:00-17:00",
+      "shop": "bakery"
+    },
+    "distance_to_station": 741.816860198278
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5248247,
+    "lon": 6.5746653,
+    "tags": {
+      "name": "The next cut",
+      "opening_hours": "Tu-Fr 09:00-19:00; Mo 12:00-19:00; Sa 09:00-18:00",
+      "shop": "hairdresser",
+      "website": "https://the-next-cut-barber-shop-vortex.business.site/"
+    },
+    "distance_to_station": 828.0843669476219
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5265935,
+    "lon": 6.5934561,
+    "tags": {
+      "brand": "Honda",
+      "name": "Daytona Shop",
+      "shop": "motorcycle"
+    },
+    "distance_to_station": 789.1870355755724
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5277572,
+    "lon": 6.5934988,
+    "tags": {
+      "name": "L\u00e9a & Joy",
+      "opening_hours": "Tu,We,Fr 08:30-18:00; Th 09:30-19:00; Sa 08:30-16:00",
+      "phone": "+41 79 155 90 65",
+      "shop": "beauty",
+      "website": "https://leaenjoy.ch/"
+    },
+    "distance_to_station": 871.1671283189829
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5279404,
+    "lon": 6.5931191,
+    "tags": {
+      "name": "Studio Brenda",
+      "opening_hours": "Tu-Fr 09:00-18:30; Sa 08:30-18:00",
+      "shop": "beauty"
+    },
+    "distance_to_station": 863.3743663762251
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5238207,
+    "lon": 6.5837244,
+    "tags": {
+      "branch": "Basta Dorigny",
+      "brand": "Basta",
+      "check_date": "2024-08-08",
+      "email": "dorigny@librairiebasta.ch",
+      "fixme": "Unknown position",
+      "name": "Basta",
+      "opening_hours": "Mo-We 09:00-12:30,13:30-17:15; Th 10:30-12:30,13:30-17:15; Fr 09:00-13:00",
+      "phone": "+44 21 691 39 37",
+      "shop": "books",
+      "start_date": "1991",
+      "website": "https://librairiebasta.ch/"
+    },
+    "distance_to_station": 166.39901914599437
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5285361,
+    "lon": 6.5918818,
+    "tags": {
+      "cuisine": "asian",
+      "level": "-1",
+      "name": "Himalaya",
+      "name:zh-Hans": "\u559c\u9a6c\u62c9\u96c5",
+      "opening_hours": "Mo-Su 09:00-20:00",
+      "shop": "supermarket"
+    },
+    "distance_to_station": 847.7711585484811
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5303135,
+    "lon": 6.591584,
+    "tags": {
+      "addr:city": "Renens VD",
+      "addr:housenumber": "9",
+      "addr:postcode": "1020",
+      "addr:street": "Rue du Ch\u00eane",
+      "email": "garage-du-chene@bluewin.ch",
+      "name": "Garage du Ch\u00eane",
+      "opening_hours": "Mo-Tu 07:30-12:00 13:30-18:00 Fr 07:30-12:00 13:30-17:00",
+      "phone": "+4121 635 70 25*",
+      "shop": "car_repair",
+      "website": "https://82a40ba624b54959aa3ab5c91c2d2fde.sitefree.ch/"
+    },
+    "distance_to_station": 997.5706014740719
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5264193,
+    "lon": 6.5841481,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:housenumber": "66",
+      "addr:postcode": "1022",
+      "addr:street": "Route de la Maladi\u00e8re",
+      "name": "Elle & Ganse",
+      "shop": "hairdresser",
+      "start_date": "2025-06-02"
+    },
+    "distance_to_station": 430.1063251569062
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5231859,
+    "lon": 6.5915252,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:country": "CH",
+      "brand": "Ford",
+      "brand:wikidata": "Q44294",
+      "brand:wikipedia": "en:Ford Motor Company",
+      "building": "yes",
+      "check_date": "2022-07-25",
+      "name": "Garage du Sud-Ouest",
+      "shop": "car",
+      "source": "Orthophoto Ville de Lausanne 2008"
+    },
+    "distance_to_station": 507.9962626347053
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5212874,
+    "lon": 6.5862405,
+    "tags": {
+      "addr:city": "Chavanes-pres-Renens",
+      "addr:country": "CH",
+      "addr:housenumber": "1",
+      "addr:street": "Route Cantonale",
+      "brand": "Esso",
+      "brand:wikidata": "Q867662",
+      "brand:wikipedia": "en:Esso",
+      "building": "yes",
+      "check_date": "2022-07-25",
+      "name": "Autos Carrefour Dorigny SA",
+      "operator": "ESSO",
+      "shop": "car_repair",
+      "source": "Orthophoto Ville de Lausanne 2008"
+    },
+    "distance_to_station": 175.03689533351493
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5308002,
+    "lon": 6.5895782,
+    "tags": {
+      "building": "yes",
+      "name": "Magasin gratuit",
+      "opening_hours": "PH,Mo-Su 00:00-24:00",
+      "shop": "general"
+    },
+    "distance_to_station": 978.8973362341152
+  }
+]

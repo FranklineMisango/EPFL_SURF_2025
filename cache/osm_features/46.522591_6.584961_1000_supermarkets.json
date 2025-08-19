@@ -1,0 +1,28 @@
+[
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.5244476,
+    "lon": 6.5875933,
+    "tags": {
+      "addr:housenumber": "213",
+      "addr:street": "Route de Chavannes",
+      "name": "Best Foods",
+      "shop": "supermarket"
+    },
+    "distance_to_station": 288.76921155121767
+  },
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.5285361,
+    "lon": 6.5918818,
+    "tags": {
+      "cuisine": "asian",
+      "level": "-1",
+      "name": "Himalaya",
+      "name:zh-Hans": "\u559c\u9a6c\u62c9\u96c5",
+      "opening_hours": "Mo-Su 09:00-20:00",
+      "shop": "supermarket"
+    },
+    "distance_to_station": 847.7711585484811
+  }
+]

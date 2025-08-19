@@ -1,0 +1,18 @@
+[
+  {
+    "feature_type": "pharmacies",
+    "lat": 46.5278626,
+    "lon": 6.5679893,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:housenumber": "12",
+      "addr:street": "Route de la Maladi\u00e8re",
+      "amenity": "pharmacy",
+      "contact:website": "https://www.pharmaciecerisaie.ch/pharmacie-de-la-cerisaie",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Pharmacie de la Cerisaie"
+    },
+    "distance_to_station": 899.9651435746378
+  }
+]

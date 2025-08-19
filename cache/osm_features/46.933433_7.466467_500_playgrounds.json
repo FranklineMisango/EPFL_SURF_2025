@@ -1,0 +1,15 @@
+[
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9332073,
+    "lon": 7.4679369,
+    "tags": {
+      "access": "yes",
+      "alt_name": "Spielplatz Elfenau",
+      "leisure": "playground",
+      "name": "Spielplatz Elfenaupark",
+      "note": "Bauflyer Spielplatz Elfenaupark https://www.bern.ch/themen/freizeit-und-sport/spielplatze/downloads/bauflyer-elfenau-web.pdf"
+    },
+    "distance_to_station": 114.39542096975879
+  }
+]

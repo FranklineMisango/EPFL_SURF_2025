@@ -1,0 +1,37 @@
+[
+  {
+    "feature_type": "libraries",
+    "lat": 46.5206483,
+    "lon": 6.5770502,
+    "tags": {
+      "amenity": "library",
+      "name": "Biblioth\u00e8que de biologie"
+    },
+    "distance_to_station": 970.870164179983
+  },
+  {
+    "feature_type": "libraries",
+    "lat": 46.5184121,
+    "lon": 6.5684654,
+    "tags": {
+      "addr:city": "Ecublens",
+      "addr:country": "CH",
+      "addr:postcode": "1024",
+      "addr:street": "Rolex Learning Center",
+      "amenity": "library",
+      "contact:email": "questions.bib@epfl.ch",
+      "contact:phone": "+41 21 693 21 56",
+      "contact:website": "https://library.epfl.ch",
+      "internet_access": "wlan",
+      "name": "Biblioth\u00e8que de l'EPFL",
+      "opening_hours": "Mo-Su,PH 07:00-24:00",
+      "operator": "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne\u00a0EPFL",
+      "operator:wikidata": "Q262760",
+      "ref:isil": "CH-000010-4",
+      "wheelchair": "yes",
+      "wikidata": "Q27480131",
+      "wikimedia_commons": "Category:Biblioth\u00e8que de l'EPFL"
+    },
+    "distance_to_station": 272.2513600243833
+  }
+]

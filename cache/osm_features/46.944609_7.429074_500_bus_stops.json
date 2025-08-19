@@ -1,0 +1,248 @@
+[
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9459307,
+    "lon": 7.432389,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Kocherpark",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Kocherpark",
+      "uic_ref": "8579897"
+    },
+    "distance_to_station": 291.4395187067353
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9448422,
+    "lon": 7.4271584,
+    "tags": {
+      "highway": "bus_stop",
+      "name": "Brunnhof",
+      "network": "Libero",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "railway": "tram_stop",
+      "tram": "yes"
+    },
+    "distance_to_station": 147.70955325607062
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9457375,
+    "lon": 7.4290254,
+    "tags": {
+      "highway": "bus_stop",
+      "name": "Kaufm\u00e4nnischer Verband",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "railway": "tram_stop",
+      "tram": "yes"
+    },
+    "distance_to_station": 125.55970498650306
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9444847,
+    "lon": 7.4312485,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Hasler",
+      "public_transport": "stop_position"
+    },
+    "distance_to_station": 165.65708748760102
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9478366,
+    "lon": 7.427449,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Inselplatz",
+      "public_transport": "stop_position",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 379.51898891607686
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9472771,
+    "lon": 7.4257863,
+    "tags": {
+      "highway": "bus_stop",
+      "name": "Inselspital",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 387.70499519989136
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9444826,
+    "lon": 7.4272244,
+    "tags": {
+      "highway": "bus_stop",
+      "name": "Brunnhof",
+      "network": "Libero",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "railway": "tram_stop",
+      "tram": "yes"
+    },
+    "distance_to_station": 141.10141908121858
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9412486,
+    "lon": 7.4310231,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Eigerplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Eigerplatz",
+      "uic_ref": "8571393",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 401.87228243036964
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9435159,
+    "lon": 7.4320776,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Hasler",
+      "public_transport": "stop_position",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 258.3851858607454
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.940788,
+    "lon": 7.4318238,
+    "tags": {
+      "bench": "no",
+      "bin": "yes",
+      "bus": "yes",
+      "departures_board": "timetable",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Eigerplatz",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 473.3729445680414
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9407601,
+    "lon": 7.4320364,
+    "tags": {
+      "bench": "no",
+      "bin": "yes",
+      "bus": "yes",
+      "departures_board": "realtime",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Eigerplatz",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 483.4530852757102
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9486671,
+    "lon": 7.4272253,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "departures_board": "timetable",
+      "highway": "bus_stop",
+      "name": "Inselplatz",
+      "public_transport": "platform",
+      "ref": "D",
+      "shelter": "no",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 472.57771684182705
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9478599,
+    "lon": 7.4272788,
+    "tags": {
+      "bench": "no",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Inselplatz",
+      "public_transport": "platform",
+      "ref": "B",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 386.33586845485206
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9483468,
+    "lon": 7.427395,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "departures_board": "realtime",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Inselplatz",
+      "public_transport": "platform",
+      "ref": "C",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 434.74673765117893
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.947838,
+    "lon": 7.4276027,
+    "tags": {
+      "bench": "no",
+      "bin": "yes",
+      "bus": "yes",
+      "departures_board": "realtime",
+      "highway": "bus_stop",
+      "kerb": "raised",
+      "kerb:approach_aid": "yes",
+      "lit": "yes",
+      "name": "Inselplatz",
+      "passenger_information_display": "yes",
+      "passenger_information_display:speech_output": "yes",
+      "public_transport": "platform",
+      "ref": "A",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 376.0375447891733
+  }
+]

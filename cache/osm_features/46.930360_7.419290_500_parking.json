@@ -1,0 +1,242 @@
+[
+  {
+    "feature_type": "parking",
+    "lat": 46.9262353,
+    "lon": 7.4170475,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "20",
+      "capacity:disabled": "1",
+      "fee": "yes",
+      "parking": "surface"
+    },
+    "distance_to_station": 489.23791177798626
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.928854,
+    "lon": 7.4176814,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "check_date": "2022-09-23",
+      "currency:CHF": "yes",
+      "currency:EUR": "no",
+      "fee": "yes",
+      "fee:conditional": "no @ (Mo-Sa 00:00-07:00, 19:00-24:00; Su,PH 00:00-24:00)",
+      "maxstay": "2 hours",
+      "name": "Neuhaus",
+      "note:de": "Geb\u00fchrenpflichtig Mo-Sa 07:00-19:00",
+      "parking": "surface",
+      "payment:cash": "no",
+      "payment:coins": "yes",
+      "payment:contactless": "no",
+      "payment:easypark": "yes",
+      "payment:parkingpay": "yes",
+      "payment:twint": "yes",
+      "ref:easypark": "309711",
+      "ref:parkingpay": "PLZ 3097 Zone 11",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 207.2750349245686
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9322505,
+    "lon": 7.4206163,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "maxweight": "8",
+      "parking": "surface"
+    },
+    "distance_to_station": 233.0927041507857
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9324642,
+    "lon": 7.4208153,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 261.0728199752811
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9314675,
+    "lon": 7.4209109,
+    "tags": {
+      "amenity": "parking"
+    },
+    "distance_to_station": 174.10934834074195
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9317309,
+    "lon": 7.4202918,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 170.36316550285238
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9267815,
+    "lon": 7.4174637,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "22"
+    },
+    "distance_to_station": 421.3857083539561
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9308351,
+    "lon": 7.4184697,
+    "tags": {
+      "addr:housename": "Parkplatz pharmaSuisse",
+      "addr:housenumber": "12",
+      "addr:postcode": "3097",
+      "addr:street": "Stationsstrasse",
+      "amenity": "parking",
+      "name": "Parkplatz pharmaSuisse"
+    },
+    "distance_to_station": 81.6741627349265
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9326905,
+    "lon": 7.4192951,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 259.1400658962481
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.933068,
+    "lon": 7.4191641,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "fee": "no",
+      "parking": "surface"
+    },
+    "distance_to_station": 301.26757471585245
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9334003,
+    "lon": 7.4226292,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking"
+    },
+    "distance_to_station": 422.58280673559636
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9307664,
+    "lon": 7.4219184,
+    "tags": {
+      "amenity": "parking",
+      "capacity:disabled": "2",
+      "parking": "street_side"
+    },
+    "distance_to_station": 204.63495468655768
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9314358,
+    "lon": 7.4209973,
+    "tags": {
+      "amenity": "parking"
+    },
+    "distance_to_station": 176.39819199485058
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9313853,
+    "lon": 7.4203401,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 139.12533093892506
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9313825,
+    "lon": 7.4201314,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "capacity": "5",
+      "fee": "no",
+      "operator": "Berner Kantonalbank",
+      "parking": "street_side",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 130.41810190517026
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9288868,
+    "lon": 7.4236997,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 372.77095211848103
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9292718,
+    "lon": 7.416796,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 224.7363252980889
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9263421,
+    "lon": 7.4165335,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 493.37391826192714
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9340492,
+    "lon": 7.4191203,
+    "tags": {
+      "access": "visitors",
+      "amenity": "parking",
+      "orientation": "perpendicular",
+      "parking": "street_side"
+    },
+    "distance_to_station": 410.42264712774005
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9280599,
+    "lon": 7.4147592,
+    "tags": {
+      "access": "private",
+      "amenity": "parking"
+    },
+    "distance_to_station": 428.6972116781628
+  }
+]

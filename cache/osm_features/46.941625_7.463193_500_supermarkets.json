@@ -1,0 +1,48 @@
+[
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.9454484,
+    "lon": 7.4628317,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "16",
+      "addr:postcode": "3006",
+      "addr:street": "Schosshaldenstrasse",
+      "alt_name": "VOI Schosshalde",
+      "branch": "Bern Schlosshalde",
+      "brand": "VOI",
+      "brand:wikidata": "Q110277616",
+      "contact:addr": "Schosshaldenstrasse 16, 3006 Bern",
+      "contact:phone": "+41 58 5675015",
+      "name": "VOI",
+      "opening_hours": "Mo-Fr 07:30-19:00; Sa 07:30-17:00; Su off; PH off",
+      "operator": "Genossenschaft Migros Aare",
+      "shop": "supermarket",
+      "source": "Survey",
+      "website": "https://www.voi-migrospartner.ch/de-CH/filialen#voi-voi-bern-schosshalde"
+    },
+    "distance_to_station": 426.03713025288766
+  },
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.9413577,
+    "lon": 7.4658141,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "110",
+      "addr:postcode": "3006",
+      "addr:street": "Thunstrasse",
+      "brand": "Migros",
+      "brand:wikidata": "Q680727",
+      "level": "0",
+      "name": "Migros",
+      "opening_hours": "Mo-Fr 08:00-19:00; Sa 08:00-17:00",
+      "operator": "Genossenschaft Migros-Aare",
+      "phone": "+41585671930",
+      "shop": "supermarket",
+      "website": "https://www.migros.ch/",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 201.20145309362792
+  }
+]

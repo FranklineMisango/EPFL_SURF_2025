@@ -1,0 +1,59 @@
+[
+  {
+    "feature_type": "commercial",
+    "lat": 46.9542368,
+    "lon": 7.4424033,
+    "tags": {
+      "landuse": "commercial"
+    },
+    "distance_to_station": 452.76225491224807
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.9511198,
+    "lon": 7.4368796,
+    "tags": {
+      "landuse": "commercial"
+    },
+    "distance_to_station": 130.6040104316496
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.9522214,
+    "lon": 7.4356788,
+    "tags": {
+      "landuse": "commercial"
+    },
+    "distance_to_station": 254.3860643826483
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.956295,
+    "lon": 7.4401614,
+    "tags": {
+      "landuse": "commercial",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 589.6890728738356
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.9498746,
+    "lon": 7.432568,
+    "tags": {
+      "landuse": "commercial",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 477.70406118139584
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.9484793,
+    "lon": 7.4404793,
+    "tags": {
+      "landuse": "commercial",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 324.45030567226445
+  }
+]

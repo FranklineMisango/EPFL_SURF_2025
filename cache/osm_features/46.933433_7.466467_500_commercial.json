@@ -1,0 +1,12 @@
+[
+  {
+    "feature_type": "commercial",
+    "lat": 46.9323316,
+    "lon": 7.4676929,
+    "tags": {
+      "landuse": "commercial",
+      "operator": "Stadtgr\u00fcn Bern"
+    },
+    "distance_to_station": 153.82875037928335
+  }
+]

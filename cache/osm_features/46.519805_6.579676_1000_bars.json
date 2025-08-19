@@ -1,0 +1,48 @@
+[
+  {
+    "feature_type": "bars",
+    "lat": 46.5204587,
+    "lon": 6.567817,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:postcode": "1015",
+      "addr:street": "Avenue Piccard",
+      "air_conditioning": "yes",
+      "amenity": "bar",
+      "brewery": "yes;various;bfm;dr_gab's;brewdog;pohjala;a_tue_tete;gurten;chimay",
+      "contact:facebook": "https://www.facebook.com/BarSatellite/",
+      "cuisine": "pizza;sandwich",
+      "description": "Satellite est une association \u00e9tudiante de l'EPFL. Elle s'occupe notamment du bar du campus. et y organise beaucoup d'\u00e9v\u00e9nements durant l'ann\u00e9e, tels que des concerts, des caf\u00e9-th\u00e9\u00e2tre, des d\u00e9gustations, des jams, des soir\u00e9es ludiques et bien d'autres.",
+      "email": "contact@satellite.bar",
+      "internet_access": "yes",
+      "level": "2",
+      "name": "Satellite",
+      "opening_hours": "Mo, We 07:30-22:00; Th-Fr 07:30-23:00; Tu 07:30-00:00",
+      "outdoor_seating": "yes",
+      "payment:camipro": "yes",
+      "payment:cash": "yes",
+      "phone": "+41 21 693 32 76",
+      "smoking": "outside",
+      "start_date": "1984",
+      "toilets": "yes",
+      "website": "https://satellite.bar",
+      "wheelchair": "yes",
+      "wikidata": "Q3473877"
+    },
+    "distance_to_station": 912.8882736230858
+  },
+  {
+    "feature_type": "bars",
+    "lat": 46.5238994,
+    "lon": 6.5751222,
+    "tags": {
+      "amenity": "bar",
+      "name": "Le Perchoir",
+      "opening_hours": "Mo-Su 16:00-23:00",
+      "outdoor_seating": "yes",
+      "phone": "+41 21 211 14 04",
+      "website": "https://www.levortex.ch/perchoir"
+    },
+    "distance_to_station": 573.8008974639115
+  }
+]

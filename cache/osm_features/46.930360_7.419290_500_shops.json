@@ -1,0 +1,983 @@
+[
+  {
+    "feature_type": "shops",
+    "lat": 46.9342596,
+    "lon": 7.4201608,
+    "tags": {
+      "email": "info@belarlicht.ch",
+      "name": "Belar Licht AG",
+      "opening_hours": "Mo-Fr 07:30-12:00,13:00-17:00",
+      "opening_hours:url": "https://www.belarlicht.ch/kontakt.shtml",
+      "phone": "+41 31 371 77 30",
+      "shop": "lighting",
+      "website": "https://belarlicht.ch/"
+    },
+    "distance_to_station": 438.62800883684884
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9269634,
+    "lon": 7.4182519,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "217",
+      "addr:postcode": "3097",
+      "addr:street": "Schwarzenburgstrasse",
+      "check_date": "2025-03-30",
+      "contact:email": "info@kuechenakzente.ch",
+      "contact:fax": "+41 31 381 70 08",
+      "contact:phone": "+41 31 381 70 07",
+      "name": "K\u00fcchenakzente",
+      "opening_hours": "Mo-Fr 09:00-12:00,13:30-17:00; Sa 09:00-13:00; Su off",
+      "operator": "k\u00fcchenakzente AG",
+      "shop": "furniture",
+      "website": "https://www.kuechenakzente.ch/"
+    },
+    "distance_to_station": 385.8234731465772
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9264803,
+    "lon": 7.4170824,
+    "tags": {
+      "brand": "Otto's",
+      "brand:wikidata": "Q2041507",
+      "check_date": "2023-05-11",
+      "name": "Otto's",
+      "opening_hours": "Mo-Th 09:00-19:00; Fr 09:00-21:00; Sa 09:00-17:00",
+      "payment:mastercard": "yes",
+      "payment:twint": "yes",
+      "payment:visa": "yes",
+      "shop": "variety_store",
+      "website": "https://www.ottos.ch/",
+      "wheelchair": "limited"
+    },
+    "distance_to_station": 462.8289785768287
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9278536,
+    "lon": 7.4167617,
+    "tags": {
+      "alt_name": "Blumen Dora Hugi",
+      "check_date": "2025-02-23",
+      "contact:email": "blumendorahugi@bluewin.ch",
+      "contact:phone": "+41 31 9715151",
+      "name": "Dora Hugi",
+      "opening_hours": "Mo-Fr 08:30-12:30,13:15-18:30; Sa 08:30-17:00; Su off",
+      "operator": "Dora Hugi",
+      "shop": "florist",
+      "website": "https://www.blumendorahugi.ch/",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 338.42610135457494
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9288556,
+    "lon": 7.4170114,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:country": "CH",
+      "addr:housenumber": "249",
+      "addr:postcode": "3097",
+      "addr:street": "K\u00f6nizstrasse",
+      "alt_name": "Velo Kretschmann",
+      "check_date": "2024-01-05",
+      "email": "info@kretschmann.ch",
+      "name": "Kretschmann",
+      "opening_hours": "Mo-Fr 08:30-12:30, 14:00-18:30; Sa-Su off",
+      "phone": "+41 31 971 25 14",
+      "service:bicycle:pump": "yes",
+      "service:bicycle:repair": "yes",
+      "service:bicycle:retail": "yes",
+      "shop": "bicycle",
+      "website": "https://kretschmann.ch/"
+    },
+    "distance_to_station": 240.66712261378433
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9317736,
+    "lon": 7.4212186,
+    "tags": {
+      "contact:mobile": "+41 79 777 33 78",
+      "email": "info@bernpc.ch",
+      "name": "Bernpc GmbH",
+      "opening_hours": "Mo-Fr 09:00-12:00, 13:00-19:00",
+      "phone": "+41 31 508 53 52",
+      "shop": "computer",
+      "website": "https://bernpc.ch"
+    },
+    "distance_to_station": 214.83219104982783
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9265971,
+    "lon": 7.4173327,
+    "tags": {
+      "check_date": "2023-05-11",
+      "name": "Sun Kiosk + Shop",
+      "opening_hours": "Mo-Fr 07:00-19:00; Sa 08:00-18:00; Su 09:00-18:00",
+      "shop": "kiosk",
+      "website": "https://sunkiosk.ch",
+      "wheelchair": "limited"
+    },
+    "distance_to_station": 444.0296159003273
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.931395,
+    "lon": 7.4207149,
+    "tags": {
+      "check_date": "2023-05-11",
+      "name": "AUTOSTOP K\u00f6niz",
+      "opening_hours": "Mo-Fr 08:00-12:00,13:15-17:15",
+      "phone": "+41 31 972 29 29",
+      "shop": "car"
+    },
+    "distance_to_station": 157.96036755452013
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9279192,
+    "lon": 7.4168098,
+    "tags": {
+      "alt_name": "Coiffure HairDora",
+      "check_date": "2025-02-23",
+      "contact:phone": "+41 31 3011414",
+      "name": "hairdora",
+      "opening_hours": "Tu-Fr 08:30-18:00",
+      "operator": "Dora Zimmermann",
+      "shop": "hairdresser",
+      "website": "https://www.hairdora.ch/"
+    },
+    "distance_to_station": 330.3488947822269
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9347215,
+    "lon": 7.4177577,
+    "tags": {
+      "alt_name": "Delinat-Weindepot Bern",
+      "branch": "Bern",
+      "contact:phone": "+41 31 9725030",
+      "name": "Delinat",
+      "opening_hours": "Mo off; Tu-Fr 16:00-19:00; Sa 10:00-16:00; Su off",
+      "operator": "Delinat",
+      "organic": "yes",
+      "shop": "wine",
+      "toilets:wheelchair": "yes",
+      "website": "https://www.delinat.com/weindepot-bern",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 498.737690965841
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9337755,
+    "lon": 7.4233825,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:housenumber": "105",
+      "addr:postcode": "3097",
+      "addr:street": "Schwarzenburgstrasse",
+      "email": "lanz.u@bluewin.ch",
+      "name": "B\u00e4ckerei \u2013 Konditorei Lanz GmbH",
+      "opening_hours": "Mo-Fr 06:30-18:30; Sa 06:30-14:00",
+      "opening_hours:covid19": "Su 08:30-17:00; Mo,We-Fr 06:30-18:30; Sa 06:30-16:00",
+      "phone": "+41 319713869",
+      "shop": "bakery",
+      "website": "https://www.lanzbeck.ch/",
+      "wheelchair": "limited"
+    },
+    "distance_to_station": 490.7158132664223
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.933398,
+    "lon": 7.4197151,
+    "tags": {
+      "brand": "Denner",
+      "brand:wikidata": "Q379911",
+      "brand:wikipedia": "en:Denner (supermarket)",
+      "cash_withdrawal": "migros_bank;postfinance_card",
+      "cash_withdrawal:fee": "no",
+      "cash_withdrawal:purchase_required": "no",
+      "cash_withdrawal:type": "checkout",
+      "check_date": "2023-08-07",
+      "contact:phone": "+41 31 3034670",
+      "name": "Denner",
+      "opening_hours": "Mo-Fr 07:00-20:00; Sa 08:00-17:00",
+      "shop": "supermarket",
+      "website": "https://www.denner.ch/"
+    },
+    "distance_to_station": 339.3488174087923
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9343145,
+    "lon": 7.4200357,
+    "tags": {
+      "check_date": "2023-04-28",
+      "contact:email": "bern@fennobed.ch",
+      "name": "FENNOBED",
+      "opening_hours": "We-Fr 11:00-19:00; Sa 10:00-17:00",
+      "phone": "+41 31 556 85 19",
+      "shop": "bed",
+      "website": "https://www.fennobed.ch/"
+    },
+    "distance_to_station": 443.350849256134
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9343693,
+    "lon": 7.4199106,
+    "tags": {
+      "check_date": "2023-06-28",
+      "name": "Similor AG",
+      "opening_hours": "Mo-Th 07:15-12:00,13:00-17:00; Fr 07:15-12:00,13:00-16:15",
+      "shop": "interior_decoration",
+      "source": "Survey",
+      "website": "http://similor.ch"
+    },
+    "distance_to_station": 448.297334874705
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.93415,
+    "lon": 7.4204111,
+    "tags": {
+      "check_date": "2024-01-24",
+      "name": "Fashai Thaimassage",
+      "opening_hours": "Mo-Sa 10:00-20:00; Su 11:00-18:00",
+      "payment:cash": "yes",
+      "payment:mastercard": "yes",
+      "payment:twint": "yes",
+      "payment:visa": "yes",
+      "phone": "+41 31 588 58 33",
+      "shop": "massage",
+      "website": "http://www.fahsai-thaimassage.ch/"
+    },
+    "distance_to_station": 429.94029849970116
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9340404,
+    "lon": 7.4206613,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:housenumber": "20",
+      "addr:postcode": "3097",
+      "addr:street": "Wilkerstrasse",
+      "check_date": "2022-10-20",
+      "email": "info@badelandia.ch",
+      "fax": "+41 31 964 11 45",
+      "name": "Badelandia GmbH",
+      "opening_hours": "Mo-Fr 08:00-12:00,13:30-18:00",
+      "phone": "+41 31 964 11 44",
+      "shop": "wholesale",
+      "website": "http://badelandia.ch",
+      "wholesale": "sanitary"
+    },
+    "distance_to_station": 422.28033831196467
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9315167,
+    "lon": 7.4207957,
+    "tags": {
+      "check_date": "2023-05-11",
+      "name": "Coiffure Gianfranco",
+      "opening_hours": "Tu-Fr 09:00-19:00; Sa 09:00-14:00",
+      "shop": "hairdresser"
+    },
+    "distance_to_station": 172.08915035975912
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9334349,
+    "lon": 7.417148,
+    "tags": {
+      "check_date": "2023-08-07",
+      "name": "Sanitas Tr\u00f6sch Sanit\u00e4r Shop",
+      "name:de": "Sanitas Tr\u00f6sch Sanit\u00e4r Shop",
+      "opening_hours": "Mo-Th 07:00-12:00, 13:00-17:00; Fr 07:00-12:00, 13:00-16:00",
+      "shop": "hardware"
+    },
+    "distance_to_station": 378.6265733498062
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9342698,
+    "lon": 7.4178288,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:housenumber": "42b",
+      "addr:postcode": "3097",
+      "addr:street": "Waldeggstrasse",
+      "contact:email": "info@rundum.ch",
+      "contact:phone": "+41 31 381 03 03",
+      "name": "Rundum Ortho & Reha",
+      "opening_hours": "Mo-Fr 08:00-12:00, 13:00-17:00",
+      "shop": "medical_supply",
+      "toilets:wheelchair": "yes",
+      "website": "https://www.rundum.ch/",
+      "wheelchair": "yes",
+      "wheelchair:description": "Rollstuhlservice Rollstuhlverkauf Rollstuhlberatung"
+    },
+    "distance_to_station": 448.6840863655388
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9281463,
+    "lon": 7.4167733,
+    "tags": {
+      "email": "bern@wirzwelt.ch",
+      "fax": "+41 31 376 16 09",
+      "name": "Wirz Tapeten AG",
+      "opening_hours": "Mo-Th 07:30-12:00,13:00-17:00; Fr 07:30-12:00,13:00-16:00",
+      "phone": "+41 31 376 16 06",
+      "shop": "interior_decoration",
+      "website": "https://wirzwelt.ch/filialen/filiale-bern/",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 311.6285865548982
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.92893,
+    "lon": 7.415696,
+    "tags": {
+      "name": "Carol's Coiffure",
+      "opening_hours": "Mo,Tu,Th-Sa 09:00-17:00; PH,We,Su off",
+      "shop": "hairdresser"
+    },
+    "distance_to_station": 315.8528084198432
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9327657,
+    "lon": 7.4212169,
+    "tags": {
+      "addr:housenumber": "11",
+      "addr:postcode": "3097",
+      "addr:street": "Waldeggstrasse",
+      "check_date": "2023-08-07",
+      "drink:wine": "yes",
+      "email": "info@salwey.ch",
+      "level": "-1",
+      "name": "Salwey's Weinkeller",
+      "name:de": "Salwey's Weinkeller",
+      "opening_hours": "Tu-Fr 10:00-18:30; Sa 10:00-16:00",
+      "phone": "+41 31 972 80 40",
+      "shop": "alcohol",
+      "website": "https://www.salwey.ch/"
+    },
+    "distance_to_station": 304.9010280265447
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9328863,
+    "lon": 7.4227479,
+    "tags": {
+      "name": "wARTzimmer",
+      "shop": "art"
+    },
+    "distance_to_station": 384.51460121986395
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9292403,
+    "lon": 7.4161731,
+    "tags": {
+      "name": "Brillen B\u00fchne",
+      "opening_hours": "Tu-Fr 08:30-12:30, 14:00-18:30; Sa 08:30-13:00",
+      "shop": "optician",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 267.4299621435385
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9284234,
+    "lon": 7.4163663,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:housenumber": "264",
+      "addr:postcode": "3097",
+      "addr:street": "K\u00f6nizstrasse",
+      "name": "B\u00f6gli Bestattungen GmbH",
+      "phone": "+41 31 971 63 39",
+      "shop": "funeral_directors",
+      "website": "https://www.boegli-bestattungen.ch/"
+    },
+    "distance_to_station": 309.2898396544972
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9287321,
+    "lon": 7.4167694,
+    "tags": {
+      "brand": "VOI",
+      "brand:wikidata": "Q110277616",
+      "check_date": "2023-12-05",
+      "name": "Voi",
+      "opening_hours": "Mo-Fr 07:30-19:00; Sa 07:30-17:00",
+      "operator": "Alexander Zysset",
+      "shop": "supermarket",
+      "start_date": "2023-12-07"
+    },
+    "distance_to_station": 263.43973132639127
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9325359,
+    "lon": 7.4224898,
+    "tags": {
+      "check_date": "2022-09-27",
+      "name": "Royal",
+      "opening_hours": "Mo-Th 09:00-19:00; Fr 09:00-20:00; Sa 08:00-17:00",
+      "phone": "+41 31 971 88 80",
+      "shop": "hairdresser"
+    },
+    "distance_to_station": 342.88833384209795
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9279253,
+    "lon": 7.4163767,
+    "tags": {
+      "check_date": "2025-05-07",
+      "name": "Luzi",
+      "opening_hours": "Mo 10:00-17:00; Tu-We 07:00-17:00; Th 07:00-16:00",
+      "shop": "hairdresser",
+      "website": "https://www.luzi-coiffure.ch/"
+    },
+    "distance_to_station": 349.6169272573722
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9285671,
+    "lon": 7.4167033,
+    "tags": {
+      "male": "yes",
+      "name": "Gentlemen\u2018s Coiffeur",
+      "opening_hours": "Mo-We,Fr 09:00-19:00; Th 09:00-20:00; Sa 08:30-17:00",
+      "phone": "+41 31 557 20 91",
+      "shop": "hairdresser",
+      "website": "http://gentlemenscoiffeur.ch"
+    },
+    "distance_to_station": 279.86784223731786
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9297876,
+    "lon": 7.4166404,
+    "tags": {
+      "check_date": "2024-01-05",
+      "name": "V. R Shop",
+      "opening_hours": "Mo-Th 09:00-19:00; Fr 09:00-20:00; Sa 09:00-17:00; Su 10:00-18:00",
+      "payment:twint": "yes",
+      "shop": "convenience"
+    },
+    "distance_to_station": 211.02210895491984
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9303466,
+    "lon": 7.4187447,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:housenumber": "11",
+      "addr:postcode": "3097",
+      "addr:street": "Stationsstrasse",
+      "contact:phone": "+41 31 971 46 69",
+      "name": "Brock & Art",
+      "shop": "second_hand",
+      "website": "https://www.brockart.ch/"
+    },
+    "distance_to_station": 41.433367675539934
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9293708,
+    "lon": 7.4171217,
+    "tags": {
+      "check_date": "2025-04-26",
+      "contact:email": "lpliebefeld@luethiportmann.ch",
+      "contact:phone": "+41 31 822 61 41",
+      "name": "L\u00fcthi\u2018s Fleischwaren",
+      "opening_hours": "Tu-Fr 08:30-18:30; Sa 07:30-16:00",
+      "shop": "butcher",
+      "source": "website",
+      "website": "https://www.luethiportmann.ch/de/fabrikladen/direktverkauf-liebefeld"
+    },
+    "distance_to_station": 198.00940185226887
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9285363,
+    "lon": 7.4167054,
+    "tags": {
+      "check_date": "2025-05-07",
+      "name": "Tradycja",
+      "opening_hours": "Mo-Fr 10:00-17:00; Sa 09:00-17:00",
+      "shop": "convenience"
+    },
+    "distance_to_station": 282.2068204824308
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9280323,
+    "lon": 7.4168546,
+    "tags": {
+      "check_date": "2023-05-11",
+      "contact:instagram": "https://www.instagram.com/beauty_.rooms",
+      "name": "Beauty Rooms",
+      "phone": "+41 76 818 75 77",
+      "shop": "hairdresser"
+    },
+    "distance_to_station": 318.10723603105197
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9297147,
+    "lon": 7.4166501,
+    "tags": {
+      "check_date": "2023-05-11",
+      "name": "S&M Boutique",
+      "opening_hours": "Mo-Th 09:00-19:00; Fr 09:00-20:00; Sa 09:00-17:00",
+      "shop": "clothes"
+    },
+    "distance_to_station": 212.9134288842424
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9335027,
+    "lon": 7.42006,
+    "tags": {
+      "check_date": "2022-11-05",
+      "name": "Wyser",
+      "opening_hours": "Mo-Fr 08:00-12:00,13:30-17:30",
+      "phone": "+41 31 997 34 34",
+      "shop": "appliance",
+      "website": "https://wyser.ch/"
+    },
+    "distance_to_station": 354.3096253512049
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9268493,
+    "lon": 7.4154408,
+    "tags": {
+      "name": "Pneu Egger",
+      "shop": "car_repair"
+    },
+    "distance_to_station": 487.6735667802836
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9326977,
+    "lon": 7.4200378,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:housenumber": "27",
+      "addr:postcode": "3097",
+      "addr:street": "Waldeggstrasse",
+      "email": "veloladen@drahtesel.ch",
+      "name": "Drahtesel",
+      "opening_hours": "Tu-Fr 13:00-18:00",
+      "phone": "+41 31 979 70 76",
+      "service:bicycle:repair": "yes",
+      "service:bicycle:retail": "yes",
+      "service:bicycle:second_hand": "yes",
+      "shop": "bicycle",
+      "website": "https://drahtesel.ch/"
+    },
+    "distance_to_station": 266.0698807715082
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9294942,
+    "lon": 7.4162608,
+    "tags": {
+      "check_date": "2025-05-07",
+      "clothes": "children",
+      "contact:email": "info@troimli-boutique.ch",
+      "contact:website": "https://troimli-boutique.ch",
+      "name": "Tr\u00f6imli Boutique",
+      "opening_hours": "We 14:00-18:30; Th 09:00-12:00,13:00-17:00, Sa[-1] 10:00-14:00; Su,PH off",
+      "shop": "clothes"
+    },
+    "distance_to_station": 249.35415489134186
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9284544,
+    "lon": 7.416711,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:housenumber": "253",
+      "addr:postcode": "3097",
+      "addr:street": "K\u00f6nizstrasse",
+      "amenity": "restaurant",
+      "check_date": "2025-07-26",
+      "cuisine": "tibetan",
+      "diet:vegan": "yes",
+      "diet:vegetarian": "yes",
+      "name": "Tibetan Snow Lion",
+      "opening_hours": "Mo-Fr 10:00-14:00,17:00-22:00; Sa,Su 17:00-22:00",
+      "payment:twint": "yes",
+      "proposed:amenity": "restaurant",
+      "shop": "vacant",
+      "start_date": "2020-12",
+      "takeaway": "yes"
+    },
+    "distance_to_station": 288.5315274900788
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9334683,
+    "lon": 7.4231642,
+    "tags": {
+      "name": "Mella Hair",
+      "opening_hours": "Mo, We, Fr 09:00-18:30; Th 09:00-20:00; Sa 09:00-15:00",
+      "phone": "+41786850554",
+      "shop": "hairdresser"
+    },
+    "distance_to_station": 453.8678539134908
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9339663,
+    "lon": 7.4181489,
+    "tags": {
+      "name": "Frischknecht",
+      "opening_hours": "Mo-Fr 08:30-12:00, 13:30-17:30",
+      "phone": "+41 33 224 00 10",
+      "shop": "flooring",
+      "website": "https://www.frischknecht-ag.ch/"
+    },
+    "distance_to_station": 410.25619548995854
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9340344,
+    "lon": 7.4180771,
+    "tags": {
+      "name": "3Light",
+      "phone": "+41 31 961 75 15",
+      "shop": "lighting",
+      "website": "https://www.3light.ch/"
+    },
+    "distance_to_station": 418.82577028721266
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9340347,
+    "lon": 7.4189512,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:housenumber": "40a",
+      "addr:postcode": "3097",
+      "addr:street": "Waldeggstrasse",
+      "check_date": "2023-03-10",
+      "clothes": "sports",
+      "name": "Swiss Designer Sport",
+      "opening_hours": "Fr 13:00-18:30; Sa 10:00-15:00",
+      "phone": "+41 31 922 10 10",
+      "shop": "clothes",
+      "website": "https://swissdesignersport.com/"
+    },
+    "distance_to_station": 409.41701417985234
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9327981,
+    "lon": 7.4211189,
+    "tags": {
+      "check_date": "2022-09-27",
+      "name": "Poyet",
+      "opening_hours": "Tu-Fr 10:00-12:30,14:00-18:00; Sa 10:00-12:30,14:00-16:00",
+      "phone": "+41 31 311 65 15",
+      "shop": "weapons",
+      "website": "https://poyet-bern.ch"
+    },
+    "distance_to_station": 304.6028856608563
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.933638,
+    "lon": 7.4185833,
+    "tags": {
+      "brand": "Brillux",
+      "brand:wikidata": "Q917229",
+      "brand:wikipedia": "de:Brillux",
+      "email": "liebefeld@brillux.ch",
+      "name": "Brillux",
+      "opening_hours": "Mo-Th 07:00-17:00; Fr 07:00-16:00",
+      "phone": "+41 31 970 52 00",
+      "shop": "paint",
+      "website": "https://www.brillux.ch/unternehmen/niederlassungen/schweiz/niederlassung/details/212/"
+    },
+    "distance_to_station": 368.42570509228517
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9286537,
+    "lon": 7.4163647,
+    "tags": {
+      "laundry_service": "yes",
+      "mapillary": "486466456113039",
+      "name": "Alles rein",
+      "opening_hours": "Mo-Fr 07:30-18:30, Sa 08:00-12:00",
+      "self_service": "no",
+      "shop": "laundry",
+      "website": "https://www.allesrein.ch/index.php/standorte/filiale-liebefeld",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 292.1314652537819
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.933255,
+    "lon": 7.4224764,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:country": "CH",
+      "addr:housenumber": "112",
+      "addr:postcode": "3097",
+      "addr:street": "Schwarzenburgstrasse",
+      "brand": "avec",
+      "brand:wikidata": "Q103863974",
+      "check_date": "2023-01-07",
+      "name": "avec",
+      "opening_hours": "Mo-Fr 06:30-21:00; Sa 07:00-20:00; Su 08:00-20:00",
+      "shop": "convenience"
+    },
+    "distance_to_station": 402.69652724411964
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.930408,
+    "lon": 7.4161198,
+    "tags": {
+      "brand": "Yamaha",
+      "brand:wikidata": "Q158888",
+      "contact:email": "info@motosieber.ch",
+      "contact:phone": "+41 31 971 04 34",
+      "contact:website": "https://www.motosieber.ch",
+      "name": "Moto Sieber",
+      "opening_hours": "Mo-Fr 08:00-12:00,13:00-18:00; Sa 09:00-12:00; Su,PH off",
+      "shop": "motorcycle"
+    },
+    "distance_to_station": 240.78357987598673
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9308545,
+    "lon": 7.4160235,
+    "tags": {
+      "alt_name": "Coiffure Renate",
+      "contact:email": "r-flisch@bluewin.ch",
+      "contact:phone": "+41 31 972 06 01",
+      "contact:website": "https://www.coiffure-renate.ch",
+      "name": "Renate",
+      "opening_hours": "Mo,We,Sa 08:30-13:00; Tu,Th,Fr 08:30-12:00,13:30-18:30; PH,Su off",
+      "shop": "hairdresser",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 254.05746699336294
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.932226,
+    "lon": 7.4192239,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:housenumber": "47",
+      "addr:postcode": "3097",
+      "addr:street": "Waldeggstrasse",
+      "name": "HAIRVORRAGEND",
+      "opening_hours": "Mo 12:00-18:00; Tu,Th 07:00-17:30; We,Fr 08:30-19:00",
+      "payment:cash": "yes",
+      "payment:credit_cards": "yes",
+      "phone": "+41 31 332 88 77",
+      "shop": "hairdresser",
+      "website": "https://www.hairvorragend.ch/"
+    },
+    "distance_to_station": 207.5504298098054
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9291526,
+    "lon": 7.4171821,
+    "tags": {
+      "addr:housenumber": "237",
+      "addr:street": "K\u00f6nizstrasse",
+      "amenity": "ski_rental",
+      "check_date": "2024-01-05",
+      "description": "Cross Country Ski",
+      "name": "Werrens Art Sport & Events K\u00f6niz",
+      "opening_hours": "We-Th 12:30-17:30; Fr 12:30-18:00; Sa 09:00-16:00",
+      "opening_hours:url": "https://www.werrensart.com/oeffnungszeiten",
+      "phone": "+41 31 972 16 16",
+      "shop": "sports",
+      "sport": "cross_country_skiing",
+      "website": "https://werrensart.com/"
+    },
+    "distance_to_station": 208.91328260127318
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9326142,
+    "lon": 7.4225507,
+    "tags": {
+      "check_date": "2022-09-27",
+      "name": "Pia Styling",
+      "phone": "+41319711631",
+      "shop": "hairdresser",
+      "website": "https://piastyling.ch"
+    },
+    "distance_to_station": 352.3204274450086
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9324953,
+    "lon": 7.4225812,
+    "tags": {
+      "level": "-1",
+      "name": "Coiffure 4",
+      "operator": "Jeannine Bigler-Arm",
+      "phone": "+41 79 692 72 38",
+      "shop": "hairdresser"
+    },
+    "distance_to_station": 344.7157004344582
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9302045,
+    "lon": 7.4165432,
+    "tags": {
+      "check_date": "2022-08-11",
+      "check_date:opening_hours": "2024-06-16",
+      "name": "Hofladen K\u00f6niz Liebefeld",
+      "opening_hours": "07:00-21:00",
+      "payment:cash": "yes",
+      "payment:coins": "yes",
+      "payment:mastercard": "yes",
+      "payment:twint": "yes",
+      "payment:visa": "yes",
+      "shop": "convenience",
+      "website": "https://vomchaeser.ch/laeden/koeniz/"
+    },
+    "distance_to_station": 209.2900407953929
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9304942,
+    "lon": 7.416477,
+    "tags": {
+      "check_date": "2022-12-24",
+      "name": "Atelier Haute Cuisine",
+      "opening_hours": "\"by appointment\"",
+      "shop": "kitchen",
+      "website": "https://ahc.ch/"
+    },
+    "distance_to_station": 214.12140579492174
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.931422,
+    "lon": 7.4213049,
+    "tags": {
+      "addr:housenumber": "145",
+      "addr:street": "Schwarzenburgstrasse",
+      "check_date": "2024-07-18",
+      "contact:instagram": "https://www.instagram.com/derfloristkoeniz",
+      "email": "kontakt@derflorist.ch",
+      "name": "Der Florist",
+      "opening_hours": "Mo-Fr 08:30-18:30; Sa 08:30-16:00",
+      "phone": "+41 31 971 02 27",
+      "shop": "florist",
+      "website": "https://www.derflorist.ch"
+    },
+    "distance_to_station": 193.26947942990833
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9294622,
+    "lon": 7.4170144,
+    "tags": {
+      "check_date": "2025-04-26",
+      "name": "UnihockeyCenter.ch",
+      "opening_hours": "Tu,Th-Fr 14:00-18:30; We 10:00-12:00,14:00-18:30; Sa 10:00-16:00",
+      "shop": "sports"
+    },
+    "distance_to_station": 199.56098397045668
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9308734,
+    "lon": 7.4164531,
+    "tags": {
+      "check_date": "2024-07-23",
+      "name": "schlafTEQ",
+      "phone": "+41 58 255 04 22",
+      "shop": "bed",
+      "website": "https://schlafteq.ch"
+    },
+    "distance_to_station": 222.85092312053513
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9343091,
+    "lon": 7.4194672,
+    "tags": {
+      "check_date": "2024-10-25",
+      "email": "info@treesalaspa.ch",
+      "name": "Tree Sala",
+      "opening_hours": "10:00-20:00",
+      "phone": "+41 31 972 38 38",
+      "shop": "massage",
+      "website": "https://treesalaspa.ch/"
+    },
+    "distance_to_station": 439.32597046905477
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9293596,
+    "lon": 7.4162362,
+    "tags": {
+      "check_date": "2025-01-22",
+      "contact:instagram": "https://www.instagram.com/_miyongsil",
+      "email": "hello.miyongsil@gmail.com",
+      "name": "Mi Yong Sil",
+      "shop": "hairdresser",
+      "website": "https://miyongsil.simplybook.it/"
+    },
+    "distance_to_station": 257.1891554351573
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.928914,
+    "lon": 7.4162826,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:country": "CH",
+      "addr:housenumber": "258",
+      "addr:postcode": "3097",
+      "addr:street": "K\u00f6nizstrasse",
+      "building": "kiosk",
+      "ele": "567",
+      "name": "Fadesp\u00fceli",
+      "opening_hours": "Mo-Fr 08:30-19:00",
+      "shop": "kiosk",
+      "source": "bing",
+      "source:addr": "Geb\u00e4udeadressen des Kantons Bern \u00a9 Amt f\u00fcr Geoinformation des Kantons Bern"
+    },
+    "distance_to_station": 279.2912395707749
+  }
+]

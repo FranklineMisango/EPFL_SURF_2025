@@ -1,0 +1,13 @@
+[
+  {
+    "feature_type": "cafes",
+    "lat": 46.5248245,
+    "lon": 6.5757013,
+    "tags": {
+      "amenity": "cafe",
+      "name": "Vortex",
+      "opening_hours": "Mo-Fr 08:00-23:00"
+    },
+    "distance_to_station": 752.6207934720981
+  }
+]

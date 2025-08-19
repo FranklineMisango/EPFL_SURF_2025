@@ -1,0 +1,208 @@
+[
+  {
+    "feature_type": "cafes",
+    "lat": 46.9556431,
+    "lon": 7.4519046,
+    "tags": {
+      "amenity": "cafe",
+      "check_date": "2025-07-18",
+      "email": "info@visavisbern.ch",
+      "mobile": "+41 79 811 28 49",
+      "name": "Vis-\u00e0-vis",
+      "opening_hours": "Tu-We 09:00-23:00, Th-Sa 09:00-00:30",
+      "outdoor_seating": "yes",
+      "website": "https://www.visavisbern.ch/",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 745.3249859237523
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9564727,
+    "lon": 7.4451463,
+    "tags": {
+      "amenity": "cafe",
+      "cuisine": "bistro",
+      "email": "info@lorraine22.ch",
+      "name": "Lorraine 22",
+      "opening_hours": "Mo-We 16:00-22:00, Th-Fr 16:00-00:30, Sa 10:00-00:30",
+      "operator": "Blindspot",
+      "outdoor_seating": "yes",
+      "phone": "+41 31 517 83 99",
+      "website": "https://lorraine22.ch/"
+    },
+    "distance_to_station": 549.8971944142686
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9580408,
+    "lon": 7.4368697,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "2",
+      "addr:postcode": "3012",
+      "addr:street": "Bonstettenstrasse",
+      "alt_name": "Apfelgold - desserts et livres",
+      "amenity": "cafe",
+      "check_date": "2024-03-14",
+      "cuisine": "dessert",
+      "diet:vegan": "yes",
+      "diet:vegetarian": "yes",
+      "email": "schnouse@apfelgold.ch",
+      "internet_access": "wlan",
+      "name": "Apfelgold",
+      "opening_hours": "Th-Su 08:00-18:00",
+      "operator": "Schnouse GmbH",
+      "outdoor_seating": "yes",
+      "payment:cash": "yes",
+      "payment:coins": "yes",
+      "payment:twint": "yes",
+      "phone": "+41 31 558 24 04",
+      "smoking": "no",
+      "takeaway": "yes",
+      "website": "https://www.apfelgold.ch",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 829.5285374306052
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9624923,
+    "lon": 7.4516195,
+    "tags": {
+      "addr:postcode": "3014",
+      "amenity": "cafe",
+      "contact:addr": "Standstrasse 34, 3014 Bern",
+      "contact:facebook": "philscoffeetogo",
+      "contact:instagram": "philscoffeetogo",
+      "name": "Phil's Coffee to Go",
+      "opening_hours": "Mo 07:30-13:30; Tu-Fr 07:30-14:30; Sa 09:00-13:30",
+      "operator": "Philipp Thoma",
+      "source": "survey",
+      "takeaway": "only",
+      "website": "https://www.philscoffeetogo.ch"
+    },
+    "distance_to_station": 399.1948588575284
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9571784,
+    "lon": 7.4467912,
+    "tags": {
+      "amenity": "cafe",
+      "check_date:opening_hours": "2023-06-20",
+      "contact:city": "Bern",
+      "contact:housenumber": "5",
+      "contact:phone": "+41 31 333 82 22",
+      "contact:postcode": "3013",
+      "contact:street": "Hofweg",
+      "contact:website": "https://www.bistro-zytlos.ch/",
+      "name": "Bistro zytlos",
+      "old_name": "Caf\u00e9 Wohnzimmer",
+      "opening_hours": "Mo 12:00-17:30; Tu-Fr 09:00-17:30; Sa 09:00-16:00; Su,PH off",
+      "operator": "GEWA"
+    },
+    "distance_to_station": 459.2059672561188
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9597696,
+    "lon": 7.4543749,
+    "tags": {
+      "addr:postcode": "3014",
+      "amenity": "cafe",
+      "contact:addr": "Stauffacherstrasse 11, 3014 Bern",
+      "contact:email": "info@kafipfyfouter.ch",
+      "contact:phone": "+41 31 3319505",
+      "contact:website": "https://www.kafipfyfouter.ch/",
+      "name": "Kafi Pfyfouter",
+      "opening_hours": "Tu-Fr 08:00-18:00; Sa 08:00-15:00; Su 09:00-17:00"
+    },
+    "distance_to_station": 611.0241649252322
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9607132,
+    "lon": 7.4392903,
+    "tags": {
+      "addr:housenumber": "54",
+      "addr:postcode": "3012",
+      "addr:street": "Engestrasse",
+      "amenity": "cafe",
+      "email": "reservation-ieb@zghotels.ch",
+      "name": "Parc Caf\u00e9 & Minigolf",
+      "opening_hours": "Mo-Fr 09:00-21:00; Sa-Su 11:00-21:00",
+      "phone": "+41 31 309 61 11",
+      "website": "https://innere-enge.ch/parccafe/"
+    },
+    "distance_to_station": 565.4013324744355
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9548039,
+    "lon": 7.4513278,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "3",
+      "addr:postcode": "3013",
+      "addr:street": "Viktoriaplatz",
+      "amenity": "cafe",
+      "check_date": "2024-09-11",
+      "email": "info@vktr.ch",
+      "name": "Viktor",
+      "opening_hours": "Mo-Tu 16:00-22:00; We 08:00-22:00; Th-Sa 08:00-24:00; Su 09:00-16:00",
+      "outdoor_seating": "yes",
+      "phone": "+41 31 333 30 13",
+      "website": "https://www.allcatsarebeautiful.ch/"
+    },
+    "distance_to_station": 805.3910334087827
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9587906,
+    "lon": 7.4572151,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "2",
+      "addr:postcode": "3014",
+      "addr:street": "R\u00fctlistrasse",
+      "amenity": "cafe",
+      "cuisine": "coffee_shop;regional",
+      "name": "Simplyfine Bern",
+      "outdoor_seating": "yes",
+      "phone": "+41313435656",
+      "website": "https://www.simplyfine.ch"
+    },
+    "distance_to_station": 850.1661028495262
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9567894,
+    "lon": 7.4526464,
+    "tags": {
+      "amenity": "cafe",
+      "check_date": "2023-04-05",
+      "name": "breitsch"
+    },
+    "distance_to_station": 677.8122882580645
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9591314,
+    "lon": 7.4564413,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "99",
+      "addr:postcode": "3014",
+      "addr:street": "Rodtmattstrasse",
+      "amenity": "cafe",
+      "facebook": "https://www.facebook.com/Ferdinandkaffee/",
+      "name": "Ferdinand Coffee",
+      "opening_hours": "Tu-Fr 09:00-18:00; Sa 08:00-17:00",
+      "outdoor_seating": "yes",
+      "phone": "079 380 30 18",
+      "website": "https://ferdinand-coffee.ch/"
+    },
+    "distance_to_station": 782.2498941247197
+  }
+]

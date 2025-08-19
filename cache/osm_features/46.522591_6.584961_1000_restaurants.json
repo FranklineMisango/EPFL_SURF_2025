@@ -1,0 +1,210 @@
+[
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5297906,
+    "lon": 6.5918468,
+    "tags": {
+      "addr:city": "Renens VD",
+      "addr:housenumber": "7",
+      "addr:postcode": "1020",
+      "addr:street": "Chemin du Ch\u00eane",
+      "amenity": "restaurant",
+      "cuisine": "italian",
+      "name": "il Bacio"
+    },
+    "distance_to_station": 958.9736428697349
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5291759,
+    "lon": 6.5901475,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Restaurant du Ch\u00eane"
+    },
+    "distance_to_station": 833.1643157027089
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5227635,
+    "lon": 6.5802756,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:housenumber": "109",
+      "addr:postcode": "1015",
+      "addr:street": "UNIL - B\u00e2timent Unith\u00e8que",
+      "amenity": "restaurant",
+      "cuisine": "regional;italian",
+      "diet:vegetarian": "yes",
+      "fax": "+41 21 692 26 85",
+      "name": "Da Nino",
+      "opening_hours": "Mo, Tu 08:00-15:00; We-Sa 08:00-15:00, 17:30-00:00",
+      "phone": "+41 21 692 26 88",
+      "website": "http://www.nino-dorigny.ch"
+    },
+    "distance_to_station": 360.02490949002936
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5211797,
+    "lon": 6.5740002,
+    "tags": {
+      "amenity": "restaurant",
+      "cuisine": "regional",
+      "name": "Caf\u00e9teria Amphimax"
+    },
+    "distance_to_station": 855.5485449985335
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5237719,
+    "lon": 6.5839948,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Caf\u00e9t\u00e9ria de l'Anthropole"
+    },
+    "distance_to_station": 150.7587640263986
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5221165,
+    "lon": 6.5842811,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Caf\u00e9t\u00e9ria de l'Internef"
+    },
+    "distance_to_station": 74.18767790690703
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5280866,
+    "lon": 6.5900896,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Centre Portugais"
+    },
+    "distance_to_station": 726.6649035657207
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5169411,
+    "lon": 6.5768211,
+    "tags": {
+      "addr:housenumber": "11",
+      "addr:street": "Chemin du Petit-Port",
+      "amenity": "restaurant",
+      "cuisine": "french",
+      "indoor_seating": "yes",
+      "internet_access": "wlan",
+      "name": "Bistrot Du Petit Port",
+      "opening_hours": "PH,Mo-Su 09:00-23:00",
+      "outdoor_seating": "yes"
+    },
+    "distance_to_station": 885.7709351042413
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5241215,
+    "lon": 6.5887888,
+    "tags": {
+      "addr:housenumber": "201",
+      "addr:street": "Route de Chavannes",
+      "amenity": "restaurant",
+      "name": "Restaurant de la Bourdonnette",
+      "opening_hours": "Mo-Fr 08:00-00:00; Sa 09:00-00:00",
+      "phone": "+41 21 625 62 62",
+      "website": "http://www.restaurant-de-la-bourdonnette.com/"
+    },
+    "distance_to_station": 339.42358334015665
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5189326,
+    "lon": 6.57981,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:postcode": "1015",
+      "addr:street": "Route Cantonale",
+      "amenity": "restaurant",
+      "name": "Centre Sport et Sant\u00e9",
+      "operator": "Fit & Fun Saveurs S\u00e0rl",
+      "phone": "+41 21 692 48 75",
+      "self_service": "only",
+      "website": "https://www.unil.ch/restos/fr/home/menuinst/ou-se-restaurer/self-service-du-css.html"
+    },
+    "distance_to_station": 567.1053540806513
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5266133,
+    "lon": 6.5790251,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Restaurant self-service de G\u00e9opolis",
+      "website": "https://geopolis.sv-restaurant.ch/fr/plan-des-menus/"
+    },
+    "distance_to_station": 638.2438160324392
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5227383,
+    "lon": 6.579738,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Restaurant self-service de l'Unith\u00e8que, \"Le R\u00e9fectoire\"",
+      "website": "http://nino-unil.ch/menu-de-la-semaine/"
+    },
+    "distance_to_station": 401.0987576537131
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5288686,
+    "lon": 6.5904091,
+    "tags": {
+      "addr:housenumber": "25",
+      "addr:street": "Rue du Lac",
+      "amenity": "restaurant",
+      "check_date": "2023-08-22",
+      "cuisine": "japanese;sushi;asian",
+      "name": "Takumi",
+      "phone": "+41 21 553 80 81",
+      "website": "https://takumi1020.ch/"
+    },
+    "distance_to_station": 813.448657435314
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5268058,
+    "lon": 6.5741632,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:country": "CH",
+      "addr:housenumber": "8",
+      "addr:postcode": "1022",
+      "addr:street": "Rue de la Mouline",
+      "amenity": "restaurant",
+      "building": "yes",
+      "cuisine": "indian",
+      "name": "Indian Zayeka",
+      "opening_hours": "Tu-Sa 11:30-14:30,18:30-23:00; Mo 18:30-23:00",
+      "phone": "+41 21 691 58 57",
+      "source": "EPFL ortho"
+    },
+    "distance_to_station": 951.7946600408023
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5171956,
+    "lon": 6.595437,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:housenumber": "7",
+      "addr:postcode": "1007",
+      "addr:street": "Chemin du Camping",
+      "amenity": "restaurant",
+      "building": "yes",
+      "name": "La Vaudaire"
+    },
+    "distance_to_station": 1002.9567857782713
+  }
+]

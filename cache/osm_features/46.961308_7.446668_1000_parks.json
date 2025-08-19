@@ -1,0 +1,136 @@
+[
+  {
+    "feature_type": "parks",
+    "lat": 46.9687511,
+    "lon": 7.4398197,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 977.8921275717263
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9526432,
+    "lon": 7.4512394,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 1024.210100719384
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9559065,
+    "lon": 7.4544243,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 842.1121680180547
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9583794,
+    "lon": 7.4540792,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 651.3189047211127
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.957587,
+    "lon": 7.4497761,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 476.55464605385595
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9594587,
+    "lon": 7.4500129,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 327.25196012143414
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9554905,
+    "lon": 7.4448257,
+    "tags": {
+      "leisure": "park",
+      "name": "Lorrainepark",
+      "operator": "Stadt Bern"
+    },
+    "distance_to_station": 661.7794001351425
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9622947,
+    "lon": 7.433864,
+    "tags": {
+      "leaf_cycle": "mixed",
+      "leaf_type": "mixed",
+      "leisure": "park",
+      "name": "Studerstein",
+      "natural": "wood",
+      "sport": "disc_golf"
+    },
+    "distance_to_station": 980.6587955467418
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9632517,
+    "lon": 7.4407567,
+    "tags": {
+      "leisure": "park",
+      "opening_hours": "24/7"
+    },
+    "distance_to_station": 499.0893875473824
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.961913,
+    "lon": 7.4586904,
+    "tags": {
+      "leisure": "park",
+      "name": "Tellplatz"
+    },
+    "distance_to_station": 917.504837208886
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9550217,
+    "lon": 7.4500693,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 745.2840659008797
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9576218,
+    "lon": 7.4573481,
+    "tags": {
+      "dog": "leashed",
+      "leisure": "park",
+      "name": "Kasernenwiese"
+    },
+    "distance_to_station": 910.3673122673314
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9572431,
+    "lon": 7.4487638,
+    "tags": {
+      "access": "yes",
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:postcode": "3013",
+      "leisure": "park",
+      "name": "Breitenrainpark",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 479.24744539049055
+  }
+]

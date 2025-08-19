@@ -1,0 +1,1287 @@
+[
+  {
+    "feature_type": "offices",
+    "lat": 46.9409128,
+    "lon": 7.4316519,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:floor": "12",
+      "addr:housenumber": "5",
+      "addr:postcode": "3007",
+      "addr:street": "Eigerplatz",
+      "contact:addr:full": "Eigerplatz 5, 3007 Bern",
+      "contact:email": "embajada@embachile.ch",
+      "contact:fax": "+41 31 3700055",
+      "contact:phone": "+41 31 3700050",
+      "country": "CL",
+      "diplomatic": "embassy",
+      "embassy": "yes",
+      "name": "Botschaft Chile",
+      "name:de": "Botschaft Chile",
+      "name:en": "Embassy Chile",
+      "name:es": "Embajada Chile",
+      "name:fr": "Ambassade Chili",
+      "name:it": "Ambasciata Cile",
+      "office": "diplomatic",
+      "opening_hours": "Mo-Fr 09:00-17:00; Sa-Su off",
+      "source": "http://www.eda.admin.ch/eda/de/home/reps/forrep/hidden/c_124.html",
+      "target": "CH",
+      "website": "http://chileabroad.gov.cl/suiza/berne",
+      "wikidata": "Q26979989"
+    },
+    "distance_to_station": 455.19729160348965
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9409724,
+    "lon": 7.4316985,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:floor": "11",
+      "addr:housenumber": "5",
+      "addr:postcode": "3007",
+      "addr:street": "Eigerplatz",
+      "alt_name": "Botschaft Ungarn - Konsulat",
+      "contact:addr:full": "Eigerplatz 5, 3007 Bern",
+      "contact:email": "consulate.brc@mfa.gov.hu",
+      "contact:fax": "+41 31 3711355",
+      "contact:phone": "+41 31 3717114",
+      "country": "HU",
+      "diplomatic": "consulate",
+      "name": "Konsulat Ungarn",
+      "name:de": "Konsulat Ungarn",
+      "name:en": "Consulate Hungary",
+      "office": "diplomatic",
+      "opening_hours": "Mo off; Tu-Fr 10:00-12:00; Sa-Su off",
+      "source": "http://www.eda.admin.ch/eda/de/home/reps/forrep/hidden/c_151.html",
+      "target": "CH",
+      "website": "https://bern.mfa.gov.hu/page/elerhetoseg-megkoezelites"
+    },
+    "distance_to_station": 450.7753701565454
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.945753,
+    "lon": 7.4327655,
+    "tags": {
+      "office": "yes"
+    },
+    "distance_to_station": 307.7677789109844
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9456113,
+    "lon": 7.4337333,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "11",
+      "addr:postcode": "3007",
+      "addr:street": "Belpstrasse",
+      "contact:addr:full": "Belpstrasse 11, 3007 Bern",
+      "contact:email": "info@ghanaembassy.ch",
+      "contact:fax": "+41 31 381 49 41",
+      "contact:phone": "+41 31 381 78 52",
+      "contact:website": "http://www.ghanaembassy.ch/",
+      "country": "GH",
+      "diplomatic": "embassy",
+      "embassy": "yes",
+      "name": "Botschaft Ghana",
+      "name:de": "Botschaft Ghana",
+      "name:en": "Embassy Ghana",
+      "name:fr": "Ambassade du Ghana",
+      "office": "diplomatic",
+      "opening_hours": "Mo-Th 09:30-12:30,14:00-17:00; Fr 14:00-17:00",
+      "source": "https://www.eda.admin.ch/eda/de/home/vertretungen-und-reisehinweise/ghana/ghana-vertretunginderschweiz.html",
+      "target": "CH",
+      "wikidata": "Q26979966"
+    },
+    "distance_to_station": 370.85721428992224
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9435274,
+    "lon": 7.4342671,
+    "tags": {
+      "alt_name": "PBI Schweiz",
+      "contact:addr": "Gutenbergstrasse 35, 3011 Bern",
+      "contact:email": "info@peacebrigades.ch",
+      "contact:phone": "+41 31 3724444",
+      "contact:website": "https://www.peacebrigades.ch/de/ueber-pbi/kontakt-aufnehmen",
+      "name": "Peace Brigades International Schweiz",
+      "office": "ngo",
+      "source": "Survey and website",
+      "website": "https://www.peacebrigades.ch"
+    },
+    "distance_to_station": 412.16753385334476
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9435982,
+    "lon": 7.4348061,
+    "tags": {
+      "alt_name": "Weblaw AG, Bern",
+      "email": "info@weblaw.ch",
+      "fax": "+41 31 3805778",
+      "name": "Weblaw",
+      "office": "lawyer",
+      "operator": "Weblaw AG",
+      "phone": "+41 31 3805777",
+      "website": "http://www.weblaw.ch"
+    },
+    "distance_to_station": 449.4299940492617
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9456873,
+    "lon": 7.4304323,
+    "tags": {
+      "contact:addr": "Effingerstrasse 41, 3008 Bern",
+      "contact:facebook": "https://www.facebook.com/massage4workers",
+      "email": "info@massage4workers.ch",
+      "name": "Massage4Workers",
+      "office": "therapist",
+      "opening_hours": "Mo-Tu off; We 16:30-20:00; Th 09:00-22:00; Fr 08:00-21:00; Sa 08:00-17:00; Su off",
+      "operator": "massage4workers GmbH",
+      "phone": "+41 79 7045539",
+      "source": "website",
+      "website": "https://www.massage4workers.ch/"
+    },
+    "distance_to_station": 158.1624536267623
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9450327,
+    "lon": 7.4300335,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "29",
+      "addr:postcode": "3007",
+      "addr:street": "Zieglerstrasse",
+      "alt_name": "Kolumbianische Botschaft",
+      "contact:addr:full": "Zieglerstrasse 29, 3007 Bern",
+      "contact:email": "esuiza@cancilleria.gov.co",
+      "contact:fax": "+41 31 3501409",
+      "contact:phone": "+41 31 3501400",
+      "country": "CO",
+      "diplomatic": "embassy",
+      "embassy": "yes",
+      "name": "Botschaft Kolumbien",
+      "name:de": "Botschaft Kolumbien",
+      "name:es": "Embajada de Colombia",
+      "name:fr": "Ambassade de Colombie",
+      "office": "diplomatic",
+      "opening_hours": "Mo-Fr 08:30-13:00, 14:30-18:00; Sa-Su off; PH off",
+      "source": "survey and https://www.eda.admin.ch/eda/de/home/vertretungen-und-reisehinweise/kolumbien/kolumbien-vertretunginderschweiz.html",
+      "target": "CH",
+      "website": "https://suiza.embajada.gov.co/",
+      "wikidata": "Q26979991"
+    },
+    "distance_to_station": 86.7658938076139
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9468187,
+    "lon": 7.4288311,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "26",
+      "addr:postcode": "3008",
+      "addr:street": "Schl\u00f6sslistrasse",
+      "contact:email": "vietsuisse@bluewin.ch",
+      "contact:fax": "+41 31 3887879",
+      "contact:phone": "+41 31 3887872",
+      "country": "VN",
+      "diplomatic": "embassy",
+      "embassy": "yes",
+      "name": "Botschaft Vietnam",
+      "name:de": "Botschaft Vietnam",
+      "name:en": "Embassy Vietnam",
+      "name:es": "Embajada Vietnam",
+      "name:fr": "Ambassade Vi\u00eat Nam",
+      "name:it": "Ambasciata Vietnam",
+      "office": "diplomatic",
+      "opening_hours": "Mo-Fr 08:30-12:00,14:00-17:30; Sa-Su off",
+      "source": "http://www.eda.admin.ch/eda/de/home/reps/forrep/hidden/c_208.html",
+      "target": "CH",
+      "website": "https://www.vietnamembassy-switzerland.org/",
+      "wikidata": "Q26979960"
+    },
+    "distance_to_station": 246.41993762107182
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9431998,
+    "lon": 7.4348151,
+    "tags": {
+      "check_date": "2025-05-25",
+      "name": "SRF Schweizer Radio und Fernsehen",
+      "office": "publisher",
+      "short_name": "SRF"
+    },
+    "distance_to_station": 463.1442831376473
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9442191,
+    "lon": 7.4296008,
+    "tags": {
+      "alt_name": "GLUE Software Engineering",
+      "contact:addr": "Zieglerstrasse 34, 3007 Bern",
+      "contact:email": "info@glue.ch",
+      "contact:fax": "+41 31 3853018",
+      "contact:phone": "+41 31 3853011",
+      "name": "GLUE",
+      "office": "it",
+      "operator": "GLUE Software Engineering AG",
+      "source": "website",
+      "website": "https://www.glue.ch/"
+    },
+    "distance_to_station": 58.97143803293397
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9435579,
+    "lon": 7.4327731,
+    "tags": {
+      "alt_name": "Puzzle ITC",
+      "contact:addr": "Belpstrasse 37, 3007 Bern",
+      "contact:email": "info@puzzle.ch",
+      "contact:fax": "+41 31 3702201",
+      "contact:phone": "+41 31 3702200",
+      "level": "3",
+      "name": "Puzzle ITC",
+      "office": "it",
+      "opening_hours": "Mo-Fr 08:00-12:00, 13:00-17:00",
+      "operator": "Puzzle ITC AG",
+      "source": "knowledge",
+      "website": "https://www.puzzle.ch"
+    },
+    "distance_to_station": 304.16391192005125
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9414585,
+    "lon": 7.431387,
+    "tags": {
+      "alt_name": "Bernmobil Direktion",
+      "brand": "Bernmobil",
+      "check_date": "2025-05-26",
+      "contact:addr": "Eigerplatz 3, 3007 Bern",
+      "contact:email": "info@bernmobil.ch",
+      "contact:fax": "+41 31 3218618",
+      "contact:phone": "+41 31 3218844",
+      "contact:website": "https://www.bernmobil.ch/Seiten/konntakt/kontaktformular/?oid",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Bernmobil_Logo.svg/1000px-Bernmobil_Logo.svg.png",
+      "name": "BERNMOBIL",
+      "office": "company",
+      "operator": "SVB",
+      "source": "survey and website",
+      "website": "https://www.bernmobil.ch",
+      "wikidata": "Q681700",
+      "wikimedia_commons": "Category:Bernmobil",
+      "wikipedia": "de:BERNMOBIL"
+    },
+    "distance_to_station": 391.8465567632877
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9415092,
+    "lon": 7.4314755,
+    "tags": {
+      "alt_name": "Bahn + Bus Beratung 3B",
+      "consulting": "public_transport",
+      "contact:addr": "Eigerplatz 3, 3007 Bern",
+      "contact:email": "info@3b-ag.ch",
+      "contact:fax": "+41 31 3218780",
+      "contact:phone": "+41 31 3218787",
+      "contact:website": "http://3b-ag.ch/de/kontakt/index.php",
+      "name": "3B",
+      "office": "consulting",
+      "operator": "Bahn + Bus Beratung AG 3B",
+      "source": "survey and website",
+      "website": "http://www.3b-ag.ch"
+    },
+    "distance_to_station": 389.9108924479291
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9471831,
+    "lon": 7.4332081,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "27",
+      "addr:postcode": "3008",
+      "addr:street": "Laupenstrasse",
+      "contact:email": "info@finma.ch",
+      "contact:fax": "+41 31 3279101",
+      "contact:phone": "+41 31 3279100",
+      "name": "Eidgen\u00f6ssische Finanzmarktaufsicht FINMA",
+      "name:de": "Eidgen\u00f6ssische Finanzmarktaufsicht FINMA",
+      "name:en": "Swiss Financial Market Supervisory Authority FINMA",
+      "name:fr": "Autorit\u00e9 f\u00e9d\u00e9rale de surveillance des march\u00e9s financiers FINMA",
+      "name:it": "Autorit\u00e0 federale di vigilanza sui mercati finanziari FINMA",
+      "office": "government",
+      "opening_hours": "Mo-Fr 08:00-12:00; Sa-Su off; PH off",
+      "short_name": "FINMA",
+      "website": "https://www.finma.ch",
+      "wikidata": "Q681362",
+      "wikipedia": "de:Eidgen\u00f6ssische Finanzmarktaufsicht"
+    },
+    "distance_to_station": 424.7704608580949
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9437117,
+    "lon": 7.4272944,
+    "tags": {
+      "contact:addr": "Brunnhofweg 47, 3007 Bern",
+      "contact:phone": "+41 31 380 10 90",
+      "name": "Volltreffer",
+      "office": "employment_agency",
+      "opening_hours:phone": "Mo-Fr 08:30-11:30, 13:30-16:00",
+      "operator": "Personal K\u00e4nel AG",
+      "website": "https://www.personalkaenel.ch"
+    },
+    "distance_to_station": 167.9275796573805
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.943393,
+    "lon": 7.4304696,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "45",
+      "addr:postcode": "3007",
+      "addr:street": "Zieglerstrasse",
+      "contact:addr": "Zieglerstrasse 45, 3007 Bern",
+      "contact:email": "info@nigerianbern.org",
+      "contact:fax": "+41 31 3842626",
+      "contact:phone": "+41 31 3842600",
+      "country": "NG",
+      "diplomatic": "embassy",
+      "embassy": "yes",
+      "name": "Botschaft Nigeria",
+      "name:en": "Embassy Nigeria",
+      "name:es": "Embajada Nigeria",
+      "name:fr": "Ambassade Nig\u00e9ria",
+      "name:it": "Ambasciata Nigeria",
+      "office": "diplomatic",
+      "opening_hours": "Mo-Fr 09:00-12:00, 13:00-17:00; Sa-Su off",
+      "source": "survey and https://www.eda.admin.ch/eda/de/home/vertretungen-und-reisehinweise/nigeria/nigeria-vertretunginderschweiz.html#par",
+      "target": "CH",
+      "website": "https://www.nigerianbern.org/",
+      "wikidata": "Q26979970"
+    },
+    "distance_to_station": 171.76345549776926
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9423832,
+    "lon": 7.4307162,
+    "tags": {
+      "contact:addr": "F\u00fcllerichstrasse 53, 3073 Muri",
+      "contact:email": "info@anischglobal.ch",
+      "contact:mobile": "+41 79 5765555",
+      "contact:phone": "+41 31 9115858",
+      "name": "Anisch Global",
+      "office": "travel_agent",
+      "operator": "Anisch Global AG",
+      "source": "survey and website",
+      "website": "https://www.anischglobal.ch"
+    },
+    "distance_to_station": 277.1064083875533
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9436826,
+    "lon": 7.4337958,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "31",
+      "addr:postcode": "3007",
+      "addr:street": "Schwarztorstrasse",
+      "alt_name": "Botschaft Vereinigte Emirate",
+      "alt_name:de": "Botschaft Vereinigte Emirate",
+      "alt_name:en": "Emirati Embassy",
+      "contact:addr": "Schwarztorstrasse 31, 3007 Bern",
+      "contact:email": "bernemb@mofa.gov.ae",
+      "contact:fax": "+41 844 888 888",
+      "contact:phone": "+41 31 3121710",
+      "country": "AE",
+      "diplomatic": "embassy",
+      "diplomatic:services:citizen_services": "yes",
+      "embassy": "yes",
+      "name": "Botschaft der Vereinigten Arabischen Emirate",
+      "name:ar": "\u0633\u0641\u0627\u0631\u0629 \u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629",
+      "name:de": "Botschaft der Vereinigten Arabischen Emirate",
+      "name:en": "Embassy of the United Arab Emirates",
+      "name:es": "Embajada de Emiratos \u00c1rabes Unidos",
+      "name:fr": "Ambassade des \u00c9mirats arabes unis",
+      "name:it": "Ambasciata degli Emirati Arabi Uniti",
+      "name:nl": "Ambassade van de Verenigde Arabische Emiraten",
+      "name:pl": "Ambasada Zjednoczonych Emirat\u00f3w Arabskich",
+      "name:pt": "Embaixada dos Emirados \u00c1rabes Unidos",
+      "name:ro": "Ambasada Emiratelor Arabe Unite",
+      "name:ru": "\u041f\u043e\u0441\u043e\u043b\u044c\u0441\u0442\u0432\u043e \u041e\u0431\u044a\u0435\u0434\u0438\u043d\u0435\u043d\u043d\u044b\u0445 \u0410\u0440\u0430\u0431\u0441\u043a\u0438\u0445 \u042d\u043c\u0438\u0440\u0430\u0442\u043e\u0432",
+      "name:se": "F\u00f6renade Arabemiratens ambassad",
+      "name:sr": "\u0430\u043c\u0431\u0430\u0441\u0430\u0434\u0430 \u0423\u0458\u0435\u0434\u0438\u045a\u0435\u043d\u0438\u0445 \u0410\u0440\u0430\u043f\u0441\u043a\u0438\u0445 \u0415\u043c\u0438\u0440\u0430\u0442\u0430",
+      "name:tr": "Birle\u015fik Arap Emirlikleri B\u00fcy\u00fckel\u00e7ili\u011fi",
+      "name:zh": "\u963f\u62c9\u4f2f\u806f\u5408\u914b\u9577\u570b\u5927\u4f7f\u9928",
+      "note": "https://www.eda.admin.ch/eda/de/home/vertretungen-und-reisehinweise/vereinigte-arabischeemirate/vereinigte-arabischeemiratevertretunginderschweiz.html#par",
+      "office": "diplomatic",
+      "opening_hours": "Mo-Fr 09:00-16:00; Sa-Su off; PH off",
+      "short_name": "VAE Botschaft",
+      "short_name:de": "VAE Botschaft",
+      "short_name:en": "UAE Embassy",
+      "short_name:ru": "\u041f\u043e\u0441\u043e\u043b\u044c\u0441\u0442\u0432\u043e \u041e\u0410\u042d",
+      "source": "Survey and website EDA",
+      "target": "CH",
+      "wikidata": "Q26995384"
+    },
+    "distance_to_station": 372.9598371858776
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9455345,
+    "lon": 7.4337865,
+    "tags": {
+      "brand": "Allianz",
+      "brand:wikidata": "Q487292",
+      "name": "Allianz",
+      "office": "insurance"
+    },
+    "distance_to_station": 372.26001548664857
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.94362,
+    "lon": 7.4354308,
+    "tags": {
+      "contact:addr": "Monbijoustrasse 34, 3011 Bern",
+      "contact:email": "info@mathysanwaltsbuero.ch",
+      "contact:fax": "+41 31 3701013",
+      "contact:phone": "+41 31 3701012",
+      "contact:website": "http://www.mathysanwaltsbuero.ch/index.php?DE&kontakt&sid=110&art=k",
+      "name": "Mathys Anwalts B\u00fcro",
+      "office": "lawyer",
+      "owner": "Daniela Mathys F\u00fcrsprecherin",
+      "website": "https://www.mathysanwaltsbuero.ch/"
+    },
+    "distance_to_station": 494.94485303193943
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9461638,
+    "lon": 7.4341864,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "20",
+      "addr:postcode": "3003",
+      "addr:street": "Effingerstrasse",
+      "name": "Bundesamt f\u00fcr Sozialversicherungen",
+      "office": "government",
+      "wikidata": "Q1005485"
+    },
+    "distance_to_station": 424.8762778030009
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9456969,
+    "lon": 7.433064,
+    "tags": {
+      "contact:addr": "Effingerstrasse 27, 3008 Bern",
+      "contact:email": "DEZA-hh@eda.admin.ch",
+      "contact:phone": "+41 58 4623124",
+      "contact:post_addr": "Effingerstrasse 27, 3003 Bern",
+      "name": "SDC Humanitarian Aid",
+      "office": "government",
+      "short_name": "SKH",
+      "short_name:de": "SKH",
+      "short_name:en": "SHA",
+      "website": "https://www.eda.admin.ch/deza/de/home/aktivitaeten_projekte/aktivitaeten/humanitaere_hilfe/skh.html"
+    },
+    "distance_to_station": 326.16946661957724
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9442452,
+    "lon": 7.4319588,
+    "tags": {
+      "contact:addr": "Schwarztorstrasse 51, 3007 Bern",
+      "contact:email": "ebg@ebg.admin.ch",
+      "contact:fax": "+41 58 4629281",
+      "contact:phone": "+41 58 4626843",
+      "contact:twitter": "https://twitter.com/EBG_BFEG_UFU",
+      "government": "administrative",
+      "name": "Eidgen\u00f6ssisches B\u00fcro f\u00fcr die Gleichstellung von Frau und Mann EGB",
+      "name:de": "Eidgen\u00f6ssisches B\u00fcro f\u00fcr die Gleichstellung von Frau und Mann EGB",
+      "name:en": "Federal Office for Gender Equality",
+      "name:fr": "Bureau f\u00e9d\u00e9ral de l'\u00e9galit\u00e9 entre femmes et hommes BFEG",
+      "name:it": "Ufficio federale per l'uguaglianza fra donna e uomo UFU",
+      "office": "government",
+      "source": "Survey and website",
+      "website": "https://www.ebg.admin.ch/ebg/de/home.html",
+      "wikidata": "Q33121067"
+    },
+    "distance_to_station": 222.7038394239346
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9438013,
+    "lon": 7.4334485,
+    "tags": {
+      "contact:addr": "Schwarztorstrasse 31, 3007 Bern",
+      "contact:email": "denkmalpflege@be.ch",
+      "contact:phone": "+41 31 6334030",
+      "government": "public_service",
+      "name": "Denkmalpflege des Kantons Bern",
+      "name:de": "Denkmalpflege des Kantons Bern",
+      "name:en": "Monument preservation service of the canton of Bern",
+      "name:fr": "Service des monuments historiques du canton de Berne",
+      "office": "government",
+      "source": "Survey and website",
+      "website": "https://www.kultur.bkd.be.ch/de/start/themen/denkmalpflege.html",
+      "wikidata": "Q27479792"
+    },
+    "distance_to_station": 344.01743204620794
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9424048,
+    "lon": 7.4325528,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "5",
+      "addr:postcode": "3007",
+      "addr:street": "Mattenhofstrasse",
+      "description": "1. Hilfe im digitalen Alltag: Support, Beratung & Schulung",
+      "email": "info@computerhilfe-bern.ch",
+      "level": "6",
+      "name": "Computerhilfe Bern",
+      "office": "it",
+      "opening_hours": "Mo-Fr 09:00-17:00",
+      "payment:cards": "yes",
+      "payment:cash": "yes",
+      "phone": "+41 76 502 09 90",
+      "website": "https://computerhilfe-bern.ch"
+    },
+    "distance_to_station": 360.2916582811614
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9449591,
+    "lon": 7.4235727,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "127",
+      "addr:postcode": "3007",
+      "addr:street": "Schwarztorstrasse",
+      "name": "Gesellschafterin Lang",
+      "office": "therapist",
+      "website": "https://www.diegesellschafterin.ch/"
+    },
+    "distance_to_station": 419.42572004923545
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9437855,
+    "lon": 7.435489,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "30/32",
+      "addr:postcode": "3001",
+      "addr:street": "Monbijoustrasse",
+      "check_date": "2025-06-12",
+      "contact:email": "info@dobiaschofsky.com",
+      "contact:fax": "+41 31 5601070",
+      "contact:phone": "+41 31 5601060",
+      "name": "Dobiaschofsky",
+      "office": "auctioneer",
+      "opening_hours": "Mo-Fr 09:00-12:00, 14:00-17:00; Sa-Su off; PH off",
+      "operator": "Dobiaschofsky Auktionen AG",
+      "owner": "Dobiaschofsky Auktionen AG",
+      "website": "https://www.dobiaschofsky.com",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 495.525332996523
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9445128,
+    "lon": 7.4287936,
+    "tags": {
+      "contact:addr": "Schwarztorstrasse 71, 3007 Bern",
+      "email": "sozialamt@bern.ch",
+      "government": "social_services",
+      "name": "Sozialamt der Stadt Bern",
+      "office": "government",
+      "opening_hours": "Mo-We 08:30-11:30,14:00-17:00; Th 14:00-17:00; Fr 08:30-11:30,14:00-16:00",
+      "phone": "+41 31 3216347",
+      "website": "https://www.bern.ch/politik-und-verwaltung/stadtverwaltung/bss/sozialamt"
+    },
+    "distance_to_station": 23.80599258786077
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9434297,
+    "lon": 7.4324846,
+    "tags": {
+      "contact:addr": "Belpstrasse 39, 3007 Bern",
+      "contact:email": "info@xeloba.ch",
+      "contact:phone": "+41 31 8390404",
+      "name": "Xeloba",
+      "office": "consulting",
+      "operator": "Xeloba GmbH",
+      "source": "survey and website",
+      "website": "https://xeloba.ch"
+    },
+    "distance_to_station": 290.22342067151556
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9424506,
+    "lon": 7.4323996,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "5",
+      "addr:postcode": "3007",
+      "addr:street": "Mattenhofstrasse",
+      "consulting": "websupport;it-support",
+      "description": "Digitale Full Service Agentur, Web- und IT-Support f\u00fcr Private, Gewerbe und KMU.",
+      "email": "info@luc.net",
+      "level": "6",
+      "name": "luc.net | digital und internett",
+      "office": "consulting",
+      "opening_hours": "Mo-Fr 09:00-17:00",
+      "phone": "+41765020990",
+      "smoking": "separated",
+      "start_date": "01.01.2017",
+      "website": "https://luc.net"
+    },
+    "distance_to_station": 348.32739486605635
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9465118,
+    "lon": 7.4349967,
+    "tags": {
+      "contact:addr": "Seilerstrasse 8, 3011 Bern",
+      "contact:email": "info@mimacom.com",
+      "contact:phone": "+41 31 329 09 00",
+      "name": "mimacom",
+      "office": "it",
+      "operator": "mimacom ag",
+      "website": "https://www.mimacom.com"
+    },
+    "distance_to_station": 496.9172710317566
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9440464,
+    "lon": 7.4310045,
+    "tags": {
+      "amenity": "archive",
+      "contact:addr": "Villettemattstrasse 9, 3007 Bern",
+      "contact:email": "info@agrararchiv.ch",
+      "contact:phone": "+41 31 9117255",
+      "name": "Archiv f\u00fcr Agrargeschichte",
+      "name:de": "Archiv f\u00fcr Agrargeschichte",
+      "name:en": "Archives of rural history",
+      "name:fr": "Archives de l'histoire rurale",
+      "office": "association",
+      "operator": "Verein Archiv f\u00fcr Agrargeschichte",
+      "short_name": "AFA",
+      "short_name:de": "AFA",
+      "short_name:en": "ARH",
+      "short_name:fr": "AHR",
+      "website": "https://www.histoirerurale.ch",
+      "wikidata": "Q27479780"
+    },
+    "distance_to_station": 159.343386651343
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9461884,
+    "lon": 7.4307884,
+    "tags": {
+      "contact:addr": "Effingerstrasse 40, 3008 Bern",
+      "contact:facebook": "http://www.facebook.com/krebsliga",
+      "contact:instagram": "http://www.instagram.com/krebsliga",
+      "contact:twitter": "http://www.twitter.com/krebsliga",
+      "email": "info@krebsliga.ch",
+      "fax": "+41 31 389 91 60",
+      "name": "Krebsliga Schweiz",
+      "office": "ngo",
+      "operator": "Verein Krebsliga Schweiz",
+      "phone": "+41 31 389 91 00",
+      "website": "https://www.krebsliga.ch/"
+    },
+    "distance_to_station": 218.6093668407708
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9444825,
+    "lon": 7.4224989,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "123",
+      "addr:postcode": "3007",
+      "addr:street": "Schwarztorstrasse",
+      "name": "Assicurama AG",
+      "office": "financial",
+      "website": "https://www.assicurama.ch/"
+    },
+    "distance_to_station": 499.3283465174252
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.944475,
+    "lon": 7.4239495,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "115",
+      "addr:postcode": "3007",
+      "addr:street": "Schwarztorstrasse",
+      "check_date": "2023-08-05",
+      "name": "Alpha Home GmbH",
+      "office": "cleaning",
+      "opening_hours": "Mo-Fr 08:00-17:00",
+      "phone": "+41 31 558 58 24",
+      "website": "https://alpha-home.ch/"
+    },
+    "distance_to_station": 389.2952158304322
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.944191,
+    "lon": 7.4322401,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "24",
+      "addr:postcode": "3007",
+      "addr:street": "Belpstrasse",
+      "name": "Zentrum f\u00fcr Schwerh\u00f6rige und Geh\u00f6rlose Bern",
+      "office": "association",
+      "website": "https://www.walkerhaus.ch/"
+    },
+    "distance_to_station": 244.8063075259837
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9436506,
+    "lon": 7.4295496,
+    "tags": {
+      "contact:addr": "Mattenhofstrasse 28, 3007 Bern",
+      "contact:phone": "+41 31 398 70 10",
+      "name": "Rotstift",
+      "office": "lector",
+      "operator": "Rotstift AG",
+      "website": "https://www.rotstift-ag.ch"
+    },
+    "distance_to_station": 112.50047498732364
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.940892,
+    "lon": 7.4275459,
+    "tags": {
+      "level": "0",
+      "name": "ProCap",
+      "office": "association",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 429.25977966265424
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9435516,
+    "lon": 7.4298659,
+    "tags": {
+      "contact:addr": "Zieglerstrasse 44, 3007 Bern",
+      "contact:fax": "+41 31 5331101",
+      "contact:phone": "+41 31 5331100",
+      "name": "Institut f\u00fcr Kindsvertretung",
+      "office": "lawyer",
+      "operator": "Institut f\u00fcr Kindsvertretung GmbH",
+      "website": "https://kindsvertretung.ch"
+    },
+    "distance_to_station": 132.03837936270855
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9436045,
+    "lon": 7.4298504,
+    "tags": {
+      "contact:addr": "Zieglerstrasse 44, 3007 Bern",
+      "name": "Institut f\u00fcr Opfervertretung",
+      "office": "lawyer"
+    },
+    "distance_to_station": 126.27609907269007
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9435773,
+    "lon": 7.429956,
+    "tags": {
+      "contact:addr": "Zieglerstrasse 44, 3007 Bern",
+      "name": "Sollberger Immo",
+      "office": "estate_agent"
+    },
+    "distance_to_station": 132.81446783359777
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9465889,
+    "lon": 7.4302511,
+    "tags": {
+      "name": "Emch+Berger Holding AG",
+      "office": "company",
+      "operator": "Emch+Berger Holding AG",
+      "website": "https://www.emchberger.ch/"
+    },
+    "distance_to_station": 237.6210955973211
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9450463,
+    "lon": 7.4294151,
+    "tags": {
+      "contact:addr": "Gartenstrasse 1, 3007 Bern",
+      "contact:email": "ebic.bern@emchberger.ch",
+      "contact:instagram": "https://www.instagram.com/emchberger",
+      "contact:linkedin": "https://ch.linkedin.com/company/emchberger",
+      "contact:phone": "+41 58 4517111",
+      "name": "Emch+Berger ImmoConsult",
+      "office": "consulting",
+      "operator": "Emch+Berger ImmoConsult AG",
+      "website": "https://www.emchberger.ch/de/emchberger-immoconsult-ag"
+    },
+    "distance_to_station": 55.113479349972714
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9449583,
+    "lon": 7.4300553,
+    "tags": {
+      "alt_name": "Atupri Hauptsitz",
+      "contact:addr": "Zieglerstrasse 29, 3007 Bern",
+      "contact:facebook": "AtupriSchweiz",
+      "contact:instagram": "atupri.ch",
+      "contact:twitter": "atupri_ch",
+      "description": "Hauptsitz",
+      "email": "info@atupri.ch",
+      "name": "Atupri",
+      "office": "health_insurance",
+      "opening_hours": "Mo-Fr 08:00-17:00; Sa-Su off; PH off",
+      "phone": "+41 31 555 09 11",
+      "website": "https://www.atupri.ch/de/kontakt/hauptsitz"
+    },
+    "distance_to_station": 84.02808585554914
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9449684,
+    "lon": 7.4294205,
+    "tags": {
+      "alt_name": "Atupri Service Center Bern",
+      "contact:addr": "Gartenstrasse 1, 3007 Bern",
+      "contact:facebook": "https://www.facebook.com/AtupriSchweiz/",
+      "contact:instagram": "https://www.instagram.com/atupri.ch/",
+      "contact:phone": "+41 800200888",
+      "contact:twitter": "https://twitter.com/atupri_ch",
+      "level": "0",
+      "name": "Atupri Service Center",
+      "office": "health_insurance",
+      "operator": "Atupri Gesunheitsversicherungen",
+      "website": "https://www.atupri.ch/de/kontakt/service-center"
+    },
+    "distance_to_station": 47.86595467247558
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9472739,
+    "lon": 7.4302928,
+    "tags": {
+      "contact:addr": "Laupenstrasse 45, 3008 Bern",
+      "contact:email": "info@garaio.com",
+      "contact:facebook": "https://www.facebook.com/GARAIOAG",
+      "contact:linkedin": "https://www.linkedin.com/company/garaio-ag",
+      "contact:phone": "+41 58 3107000",
+      "name": "Garaio Labs",
+      "office": "it",
+      "operator": "Garaio AG",
+      "website": "https://www.garaio.com"
+    },
+    "distance_to_station": 310.45487852193645
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.942609,
+    "lon": 7.4306561,
+    "tags": {
+      "name": "CURAVIVA Schweiz",
+      "office": "organization",
+      "phone": "+41 31 385 33 33",
+      "website": "https://www.curaviva.ch/"
+    },
+    "distance_to_station": 252.7337103579865
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9425878,
+    "lon": 7.4307358,
+    "tags": {
+      "name": "Allreal Generalunternehmung AG",
+      "office": "estate_agent",
+      "phone": "+41 31 917 18 88"
+    },
+    "distance_to_station": 257.7175677165527
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.942502,
+    "lon": 7.4307542,
+    "tags": {
+      "name": "BESA Care AG",
+      "office": "it",
+      "phone": "+41 31 385 33 90",
+      "website": "https://www.besacare.ch/"
+    },
+    "distance_to_station": 266.74292434154006
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9424882,
+    "lon": 7.4306748,
+    "tags": {
+      "name": "INSOS Schweiz",
+      "office": "organization",
+      "phone": "+41 31 385 33 00",
+      "website": "https://www.insos.ch/"
+    },
+    "distance_to_station": 265.2765863442434
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9448544,
+    "lon": 7.4314185,
+    "tags": {
+      "name": "Eidgen\u00f6ssische Steuerverwaltung",
+      "office": "tax"
+    },
+    "distance_to_station": 180.06895370713568
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9457392,
+    "lon": 7.4339693,
+    "tags": {
+      "name": "Spoud",
+      "office": "it",
+      "website": "https://spoud.io"
+    },
+    "distance_to_station": 392.30379189973087
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9453582,
+    "lon": 7.4299921,
+    "tags": {
+      "alt_name": "W2H Architekten",
+      "contact:addr": "Haslerstrasse 30, 3008 Bern",
+      "contact:email": "info@w2h.ch",
+      "contact:fax": "+41 31 3704042",
+      "contact:phone": "+41 31 3704040",
+      "name": "W2H",
+      "office": "architect",
+      "operator": "W2H Architekten AG",
+      "website": "https://www.w2h.ch"
+    },
+    "distance_to_station": 108.63852898446697
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.941867,
+    "lon": 7.4288267,
+    "tags": {
+      "addr:full": "Tscharnerstrasse 29, 3008 Bern",
+      "check_date": "2024-10-19",
+      "description:de": "Schulungsr\u00e4ume Verkehrsfachschule Schweiz",
+      "name": "BildungsCenter Bernmobil",
+      "office": "education",
+      "website": "https://www.verkehrsfachschule.ch/kontakt"
+    },
+    "distance_to_station": 305.4512738534054
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9457205,
+    "lon": 7.4344624,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "17",
+      "addr:postcode": "3008",
+      "addr:street": "Effingerstrasse",
+      "email": "gwk@gwk-law.ch",
+      "fax": "+41 31 511 60 31",
+      "name": "GWK LAW AG - Rechtsanw\u00e4lte",
+      "office": "lawyer",
+      "phone": "+41 31 511 60 30",
+      "website": "https://www.gwk-law.ch/"
+    },
+    "distance_to_station": 427.3249254125051
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.947613,
+    "lon": 7.4278252,
+    "tags": {
+      "alt_name": "Swiss Institute for Translational and Entrepreneurial Medicine",
+      "contact:addr": "Freiburgstrasse 3, 3010 Bern",
+      "contact:email": "info@sitem-insel.ch",
+      "contact:facebook": "https://www.facebook.com/siteminsel",
+      "contact:linkedin": "https://www.linkedin.com/company/sitem-inselag",
+      "contact:phone": "+41 31 6646000",
+      "name": "sitem-insel",
+      "office": "company",
+      "operator": "sitem-insel AG",
+      "website": "https://sitem-insel.ch"
+    },
+    "distance_to_station": 347.2402782018354
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9449853,
+    "lon": 7.4299542,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "29",
+      "addr:postcode": "3007",
+      "addr:street": "Zieglerstrasse",
+      "name": "4H Hochuli & Partner",
+      "office": "consulting",
+      "phone": "+41 31 350 11 15",
+      "website": "https://4hplus.ch/"
+    },
+    "distance_to_station": 78.85696333201646
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9426623,
+    "lon": 7.4317953,
+    "tags": {
+      "email": "info@koda.ch",
+      "fax": "+41 31 390 92 34",
+      "name": "KODA",
+      "office": "therapist",
+      "opening_hours": "Mo-Fr 08:00-11:10,14:00-17:00",
+      "phone": "+41 31 390 92 22",
+      "website": "https://www.koda.ch/"
+    },
+    "distance_to_station": 299.21211304613183
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9423128,
+    "lon": 7.4310959,
+    "tags": {
+      "addr:housenumber": "48",
+      "addr:street": "Belpstrasse",
+      "check_date": "2025-05-26",
+      "name": "IUB Engineering AG",
+      "office": "company",
+      "phone": "+41313571111"
+    },
+    "distance_to_station": 297.8962478839975
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.944913,
+    "lon": 7.4352232,
+    "tags": {
+      "alt_name": "Zahnmanufaktur Zimmermann & M\u00e4der AG",
+      "check_date": "2025-02-16",
+      "contact:addr": "Gutenbergstrasse 14, 3011 Bern",
+      "contact:email": "info@zmdental.ch",
+      "contact:facebook": "https://de-de.facebook.com/Zahnmanufaktur-Zimmermann-M\u00e4der-AG-334552549964962",
+      "contact:fax": "+41 31 3115634",
+      "contact:phone": "+41 31 3115150",
+      "craft": "dental_technician",
+      "name": "Zahnmanufaktur",
+      "office": "company",
+      "opening_hours": "Mo-Fr 08:00-17:30; Sa-Su off; PH off",
+      "operator": "Zahnmanufaktur Zimmermann & M\u00e4der AG",
+      "source": "survey and website",
+      "website": "https://zmdental.ch"
+    },
+    "distance_to_station": 468.0364884115832
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9453024,
+    "lon": 7.4290824,
+    "tags": {
+      "contact:phone": "+41 31 311 33 22",
+      "contact:website": "https://www.pushandpull.ch/",
+      "name": "Push\u2018n\u2018Pull",
+      "office": "graphic_design"
+    },
+    "distance_to_station": 77.12750033191267
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9465487,
+    "lon": 7.4294834,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "23",
+      "addr:postcode": "3001",
+      "addr:street": "Schl\u00f6sslistrasse",
+      "company": "engineering",
+      "email": "bern@emchberger.ch",
+      "engineering": "fire_protection",
+      "name": "Emch+Berger AG Bern",
+      "office": "company",
+      "phone": "+41 58 451 61 11",
+      "website": "https://www.emchberger.ch/"
+    },
+    "distance_to_station": 217.93545518424415
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9452792,
+    "lon": 7.4341285,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "24",
+      "addr:postcode": "3011",
+      "addr:street": "Kapellenstrasse",
+      "contact:email": "info@frabina.ch",
+      "contact:phone": "+41 31 381 27 01",
+      "contact:website": "https://frabina.ch",
+      "description:de": "Beratung f\u00fcr binationale Paare und Familien, Expats, MigrantInnen und Betroffene von Rassismus und Diskriminierung",
+      "name": "frabina",
+      "office": "association"
+    },
+    "distance_to_station": 390.88322969362963
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9427654,
+    "lon": 7.4323503,
+    "tags": {
+      "check_date": "2022-05-19",
+      "name": "Termobil AG",
+      "office": "estate_agent",
+      "phone": "+41 31 382 71 02",
+      "website": "https://termobil.ch/"
+    },
+    "distance_to_station": 322.304914063383
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9415278,
+    "lon": 7.4306121,
+    "tags": {
+      "addr:housenumber": "2",
+      "addr:postcode": "3007",
+      "addr:street": "Eigerplatz",
+      "email": "info@vpodbern.ch",
+      "name": "SSP",
+      "name:de": "VPOD Bern St\u00e4dte Gemeinden Energie",
+      "name:fr": "SSP Bern section \u00e9nergie",
+      "office": "ngo",
+      "phone": "+41 31 371 67 45",
+      "website": "https://bern.vpod.ch/"
+    },
+    "distance_to_station": 361.94609813137305
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9465522,
+    "lon": 7.4348217,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:floor": "4",
+      "addr:housenumber": "8a",
+      "addr:postcode": "3011",
+      "addr:street": "Seilerstrasse",
+      "check_date:opening_hours": "2024-06-15",
+      "company": "software_development",
+      "level": "4",
+      "name": "Sopra Steria AG, Gesch\u00e4ftsstelle Bern",
+      "office": "it",
+      "opening_hours": "Mo-Fr 08:00-17:00",
+      "phone": "+41-43-547 43 43",
+      "toilets:wheelchair": "no",
+      "website": "https://www.soprasteria.ch/",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 486.90721904115804
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9437213,
+    "lon": 7.4336406,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "31",
+      "addr:postcode": "3007",
+      "addr:street": "Schwarztorstrasse",
+      "name": "Glue Software Engineering AG",
+      "office": "company",
+      "phone": "+41 31 385 30 11",
+      "website": "info@glue.ch"
+    },
+    "distance_to_station": 360.4487564783517
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9424256,
+    "lon": 7.4324368,
+    "tags": {
+      "name": "Voll Toll GmbH",
+      "office": "company",
+      "website": "https://www.volltoll.ch/"
+    },
+    "distance_to_station": 352.2895230231569
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9468826,
+    "lon": 7.4345774,
+    "tags": {
+      "name": "Eversheds Sutherland",
+      "office": "lawyer"
+    },
+    "distance_to_station": 488.32965052037326
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9469658,
+    "lon": 7.4345816,
+    "tags": {
+      "name": "Wincasa",
+      "office": "property_management"
+    },
+    "distance_to_station": 493.45296868758203
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.9435851,
+    "lon": 7.4331554,
+    "tags": {
+      "email": "info@triio.ch",
+      "name": "Triio",
+      "office": "ngo",
+      "opening_hours": "Mo-Fr 08:45-12:00,13:30-16:45; We 13:30-16:45",
+      "phone": "+41313119155",
+      "website": "https://www.triio.ch/"
+    },
+    "distance_to_station": 330.0911615134631
+  }
+]

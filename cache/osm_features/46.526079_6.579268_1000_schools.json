@@ -1,0 +1,108 @@
+[
+  {
+    "feature_type": "schools",
+    "lat": 46.5265003,
+    "lon": 6.5719241,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:country": "CH",
+      "addr:housenumber": "2",
+      "addr:postcode": "1022",
+      "addr:street": "Rte de la Plaine",
+      "amenity": "school",
+      "building": "school",
+      "building:levels": "3",
+      "name": "Coll\u00e8ge de la Plaine",
+      "roof:levels": "0",
+      "source": "EPFL ortho"
+    },
+    "distance_to_station": 565.4079254947203
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.5238402,
+    "lon": 6.5903604,
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "\u00c9cole et Centre de vie enfantine de la Bourdonnette",
+      "source": "Orthophoto Ville de Lausanne 2008"
+    },
+    "distance_to_station": 886.7314021235277
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.5267358,
+    "lon": 6.5720466,
+    "tags": {
+      "amenity": "school",
+      "check_date": "2024-12-30",
+      "name": "Coll\u00e8ge de la Plaine"
+    },
+    "distance_to_station": 558.8546987085392
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.5310994,
+    "lon": 6.5862531,
+    "tags": {
+      "amenity": "school",
+      "check_date": "2024-05-10",
+      "name": "Coll\u00e8ge du L\u00e9man"
+    },
+    "distance_to_station": 773.725897266507
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.5339685,
+    "lon": 6.5740665,
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "check_date": "2024-12-30",
+      "name": "Coll\u00e8ge de la Planta"
+    },
+    "distance_to_station": 963.5331066058819
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.5327702,
+    "lon": 6.5748439,
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "La Concorde"
+    },
+    "distance_to_station": 817.5898120898706
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.5308682,
+    "lon": 6.5882723,
+    "tags": {
+      "amenity": "school",
+      "check_date": "2024-08-08",
+      "name": "Coll\u00e8ge du Censuy"
+    },
+    "distance_to_station": 872.1657243352415
+  },
+  {
+    "feature_type": "schools",
+    "lat": 46.5316101,
+    "lon": 6.5678648,
+    "tags": {
+      "addr:city": "Ecublens (VD)",
+      "addr:housenumber": "6",
+      "addr:postcode": "1024",
+      "addr:street": "Route du Bois",
+      "amenity": "school",
+      "grades": "7-11",
+      "name": "\u1ebatablissement primaire et secondaire d'Ecublens",
+      "operator:type": "public",
+      "religion": "no",
+      "short_name": "EPS Ecublens",
+      "website": "https://www.ecoles-ecublens.ch/"
+    },
+    "distance_to_station": 1069.319496127159
+  }
+]

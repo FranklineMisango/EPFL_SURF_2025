@@ -1,0 +1,63 @@
+[
+  {
+    "feature_type": "train_stations",
+    "lat": 46.5279092,
+    "lon": 6.5666458,
+    "tags": {
+      "ele": "396",
+      "name": "Cerisaie",
+      "operator": "TL",
+      "public_transport": "station",
+      "railway": "station",
+      "railway:ref": "CERI",
+      "station": "light_rail",
+      "uic_name": "Ecublens VD, Cerisaie",
+      "uic_ref": "8501216",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 943.1023196456865
+  },
+  {
+    "feature_type": "train_stations",
+    "lat": 46.5221982,
+    "lon": 6.566154,
+    "tags": {
+      "ele": "396",
+      "light_rail": "yes",
+      "name": "EPFL",
+      "operator": "TL",
+      "public_transport": "station",
+      "railway": "station",
+      "railway:ref": "EPFL",
+      "station": "light_rail",
+      "uic_name": "Ecublens VD, EPFL",
+      "uic_ref": "8501214",
+      "wheelchair": "yes",
+      "wikidata": "Q29861806",
+      "wikimedia_commons": "Category:EPFL m1 station"
+    },
+    "distance_to_station": 485.66298098058815
+  },
+  {
+    "feature_type": "train_stations",
+    "lat": 46.5249989,
+    "lon": 6.5791675,
+    "tags": {
+      "ele": "385",
+      "internet_access": "no",
+      "light_rail": "yes",
+      "name": "UNIL-Mouline",
+      "old_name": "Mouline",
+      "operator": "TL",
+      "public_transport": "station",
+      "railway": "station",
+      "railway:ref": "MOUI",
+      "station": "light_rail",
+      "uic_name": "Chavannes-R., UNIL-Mouline",
+      "uic_ref": "8501212",
+      "wheelchair": "yes",
+      "wikidata": "Q30745649"
+    },
+    "distance_to_station": 778.0131889961696
+  }
+]

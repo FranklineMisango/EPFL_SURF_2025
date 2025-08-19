@@ -1,0 +1,19 @@
+[
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.9318819,
+    "lon": 7.4197879,
+    "tags": {
+      "contact:email": "info@leoneacademy.ch",
+      "contact:phone": "+41 31 3316746",
+      "contact:website": "http://www.leoneacademy.ch/",
+      "leisure": "sports_centre",
+      "name": "LEONE ACADEMY",
+      "old_name": "Kickboxing Academy",
+      "opening_hours": "Mo 16:45-22:00; Tu 11:45-13:30, 16:45-22:00; We 16:45-22:00; Th 16:45-22:00; Fr 16:45-21:00; Sa-Su 10:45-14:00",
+      "operator": "LEONE ACADEMY GmbH",
+      "sport": "kickboxing;fitness"
+    },
+    "distance_to_station": 173.39930482247473
+  }
+]

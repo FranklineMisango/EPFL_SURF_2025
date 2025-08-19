@@ -1,0 +1,48 @@
+[
+  {
+    "feature_type": "theatres",
+    "lat": 46.9531093,
+    "lon": 7.4401446,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "8",
+      "addr:postcode": "3012",
+      "addr:street": "Neubr\u00fcckstrasse",
+      "alt_name": "Tojo Theater Reitschule Bern",
+      "amenity": "theatre",
+      "contact:email": "tojo@reitschule.ch",
+      "contact:phone": "+41 31 3066969",
+      "entrance": "yes",
+      "name": "Tojo",
+      "source": "survey and website",
+      "website": "https://www.tojo.ch/",
+      "wheelchair": "limited"
+    },
+    "distance_to_station": 252.31593027575454
+  },
+  {
+    "feature_type": "theatres",
+    "lat": 46.948336,
+    "lon": 7.4431434,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "4",
+      "addr:postcode": "3011",
+      "addr:street": "Spitalgasse",
+      "alt_name": "Theater am K\u00e4figturm",
+      "amenity": "theatre",
+      "contact:addr": "Spitalgasse 4, 3011 Bern",
+      "contact:email": "info@theater-am-kaefigturm.ch",
+      "contact:phone": "+41 31 3116100",
+      "contact:website": "http://www.theater-am-kaefigturm.ch/kontakt/",
+      "level": "-3",
+      "name": "am K\u00e4figturm",
+      "note": "Location 2nd basement floor",
+      "source": "website",
+      "website": "https://www.theater-am-kaefigturm.ch/",
+      "wheelchair": "limited"
+    },
+    "distance_to_station": 461.948169967327
+  }
+]

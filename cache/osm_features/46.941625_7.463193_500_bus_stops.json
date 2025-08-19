@@ -1,0 +1,221 @@
+[
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9446931,
+    "lon": 7.4585842,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Liebegg",
+      "public_transport": "stop_position",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 488.67751394624054
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9447476,
+    "lon": 7.4612489,
+    "tags": {
+      "highway": "bus_stop",
+      "name": "Seminar",
+      "public_transport": "stop_position",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 377.28935359670794
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9446184,
+    "lon": 7.4595746,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Liebegg",
+      "public_transport": "stop_position",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 431.5656381286494
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9412314,
+    "lon": 7.4634153,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "name": "Brunnadernstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "ref": "A",
+      "shelter": "yes",
+      "uic_name": "Bern, Brunnadernstrasse",
+      "uic_ref": "8507061",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 46.89980490956009
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9407592,
+    "lon": 7.4631813,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "D",
+      "name": "Brunnadernstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Brunnadernstrasse",
+      "uic_ref": "8507061"
+    },
+    "distance_to_station": 96.26547624403788
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9414251,
+    "lon": 7.4653043,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "local_ref": "C",
+      "name": "Brunnadernstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "yes",
+      "uic_name": "Bern, Brunnadernstrasse",
+      "uic_ref": "8507061",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 161.82497193562796
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9390386,
+    "lon": 7.4629244,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Petruskirche",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Petruskirche",
+      "uic_ref": "8589001"
+    },
+    "distance_to_station": 288.30497120451946
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9390932,
+    "lon": 7.4621473,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Petruskirche",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Petruskirche",
+      "uic_ref": "8589001"
+    },
+    "distance_to_station": 292.49018061204237
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9403926,
+    "lon": 7.4586086,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Thunplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Thunplatz",
+      "uic_ref": "8589003"
+    },
+    "distance_to_station": 374.03597928450097
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9421839,
+    "lon": 7.4674674,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Burgernziel",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Burgernziel",
+      "uic_ref": "8587481",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 330.40737905707937
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9419462,
+    "lon": 7.4660181,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Burgernziel",
+      "public_transport": "stop_position",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 217.43690151481223
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.943076,
+    "lon": 7.4691606,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "556",
+      "highway": "bus_stop",
+      "name": "Sonnenhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Sonnenhof",
+      "uic_ref": "8590019"
+    },
+    "distance_to_station": 480.9232288770598
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9405201,
+    "lon": 7.4583913,
+    "tags": {
+      "bus": "yes",
+      "ele": "553",
+      "highway": "bus_stop",
+      "name": "Thunplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Thunplatz",
+      "uic_ref": "8589003"
+    },
+    "distance_to_station": 384.67321655263254
+  }
+]

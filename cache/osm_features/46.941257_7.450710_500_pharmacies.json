@@ -1,0 +1,25 @@
+[
+  {
+    "feature_type": "pharmacies",
+    "lat": 46.9430736,
+    "lon": 7.4519886,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "15",
+      "addr:postcode": "3005",
+      "addr:street": "Thunstrasse",
+      "amenity": "pharmacy",
+      "contact:email": "info@kirchenfeldapotheke.ch",
+      "contact:emergency_phone": "+41 0900989900",
+      "contact:fax": "+41 31 3515788",
+      "contact:phone": "+41 31 3511780",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Kirchenfeld Apotheke",
+      "opening_hours": "Mo-Fr 08:00-18:30; Sa 08:00-16:00",
+      "website": "https://www.kirchenfeldapotheke.ch/"
+    },
+    "distance_to_station": 224.13204606653352
+  }
+]

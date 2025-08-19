@@ -1,0 +1,81 @@
+[
+  {
+    "feature_type": "parks",
+    "lat": 46.9479489,
+    "lon": 7.4682723,
+    "tags": {
+      "access": "private",
+      "leisure": "park"
+    },
+    "distance_to_station": 511.48482473770724
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9506994,
+    "lon": 7.4645425,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 295.87781046761
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9503264,
+    "lon": 7.4647374,
+    "tags": {
+      "access": "private",
+      "leisure": "park"
+    },
+    "distance_to_station": 315.8616567920662
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9507427,
+    "lon": 7.4621898,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 441.5382337636666
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9510172,
+    "lon": 7.4733516,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 481.3479133826102
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9491162,
+    "lon": 7.4749296,
+    "tags": {
+      "leisure": "park",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 684.9415436411889
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.9519259,
+    "lon": 7.4602936,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:postcode": "3006",
+      "image": "https://commons.wikimedia.org/wiki/File:RosengartenBern02.jpg",
+      "leisure": "park",
+      "name": "Rosengarten",
+      "name:de": "Rosengarten",
+      "name:en": "Rose Garden",
+      "name:fr": "Roseraie",
+      "name:ko": "\ub85c\uc820\uac00\ub974\ud150(\uc7a5\ubbf8 \uc815\uc6d0)",
+      "type": "multipolygon",
+      "website": "https://www.bern.ch/stadtverwaltung/tvs/stadtgruen/gruenflaechenpflege/gruenanlagen/rosengarten/",
+      "wikidata": "Q2167108",
+      "wikipedia": "de:Rosengarten Bern"
+    },
+    "distance_to_station": 543.2147408316105
+  }
+]

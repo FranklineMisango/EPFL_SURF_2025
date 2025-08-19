@@ -1,0 +1,23 @@
+[
+  {
+    "feature_type": "schools",
+    "lat": 46.9325606,
+    "lon": 7.426354,
+    "tags": {
+      "addr:city": "Liebefeld",
+      "addr:country": "CH",
+      "addr:housenumber": "19-27",
+      "addr:postcode": "3097",
+      "addr:street": "J\u00e4gerweg",
+      "amenity": "school",
+      "contact:email": "schulleitung.hessgut@koeniz.ch",
+      "contact:website": "https://www.schulehessgut.ch/",
+      "isced:level": "1",
+      "language:de": "yes",
+      "name": "Schule Hessgut",
+      "phone": "+41 31 979 32 00",
+      "school:gender": "mixed"
+    },
+    "distance_to_station": 589.5618885719947
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.5190715,
+    "lon": 6.5813807,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:postcode": "1015",
+      "leisure": "sports_centre",
+      "name": "Centre sportif universitaire de Dorigny",
+      "website": "https://sport.unil.ch/?mid=127"
+    },
+    "distance_to_station": 1265.7564304836103
+  }
+]

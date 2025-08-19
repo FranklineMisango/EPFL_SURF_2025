@@ -1,0 +1,52 @@
+[
+  {
+    "feature_type": "hotels",
+    "lat": 46.9423827,
+    "lon": 7.430204,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "66",
+      "addr:postcode": "3007",
+      "addr:street": "Zieglerstrasse",
+      "air_conditioning": "yes",
+      "branch": "Bern City",
+      "brand": "Ibis Styles",
+      "brand:wikidata": "Q3147425",
+      "check_date": "2025-03-21",
+      "email": "h9662@accor.com",
+      "name": "Ibis Styles",
+      "operator": "Accor",
+      "phone": "+41 31 378 66 66",
+      "planned:tourism": "hotel",
+      "tourism": "hotel",
+      "website": "https://all.accor.com/hotel/9662/index.de.shtml"
+    },
+    "distance_to_station": 261.9766822202621
+  },
+  {
+    "feature_type": "hotels",
+    "lat": 46.943034,
+    "lon": 7.4325447,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "43",
+      "addr:postcode": "3007",
+      "addr:street": "Belpstrasse",
+      "alt_name": "Hotel La Pergola",
+      "contact:addr": "Belpstrasse 43, 3007 Bern",
+      "contact:email": "info@hotel-lapergola.ch",
+      "contact:fax": "+41 31 3815054",
+      "contact:phone": "+41 31 9414343",
+      "contact:website": "http://www.hotel-lapergola.ch/en/contact.html",
+      "internet_access": "wlan",
+      "internet_access:fee": "no",
+      "name": "La Pergola",
+      "operator": "SV (Schweiz) AG",
+      "source": "survey and website",
+      "stars": "3",
+      "tourism": "hotel",
+      "website": "https://www.hotel-lapergola.ch/"
+    },
+    "distance_to_station": 316.365608494308
+  }
+]

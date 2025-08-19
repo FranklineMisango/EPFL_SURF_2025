@@ -1,0 +1,22 @@
+[
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9513945,
+    "lon": 7.4647443,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 236.61669414397988
+  },
+  {
+    "feature_type": "swimming_pools",
+    "lat": 46.9513702,
+    "lon": 7.4640114,
+    "tags": {
+      "access": "private",
+      "leisure": "swimming_pool"
+    },
+    "distance_to_station": 286.66748989743667
+  }
+]

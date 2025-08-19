@@ -1,0 +1,22 @@
+[
+  {
+    "feature_type": "residential",
+    "lat": 46.95476,
+    "lon": 7.4320375,
+    "tags": {
+      "landuse": "residential",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 1150.9598032550325
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.9398183,
+    "lon": 7.4266625,
+    "tags": {
+      "landuse": "residential",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 563.2586036747276
+  }
+]

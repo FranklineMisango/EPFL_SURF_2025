@@ -1,0 +1,114 @@
+[
+  {
+    "feature_type": "offices",
+    "lat": 46.5329988,
+    "lon": 6.5772049,
+    "tags": {
+      "name": "H\u00f4tel de Ville de Chavannes-pr\u00e8s-Renens",
+      "office": "government"
+    },
+    "distance_to_station": 785.3327354599558
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.52396,
+    "lon": 6.5838847,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:postcode": "1015",
+      "addr:street": "B\u00e2timent Antrhopole",
+      "email": "fsle@unil.ch",
+      "level": "0",
+      "name": "Fondation Solidarit\u00e9 Logements pour les \u00c9tudiant-e-s",
+      "office": "association",
+      "opening_hours": "online",
+      "website": "https://www.fsle.ch",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 425.39559260130136
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.5274786,
+    "lon": 6.5914857,
+    "tags": {
+      "addr:city": "Renens",
+      "addr:country": "CH",
+      "addr:housenumber": "33",
+      "addr:postcode": "1020",
+      "addr:street": "Rue du Lac",
+      "email": "stucky@stucky.ch",
+      "name": "Stucky SA",
+      "name:wikidata": "Q120734",
+      "name:wikipedia": "fr:Alfred Stucky",
+      "office": "company",
+      "phone": "+41 21 637 15 13",
+      "website": "https://www.gruner.ch/fr/stucky",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 950.2251357874679
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.5305626,
+    "lon": 6.5818532,
+    "tags": {
+      "addr:city": "Renens",
+      "addr:housenumber": "26",
+      "addr:postcode": "1020",
+      "addr:street": "Avenue de la Piscine",
+      "name": "ARCHITRAM Architecture et Urbanisme",
+      "office": "architect",
+      "phone": "+41 21 631 35 35",
+      "website": "https://architram.ch/"
+    },
+    "distance_to_station": 536.4205830358263
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.5269103,
+    "lon": 6.5741544,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:housenumber": "8",
+      "addr:postcode": "1022",
+      "addr:street": "Rue de la Mouline",
+      "name": "Picterra",
+      "office": "company",
+      "website": "https://picterra.ch/"
+    },
+    "distance_to_station": 403.0781352811612
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.527683,
+    "lon": 6.5723115,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:housenumber": "38",
+      "addr:postcode": "1022",
+      "addr:street": "Route de la Maladi\u00e8re",
+      "government": "yes",
+      "name": "Administration communale, Inspection intercommunale des chantiers",
+      "office": "government",
+      "phone": "+41 21 633 33 70"
+    },
+    "distance_to_station": 562.7307475117915
+  },
+  {
+    "feature_type": "offices",
+    "lat": 46.5312586,
+    "lon": 6.573759,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:housenumber": "1",
+      "addr:place": "Place des Ateliers",
+      "addr:postcode": "1022",
+      "name": "ALCO SA",
+      "office": "company",
+      "phone": "+41 21 637 47 77",
+      "website": "https://www.alco.ch/"
+    },
+    "distance_to_station": 714.2536102760572
+  }
+]

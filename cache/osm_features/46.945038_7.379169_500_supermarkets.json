@@ -1,0 +1,118 @@
+[
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.9450069,
+    "lon": 7.3744929,
+    "tags": {
+      "alt_name": "Migros Bern Westside",
+      "branch": "Bern Westside",
+      "brand": "Migros",
+      "brand:wikidata": "Q680727",
+      "brand:wikipedia": "de:Migros",
+      "level": "1",
+      "level:ref": "0",
+      "name": "Migros",
+      "opening_hours": "Mo-Th 09:00-20:00; Fr 09:00-21:00; Sa 08:00-17:00",
+      "operator": "Genossenschaft Migros Aare",
+      "phone": "+41 58 567 03 03",
+      "shop": "supermarket",
+      "website": "https://filialen.migros.ch/de/migros-supermarkt-bern-westside",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 354.9699224377045
+  },
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.9483455,
+    "lon": 7.3772221,
+    "tags": {
+      "brand": "Coop",
+      "brand:wikidata": "Q432564",
+      "brand:wikipedia": "de:Coop (Schweiz)",
+      "name": "Coop",
+      "opening_hours": "Mo-Fr 07:00-20:00; Sa 07:00-17:00",
+      "shop": "supermarket",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 396.3317546674999
+  },
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.9474596,
+    "lon": 7.3831165,
+    "tags": {
+      "alt_name": "Migros Bethlehem (MM)",
+      "branch": "Bern Betlehem",
+      "brand": "Migros",
+      "brand:wikidata": "Q680727",
+      "brand:wikipedia": "en:Migros",
+      "cash_withdrawal": "migros_bank;postfinance_card",
+      "cash_withdrawal:fee": "no",
+      "cash_withdrawal:purchase_required": "no",
+      "cash_withdrawal:type": "checkout",
+      "check_date:opening_hours": "2021-09-09",
+      "level": "0",
+      "name": "Migros",
+      "opening_hours": "Mo-Th 08:00-19:00; Fr 08:00-21:00; Sa 08:00-17:00; Su,PH closed",
+      "operator": "Genossenschaft Migros Aare",
+      "phone": "+41 58 567 60 00",
+      "shop": "supermarket",
+      "website": "https://filialen.migros.ch/de/migros-supermarkt-bern-bethlehem"
+    },
+    "distance_to_station": 402.8686714678994
+  },
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.948067,
+    "lon": 7.3830434,
+    "tags": {
+      "brand": "Denner",
+      "brand:wikidata": "Q379911",
+      "brand:wikipedia": "en:Denner (supermarket)",
+      "cash_withdrawal": "migros_bank;postfinance_card",
+      "cash_withdrawal:fee": "no",
+      "cash_withdrawal:purchase_required": "no",
+      "cash_withdrawal:type": "checkout",
+      "check_date:opening_hours": "2021-09-09",
+      "level": "0",
+      "name": "Denner",
+      "opening_hours": "Mo-Th 08:00-19:00; Fr 08:00-21:00; Sa 08:00-17:00; Su,PH closed",
+      "phone": "+41 58 999 03 39",
+      "shop": "supermarket",
+      "website": "https://www.denner.ch/de/filialen/denner-filiale-und-oeffnungszeiten/store/riedbachstrasse-8-3027-bern-bethlehem/"
+    },
+    "distance_to_station": 447.14484089078707
+  },
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.9484456,
+    "lon": 7.3771937,
+    "tags": {
+      "brand": "Lidl",
+      "brand:wikidata": "Q151954",
+      "brand:wikipedia": "en:Lidl",
+      "name": "Lidl",
+      "opening_hours": "Mo-Th 07:00-20:00; Fr 07:00-21:00; Sa 07:00-17:00",
+      "shop": "supermarket"
+    },
+    "distance_to_station": 407.46921507236857
+  },
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.9453867,
+    "lon": 7.3737873,
+    "tags": {
+      "brand": "Denner",
+      "brand:wikidata": "Q379911",
+      "level": "0",
+      "level:ref": "-1",
+      "name": "Denner",
+      "opening_hours": "Mo-Th 09:00-20:00; Fr 08:00-21:00; Sa 08:00-17:00",
+      "operator": "Denner",
+      "operator:wikidata": "Q379911",
+      "shop": "supermarket",
+      "website": "https://www.denner.ch/de/filialen/denner-filiale-und-oeffnungszeiten/store/einkaufszentrum-westside-riedbachstrasse-100-3027-bern/"
+    },
+    "distance_to_station": 410.3492984565861
+  }
+]

@@ -1,0 +1,350 @@
+[
+  {
+    "feature_type": "shops",
+    "lat": 46.9415716,
+    "lon": 7.4561769,
+    "tags": {
+      "alt_name": "bulthaup",
+      "brand": "bulthaup",
+      "brand:wikidata": "Q1004697",
+      "contact:addr": "Thunstrasse 43a, 3005 Bern",
+      "contact:email": "bulthaup@megert-kuechen.ch",
+      "contact:fax": "+41 31 3511610",
+      "contact:phone": "+41 31 3510707",
+      "name": "Megert + Partner K\u00fcchen",
+      "opening_hours": "Mo-Fr 09:00-12:00, 14:00-17:00; Sa-Su off; PH off",
+      "shop": "kitchen",
+      "source": "survey and website",
+      "website": "https://bern.bulthaup.com"
+    },
+    "distance_to_station": 416.51649107365694
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9422469,
+    "lon": 7.4531136,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "18",
+      "addr:postcode": "3005",
+      "addr:street": "Thunstrasse",
+      "alt_name": "Migros Kirchenfeld",
+      "branch": "Bern Kirchenfeld",
+      "brand": "Migros",
+      "brand:wikidata": "Q680727",
+      "brand:wikipedia": "en:Migros",
+      "cash_withdrawal": "migros_bank;postfinance_card",
+      "cash_withdrawal:fee": "no",
+      "cash_withdrawal:purchase_required": "no",
+      "cash_withdrawal:type": "checkout",
+      "contact:addr:full": "Thunstrasse 18, 3005 Bern",
+      "contact:phone": "+41 58 5675050",
+      "internet_access": "wlan",
+      "internet_access:fee": "no",
+      "internet_access:ssid": "MIGROS WiFi",
+      "name": "Migros",
+      "opening_hours": "Mo-Fr 08:00-20:00, Sa 08:00-17:00; PH off",
+      "operator": "Genossenschaft Migros Aare",
+      "shop": "supermarket",
+      "website": "https://filialen.migros.ch/de/migros-supermarkt-bern-kirchenfeld",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 213.1211466641667
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9425501,
+    "lon": 7.4523452,
+    "tags": {
+      "contact:addr": "Thunstrasse 16, 3005 Bern",
+      "contact:email": "kirchenfeld@marsano.ch",
+      "contact:phone": "+41 31 3511526",
+      "contact:website": "https://marsano.ch/blumen/bern/kirchenfeld",
+      "name": "Marsano",
+      "old_name": "Margrit",
+      "opening_hours": "Mo-Fr 08:00-18:30; Sa 08:00-16:00",
+      "operator": "Marsano AG",
+      "shop": "florist"
+    },
+    "distance_to_station": 189.98269081154822
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9426132,
+    "lon": 7.4521697,
+    "tags": {
+      "alt_name": "Schuhmacherei Bozan",
+      "contact:addr": "Thunstrasse 16, 3005 Bern",
+      "contact:mobile": "+41 78 6155536",
+      "contact:phone": "+41 31 3515422",
+      "name": "Bozan",
+      "opening_hours": "Mo-Tu 07:30-12:15,14:00-18:30; We 07:30-12:15; Th-Fr 07:30-12:15,14:00-18:30; Sa 09:00-14:00",
+      "operator": "Aslan Bozan",
+      "shop": "shoes",
+      "source": "survey and website",
+      "website": "https://www.schuhmacherei-bozan.ch/"
+    },
+    "distance_to_station": 187.16314111599797
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9427616,
+    "lon": 7.4518662,
+    "tags": {
+      "alt_name": "Optikergesch\u00e4ft Ulrich Sarbach",
+      "contact:addr": "Thunstrasse 12, 3005 Bern / Postfach, 3000 Bern 6",
+      "contact:phone": "+41 31 351 06 00",
+      "name": "Sarbach",
+      "note": "Thunstrasse 12 existiert offiziell in Bern nicht",
+      "shop": "optician"
+    },
+    "distance_to_station": 188.95465789825363
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9426995,
+    "lon": 7.4517677,
+    "tags": {
+      "contact:addr": "Mottastrasse 1, 3005 Bern",
+      "contact:email": "info@locken.salon",
+      "contact:mobile": "+41 77 512 80 26",
+      "contact:phone": "+41 31 351 07 77",
+      "contact:website": "https://locken.salon/",
+      "name": "Coiffure Flowerhair",
+      "opening_hours": "Mo 17:00-20:00; Tu off; We 09:30-18:00; Th 12:00-19:00; Fr 11:00-20:00; Sa 08:00-15:00, Su,PH off",
+      "shop": "hairdresser"
+    },
+    "distance_to_station": 179.3983764628928
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9431808,
+    "lon": 7.4505797,
+    "tags": {
+      "alt_name": "Coiffeur Headline",
+      "contact:addr": "Thunstrasse 2, 3005 Bern",
+      "contact:email": "info@headline-bern.ch",
+      "contact:phone": "+41 31 3520888",
+      "name": "headline",
+      "opening_hours": "Mo 09:00-16:00; Tu-We 08:00-18:30; Th 08:00-20:00; Fr 08:00-18:30; Sa 08:00-14:00; Su off",
+      "operator": "Debora Kaufmann",
+      "shop": "hairdresser",
+      "source": "survey and website",
+      "website": "https://www.headline-bern.ch/"
+    },
+    "distance_to_station": 214.16725447687418
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9431015,
+    "lon": 7.4508524,
+    "tags": {
+      "email": "info@mariaboog.ch",
+      "name": "Maria Boog",
+      "phone": "+41 31 352 65 43",
+      "shop": "tailor",
+      "website": "https://www.mariaboog.ch/"
+    },
+    "distance_to_station": 205.40635869678485
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9400723,
+    "lon": 7.4521132,
+    "tags": {
+      "alt_name": "Dolceforno Danieli",
+      "contact:addr": "Kirchenfeldstrasse 40a, 3005 Bern",
+      "contact:email": "dolceforno@bluewin.ch",
+      "contact:fax": "+41 31 3514600",
+      "contact:phone": "+41 31 3510262",
+      "craft": "pastry",
+      "name": "Danieli",
+      "opening_hours": "Mo 07:00-11:45; Tu 07:00-11:45,14:30-18:00; We 07:00-11:45; Th 07:00-11:45,14:30-18:00; Fr 07:00-11:45,14:30-18:00; Sa 07:00-11:45; Su off; PH off",
+      "operator": "Gerarda & William Danieli",
+      "shop": "pastry",
+      "source": "survey and website",
+      "start_date": "1988",
+      "website": "https://www.dolceforno.ch"
+    },
+    "distance_to_station": 169.40415618254372
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9387292,
+    "lon": 7.4472353,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "50",
+      "addr:postcode": "3005",
+      "addr:street": "Aegertenstrasse",
+      "alt_name": "B\u00e4ckerei-Konditorei R\u00f6thlisberger",
+      "check_date": "2023-09-02",
+      "contact:email": "roethlis.berger@bluewin.ch",
+      "contact:fax": "+41 31 3521221",
+      "contact:phone": "+41 31 3521221",
+      "name": "R\u00f6thlisberger",
+      "opening_hours": "Mo-Fr 06:30-18:30; Sa 07:00-13:00; Su 08:00-13:00",
+      "shop": "bakery",
+      "source": "survey and website",
+      "website": "http://www.b\u00e4ckerei-r\u00f6thlisberger.ch",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 385.45876533248276
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9428059,
+    "lon": 7.4517438,
+    "tags": {
+      "contact:addr": "Mottastrasse 1, 3005 Bern",
+      "contact:email": "mail@coiffeur-merz.ch",
+      "contact:phone": "+41 31 381 41 01",
+      "contact:website": "https://www.coiffeur-merz.ch",
+      "name": "Coiffeur Merz",
+      "opening_hours": "Mo 10:00-19:00; Tu,We,Fr 08:00-19:00; Th 08:00-21:00; Sa 08:00-13:00; Su,PH off",
+      "shop": "hairdresser"
+    },
+    "distance_to_station": 189.29221871225144
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9437706,
+    "lon": 7.4499172,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "1",
+      "addr:postcode": "3005",
+      "addr:street": "Thunstrasse",
+      "name": "Kiosk",
+      "shop": "kiosk"
+    },
+    "distance_to_station": 285.9264515217802
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9414109,
+    "lon": 7.4516456,
+    "tags": {
+      "contact:addr": "Mottastrasse 20, 3005 Bern",
+      "contact:email": "info@millevins.ch",
+      "contact:fax": "+41 31 3292922",
+      "contact:phone": "+41 31 3292923",
+      "name": "mille vins",
+      "opening_hours": "Mo-Fr 08:30-17:00; Th 08:30-19:00",
+      "operator": "mille vins gmbh",
+      "shop": "alcohol",
+      "source": "survey and website",
+      "website": "https://www.millevins.ch"
+    },
+    "distance_to_station": 73.07387700555353
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9428419,
+    "lon": 7.4524574,
+    "tags": {
+      "contact:addr": "Luisenstrasse 14, 3005 Bern",
+      "contact:email": "royal@vatter.ch",
+      "contact:fax": "+41 31 3515715",
+      "contact:phone": "+41 31 3021000",
+      "name": "Vatter Royal",
+      "opening_hours": "Mo-Fr 07:15-18:30; Sa 07:15-14:00; Su 09:00-13:00",
+      "shop": "convenience",
+      "source": "survey and website",
+      "website": "https://www.vatter.ch/royal"
+    },
+    "distance_to_station": 220.60333215001518
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9430711,
+    "lon": 7.4509475,
+    "tags": {
+      "contact:addr": "Thunstrasse 6, 3005 Bern",
+      "contact:email": "chocolatemanufacture@gmail.com",
+      "contact:mobile": "+41 76 4233477",
+      "craft": "confectionery",
+      "name": "Chocolate Manufacture",
+      "opening_hours": "Mo off; Tu-Fr 10:00-17:00; Sa 09:00-15:00; Su off",
+      "shop": "pastry",
+      "source": "survey and website",
+      "website": "https://www.chocolate-manufacture.com"
+    },
+    "distance_to_station": 202.54573936674117
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9414718,
+    "lon": 7.4508616,
+    "tags": {
+      "email": "info@capelliinarte.ch",
+      "name": "Capelli in Arte",
+      "operator": "Patrizia Orefice",
+      "phone": "+41 313518182",
+      "shop": "hairdresser",
+      "website": "http://capelliinarte.ch"
+    },
+    "distance_to_station": 26.536312532007944
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9425866,
+    "lon": 7.4522467,
+    "tags": {
+      "contact:email": "hello@nordicandfriends.ch",
+      "contact:phone": "+41 315443185",
+      "contact:website": "https://www.nordicandfriends.ch",
+      "name": "Nordic & Friends",
+      "opening_hours": "We-Fr 11:00-18:30; Sa 09:30-14:00; Su-Tu,PH closed",
+      "shop": "furniture"
+    },
+    "distance_to_station": 188.3518544861257
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9424809,
+    "lon": 7.45257,
+    "tags": {
+      "contact:email": "info@trouvaillekids.ch",
+      "contact:phone": "+41 774156867",
+      "contact:website": "https://www.trouvaillekids.ch",
+      "name": "Trouvaille kids & living",
+      "opening_hours": "Tu-We 09:30-12:30,14:30-18:00; Th 09:30-12:00,14:30-18:00; Fr 09:30-13:00,14:30-18:00; Sa 10:30-14:00; Su-Mo,PH closed",
+      "shop": "furniture"
+    },
+    "distance_to_station": 196.133200703637
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.942661,
+    "lon": 7.4529322,
+    "tags": {
+      "contact:email": "info@trouvaillekids.ch",
+      "contact:phone": "+41 774156867",
+      "contact:website": "https://www.trouvaillekids.ch",
+      "name": "Trouvaille kids",
+      "opening_hours": "Tu-We 09:30-12:30,14:30-18:00; Th 09:30-12:00,14:30-18:00; Fr 09:30-13:00,14:30-18:00; Sa 10:30-14:00; Su-Mo,PH closed",
+      "shop": "toys"
+    },
+    "distance_to_station": 229.87590081902846
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9428177,
+    "lon": 7.4504873,
+    "tags": {
+      "addr:housenumber": "7",
+      "addr:postcode": "3005",
+      "addr:street": "Helvetiastrasse",
+      "email": "hello@julesunique.ch",
+      "name": "Jules Unique",
+      "opening_hours": "Mo-Fr 09:00-12:00, 13:00-18:00; Sa 10:00-16:00",
+      "phone": "+41 79 943 51 50",
+      "shop": "clothes",
+      "website": "https://julesunique.ch/de/pages/laden-in-bern"
+    },
+    "distance_to_station": 174.38491418091925
+  }
+]

@@ -1,0 +1,519 @@
+[
+  {
+    "feature_type": "shops",
+    "lat": 46.9416669,
+    "lon": 7.4643324,
+    "tags": {
+      "alt_name": "Claudio Caviezel GmbH - Schreinerwerkst\u00e4tte, Restaurationen",
+      "contact:addr": "Thunstrasse 103, 3006 Bern",
+      "contact:email": "info@caviezel-bern.ch",
+      "contact:fax": "+41 31 3520344",
+      "contact:phone": "+41 31 3520377",
+      "name": "Schreinerei Caviezel",
+      "opening_hours": "Mo-Fr 07:30-12:00,13:00-17:00; Sa-Su off",
+      "shop": "furniture",
+      "source": "survey and website",
+      "website": "https://caviezel-bern.ch/"
+    },
+    "distance_to_station": 86.63401016512799
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9415588,
+    "lon": 7.4644429,
+    "tags": {
+      "alt_name": "IN-HOUSE Int\u00e9rieur",
+      "contact:addr": "Thunstrasse 103, 3006 Bern",
+      "contact:email": "info@inhaus.ch",
+      "contact:fax": "+41 31 3519050",
+      "contact:phone": "+41 31 3519050",
+      "name": "IN-HAUS",
+      "opening_hours": "Mo-Fr 09:00-12:30,14:00-19:00; Sa 09:00-16:00; Su off",
+      "shop": "furniture",
+      "source": "survey and website",
+      "website": "https://www.inhaus.ch/"
+    },
+    "distance_to_station": 95.18123552574346
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9415396,
+    "lon": 7.4626639,
+    "tags": {
+      "access:covid19": "yes",
+      "alt_name": "Reinhard - B\u00e4ckerei Konditorei",
+      "cafe": "yes",
+      "contact:addr": "Brunnadernstrasse 21, 3006 Bern",
+      "contact:email": "info@reinhard-baeckerei.ch",
+      "contact:fax": "+41 31 3528326",
+      "contact:phone": "+41 31 3524477",
+      "delivery:covid19": "yes",
+      "name": "Reinhard",
+      "opening_hours": "Mo-Fr 06:30-18:30; Sa 06:30-15:00; Su 07:30-12:00",
+      "shop": "bakery",
+      "source": "survey and website",
+      "website": "https://reinhard.swiss",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 41.26528602595876
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9419968,
+    "lon": 7.4668083,
+    "tags": {
+      "contact:addr": "Ostring 3, 3006 Bern",
+      "contact:phone": "+41 31 3510107",
+      "shop": "kiosk",
+      "source": "survey"
+    },
+    "distance_to_station": 277.56922480969683
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9412114,
+    "lon": 7.4621987,
+    "tags": {
+      "alt_name": "Zbinden Betten und M\u00f6belhaus",
+      "contact:addr": "Thunstrasse 87, 3006 Bern",
+      "contact:email": "info@zbindenbetten.ch",
+      "contact:fax": "+41 31 3527043",
+      "contact:phone": "+41 31 3527044",
+      "name": "Zbinden",
+      "opening_hours": "Mo-Fr 08:30-12:00, 14:00-18:30; Sa 08:30-12:00; Su off",
+      "operator": "Zbinden Reinhold AG",
+      "shop": "furniture",
+      "source": "website and survey",
+      "website": "https://www.zbindenbetten.ch"
+    },
+    "distance_to_station": 88.3795070427717
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9412312,
+    "lon": 7.462343,
+    "tags": {
+      "alt_name": "BelCom Elektro - Beleuchtungen, Elektroinstallationen",
+      "contact:addr": "Thunstrasse 89, 3006 Bern",
+      "contact:email": "info@belcom.org",
+      "contact:fax": "+41 31 3515969",
+      "contact:phone": "+41 31 3510100",
+      "name": "BelCom",
+      "opening_hours": "Mo-Fr 07:00-12:00, 13:00-18:00; Sa-Su off",
+      "operator": "BelCom Elektro GmbH",
+      "shop": "electronics",
+      "source": "website and survey",
+      "website": "https://www.belcom-bern.ch"
+    },
+    "distance_to_station": 77.97197021036467
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9410557,
+    "lon": 7.4612774,
+    "tags": {
+      "contact:addr": "Thunstrasse 71, 3006 Bern",
+      "contact:email": "kontakt@fono-tone.ch",
+      "contact:fax": "+41 31 3527850",
+      "contact:phone": "+41 31 3527858",
+      "name": "Fono-Tone",
+      "shop": "hifi",
+      "source": "survey and website",
+      "website": "https://fono-tone.ch/"
+    },
+    "distance_to_station": 158.59738354905355
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9410078,
+    "lon": 7.4610098,
+    "tags": {
+      "contact:addr": "Thunstrasse 71, 3006 Bern",
+      "contact:email": "info@cosmetic-envogue.ch",
+      "contact:phone": "+41 31 3024033",
+      "name": "Cosmetic en Vogue",
+      "shop": "hairdresser",
+      "source": "survey and website",
+      "website": "http://www.cosmetic-envogue.ch"
+    },
+    "distance_to_station": 179.37978377271918
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9410855,
+    "lon": 7.4611251,
+    "tags": {
+      "contact:addr": "Thunstrasse 71, 3006 Bern",
+      "contact:phone": "+41 31 5355727",
+      "name": "Studio Relax",
+      "shop": "hairdresser",
+      "source": "survey"
+    },
+    "distance_to_station": 168.05098781083203
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9418535,
+    "lon": 7.461585,
+    "tags": {
+      "contact:addr": "Beatusstrasse 7, 3006 Bern",
+      "contact:phone": "+41 31 3513330",
+      "name": "Coiffeur-L\u00e4deli",
+      "operator": "Maria Schranz",
+      "shop": "hairdresser",
+      "source": "survey"
+    },
+    "distance_to_station": 124.68614158111937
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9413848,
+    "lon": 7.4665168,
+    "tags": {
+      "alt_name": "Rosser Fahrzeugelektrik",
+      "contact:addr": "Muristrasse 64, 3006 Bern",
+      "contact:email": "rrosser@rosser.ch",
+      "contact:fax": "+41 31 3983301",
+      "contact:phone": "+41 31 3983300",
+      "name": "Rosser Autoelektro",
+      "opening_hours": "Mo-Fr 08:00-12:00,13:15-18:00; Sa 08:30-12:00; Su off",
+      "operator": "Rosser GmbH",
+      "shop": "car_repair",
+      "source": "survey and website",
+      "website": "https://www.rosser.ch/"
+    },
+    "distance_to_station": 253.7513761662746
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.941197,
+    "lon": 7.4662596,
+    "tags": {
+      "alt_name": "ORHAN Haarkunst",
+      "contact:addr": "Kalcheggweg 4, 3006 Bern",
+      "contact:facebook": "https://www.facebook.com/OrhanHaarkunst",
+      "contact:phone": "+41 31 3512121",
+      "name": "ORHAN",
+      "opening_hours": "Mo off; Tu-Fr 08:30-18:30; Sa 08:30-15:30; Su off",
+      "shop": "hairdresser",
+      "source": "survey and website",
+      "website": "https://www.orhanhaarkunst.ch/"
+    },
+    "distance_to_station": 237.62955406837224
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9408882,
+    "lon": 7.462449,
+    "tags": {
+      "brand": "R\u00fcedu",
+      "brand:wikidata": "Q112913831",
+      "name": "R\u00fcedu",
+      "self_service": "only",
+      "shop": "convenience",
+      "website": "https://ruedu.ch/"
+    },
+    "distance_to_station": 99.49835817200525
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9409987,
+    "lon": 7.4629587,
+    "tags": {
+      "cargo_bike": "only",
+      "check_date": "2024-07-31",
+      "name": "Holy Cargo",
+      "opening_hours": "We-Fr 11:00-19:00; Sa 10:00-16:00",
+      "shop": "bicycle",
+      "website": "https://holycargo.ch"
+    },
+    "distance_to_station": 71.86446910276325
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9446635,
+    "lon": 7.4613848,
+    "tags": {
+      "alt_name": "Restoshop Bern-Schosshalde",
+      "brand": "Restoshop",
+      "contact:addr": "Kleiner Muristalden 40b, 3006 Bern",
+      "contact:fax": "+41 31 3522113",
+      "contact:phone": "+41 31 3522113",
+      "name": "Restoshop",
+      "opening_hours": "Mo-Fr 06:30-22:00; Sa-Su 07:00-22:00",
+      "operator": "Restoshop S.A.",
+      "shop": "convenience"
+    },
+    "distance_to_station": 364.6941765853176
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.94272,
+    "lon": 7.4689914,
+    "tags": {
+      "contact:phone": "+41 31 3525201",
+      "name": "Beauty Time",
+      "opening_hours": "Mo off; Tu-Fr 09:00-18:00; Sa 09:00-13:00; Su off",
+      "shop": "hairdresser",
+      "source": "survey and website",
+      "website": "https://www.coiffeurbeautytime.ch/"
+    },
+    "distance_to_station": 456.7351394395542
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9418872,
+    "lon": 7.467192,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "4",
+      "addr:postcode": "3006",
+      "addr:street": "Ostring",
+      "name": "All Time Classics Tattoo",
+      "shop": "tattoo"
+    },
+    "distance_to_station": 304.9989882946958
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9424814,
+    "lon": 7.4684742,
+    "tags": {
+      "contact:addr": "Ostring 24, 3006 Bern",
+      "contact:email": "wrpkueche@bluewin.ch",
+      "contact:fax": "+41 31 3516226",
+      "contact:phone": "+41 31 3528558",
+      "contact:website": "http://www.wrp-kuechen.ch/kontakt/kontakt.htm",
+      "name": "WRP K\u00fcchenstudio",
+      "opening_hours": "Mo off; Tu-Fr 13:30-17:30; Sa 09:00-12:00; Su off",
+      "shop": "furniture",
+      "short_name": "WRP",
+      "source": "survey and website",
+      "website": "http://www.wrp-kuechen.ch"
+    },
+    "distance_to_station": 412.0964258667234
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9454484,
+    "lon": 7.4628317,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "16",
+      "addr:postcode": "3006",
+      "addr:street": "Schosshaldenstrasse",
+      "alt_name": "VOI Schosshalde",
+      "branch": "Bern Schlosshalde",
+      "brand": "VOI",
+      "brand:wikidata": "Q110277616",
+      "contact:addr": "Schosshaldenstrasse 16, 3006 Bern",
+      "contact:phone": "+41 58 5675015",
+      "name": "VOI",
+      "opening_hours": "Mo-Fr 07:30-19:00; Sa 07:30-17:00; Su off; PH off",
+      "operator": "Genossenschaft Migros Aare",
+      "shop": "supermarket",
+      "source": "Survey",
+      "website": "https://www.voi-migrospartner.ch/de-CH/filialen#voi-voi-bern-schosshalde"
+    },
+    "distance_to_station": 426.03713025288766
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9415335,
+    "lon": 7.4642948,
+    "tags": {
+      "alt_name": "Kosmetikinstitut Laura",
+      "contact:addr": "Thunstrasse 103, 3006 Bern",
+      "contact:email": "info@kosmetikinstitut-laura.ch",
+      "contact:phone": "+41 31 3520511",
+      "name": "Laura",
+      "operator": "Laura Bezzola",
+      "shop": "beauty",
+      "source": "survey and website",
+      "website": "http://www.kosmetikinstitut-laura.ch"
+    },
+    "distance_to_station": 84.26875638778925
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9415772,
+    "lon": 7.4647003,
+    "tags": {
+      "alt_name": "Scissor hands Coiffure for Men",
+      "contact:addr": "Thunstrasse 105, 3006 Bern",
+      "contact:phone": "+41 31 3814000",
+      "female:signed": "no",
+      "male:signed": "no",
+      "name": "Gorgis",
+      "shop": "hairdresser",
+      "source": "survey"
+    },
+    "distance_to_station": 114.56104980681643
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9425131,
+    "lon": 7.4684433,
+    "tags": {
+      "contact:addr": "Ostring 24, 3006 Bern",
+      "contact:phone": "+41 31 3513137",
+      "contact:website": "http://www.thai-massage-uan.ch/",
+      "description": "Traditionelle Wat Poo Thai-Therapie-Massage",
+      "massage": "thai",
+      "name": "UAN",
+      "opening_hours": "Mo-Sa 10:00-22:00",
+      "shop": "massage"
+    },
+    "distance_to_station": 410.64781395858984
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9419127,
+    "lon": 7.4650463,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "7",
+      "addr:postcode": "3006",
+      "addr:street": "Bornweg",
+      "contact:facebook": "https://www.facebook.com/%C3%80-V%C3%89LO-677843275709056",
+      "email": "info@avelo.ch",
+      "name": "\u00e0 v\u00e9lo",
+      "opening_hours": "Tu-Fr 09:00-11:00,16:00-18:00",
+      "operator": "Jonas Grandjean",
+      "phone": "+41 31 533 55 20",
+      "service:bicycle:cleaning": "yes",
+      "service:bicycle:dealer": "yes",
+      "service:bicycle:parts": "yes",
+      "service:bicycle:pump": "yes",
+      "service:bicycle:repair": "yes",
+      "service:bicycle:retail": "yes",
+      "shop": "bicycle",
+      "website": "http://avelo.ch"
+    },
+    "distance_to_station": 144.29861200540958
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9416904,
+    "lon": 7.4653026,
+    "tags": {
+      "name": "Dobiaschofsky Kunstauktionen",
+      "shop": "art",
+      "website": "https://www.dobiaschofsky.com/"
+    },
+    "distance_to_station": 160.32872005522776
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9393505,
+    "lon": 7.4685977,
+    "tags": {
+      "contact:addr": "Lombachweg 4, 3006 Bern",
+      "contact:email": "ruth.ruefenacht@bluewin.ch",
+      "contact:facebook": "https://www.facebook.com/pages/category/Pet-Groomer/Hundesalon-Sch%C3%B6nburg-1951521021627184",
+      "contact:mobile": "+41 79 3227033",
+      "contact:phone": "+41 31 3321240",
+      "name": "Hundesalon-Sch\u00f6nburg",
+      "operator": "Ruth R\u00fcfenacht",
+      "pet": "dog",
+      "shop": "pet_grooming"
+    },
+    "distance_to_station": 482.00453274331556
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9425983,
+    "lon": 7.4687021,
+    "tags": {
+      "name": "Plan B Records",
+      "shop": "music"
+    },
+    "distance_to_station": 432.0197405862767
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9409435,
+    "lon": 7.4627334,
+    "tags": {
+      "beauty": "tanning",
+      "name": "Golden Solarium",
+      "opening_hours": "Mo-Su 10:00-22:00",
+      "shop": "beauty"
+    },
+    "distance_to_station": 83.41307612963546
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9417876,
+    "lon": 7.4669756,
+    "tags": {
+      "addr:housenumber": "2",
+      "addr:street": "Ostring",
+      "check_date": "2022-07-08",
+      "email": "skinfit.bern@skinfit.ch",
+      "name": "Skinfit",
+      "opening_hours": "We-Fr 11:30-18:30; Sa 09:00-16:00",
+      "phone": "+41 31 558 14 42",
+      "shop": "sports"
+    },
+    "distance_to_station": 287.7422670771437
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9413577,
+    "lon": 7.4658141,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "110",
+      "addr:postcode": "3006",
+      "addr:street": "Thunstrasse",
+      "brand": "Migros",
+      "brand:wikidata": "Q680727",
+      "level": "0",
+      "name": "Migros",
+      "opening_hours": "Mo-Fr 08:00-19:00; Sa 08:00-17:00",
+      "operator": "Genossenschaft Migros-Aare",
+      "phone": "+41585671930",
+      "shop": "supermarket",
+      "website": "https://www.migros.ch/",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 201.20145309362792
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9417271,
+    "lon": 7.4668177,
+    "tags": {
+      "name": "Biohof Zaugg",
+      "opening_hours": "Fr 09:00-12:15",
+      "organic": "yes",
+      "shop": "greengrocer",
+      "street_vendor": "yes",
+      "website": "https://www.biohofzaugg.ch/"
+    },
+    "distance_to_station": 275.4203034052243
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9416847,
+    "lon": 7.4670421,
+    "tags": {
+      "name": "Las Barricas",
+      "shop": "wine",
+      "website": "https://www.lasbarricas.ch/"
+    },
+    "distance_to_station": 292.2974026052141
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.9412196,
+    "lon": 7.4648908,
+    "tags": {
+      "name": "Afia's Plants",
+      "shop": "plant",
+      "website": "https://www.instagram.com/afiasplants/"
+    },
+    "distance_to_station": 136.55223520117002
+  }
+]

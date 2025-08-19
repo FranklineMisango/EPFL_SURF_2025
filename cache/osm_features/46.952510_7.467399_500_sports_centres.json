@@ -1,0 +1,53 @@
+[
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.9565741,
+    "lon": 7.4658836,
+    "tags": {
+      "access": "designated",
+      "leisure": "sports_centre",
+      "sport": "equestrian"
+    },
+    "distance_to_station": 466.31457976225994
+  },
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.9513371,
+    "lon": 7.4662247,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "15a",
+      "addr:postcode": "3006",
+      "addr:street": "Bitziusstrasse",
+      "building": "public",
+      "layer": "-1",
+      "leisure": "sports_centre",
+      "location": "underground",
+      "name": "Turnhalle Schosshalde",
+      "website": "https://www.bern.ch/mediencenter/medienmitteilungen/aktuell_ptk/doppelturnhalle-fuer-die-volksschule-bitzius-fertiggestellt"
+    },
+    "distance_to_station": 157.9689224441522
+  },
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.9519545,
+    "lon": 7.4657186,
+    "tags": {
+      "leisure": "sports_centre"
+    },
+    "distance_to_station": 141.7163387805568
+  },
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.9543665,
+    "lon": 7.4641576,
+    "tags": {
+      "access": "designated",
+      "leisure": "sports_centre",
+      "name": "Springgarten Paddock",
+      "source": "Orthofoto Bern",
+      "sport": "equestrian"
+    },
+    "distance_to_station": 321.1588410719975
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9395993,
+    "lon": 7.4593697,
+    "tags": {
+      "leisure": "playground",
+      "name": "Quartiertreff Thunplatz",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 367.39431406874394
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9425019,
+    "lon": 7.465723,
+    "tags": {
+      "access": "private",
+      "landuse": "leisure",
+      "leisure": "playground"
+    },
+    "distance_to_station": 215.41473567137308
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9442472,
+    "lon": 7.465796,
+    "tags": {
+      "access": "permissive",
+      "leisure": "playground",
+      "name": "Spielplatz Egelsee"
+    },
+    "distance_to_station": 352.2425608907179
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9406455,
+    "lon": 7.469016,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 455.2961422982216
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.938314,
+    "lon": 7.4617355,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 384.42265966968665
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9410103,
+    "lon": 7.4651919,
+    "tags": {
+      "leisure": "playground"
+    },
+    "distance_to_station": 166.43779117254198
+  }
+]

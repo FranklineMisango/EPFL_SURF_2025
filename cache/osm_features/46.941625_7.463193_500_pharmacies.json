@@ -1,0 +1,22 @@
+[
+  {
+    "feature_type": "pharmacies",
+    "lat": 46.9412039,
+    "lon": 7.46469,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "106",
+      "addr:postcode": "3006",
+      "addr:street": "Thunstrasse",
+      "amenity": "pharmacy",
+      "brand": "TopPharm",
+      "brand:wikidata": "Q110277794",
+      "healthcare": "pharmacy",
+      "name": "TopPharm",
+      "opening_hours": "Mo-Fr 08:00-12:30,14:00-18:30; Sa 08:00-16:00",
+      "operator": "Dr. Schnyder GmbH",
+      "website": "https://www.murifeld-apotheke.ch/"
+    },
+    "distance_to_station": 122.91987641021545
+  }
+]

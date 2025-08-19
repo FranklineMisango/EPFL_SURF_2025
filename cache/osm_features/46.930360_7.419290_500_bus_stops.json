@@ -1,0 +1,321 @@
+[
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9289494,
+    "lon": 7.4161306,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "568",
+      "highway": "bus_stop",
+      "name": "Neuhausplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "old_name": "K\u00f6niz, Neuhausplatz",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "uic_name": "Liebefeld, Neuhausplatz",
+      "uic_ref": "8590056",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 286.632291217362
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.931111,
+    "lon": 7.4207871,
+    "tags": {
+      "bus": "yes",
+      "ele": "561",
+      "highway": "bus_stop",
+      "name": "Liebefeld Park",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "old_name": "K\u00f6niz, Liebefeld Park",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "yes",
+      "uic_name": "Liebefeld, Liebefeld Park",
+      "uic_ref": "8590059"
+    },
+    "distance_to_station": 141.05484920408554
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.926618,
+    "lon": 7.4176633,
+    "tags": {
+      "bus": "yes",
+      "ele": "572",
+      "highway": "bus_stop",
+      "name": "Br\u00fchlplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "K\u00f6niz, Br\u00fchlplatz",
+      "uic_ref": "8571413"
+    },
+    "distance_to_station": 434.03985260863965
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9307948,
+    "lon": 7.4205154,
+    "tags": {
+      "bus": "yes",
+      "ele": "561",
+      "highway": "bus_stop",
+      "name": "Liebefeld Park",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "old_name": "K\u00f6niz, Liebefeld Park",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "uic_name": "Liebefeld, Liebefeld Park",
+      "uic_ref": "8590059"
+    },
+    "distance_to_station": 104.85955284804915
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9327858,
+    "lon": 7.4224783,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "563",
+      "highway": "bus_stop",
+      "name": "Hessstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Liebefeld, Hessstrasse",
+      "uic_ref": "8571412"
+    },
+    "distance_to_station": 362.44598964636566
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.933923,
+    "lon": 7.4153135,
+    "tags": {
+      "bus": "yes",
+      "ele": "560",
+      "highway": "bus_stop",
+      "name": "Neumattweg",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "old_name": "K\u00f6niz, Neumattweg",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "uic_name": "Liebefeld, Neumattweg",
+      "uic_ref": "8590119",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 498.1286334318946
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9321537,
+    "lon": 7.4230919,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "563",
+      "highway": "bus_stop",
+      "name": "Hessstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Liebefeld, Hessstrasse",
+      "uic_ref": "8571412"
+    },
+    "distance_to_station": 350.88540976652524
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9293634,
+    "lon": 7.4164736,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "568",
+      "highway": "bus_stop",
+      "name": "Neuhausplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "old_name": "K\u00f6niz, Neuhausplatz",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Liebefeld, Neuhausplatz",
+      "uic_ref": "8590056"
+    },
+    "distance_to_station": 240.86718629723975
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9322763,
+    "lon": 7.422795,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "563",
+      "highway": "bus_stop",
+      "name": "Hessstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Liebefeld, Hessstrasse",
+      "uic_ref": "8571412",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 340.9340513941484
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9329226,
+    "lon": 7.4173003,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "562",
+      "highway": "bus_stop",
+      "name": "Sportweg",
+      "name:ru": "\u0421\u043f\u043e\u0440\u0442\u0432\u0435\u0433",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "old_name": "K\u00f6niz, Sportweg",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Liebefeld, Sportweg",
+      "uic_ref": "8590055",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 322.522879777074
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9262455,
+    "lon": 7.4166768,
+    "tags": {
+      "bus": "yes",
+      "ele": "572",
+      "highway": "bus_stop",
+      "name": "Br\u00fchlplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "uic_name": "K\u00f6niz, Br\u00fchlplatz",
+      "uic_ref": "8571413",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 498.692393448218
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9328553,
+    "lon": 7.4167851,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "562",
+      "highway": "bus_stop",
+      "name": "Sportweg",
+      "name:ru": "\u0421\u043f\u043e\u0440\u0442\u0432\u0435\u0433",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "old_name": "K\u00f6niz, Sportweg",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Liebefeld, Sportweg",
+      "uic_ref": "8590055",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 336.3974926271808
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9287338,
+    "lon": 7.4165298,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "568",
+      "highway": "bus_stop",
+      "name": "Neuhausplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "old_name": "K\u00f6niz, Neuhausplatz",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Liebefeld, Neuhausplatz",
+      "uic_ref": "8590056"
+    },
+    "distance_to_station": 276.8172567673874
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9287464,
+    "lon": 7.423119,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "B\u00fcndenackerstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Liebefeld, B\u00fcndenackerstrasse",
+      "uic_ref": "8502906",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 341.6589880742551
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9263692,
+    "lon": 7.417499,
+    "tags": {
+      "bus": "yes",
+      "ele": "572",
+      "highway": "bus_stop",
+      "name": "Br\u00fchlplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "K\u00f6niz, Br\u00fchlplatz",
+      "uic_ref": "8571413"
+    },
+    "distance_to_station": 464.12991396893597
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9308535,
+    "lon": 7.4161701,
+    "tags": {
+      "bus": "yes",
+      "ele": "574",
+      "highway": "bus_stop",
+      "name": "Thomasweg",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "yes",
+      "uic_name": "Liebefeld, Thomasweg",
+      "uic_ref": "8589266",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 243.17632741669365
+  }
+]

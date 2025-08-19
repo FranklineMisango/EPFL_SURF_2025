@@ -1,0 +1,97 @@
+[
+  {
+    "feature_type": "clinics",
+    "lat": 46.9526069,
+    "lon": 7.4337567,
+    "tags": {
+      "amenity": "clinic",
+      "check_date": "2022-10-27",
+      "contact:addr:full": "L\u00e4nggassstrasse 18, 3012 Bern",
+      "contact:email": "bern@pallas-kliniken.ch",
+      "contact:fax": "+41 58 3356119",
+      "contact:phone": "+41 58 3350000",
+      "healthcare": "clinic",
+      "healthcare:speciality": "ophthalmology",
+      "name": "Augenlaser Zentrum",
+      "opening_hours": "Mo-Th 08:00-12:00,13:00-17:30; Fr 08:00-12:15,13:00-17:00",
+      "operator": "Pallas Kliniken AG",
+      "website": "https://www.pallas-kliniken.ch/de/standorte/bern-3012.html"
+    },
+    "distance_to_station": 404.0070194937625
+  },
+  {
+    "feature_type": "clinics",
+    "lat": 46.9466224,
+    "lon": 7.4388229,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "10",
+      "addr:postcode": "3011",
+      "addr:street": "Schwanengasse",
+      "amenity": "clinic",
+      "branch": "Bern Zentrum",
+      "contact:email": "bern-zentrum@medbase.ch",
+      "contact:fax": "+41 31 326 55 66",
+      "contact:phone": "+41 31 326 55 55",
+      "contact:website": "https://www.medbase.ch/standorte/detail/medbase-bern-zentrum/",
+      "emergency": "no",
+      "healthcare": "clinic",
+      "name": "Medbase",
+      "old_name": "Swica Gesundheitszentrum",
+      "opening_hours": "Mo-Th 07:30-18:00; Fr 07:30-17:30",
+      "operator": "Medbase AG",
+      "operator:type": "private",
+      "operator:wikidata": "Q50038690",
+      "toilets:wheelchair": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 498.1738134661368
+  },
+  {
+    "feature_type": "clinics",
+    "lat": 46.9497242,
+    "lon": 7.439182,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "10",
+      "addr:postcode": "3012",
+      "addr:street": "Parkterrasse",
+      "amenity": "clinic",
+      "branch": "Bern Bahnhof",
+      "contact:email": "bern-bahnhof@medbase.ch",
+      "contact:fax": "+41 31 335 50 80",
+      "contact:phone": "+41 31 335 50 00",
+      "description": "Praxiszentrum mit Walk-in-Notfall",
+      "emergency": "yes",
+      "healthcare": "clinic",
+      "name": "Medbase",
+      "opening_hours": "Mo-Fr 08:00-17:00; Sa 09:00-17:00",
+      "operator": "Medbase AG",
+      "operator:type": "private",
+      "operator:wikidata": "Q50038690",
+      "website": "https://www.medbase.ch/standorte/detail/medbase-bern-bahnhof/"
+    },
+    "distance_to_station": 159.23276574129991
+  },
+  {
+    "feature_type": "clinics",
+    "lat": 46.948328,
+    "lon": 7.438513,
+    "tags": {
+      "amenity": "clinic",
+      "contact:addr:full": "Bubenbergplatz 4b, 3011 Bern",
+      "contact:email": "ambulatorium-bern@suedhang.ch",
+      "contact:fax": "+41 31 8288024",
+      "contact:phone": "+41 31 8288000",
+      "emergency": "no",
+      "healthcare": "clinic",
+      "name": "S\u00fcdhang",
+      "social_facility": "healthcare",
+      "social_facility:for": "drug_addicted",
+      "source": "survey and website",
+      "website": "https://www.suedhang.ch"
+    },
+    "distance_to_station": 308.3030715775575
+  }
+]

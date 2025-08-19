@@ -1,0 +1,11 @@
+[
+  {
+    "feature_type": "retail",
+    "lat": 46.9280093,
+    "lon": 7.4169519,
+    "tags": {
+      "landuse": "retail"
+    },
+    "distance_to_station": 315.98181892986105
+  }
+]

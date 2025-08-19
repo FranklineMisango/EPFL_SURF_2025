@@ -1,0 +1,17 @@
+[
+  {
+    "feature_type": "banks",
+    "lat": 46.5219218,
+    "lon": 6.5841246,
+    "tags": {
+      "amenity": "bank",
+      "atm": "yes",
+      "brand": "Banque Cantonale Vaudoise",
+      "brand:wikidata": "Q685533",
+      "name": "Banque Cantonale Vaudoise",
+      "operator": "BCV",
+      "short_name": "BCV"
+    },
+    "distance_to_station": 414.5995027121336
+  }
+]

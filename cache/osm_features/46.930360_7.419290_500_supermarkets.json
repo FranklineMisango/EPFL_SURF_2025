@@ -1,0 +1,39 @@
+[
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.933398,
+    "lon": 7.4197151,
+    "tags": {
+      "brand": "Denner",
+      "brand:wikidata": "Q379911",
+      "brand:wikipedia": "en:Denner (supermarket)",
+      "cash_withdrawal": "migros_bank;postfinance_card",
+      "cash_withdrawal:fee": "no",
+      "cash_withdrawal:purchase_required": "no",
+      "cash_withdrawal:type": "checkout",
+      "check_date": "2023-08-07",
+      "contact:phone": "+41 31 3034670",
+      "name": "Denner",
+      "opening_hours": "Mo-Fr 07:00-20:00; Sa 08:00-17:00",
+      "shop": "supermarket",
+      "website": "https://www.denner.ch/"
+    },
+    "distance_to_station": 339.3488174087923
+  },
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.9287321,
+    "lon": 7.4167694,
+    "tags": {
+      "brand": "VOI",
+      "brand:wikidata": "Q110277616",
+      "check_date": "2023-12-05",
+      "name": "Voi",
+      "opening_hours": "Mo-Fr 07:30-19:00; Sa 07:30-17:00",
+      "operator": "Alexander Zysset",
+      "shop": "supermarket",
+      "start_date": "2023-12-07"
+    },
+    "distance_to_station": 263.43973132639127
+  }
+]

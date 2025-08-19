@@ -1,0 +1,490 @@
+[
+  {
+    "feature_type": "cafes",
+    "lat": 46.9486716,
+    "lon": 7.4478755,
+    "tags": {
+      "addr:postcode": "3011",
+      "alt_name": "Pyri",
+      "amenity": "cafe",
+      "contact:addr": "Kornhausplatz 17, 3011 Bern",
+      "contact:fax": "+41 31 3129204",
+      "contact:phone": "+41 31 3113063",
+      "contact:website": "http://www.pyri.ch/kontakt/",
+      "indoor_seating": "yes",
+      "name": "Caf\u00e9 des Pyren\u00e9es",
+      "opening_hours": "Mo-Sa 08:00-00:30; Su 12:00-23:00",
+      "outdoor_seating": "yes",
+      "source": "survey and website",
+      "website": "http://www.pyri.ch",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 885.9608038963258
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9478322,
+    "lon": 7.4472221,
+    "tags": {
+      "addr:floor": "0",
+      "alt_name": "Adriano's Bar & Caf\u00e9",
+      "amenity": "cafe",
+      "contact:addr": "Theaterplatz 2, 3011 Bern",
+      "contact:email": "kontakt@adrianos.ch",
+      "contact:phone": "+41 31 3188831",
+      "cuisine": "sandwich",
+      "diet:vegan": "no",
+      "diet:vegetarian": "yes",
+      "name": "Adriano's",
+      "opening_hours": "Mo-Sa 07:00-00:30; Su 10:00-23:30",
+      "smokefree": "yes",
+      "source": "survey and website",
+      "website": "https://www.adrianos.ch/",
+      "wheelchair": "limited",
+      "wifi": "no"
+    },
+    "distance_to_station": 991.651703528194
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9482771,
+    "lon": 7.4524423,
+    "tags": {
+      "alt_name": "Caf\u00e9 Bar Rathaus Odeon",
+      "amenity": "cafe",
+      "check_date": "2023-07-25",
+      "contact:addr": "Gerechtigkeitsgasse 78, 3011 Bern",
+      "name": "Rathaus Bar",
+      "name:en": "Rathaus Odeon"
+    },
+    "distance_to_station": 840.5034122059233
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9556431,
+    "lon": 7.4519046,
+    "tags": {
+      "amenity": "cafe",
+      "check_date": "2025-07-18",
+      "email": "info@visavisbern.ch",
+      "mobile": "+41 79 811 28 49",
+      "name": "Vis-\u00e0-vis",
+      "opening_hours": "Tu-We 09:00-23:00, Th-Sa 09:00-00:30",
+      "outdoor_seating": "yes",
+      "website": "https://www.visavisbern.ch/",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 85.62086884613676
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9564727,
+    "lon": 7.4451463,
+    "tags": {
+      "amenity": "cafe",
+      "cuisine": "bistro",
+      "email": "info@lorraine22.ch",
+      "name": "Lorraine 22",
+      "opening_hours": "Mo-We 16:00-22:00, Th-Fr 16:00-00:30, Sa 10:00-00:30",
+      "operator": "Blindspot",
+      "outdoor_seating": "yes",
+      "phone": "+41 31 517 83 99",
+      "website": "https://lorraine22.ch/"
+    },
+    "distance_to_station": 601.8246688757717
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9490113,
+    "lon": 7.444409,
+    "tags": {
+      "alt_name": "Glatz am Waisenhausplatz",
+      "amenity": "cafe",
+      "brand": "Glatz",
+      "brand:wikidata": "Q111731089",
+      "contact:addr": "Waisenhausplatz 21, 3011 Bern",
+      "contact:email": "info@glatz-bern.ch",
+      "contact:facebook": "https://www.facebook.com/beckglatzconfiseur",
+      "contact:fax": "+41 31 3002005",
+      "contact:phone": "+41 31 3002021",
+      "cuisine": "coffee_shop",
+      "internet_access": "wlan",
+      "internet_access:fee": "no",
+      "name": "Glatz",
+      "opening_hours": "Mo-Fr 06:30-19:00; Sa 07:00-17:00; Su 10:00-17:00",
+      "smoking": "no",
+      "source": "survey and website",
+      "website": "https://www.glatz-bern.ch/kontakt/karte/"
+    },
+    "distance_to_station": 1000.8162564260974
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9490676,
+    "lon": 7.4592481,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "16",
+      "addr:postcode": "3013",
+      "addr:street": "Kl\u00f6sterlistutz",
+      "amenity": "cafe",
+      "contact:email": "info@kloesterlibern.ch",
+      "contact:fax": "+41 31 3501001",
+      "contact:phone": "+41 31 3501000",
+      "name": "Kl\u00f6sterli Weincafe",
+      "opening_hours": "Mo-Su 11:00-23:30",
+      "operator": "Altes Tramdepot Brauerei Restaurant AG",
+      "outdoor_seating": "yes",
+      "website": "https://kloesterlibern.ch/"
+    },
+    "distance_to_station": 889.5635125016646
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9522941,
+    "lon": 7.445599,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "21n",
+      "addr:postcode": "3013",
+      "addr:street": "Altenbergrain",
+      "alt_name": "Caf\u00e9 Fleuri",
+      "amenity": "cafe",
+      "diet:vegetarian": "yes",
+      "email": "info@cafefleuri.ch",
+      "internet_access": "no",
+      "name": "Caf\u00e9 Fleuri",
+      "opening_hours": "Apr-Jun,Sep-Oct PH,Mo-Su 09:00-20:00; Nov-Mar off; Jul-Aug PH,Mo-Su 09:00-21:00",
+      "phone": "+41 764080550",
+      "smoking": "no",
+      "source": "survey and website",
+      "website": "https://www.cafefleuri.ch/"
+    },
+    "distance_to_station": 686.6142649774365
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9478112,
+    "lon": 7.4499623,
+    "tags": {
+      "alt_name": "Einstein Kaffee und Rauchsalon",
+      "amenity": "cafe",
+      "contact:addr": "Kramgasse 49, 3011 Bern",
+      "contact:email": "info@einstein-kaffee.ch",
+      "contact:fax": "+41 31 3117968",
+      "contact:phone": "+41 31 3122828",
+      "name": "Einstein",
+      "opening_hours": "Mo-We 08:30-22:30; Th-Fr 08:30-00:30; Sa 07:00-00:30; Su 09:00-17:00",
+      "operator": "Einstein Kaffee AG",
+      "smoking": "separated",
+      "source": "survey and website",
+      "toilets:wheelchair": "no",
+      "website": "http://www.einstein-kaffee.ch",
+      "wheelchair": "limited"
+    },
+    "distance_to_station": 920.6819631018006
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.949955,
+    "lon": 7.4588055,
+    "tags": {
+      "amenity": "cafe",
+      "contact:addr": "Altenbergstrasse 6, 3013 Bern",
+      "contact:phone": "+41 31 3480305",
+      "name": "Albert & Frida",
+      "opening_hours": "Mo-Fr 07:00-22:00; Sa 07:30-17:30; Su 07:30-11:30",
+      "operator": "Albert & Frida GmbH",
+      "website": "https://albertfrida.ch/cafe-und-bistro"
+    },
+    "distance_to_station": 788.5637417760065
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9483174,
+    "lon": 7.4549394,
+    "tags": {
+      "alt_name": "Caf\u00e9 Bar Alpin",
+      "amenity": "cafe",
+      "contact:addr": "Gerechtigkeitsgasse 19, 3011 Bern",
+      "contact:email": "info@alpinbern.ch",
+      "contact:phone": "+41 31 3112575",
+      "name": "Caf\u00e9 Alpin",
+      "opening_hours": "Mo off; Tu 17:00-23:00; We-Fr 11:00-23:30; Sa 09:30-23:30; Su 11:00-18:00",
+      "operator": "Stephan Minder",
+      "source": "survey and website",
+      "website": "https://www.alpinbern.ch/"
+    },
+    "distance_to_station": 847.9618897122996
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.947951,
+    "lon": 7.4527632,
+    "tags": {
+      "alt_name": "Bistro Blue Cat",
+      "amenity": "cafe",
+      "check_date": "2025-07-18",
+      "contact:addr": "Gerechtigkeitsgasse 75, 3011 Bern",
+      "contact:phone": "+41 31 3110729",
+      "name": "Blue Cat",
+      "opening_hours": "Mo off; Tu-We 09:00-20:00; Th-Sa 09:00-00:30; Su off",
+      "operator": "Bistro Blue Cat GmbH",
+      "source": "survey"
+    },
+    "distance_to_station": 875.8765154379342
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9505859,
+    "lon": 7.4434432,
+    "tags": {
+      "alt_name": "Repair Caf\u00e9 Bern",
+      "amenity": "cafe",
+      "contact:addr": "Speichergasse 4, 3011 Bern",
+      "contact:email": "info@repair-cafe-bern.ch",
+      "contact:mobile": "+41 79 2972299",
+      "name": "Repair Caf\u00e9",
+      "opening_hours:url": "https://www.repair-cafe-bern.ch/Termine.php",
+      "operator": "Verein Repair Caf\u00e9 Bern",
+      "source": "Survey and website",
+      "toilets:wheelchair": "yes",
+      "website": "https://www.repair-cafe-bern.ch",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 931.9203005715706
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9471711,
+    "lon": 7.4500725,
+    "tags": {
+      "amenity": "cafe",
+      "contact:addr": "Herrengasse 10, 3011 Bern",
+      "contact:phone": "+41 43 8176330",
+      "name": "Weinkabinett Bergdorf",
+      "operator": "Bergdorf Homes AG",
+      "website": "http://www.weinkabinett.com"
+    },
+    "distance_to_station": 987.8032769269079
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9624923,
+    "lon": 7.4516195,
+    "tags": {
+      "addr:postcode": "3014",
+      "amenity": "cafe",
+      "contact:addr": "Standstrasse 34, 3014 Bern",
+      "contact:facebook": "philscoffeetogo",
+      "contact:instagram": "philscoffeetogo",
+      "name": "Phil's Coffee to Go",
+      "opening_hours": "Mo 07:30-13:30; Tu-Fr 07:30-14:30; Sa 09:00-13:30",
+      "operator": "Philipp Thoma",
+      "source": "survey",
+      "takeaway": "only",
+      "website": "https://www.philscoffeetogo.ch"
+    },
+    "distance_to_station": 748.2363075279026
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9571784,
+    "lon": 7.4467912,
+    "tags": {
+      "amenity": "cafe",
+      "check_date:opening_hours": "2023-06-20",
+      "contact:city": "Bern",
+      "contact:housenumber": "5",
+      "contact:phone": "+41 31 333 82 22",
+      "contact:postcode": "3013",
+      "contact:street": "Hofweg",
+      "contact:website": "https://www.bistro-zytlos.ch/",
+      "name": "Bistro zytlos",
+      "old_name": "Caf\u00e9 Wohnzimmer",
+      "opening_hours": "Mo 12:00-17:30; Tu-Fr 09:00-17:30; Sa 09:00-16:00; Su,PH off",
+      "operator": "GEWA"
+    },
+    "distance_to_station": 495.6132389672213
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.947348,
+    "lon": 7.4487192,
+    "tags": {
+      "amenity": "cafe",
+      "changing_table": "yes",
+      "changing_table:count": "1",
+      "changing_table:fee": "no",
+      "changing_table:location": "wheelchair_toilet",
+      "contact:addr": "M\u00fcnstergasse 61-63, 3011 Bern",
+      "contact:email": "willkommen@lesbar.ch",
+      "contact:facebook": "https://www.facebook.com/CafeLoungeLesbar",
+      "contact:phone": "+41 31 311 72 72",
+      "internet_access": "wlan",
+      "internet_access:fee": "no",
+      "name": "Lesbar",
+      "opening_hours": "Mo 08:00-20.00, Di-Fr 07:30-20:00; Sa 07:00-18:00",
+      "smoking": "no",
+      "toilets": "yes",
+      "toilets:access": "customers",
+      "toilets:wheelchair": "designated",
+      "website": "https://www.lesbar.ch",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 997.3785298466253
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9490065,
+    "lon": 7.4488208,
+    "tags": {
+      "amenity": "cafe",
+      "start_date": "2014"
+    },
+    "distance_to_station": 822.2806545906911
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9597696,
+    "lon": 7.4543749,
+    "tags": {
+      "addr:postcode": "3014",
+      "amenity": "cafe",
+      "contact:addr": "Stauffacherstrasse 11, 3014 Bern",
+      "contact:email": "info@kafipfyfouter.ch",
+      "contact:phone": "+41 31 3319505",
+      "contact:website": "https://www.kafipfyfouter.ch/",
+      "name": "Kafi Pfyfouter",
+      "opening_hours": "Tu-Fr 08:00-18:00; Sa 08:00-15:00; Su 09:00-17:00"
+    },
+    "distance_to_station": 450.56249879406465
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9484074,
+    "lon": 7.4550681,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "13",
+      "addr:postcode": "3011",
+      "addr:street": "Gerechtigkeitsgasse",
+      "amenity": "cafe",
+      "contact:email": "tschou@lieblings.be",
+      "contact:instagram": "https://www.instagram.com/lieblingsbern/",
+      "contact:website": "https://lieblings.be/",
+      "description": "Ein Haufen von Leuten, die ihrer Freude an nachhaltiger, gem\u00fctlicher Gastronomie nachgehen. Wir arbeiten alle ehrenamtlich und spenden den gesamten Lieblings-Gewinn plus dein Trinkgeld. So schmeckt dein Kaffee gleich doppelt gut!",
+      "internet_access": "yes",
+      "name": "Lieblings",
+      "opening_hours": "We-Th 17:00-23:00; Fr 17:00-24:00; Sa 10:00-24:00",
+      "opening_hours:covid19": "Fr 17:00-24:00; Sa 10:00-24:00",
+      "outdoor_seating": "yes"
+    },
+    "distance_to_station": 839.8960273407677
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9548039,
+    "lon": 7.4513278,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "3",
+      "addr:postcode": "3013",
+      "addr:street": "Viktoriaplatz",
+      "amenity": "cafe",
+      "check_date": "2024-09-11",
+      "email": "info@vktr.ch",
+      "name": "Viktor",
+      "opening_hours": "Mo-Tu 16:00-22:00; We 08:00-22:00; Th-Sa 08:00-24:00; Su 09:00-16:00",
+      "outdoor_seating": "yes",
+      "phone": "+41 31 333 30 13",
+      "website": "https://www.allcatsarebeautiful.ch/"
+    },
+    "distance_to_station": 170.5823847097295
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9489714,
+    "lon": 7.4488987,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "52",
+      "addr:postcode": "3011",
+      "addr:street": "Brunngasse",
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "email": "hello@jusqa.ch",
+      "food": "no",
+      "name": "jusq'\u00e0",
+      "opening_hours": "Mo-Fr 12:00-18:00",
+      "website": "https://www.jusqa.ch/"
+    },
+    "distance_to_station": 823.6165983628294
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9587906,
+    "lon": 7.4572151,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "2",
+      "addr:postcode": "3014",
+      "addr:street": "R\u00fctlistrasse",
+      "amenity": "cafe",
+      "cuisine": "coffee_shop;regional",
+      "name": "Simplyfine Bern",
+      "outdoor_seating": "yes",
+      "phone": "+41313435656",
+      "website": "https://www.simplyfine.ch"
+    },
+    "distance_to_station": 459.9719684154548
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9567894,
+    "lon": 7.4526464,
+    "tags": {
+      "amenity": "cafe",
+      "check_date": "2023-04-05",
+      "name": "breitsch"
+    },
+    "distance_to_station": 110.1402361795455
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9591314,
+    "lon": 7.4564413,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "99",
+      "addr:postcode": "3014",
+      "addr:street": "Rodtmattstrasse",
+      "amenity": "cafe",
+      "facebook": "https://www.facebook.com/Ferdinandkaffee/",
+      "name": "Ferdinand Coffee",
+      "opening_hours": "Tu-Fr 09:00-18:00; Sa 08:00-17:00",
+      "outdoor_seating": "yes",
+      "phone": "079 380 30 18",
+      "website": "https://ferdinand-coffee.ch/"
+    },
+    "distance_to_station": 451.22948298908227
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9480878,
+    "lon": 7.449528,
+    "tags": {
+      "amenity": "cafe",
+      "contact:addr": "Kramgasse 58, 3011 Bern",
+      "contact:email": "info@quericobistro.ch",
+      "contact:phone": "+41 41 9301919",
+      "cuisine": "mexican",
+      "name": "Qu\u00e9 Rico Bistro",
+      "operator": "Qu\u00e9 Rico GmbH",
+      "website": "https://www.quericobistro.ch"
+    },
+    "distance_to_station": 900.0864564271037
+  }
+]

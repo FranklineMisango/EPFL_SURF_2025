@@ -1,0 +1,36 @@
+[
+  {
+    "feature_type": "banks",
+    "lat": 46.5219218,
+    "lon": 6.5841246,
+    "tags": {
+      "amenity": "bank",
+      "atm": "yes",
+      "brand": "Banque Cantonale Vaudoise",
+      "brand:wikidata": "Q685533",
+      "name": "Banque Cantonale Vaudoise",
+      "operator": "BCV",
+      "short_name": "BCV"
+    },
+    "distance_to_station": 593.6472499076843
+  },
+  {
+    "feature_type": "banks",
+    "lat": 46.5281276,
+    "lon": 6.5899949,
+    "tags": {
+      "addr:city": "Renens",
+      "addr:housenumber": "22 B",
+      "addr:postcode": "1020",
+      "addr:street": "Rue du Lac",
+      "amenity": "bank",
+      "atm": "no",
+      "description": "Fiduciaire Renens Lausanne. Comptabilit\u00e9, salaires, d\u00e9claration d'imp\u00f4t, d\u00e9comptes TVA, administration. Cr\u00e9ation et domiciliation de soci\u00e9t\u00e9s.",
+      "drive_through": "no",
+      "name": "Fiduciaire",
+      "opening_hours": "LU-VE 09:00-16:00",
+      "operator": "Erisma Fiduciaire S\u00e0rl"
+    },
+    "distance_to_station": 853.939899909163
+  }
+]

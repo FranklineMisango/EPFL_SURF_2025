@@ -1,0 +1,29 @@
+[
+  {
+    "feature_type": "banks",
+    "lat": 46.9403349,
+    "lon": 7.4512216,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "35",
+      "addr:postcode": "3005",
+      "addr:street": "Helvetiastrasse",
+      "alt_name": "WIR Bank Bern",
+      "amenity": "bank",
+      "atm": "yes",
+      "branch": "Bern",
+      "brand": "WIR",
+      "brand:wikidata": "Q689689",
+      "contact:addr": "Helvetiastrasse 35, 3005 Bern",
+      "contact:email": "info@wir.ch",
+      "contact:fax": "+41 848 947942",
+      "contact:phone": "+41 848 947947",
+      "name": "WIR Bank",
+      "opening_hours": "Mo-Fr 08:00-12:00, 14:00-17:00; Sa-Su off; PH off",
+      "operator": "WIR Bank Genossenschaft",
+      "source": "survey and website",
+      "website": "https://www.wir.ch/ueber-uns/filialen/filiale-bern/"
+    },
+    "distance_to_station": 109.62463940511627
+  }
+]

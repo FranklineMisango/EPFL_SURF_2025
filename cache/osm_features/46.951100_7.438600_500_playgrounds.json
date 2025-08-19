@@ -1,0 +1,34 @@
+[
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9484494,
+    "lon": 7.4391436,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 297.60762204927204
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9492509,
+    "lon": 7.4379672,
+    "tags": {
+      "access": "yes",
+      "layer": "5",
+      "leisure": "playground"
+    },
+    "distance_to_station": 211.14653589864272
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9516874,
+    "lon": 7.4391065,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground",
+      "surface": "tartan"
+    },
+    "distance_to_station": 75.79051920593369
+  }
+]

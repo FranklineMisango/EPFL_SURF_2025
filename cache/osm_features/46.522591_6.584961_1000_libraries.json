@@ -1,0 +1,104 @@
+[
+  {
+    "feature_type": "libraries",
+    "lat": 46.5226786,
+    "lon": 6.5796508,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:postcode": "1015",
+      "amenity": "library",
+      "capacity": "750",
+      "contact:email": "Info-Dorigny@bcu.unil.ch",
+      "description": "Biblioth\u00e8que regroupant les collections acad\u00e9miques de la BCUL ainsi que son service des Manuscrits et la collection de livres pr\u00e9cieux. Emprunt gratuit apr\u00e8s inscription. Membre du r\u00e9seau Renouvaud",
+      "level": "1",
+      "name": "Biblioth\u00e8que cantonale et universitaire de Lausanne, site Unith\u00e8que",
+      "operator": "Etat de Vaud, DFJC",
+      "phone": "+41 21 692 47 66",
+      "ref:isil": "CH-000002-2",
+      "website": "https://www.bcu-lausanne.ch/",
+      "wheelchair": "yes",
+      "wikidata": "Q676831",
+      "wikimedia_commons": "Category:Biblioth\u00e8que cantonale et universitaire de Lausanne",
+      "wikipedia": "fr:Biblioth\u00e8que cantonale et universitaire - Lausanne"
+    },
+    "distance_to_station": 407.5718813705054
+  },
+  {
+    "feature_type": "libraries",
+    "lat": 46.5226775,
+    "lon": 6.5835069,
+    "tags": {
+      "addr:city": "Lausanne-Dorigny",
+      "addr:postcode": "1015",
+      "alt_name": "BEF",
+      "amenity": "library",
+      "contact:email": "bibliotheque@fondation-fleuret.ch",
+      "contact:phone": "+41 21 692 48 90",
+      "contact:website": "http://fondation-fleuret.ch/bibliotheque/",
+      "name": "Biblioth\u00e8que Edouard Fleuret",
+      "operator": "Universit\u00e9 de Lausanne, site Internef",
+      "wikidata": "Q27483289"
+    },
+    "distance_to_station": 111.98772434156928
+  },
+  {
+    "feature_type": "libraries",
+    "lat": 46.5206483,
+    "lon": 6.5770502,
+    "tags": {
+      "amenity": "library",
+      "name": "Biblioth\u00e8que de biologie"
+    },
+    "distance_to_station": 644.2828715100483
+  },
+  {
+    "feature_type": "libraries",
+    "lat": 46.5226304,
+    "lon": 6.5838946,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:postcode": "1015",
+      "amenity": "library",
+      "capacity": "460",
+      "contact:email": "bcu-internef@bcu.unil.ch",
+      "description": "Biblioth\u00e8que regroupant les collections acad\u00e9miques de droit et d'\u00e9conomie de la BCUL. Emprunt gratuit apr\u00e8s inscription. Membre du r\u00e9seau Renouvaud",
+      "level": "0",
+      "name": "Biblioth\u00e8que cantonale et universitaire de Lausanne, site Internef",
+      "operator": "Etat de Vaud, DFJC",
+      "phone": "+41 21 692 48 83",
+      "website": "https://www.bcu-lausanne.ch/",
+      "wikidata": "Q676831",
+      "wikimedia_commons": "Category:Biblioth\u00e8que cantonale et universitaire de Lausanne",
+      "wikipedia": "fr:Biblioth\u00e8que cantonale et universitaire - Lausanne"
+    },
+    "distance_to_station": 81.94282039344553
+  },
+  {
+    "feature_type": "libraries",
+    "lat": 46.5313427,
+    "lon": 6.5866767,
+    "tags": {
+      "addr:city": "Renens",
+      "addr:country": "CH",
+      "addr:housenumber": "10",
+      "addr:postcode": "1020",
+      "addr:street": "Rue du L\u00e9man",
+      "amenity": "library",
+      "contact:email": "bibliotheque.leman@renens.ch",
+      "contact:phone": "+41 21 632 73 49",
+      "contact:website": "https://www.netvibes.com/bibliotheque_leman_renens#Bienvenue",
+      "name": "Biblioth\u00e8que du L\u00e9man"
+    },
+    "distance_to_station": 981.7185139947829
+  },
+  {
+    "feature_type": "libraries",
+    "lat": 46.526511,
+    "lon": 6.5792932,
+    "tags": {
+      "amenity": "library",
+      "name": "Biblioth\u00e8que des sciences de la terre"
+    },
+    "distance_to_station": 615.6304434063406
+  }
+]

@@ -1,0 +1,222 @@
+[
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5201327,
+    "lon": 6.5654592,
+    "tags": {
+      "amenity": "restaurant",
+      "diet:vegan": "no",
+      "diet:vegetarian": "yes",
+      "indoor_seating": "yes",
+      "name": "L'esplanade",
+      "opening_hours": "Mo-Fr 07:00-19:00",
+      "outdoor_seating": "yes",
+      "payment:credit_cards": "yes",
+      "payment:debit_cards": "yes",
+      "smoking": "outside",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 228.50113549195265
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.520841,
+    "lon": 6.5643819,
+    "tags": {
+      "amenity": "restaurant",
+      "diet:vegetarian": "yes",
+      "name": "Piano",
+      "opening_hours": "Mo-Fr 11:30-13:30",
+      "website": "https://www.epfl.ch/campus/restaurants-shops-hotels/fr/restauration/self-service/le-corbusier/",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 306.86170997840077
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5203721,
+    "lon": 6.5672157,
+    "tags": {
+      "amenity": "restaurant",
+      "diet:vegetarian": "yes",
+      "name": "Le Parmentier",
+      "opening_hours": "Mo-Fr 11:00-14:00; Mo-Th 18:00-20:00"
+    },
+    "distance_to_station": 306.1109140422111
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.520374,
+    "lon": 6.5675081,
+    "tags": {
+      "amenity": "restaurant",
+      "diet:vegetarian": "yes",
+      "name": "Le Native, Foodlab",
+      "opening_hours": "Mo-Fr 11:30-14:00"
+    },
+    "distance_to_station": 319.58229724491423
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.520333,
+    "lon": 6.5688234,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Le Copernic",
+      "opening_hours": "Mo-Fr 12:00-14:00"
+    },
+    "distance_to_station": 386.97106590217413
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5211797,
+    "lon": 6.5740002,
+    "tags": {
+      "amenity": "restaurant",
+      "cuisine": "regional",
+      "name": "Caf\u00e9teria Amphimax"
+    },
+    "distance_to_station": 774.2145574256647
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5204437,
+    "lon": 6.567002,
+    "tags": {
+      "amenity": "restaurant",
+      "cuisine": "vietnamese",
+      "diet:vegetarian": "no",
+      "name": "L'Atlantide",
+      "opening_hours": "Mo-Fr 07:00-16:30"
+    },
+    "distance_to_station": 303.85495261232506
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5200508,
+    "lon": 6.5636699,
+    "tags": {
+      "amenity": "restaurant",
+      "diet:vegetarian": "yes",
+      "name": "L'Ornithorynque",
+      "opening_hours": "Mo-Fr 11:30-14:00",
+      "website": "https://restauration.epfl.ch/op/edit/Ornithorynque"
+    },
+    "distance_to_station": 237.09585441496077
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.517884,
+    "lon": 6.5688787,
+    "tags": {
+      "amenity": "restaurant",
+      "check_date:opening_hours": "2023-05-18",
+      "diet:vegetarian": "yes",
+      "name": "La Table de Vallotton",
+      "opening_hours": "Mo-Fr 11:45-14:00,18:30-22:00",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 302.8866227258103
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5163226,
+    "lon": 6.5621224,
+    "tags": {
+      "amenity": "restaurant",
+      "check_date:opening_hours": "2024-02-21",
+      "cuisine": "regional",
+      "email": "puur.epfl@eurest.ch",
+      "mobile": "+41 79 812 49 13",
+      "name": "Puur Innovation",
+      "opening_hours": "Mo-Fr 8:00-16:00",
+      "opening_hours:kitchen": "Mo-Fr 11:30-14:00",
+      "outdoor_seating": "yes",
+      "reservation": "yes",
+      "smoking": "outside",
+      "website": "https://www.epfl.ch/campus/restaurants-shops-hotels/self-service-2/puur/",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 293.7782920423951
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5225192,
+    "lon": 6.5657129,
+    "tags": {
+      "addr:city": "Ecublens (VD)",
+      "addr:housenumber": "8c",
+      "addr:postcode": "1024",
+      "addr:street": "Route Louis-Favre",
+      "amenity": "restaurant",
+      "capacity": "150",
+      "cuisine": "italian",
+      "diet:vegetarian": "yes",
+      "email": "ciao@gina-ristorante.ch",
+      "name": "Gina Ristorante",
+      "opening_hours": "Mo-Fr 11:45-14:00,18:45-21:30",
+      "phone": "+41 21 691 01 33",
+      "smoking": "outside",
+      "source": "EPFL Website, http://restauration.epfl.ch/gina and http://bottin.epfl.ch/ubrowse.action?acro=GINA",
+      "takeaway": "yes",
+      "website": "https://restauration.epfl.ch/gina",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 493.8831647746436
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5102337,
+    "lon": 6.5587481,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "Le Skipper",
+      "opening_hours": "Mo-Fr 06:30-23:30; Sa 07:00-23:30"
+    },
+    "distance_to_station": 996.1651143826492
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5169411,
+    "lon": 6.5768211,
+    "tags": {
+      "addr:housenumber": "11",
+      "addr:street": "Chemin du Petit-Port",
+      "amenity": "restaurant",
+      "cuisine": "french",
+      "indoor_seating": "yes",
+      "internet_access": "wlan",
+      "name": "Bistrot Du Petit Port",
+      "opening_hours": "PH,Mo-Su 09:00-23:00",
+      "outdoor_seating": "yes"
+    },
+    "distance_to_station": 920.5322808681908
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5138873,
+    "lon": 6.5707702,
+    "tags": {
+      "amenity": "restaurant",
+      "name": "L'Abordage",
+      "phone": "+41216919393",
+      "website": "https://abordage-restaurant.ch/"
+    },
+    "distance_to_station": 648.0442503941558
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.5257853,
+    "lon": 6.5612222,
+    "tags": {
+      "addr:city": "Ecublens (VD)",
+      "addr:country": "CH",
+      "addr:postcode": "1024",
+      "amenity": "restaurant",
+      "building": "yes",
+      "name": "Auberge Communale",
+      "source": "EPFL ortho"
+    },
+    "distance_to_station": 899.9588686783093
+  }
+]

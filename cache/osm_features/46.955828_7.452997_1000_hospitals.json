@@ -1,0 +1,45 @@
+[
+  {
+    "feature_type": "hospitals",
+    "lat": 46.9526076,
+    "lon": 7.4482726,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "11",
+      "addr:postcode": "3013",
+      "addr:street": "Sch\u00e4nzlihalde",
+      "amenity": "hospital",
+      "healthcare": "hospital",
+      "healthcare:speciality": "intensive",
+      "name": "Klinik Beau-Site",
+      "operator": "Hirslanden Gruppe",
+      "phone": "+41 31 335 33 33",
+      "website": "https://www.hirslanden.ch/de/klinik-beau-site/home.html",
+      "wheelchair": "yes",
+      "wikidata": "Q27926550"
+    },
+    "distance_to_station": 507.42847882014263
+  },
+  {
+    "feature_type": "hospitals",
+    "lat": 46.9520936,
+    "lon": 7.4536397,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "39",
+      "addr:postcode": "3013",
+      "addr:street": "Sch\u00e4nzlistrasse",
+      "amenity": "hospital",
+      "check_date": "2024-07-16",
+      "healthcare": "hospital",
+      "name": "Salem-Spital",
+      "operator": "Hirslanden Gruppe",
+      "phone": "+41 31 337 60 00",
+      "toilets:wheelchair": "yes",
+      "website": "https://www.hirslanden.ch/de/salem-spital/home.html",
+      "wheelchair": "yes",
+      "wikidata": "Q22001404"
+    },
+    "distance_to_station": 418.04123709601265
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "feature_type": "atms",
+    "lat": 46.9419014,
+    "lon": 7.4504188,
+    "tags": {
+      "amenity": "atm",
+      "covered": "yes",
+      "location": "outdoor",
+      "operator": "PostFinance",
+      "operator:wikidata": "Q449233"
+    },
+    "distance_to_station": 75.00585425222894
+  }
+]

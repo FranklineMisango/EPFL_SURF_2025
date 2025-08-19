@@ -1,0 +1,22 @@
+{
+  "total_population": 1,
+  "average_population_per_cell": 1.0,
+  "max_population_cell": 1,
+  "min_population_cell": 1,
+  "population_std": NaN,
+  "population_density_km2": 1.2732395447351628,
+  "closest_population_distance": 220.29909138162847,
+  "average_population_distance": 220.29909138162847,
+  "farthest_population_distance": 220.29909138162847,
+  "population_within_100m": 0,
+  "density_within_100m": 0.0,
+  "population_within_250m": 1,
+  "density_within_250m": 5.092958178940651,
+  "population_within_500m": 1,
+  "density_within_500m": 1.2732395447351628,
+  "population_gini": 0.0,
+  "population_entropy": 0.0,
+  "population_center_distance": 0.0,
+  "populated_cells_count": 1,
+  "empty_cells_ratio": 0.0
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "feature_type": "train_stations",
+    "lat": 46.5221982,
+    "lon": 6.566154,
+    "tags": {
+      "ele": "396",
+      "light_rail": "yes",
+      "name": "EPFL",
+      "operator": "TL",
+      "public_transport": "station",
+      "railway": "station",
+      "railway:ref": "EPFL",
+      "station": "light_rail",
+      "uic_name": "Ecublens VD, EPFL",
+      "uic_ref": "8501214",
+      "wheelchair": "yes",
+      "wikidata": "Q29861806",
+      "wikimedia_commons": "Category:EPFL m1 station"
+    },
+    "distance_to_station": 464.0407580832524
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "feature_type": "dentists",
+    "lat": 46.933443,
+    "lon": 7.4196798,
+    "tags": {
+      "amenity": "dentist",
+      "email": "info@zahnarztpraxisliebefeld.ch",
+      "healthcare": "dentist",
+      "level": "3",
+      "name": "Zahnarztpraxis Liebefeld",
+      "opening_hours": "Mo-Th 08:00-12:00,13:00-17:00; Fr 07:30-12:30,13:00-16:00",
+      "phone": "+41 31 971 30 30",
+      "website": "https://www.praxisliebefeld.ch",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 344.0893119340753
+  }
+]

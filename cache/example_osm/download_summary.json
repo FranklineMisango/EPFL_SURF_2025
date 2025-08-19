@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-08-13 12:38:22",
+  "total_stations": 3,
+  "successful_downloads": 3,
+  "success_rate": 1.0,
+  "config": {
+    "radius_meters": 500,
+    "use_osmnx": true,
+    "use_overpass": true,
+    "rate_limit_seconds": 0.5
+  }
+}

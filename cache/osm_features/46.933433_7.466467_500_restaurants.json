@@ -1,0 +1,22 @@
+[
+  {
+    "feature_type": "restaurants",
+    "lat": 46.9367029,
+    "lon": 7.4666416,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "50",
+      "addr:postcode": "3006",
+      "addr:street": "Elfenauweg",
+      "alt_name": "Restaurant ElfenauPark",
+      "amenity": "restaurant",
+      "email": "restaurant@elfenaupark.ch",
+      "name": "ElfenauPark",
+      "phone": "+41 31 356 36 56",
+      "website": "https://www.elfenaupark.ch/restaurant",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 363.8378844293768
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "feature_type": "dentists",
+    "lat": 46.9364759,
+    "lon": 7.46569,
+    "tags": {
+      "amenity": "dentist",
+      "description": "Telefon N. Bl\u00f6chlinger: +41 31 351 00 73 Telefon D. Moser: +41 31 352 65 10",
+      "email": "zahnarztpraxis-elfenau@bluewin.ch",
+      "healthcare": "dentist",
+      "name": "Zahnarztpraxis Elfenau",
+      "operator": "Dr. med. dent. Niklaus Bl\u00f6chlinger;Dr. med. dent. Dominick Moser",
+      "phone": "+41 31 351 00 73",
+      "website": "https://zahnarztpraxis-elfenau.ch/"
+    },
+    "distance_to_station": 343.45972171627244
+  }
+]

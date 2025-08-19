@@ -1,0 +1,94 @@
+[
+  {
+    "feature_type": "cafes",
+    "lat": 46.9428952,
+    "lon": 7.4524618,
+    "tags": {
+      "alt_name": "Caf\u00e9 Royal",
+      "amenity": "cafe",
+      "contact:addr": "Luisenstrasse 14, 3005 Bern",
+      "contact:email": "royal@vatter.ch",
+      "contact:fax": "+41 31 3515715",
+      "contact:phone": "+41 31 3021000",
+      "name": "Royal",
+      "opening_hours": "Mo-Fr 07:15-18:30; Sa 07:15-14:00; Su 09:00-13:00",
+      "source": "survey and website",
+      "website": "https://www.vatter.ch/royal"
+    },
+    "distance_to_station": 225.56351080420427
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9420991,
+    "lon": 7.4499084,
+    "tags": {
+      "alt_name": "Caf\u00e9 Pavillon",
+      "amenity": "cafe",
+      "contact:addr": "Helvetiastrasse 16a, 3005 Bern",
+      "contact:email": "cafepavillon@mfk.ch",
+      "contact:phone": "+41 31 3575529",
+      "indoor_seating": "yes",
+      "name": "Pavillon",
+      "opening_hours": "Mo off; Tu-Su 10:00-17:00",
+      "outdoor_seating": "yes",
+      "website": "https://www.mfk.ch/information/cafe-pavillon/"
+    },
+    "distance_to_station": 111.6895844660843
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9421477,
+    "lon": 7.4488032,
+    "tags": {
+      "amenity": "cafe",
+      "contact:addr": "Bernastrasse 15, 3005 Bern",
+      "name": "Cafeteria & Shop",
+      "opening_hours": "Mo 14:00-17:00; Tu 09:00-17:00; We 09:00-18:00; Th-Fr 09:00-17:00; Sa-Su 10:00-17:00",
+      "outdoor_seating": "yes"
+    },
+    "distance_to_station": 175.40433419844496
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9414871,
+    "lon": 7.4501246,
+    "tags": {
+      "alt_name": "Bistrot L'esprit nouveau",
+      "amenity": "cafe",
+      "contact:addr": "Hallwylstrasse 15, 3005 Bern",
+      "contact:email": "geniessen@bistrot-bern.ch",
+      "contact:phone": "+41 31 3242234",
+      "name": "L'esprit nouveau",
+      "opening_hours": "Mo-Fr 08:00-17:00",
+      "operator": "KG Gastrokultur GmbH",
+      "reusable_packaging:accept": "yes",
+      "source": "survey and website",
+      "takeaway": "yes",
+      "website": "https://www.bistrot-bern.ch/"
+    },
+    "distance_to_station": 51.28574709216867
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9443887,
+    "lon": 7.4491711,
+    "tags": {
+      "addr:full": "Helvetiaplatz 1, 3005 Bern",
+      "alt_name": "Kunsthalle Bar",
+      "amenity": "cafe",
+      "area": "yes",
+      "artist:wikidata": "Q56298882",
+      "artist_name": "Lang/Baumann",
+      "artwork_type": "installation",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Installation_Module_5_(Kunsthalle_Bar)_(Lang\u2044Baumann_2018)_11.JPG/800px-Installation_Module_5_(Kunsthalle_Bar)_(Lang\u2044Baumann_2018)_11.JPG",
+      "location:description:de": "\u00dcber dem Aareabhang auf der n\u00f6rdlichen Seite vor der Kunsthalle Helvetiaplatz 1 in 3005 Bern",
+      "name": "Module #5",
+      "start_date": "2018",
+      "tourism": "artwork",
+      "type": "multipolygon",
+      "wikidata": "Q98124913",
+      "wikimedia_commons": "Category:Installation Module 5 (Kunsthalle Bar) (Lang\u2044Baumann 2018)"
+    },
+    "distance_to_station": 367.3224620373982
+  }
+]

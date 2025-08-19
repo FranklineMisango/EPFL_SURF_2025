@@ -1,0 +1,31 @@
+[
+  {
+    "feature_type": "industrial",
+    "lat": 46.9297611,
+    "lon": 7.4171331,
+    "tags": {
+      "landuse": "industrial"
+    },
+    "distance_to_station": 176.80323250634262
+  },
+  {
+    "feature_type": "industrial",
+    "lat": 46.9291286,
+    "lon": 7.4188216,
+    "tags": {
+      "landuse": "industrial",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 141.4695517553799
+  },
+  {
+    "feature_type": "industrial",
+    "lat": 46.9331661,
+    "lon": 7.418672,
+    "tags": {
+      "landuse": "industrial",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 315.5329622271088
+  }
+]

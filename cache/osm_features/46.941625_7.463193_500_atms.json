@@ -1,0 +1,14 @@
+[
+  {
+    "feature_type": "atms",
+    "lat": 46.9419682,
+    "lon": 7.4653836,
+    "tags": {
+      "amenity": "atm",
+      "indoor": "yes",
+      "opening_hours": "24/7",
+      "operator": "PostFinance"
+    },
+    "distance_to_station": 170.63676974937826
+  }
+]

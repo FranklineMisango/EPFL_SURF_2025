@@ -1,0 +1,23 @@
+[
+  {
+    "feature_type": "industrial",
+    "lat": 46.5179608,
+    "lon": 6.5495941,
+    "tags": {
+      "industrial": "factory",
+      "landuse": "industrial",
+      "name": "Thermofisher Scientific - ARL"
+    },
+    "distance_to_station": 970.6792239265637
+  },
+  {
+    "feature_type": "industrial",
+    "lat": 46.5127634,
+    "lon": 6.5517143,
+    "tags": {
+      "landuse": "industrial",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 1056.3699638826588
+  }
+]

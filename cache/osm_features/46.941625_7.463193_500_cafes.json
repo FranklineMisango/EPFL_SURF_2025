@@ -1,0 +1,34 @@
+[
+  {
+    "feature_type": "cafes",
+    "lat": 46.9391408,
+    "lon": 7.4636159,
+    "tags": {
+      "amenity": "cafe",
+      "name": "Kirchgemeinde Petrus",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 278.07986698251005
+  },
+  {
+    "feature_type": "cafes",
+    "lat": 46.9437203,
+    "lon": 7.4640696,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "21e",
+      "addr:postcode": "3006",
+      "addr:street": "Muristrasse",
+      "amenity": "cafe",
+      "bar": "yes",
+      "email": "kontakt@caffebarriva.ch",
+      "level": "0",
+      "name": "Caff\u00e8 Bar Riva",
+      "opening_hours": "Mo-Fr 08:00-23:00, Sa 09:00-23:00,09:00-18:00",
+      "outdoor_seating": "yes",
+      "toilets": "yes",
+      "website": "https://caffebarriva.ch"
+    },
+    "distance_to_station": 242.3172510563821
+  }
+]

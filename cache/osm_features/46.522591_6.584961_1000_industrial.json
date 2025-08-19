@@ -1,0 +1,42 @@
+[
+  {
+    "feature_type": "industrial",
+    "lat": 46.5278263,
+    "lon": 6.5937974,
+    "tags": {
+      "landuse": "industrial"
+    },
+    "distance_to_station": 893.5069676362536
+  },
+  {
+    "feature_type": "industrial",
+    "lat": 46.5265794,
+    "lon": 6.5960328,
+    "tags": {
+      "landuse": "industrial"
+    },
+    "distance_to_station": 958.2506135270323
+  },
+  {
+    "feature_type": "industrial",
+    "lat": 46.5258763,
+    "lon": 6.5984722,
+    "tags": {
+      "landuse": "industrial"
+    },
+    "distance_to_station": 1099.1380795046957
+  },
+  {
+    "feature_type": "industrial",
+    "lat": 46.5195752,
+    "lon": 6.5891435,
+    "tags": {
+      "industrial": "gas",
+      "landuse": "industrial",
+      "operator": "Gaznat SA",
+      "pipeline": "substation",
+      "substation": "distribution"
+    },
+    "distance_to_station": 464.09693733487086
+  }
+]

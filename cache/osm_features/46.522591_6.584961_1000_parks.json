@@ -1,0 +1,75 @@
+[
+  {
+    "feature_type": "parks",
+    "lat": 46.5311809,
+    "lon": 6.5814854,
+    "tags": {
+      "leisure": "park",
+      "name": "Parc du Ranch"
+    },
+    "distance_to_station": 991.4036288901137
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.525895,
+    "lon": 6.5884801,
+    "tags": {
+      "access": "private",
+      "leisure": "park",
+      "surface": "compacted"
+    },
+    "distance_to_station": 455.852118893932
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5294575,
+    "lon": 6.5899394,
+    "tags": {
+      "leisure": "park",
+      "name": "Parc de la Del\u00e8ze"
+    },
+    "distance_to_station": 853.5316431231788
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5266391,
+    "lon": 6.5927678,
+    "tags": {
+      "leisure": "park",
+      "name": "Parc des C\u00f4tes"
+    },
+    "distance_to_station": 749.195888279395
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5247104,
+    "lon": 6.5968215,
+    "tags": {
+      "leisure": "park",
+      "name": "Esplanade des C\u00f4tes"
+    },
+    "distance_to_station": 940.0492201022145
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5186969,
+    "lon": 6.5911014,
+    "tags": {
+      "leisure": "park",
+      "name": "Parc Bourget",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 639.8322887253175
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5315115,
+    "lon": 6.5842972,
+    "tags": {
+      "leisure": "park",
+      "name": "Promenade des Cornouillers",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 992.9241801109989
+  }
+]

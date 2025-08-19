@@ -1,0 +1,21 @@
+[
+  {
+    "feature_type": "libraries",
+    "lat": 46.9486987,
+    "lon": 7.4272694,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "10",
+      "addr:postcode": "3008",
+      "addr:street": "Murtenstrasse",
+      "amenity": "library",
+      "email": "bibliothek.gesundheit@bfh.ch",
+      "name": "Bibliothek Gesundheit",
+      "operator": "Berner Fachhochschule",
+      "phone": "+41 31 848 35 90",
+      "website": "www.gesundheit.bfh.ch/bibliothek"
+    },
+    "distance_to_station": 474.95784725815844
+  }
+]

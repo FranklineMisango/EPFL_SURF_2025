@@ -1,0 +1,68 @@
+[
+  {
+    "feature_type": "restaurants",
+    "lat": 46.9558307,
+    "lon": 7.4674815,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "52",
+      "addr:postcode": "3006",
+      "addr:street": "Bolligenstrasse",
+      "alt_name": "Ristorante Bella Vita Pizzeria",
+      "amenity": "restaurant",
+      "contact:email": "info@ristorantebellavita.ch",
+      "contact:facebook": "https://www.facebook.com/bellavitabern",
+      "contact:fax": "+41 31 3321008",
+      "contact:phone": "+41 31 3320808",
+      "name": "Bella Vita",
+      "opening_hours": "Mo-Fr 10:30-14:00, 17:00-23:30; Sa 17:00-24:00; Su off",
+      "operator": "Ristorante Bella Vita GmbH",
+      "source": "survey and website",
+      "toilets:wheelchair": "yes",
+      "website": "https://www.ristorantebellavita.ch/",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 369.29808295698666
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.9485681,
+    "lon": 7.4654369,
+    "tags": {
+      "alt_name": "Personalrestaurant Visana Laubegg",
+      "amenity": "restaurant",
+      "contact:phone": "+41 31 3578229",
+      "name": "Visana Laubegg",
+      "operator": "SV (Schweiz) AG"
+    },
+    "distance_to_station": 462.93071912288224
+  },
+  {
+    "feature_type": "restaurants",
+    "lat": 46.9536959,
+    "lon": 7.4623052,
+    "tags": {
+      "alt_name": "Restaurant Reiterstrasse Kantonale Verwaltung",
+      "amenity": "restaurant",
+      "contact:addr": "Reiterstrasse 11, 3013 Bern",
+      "contact:phone": "+41 31 3320878",
+      "cuisine": "international",
+      "delivery": "no",
+      "internet_access": "Kantons-Gast-WLAN",
+      "internet_access:fee": "no",
+      "microbrewery": "no",
+      "name": "Reiterstrasse Kantonale Verwaltung",
+      "opening_hours": "Sa,Su off; Mo-Th 08:00-15:30; Fr 08:00-13:30",
+      "operator": "SV (Schweiz) AG",
+      "outdoor_seating": "yes",
+      "reservation": "yes",
+      "smoking": "outside",
+      "source": "website",
+      "takeaway": "no",
+      "website": "https://reiterstrasse.sv-restaurant.ch",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 408.4952111543296
+  }
+]

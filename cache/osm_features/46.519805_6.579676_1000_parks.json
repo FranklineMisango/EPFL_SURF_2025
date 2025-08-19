@@ -1,0 +1,59 @@
+[
+  {
+    "feature_type": "parks",
+    "lat": 46.513532,
+    "lon": 6.5723753,
+    "tags": {
+      "leisure": "park",
+      "name": "Parc du P\u00e9lican"
+    },
+    "distance_to_station": 894.4989109304477
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5154659,
+    "lon": 6.5754669,
+    "tags": {
+      "leisure": "park",
+      "name": "Parc des Pierrettes"
+    },
+    "distance_to_station": 580.4993013068867
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5200074,
+    "lon": 6.5683476,
+    "tags": {
+      "access": "yes",
+      "fee": "yes",
+      "leisure": "park",
+      "name": "Piccard",
+      "opening_hours": "24/7",
+      "operator": "EPFL Campus Pi\u00e9ton",
+      "parking": "surface"
+    },
+    "distance_to_station": 869.5710658272385
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.525895,
+    "lon": 6.5884801,
+    "tags": {
+      "access": "private",
+      "leisure": "park",
+      "surface": "compacted"
+    },
+    "distance_to_station": 956.3738360164922
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5186969,
+    "lon": 6.5911014,
+    "tags": {
+      "leisure": "park",
+      "name": "Parc Bourget",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 885.3444964256213
+  }
+]

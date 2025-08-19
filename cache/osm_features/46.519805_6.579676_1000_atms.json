@@ -1,0 +1,37 @@
+[
+  {
+    "feature_type": "atms",
+    "lat": 46.5199858,
+    "lon": 6.5687766,
+    "tags": {
+      "alt_name": "Postomat",
+      "amenity": "atm",
+      "cash_in": "yes",
+      "check_date": "2024-01-22",
+      "indoor": "no",
+      "name": "Postfinance",
+      "operator": "PostFinance"
+    },
+    "distance_to_station": 836.6024279739073
+  },
+  {
+    "feature_type": "atms",
+    "lat": 46.5183883,
+    "lon": 6.5676816,
+    "tags": {
+      "amenity": "atm",
+      "brand": "Credit Suisse",
+      "brand:wikidata": "Q372657",
+      "brand:wikipedia": "en:Credit Suisse",
+      "cash_in": "no",
+      "indoor": "yes",
+      "name": "Credit Suisse",
+      "name:en": "Cr\u00e9dit Suisse ATM",
+      "opening_hours": "Mo-Su 07:00-00:00",
+      "operator": "Valiant",
+      "operator:wikidata": "Q372657",
+      "operator:wikipedia": "en:Credit Suisse"
+    },
+    "distance_to_station": 933.7744647649462
+  }
+]

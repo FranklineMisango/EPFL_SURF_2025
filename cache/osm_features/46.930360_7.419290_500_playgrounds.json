@@ -1,0 +1,68 @@
+[
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.928552,
+    "lon": 7.4203243,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground"
+    },
+    "distance_to_station": 215.83718269215507
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9272848,
+    "lon": 7.4187862,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground",
+      "surface": "loose_fine_gravel",
+      "website": "https://spotic.net/123playgrounds/places/playground-wabersackerstrasse-children-playgrounds-koniz-switzerland-1hqhx"
+    },
+    "distance_to_station": 344.08001549601414
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9320726,
+    "lon": 7.4237019,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground",
+      "name": "Spielplatz Hessstrasse"
+    },
+    "distance_to_station": 385.34845481097705
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9325652,
+    "lon": 7.4209865,
+    "tags": {
+      "access": "permissive",
+      "leisure": "playground",
+      "surface": "tartan"
+    },
+    "distance_to_station": 276.9850755376384
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9341476,
+    "lon": 7.4190121,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground",
+      "surface": "tartan"
+    },
+    "distance_to_station": 421.69018196724727
+  },
+  {
+    "feature_type": "playgrounds",
+    "lat": 46.9283493,
+    "lon": 7.4209891,
+    "tags": {
+      "access": "yes",
+      "leisure": "playground",
+      "surface": "tartan"
+    },
+    "distance_to_station": 258.1362070186119
+  }
+]

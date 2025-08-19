@@ -1,0 +1,85 @@
+[
+  {
+    "feature_type": "pharmacies",
+    "lat": 46.9605349,
+    "lon": 7.4541359,
+    "tags": {
+      "alt_name": "Breitfeld Apotheke",
+      "amenity": "pharmacy",
+      "contact:addr": "Scheibenstrasse 18, 3014 Bern",
+      "contact:email": "a9@achillea.ch",
+      "contact:fax": "+41 31 3481213",
+      "contact:phone": "+41 31 3481212",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Breitfeld",
+      "opening_hours": "Mo-Fr 07:45-12:15, 13:30-18:30; Sa 08:00-16:00; Su off",
+      "operator": "Dr. B\u00e4hler Dropa AG",
+      "source": "website",
+      "website": "https://achillea.ch/de-ch/geschaeftsstellen/region-bern/breitfeld-apotheke.aspx"
+    },
+    "distance_to_station": 574.8645452378818
+  },
+  {
+    "feature_type": "pharmacies",
+    "lat": 46.9589286,
+    "lon": 7.4545518,
+    "tags": {
+      "alt_name": "Jura Apotheke",
+      "amenity": "pharmacy",
+      "check_date": "2025-08-06",
+      "check_date:opening_hours": "2023-07-21",
+      "contact:addr:full": "Breitenrainplatz 36, 3014 Bern",
+      "contact:email": "a38@achillea.ch",
+      "contact:fax": "+41 31 3310878",
+      "contact:phone": "+41 31 3315151",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Jura",
+      "opening_hours": "Mo-Fr 07:45-18:30; Sa 07:45-17:00; Su off",
+      "operator": "Dr. B\u00e4hler Dropa AG",
+      "source": "survey and website",
+      "website": "https://achillea.ch/standorte/jura-apotheke"
+    },
+    "distance_to_station": 655.788278677658
+  },
+  {
+    "feature_type": "pharmacies",
+    "lat": 46.957984,
+    "lon": 7.447145,
+    "tags": {
+      "alt_name": "Nordring-Apotheke",
+      "amenity": "pharmacy",
+      "brand": "TopPharm",
+      "brand:wikidata": "Q110277794",
+      "contact:addr:full": "Nordring 38, 3013 Bern",
+      "contact:email": "pgermann@nordring.apotheke.ch",
+      "contact:fax": "+41 31 3322719",
+      "contact:phone": "+41 31 3321136",
+      "healthcare": "pharmacy",
+      "name": "TopPharm",
+      "opening_hours": "Mo-Fr 07:45-12:30,13:30-18:30; Sa 07:45-16:00; Su off",
+      "operator": "NORDRING APOTHEKE AG",
+      "source": "survey and website",
+      "website": "http://www.nordring.apotheke.ch",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 371.3313705498101
+  },
+  {
+    "feature_type": "pharmacies",
+    "lat": 46.9579601,
+    "lon": 7.4536569,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Amavita",
+      "brand:wikidata": "Q93733901",
+      "check_date": "2025-07-16",
+      "healthcare": "pharmacy",
+      "name": "Amavita",
+      "website": "https://www.amavita.ch/de/amavita-apotheke-breitenrain",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 649.242535505311
+  }
+]

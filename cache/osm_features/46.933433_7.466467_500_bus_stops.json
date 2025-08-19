@@ -1,0 +1,158 @@
+[
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9325881,
+    "lon": 7.4728104,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "546",
+      "highway": "bus_stop",
+      "name": "Elfenau",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Elfenau",
+      "uic_ref": "8590063"
+    },
+    "distance_to_station": 490.73003048269146
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9365499,
+    "lon": 7.4649225,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "539",
+      "highway": "bus_stop",
+      "name": "Willadingweg",
+      "name:etymology:wikidata": "Q1693700",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Regionalverkehr Bern-Solothurn",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Willadingweg",
+      "uic_ref": "8589005",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 365.88545902925705
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9367458,
+    "lon": 7.4646586,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "539",
+      "highway": "bus_stop",
+      "name": "Willadingweg",
+      "name:etymology:wikidata": "Q1693700",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Regionalverkehr Bern-Solothurn",
+      "public_transport": "stop_position",
+      "shelter": "yes",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Willadingweg",
+      "uic_ref": "8589005",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 393.1245116550579
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9352863,
+    "lon": 7.4665728,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "538",
+      "highway": "bus_stop",
+      "name": "Luternauweg",
+      "name:etymology:wikidata": "Q1551898",
+      "network": "Libero",
+      "operator": "RBS Regionalverkehr Bern-Solothurn",
+      "public_transport": "stop_position",
+      "shelter": "yes",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Luternauweg",
+      "uic_ref": "8588997",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 206.23406976617736
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9349135,
+    "lon": 7.4670619,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "538",
+      "highway": "bus_stop",
+      "name": "Luternauweg",
+      "name:etymology:wikidata": "Q1551898",
+      "network": "Libero",
+      "operator": "RBS Regionalverkehr Bern-Solothurn",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Luternauweg",
+      "uic_ref": "8588997",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 170.70848808999608
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9341817,
+    "lon": 7.4702293,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "547",
+      "highway": "bus_stop",
+      "name": "Manuelstrasse",
+      "name:etymology:wikidata": "Q670805",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Regionalverkehr Bern-Solothurn",
+      "public_transport": "stop_position",
+      "shelter": "yes",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Manuelstrasse",
+      "uic_ref": "8588998",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 297.5501996364546
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9341172,
+    "lon": 7.47078,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "547",
+      "highway": "bus_stop",
+      "name": "Manuelstrasse",
+      "name:etymology:wikidata": "Q670805",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Regionalverkehr Bern-Solothurn",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Manuelstrasse",
+      "uic_ref": "8588998",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 336.20169086963205
+  }
+]

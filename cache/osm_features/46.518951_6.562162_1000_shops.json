@@ -1,0 +1,190 @@
+[
+  {
+    "feature_type": "shops",
+    "lat": 46.5212828,
+    "lon": 6.5746839,
+    "tags": {
+      "name": "KramerKrieg",
+      "opening_hours": "Mo-Fr 08:15-10:30,11:00-14:45,15:15-17:30",
+      "shop": "kiosk"
+    },
+    "distance_to_station": 995.2074361142957
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5182699,
+    "lon": 6.5681519,
+    "tags": {
+      "name": "Poseidon",
+      "shop": "rental",
+      "website": "https://www.epfl.ch/campus/services/en/it-services/discount-and-loan-for-personnal-computers/"
+    },
+    "distance_to_station": 465.8372325202728
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5184843,
+    "lon": 6.5675233,
+    "tags": {
+      "internet_access": "yes",
+      "name": "La Boutique",
+      "opening_hours": "Mo-Fr 10:00-15:00",
+      "operator": "EPFL",
+      "shop": "books",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 414.6641626387941
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.520557,
+    "lon": 6.5681235,
+    "tags": {
+      "name": "Le N\u00e9goce",
+      "opening_hours": "Mo-Fr 06:30-16:30",
+      "shop": "convenience",
+      "website": "https://restauration.epfl.ch/op/edit/page-75023.html"
+    },
+    "distance_to_station": 491.0558577203008
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5229222,
+    "lon": 6.5656983,
+    "tags": {
+      "brand": "Migros",
+      "brand:wikidata": "Q680727",
+      "brand:wikipedia": "en:Migros",
+      "cash_withdrawal": "postfinance_card",
+      "cash_withdrawal:fee": "no",
+      "cash_withdrawal:purchase_required": "no",
+      "cash_withdrawal:type": "checkout",
+      "check_date:opening_hours": "2024-06-09",
+      "name": "Migros",
+      "opening_hours": "Mo-Fr 07:30-20:00; Sa 08:00-18:00",
+      "shop": "supermarket",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 518.1745030508729
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5223266,
+    "lon": 6.5658652,
+    "tags": {
+      "brand": "Salt",
+      "brand:wikidata": "Q3884382",
+      "check_date:opening_hours": "2024-04-04",
+      "name": "Salt",
+      "opening_hours": "Mo-Fr 09:00-18:00",
+      "shop": "telecommunication",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 470.69023966691793
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5228102,
+    "lon": 6.5657045,
+    "tags": {
+      "brand": "Denner",
+      "brand:wikidata": "Q379911",
+      "brand:wikipedia": "en:Denner (supermarket)",
+      "cash_withdrawal": "migros_bank;postfinance_card",
+      "cash_withdrawal:fee": "no",
+      "cash_withdrawal:purchase_required": "no",
+      "cash_withdrawal:type": "checkout",
+      "check_date:opening_hours": "2024-06-09",
+      "name": "Denner",
+      "opening_hours": "Mo-Fr 07:30-20:00; Sa 08:00-18:00",
+      "shop": "supermarket",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 507.8644874833239
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5223303,
+    "lon": 6.5662301,
+    "tags": {
+      "addr:city": "Ecublens (VD)",
+      "addr:housenumber": "10A",
+      "addr:postcode": "1024",
+      "addr:street": "Route Louis-Favre",
+      "check_date:opening_hours": "2022-09-14",
+      "female": "yes",
+      "male": "yes",
+      "name": "Arte Beauty & Wellness",
+      "opening_hours": "Mo-Fr 08:00-20:00; Sa 08:00-18:00",
+      "shop": "hairdresser"
+    },
+    "distance_to_station": 488.4210442374384
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5258777,
+    "lon": 6.564068,
+    "tags": {
+      "addr:city": "Ecublens (VD)",
+      "addr:housenumber": "26",
+      "addr:street": "Rue de Bassenges",
+      "name": "Coiffure Michou",
+      "shop": "hairdresser"
+    },
+    "distance_to_station": 783.7486480629572
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5103185,
+    "lon": 6.5588392,
+    "tags": {
+      "female": "yes",
+      "male": "yes",
+      "name": "Aliz\u00e9",
+      "opening_hours": "Tu-Fr 09:00-18:00; Sa 08:00-15:00",
+      "shop": "hairdresser"
+    },
+    "distance_to_station": 992.9034669496773
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5104414,
+    "lon": 6.5586453,
+    "tags": {
+      "name": "Epicerie Chez Bruno",
+      "shop": "convenience"
+    },
+    "distance_to_station": 983.6841428276928
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5201158,
+    "lon": 6.5662168,
+    "tags": {
+      "description": "Vente de pulls, t-shirts, housses, reliure\nTrucs gratuits: capotes, tipp-ex, stylos,...",
+      "name": "Boutique AGEPoly",
+      "opening_hours": "Mo-Fr 10:00-16:00",
+      "operator": "AGEPoly",
+      "phone": "+41216932095",
+      "shop": "stationery"
+    },
+    "distance_to_station": 337.0115816085933
+  },
+  {
+    "feature_type": "shops",
+    "lat": 46.5217438,
+    "lon": 6.567791,
+    "tags": {
+      "building": "industrial",
+      "building:levels": "1",
+      "description": "\u25baVente de v\u00e9los d'occasion pour tous les go\u00fbts \u25baPetites r\u00e9parations au prix des fournitures \u25baMise \u00e0 disposition d'outils pour les bricoleurs \u25baCours de m\u00e9canique Horaires hors semestre: Je-Ve 12:00 Pr\u00e9sentation : https://youtu.be/nqXQ7LixL8w",
+      "name": "Point V\u00e9lo",
+      "opening_hours": "Mo-Th 12:00-13:00; Fr 12:00-17:00; SH Tu 12:00-14:00 \"Hors semestre (off semester)\"; SH Th-Fr 12:00-17:00 \"Hors semestre (off semester)\"; Jul 15-Aug 15 Th-Fr 12:00-17:00",
+      "phone": "+41 79 371 36 55",
+      "service:bicycle:pump": "yes",
+      "shop": "bicycle",
+      "website": "https://www.epfl.ch/about/sustainability/fr/accueil/mobilite/pointvelo/"
+    },
+    "distance_to_station": 531.9290540113165
+  }
+]

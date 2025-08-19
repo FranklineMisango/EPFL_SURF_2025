@@ -1,0 +1,42 @@
+[
+  {
+    "feature_type": "banks",
+    "lat": 46.9267988,
+    "lon": 7.4172306,
+    "tags": {
+      "addr:housenumber": "230",
+      "addr:postcode": "3098",
+      "addr:street": "Schwarzenburgstrasse",
+      "amenity": "bank",
+      "atm": "yes",
+      "brand": "UBS",
+      "brand:wikidata": "Q193199",
+      "brand:wikipedia": "en:UBS",
+      "check_date": "2023-05-11",
+      "name": "UBS",
+      "opening_hours": "Mo,Fr 10:00-12:00,14:00-17:00; Tu-Th 10:00-12:00",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 425.7482369314863
+  },
+  {
+    "feature_type": "banks",
+    "lat": 46.9310537,
+    "lon": 7.4197061,
+    "tags": {
+      "access": "private",
+      "amenity": "bank",
+      "brand": "Berner Kantonalbank",
+      "brand:de": "Berner Kantonalbank",
+      "brand:fr": "Banque Cantonale Bernoise",
+      "brand:wikidata": "Q824579",
+      "name": "Berner Kantonalbank",
+      "name:de": "Berner Kantonalbank",
+      "name:fr": "Banque Cantonale Bernoise",
+      "short_name": "BEKB",
+      "short_name:de": "BEKB",
+      "short_name:fr": "BCBE"
+    },
+    "distance_to_station": 83.35611110397619
+  }
+]

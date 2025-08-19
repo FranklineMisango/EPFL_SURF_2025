@@ -1,0 +1,1284 @@
+[
+  {
+    "feature_type": "parking",
+    "lat": 46.9566401,
+    "lon": 7.456965,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "fee": "no",
+      "layer": "-1",
+      "operator": "Hotel Alpenblick",
+      "parking": "underground"
+    },
+    "distance_to_station": 315.2740815947704
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9568974,
+    "lon": 7.4451816,
+    "tags": {
+      "amenity": "parking",
+      "layer": "-1",
+      "noexit": "yes",
+      "parking": "underground"
+    },
+    "distance_to_station": 606.615242800597
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.956415,
+    "lon": 7.4432227,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "layer": "-1",
+      "maxheight": "2.05",
+      "parking": "underground"
+    },
+    "distance_to_station": 746.8200072379673
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9555206,
+    "lon": 7.4443467,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "layer": "-1",
+      "parking": "underground"
+    },
+    "distance_to_station": 659.2998863452907
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9576903,
+    "lon": 7.4530826,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "fee": "yes",
+      "layer": "-2",
+      "parking": "underground",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 207.12448032942518
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9616658,
+    "lon": 7.4466625,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "layer": "-1",
+      "parking": "underground"
+    },
+    "distance_to_station": 808.4559355335516
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9595474,
+    "lon": 7.4553673,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "fee": "yes",
+      "layer": "-1",
+      "maxheight": "1.85",
+      "operator": "Coop",
+      "parking": "underground"
+    },
+    "distance_to_station": 451.13811236945793
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9472557,
+    "lon": 7.4522589,
+    "tags": {
+      "access": "disabled",
+      "amenity": "parking",
+      "capacity:disabled": "1",
+      "parking": "street_side"
+    },
+    "distance_to_station": 954.6455311104244
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9475291,
+    "lon": 7.4521718,
+    "tags": {
+      "access": "disabled",
+      "amenity": "parking",
+      "capacity:disabled": "1",
+      "parking": "street_side"
+    },
+    "distance_to_station": 924.7325100003488
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.947489,
+    "lon": 7.4513237,
+    "tags": {
+      "access": "disabled",
+      "amenity": "parking",
+      "capacity:disabled": "1",
+      "parking": "street_side"
+    },
+    "distance_to_station": 935.7618676901243
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9485454,
+    "lon": 7.4518329,
+    "tags": {
+      "access": "disabled",
+      "amenity": "parking",
+      "capacity:disabled": "2",
+      "parking": "street_side"
+    },
+    "distance_to_station": 814.4481845316018
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9530706,
+    "lon": 7.4479194,
+    "tags": {
+      "amenity": "parking",
+      "capacity": "240",
+      "fee": "yes",
+      "name": "Kursaal Parking",
+      "parking": "multi-storey"
+    },
+    "distance_to_station": 493.28914584457567
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9491465,
+    "lon": 7.4595095,
+    "tags": {
+      "access": "yes",
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:postcode": "3013",
+      "addr:street": "Kl\u00f6sterlistutz",
+      "amenity": "parking",
+      "capacity": "110",
+      "capacity:disabled": "4",
+      "capacity:women": "no",
+      "fee": "yes",
+      "name": "Kl\u00f6sterlistutz",
+      "parking": "surface",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 893.0569255956067
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9535836,
+    "lon": 7.4597937,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "38",
+      "capacity:disabled": "3",
+      "capacity:women": "0",
+      "fee": "no",
+      "parking": "surface"
+    },
+    "distance_to_station": 574.4285748248932
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9530541,
+    "lon": 7.4507199,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 353.74166075045474
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9562885,
+    "lon": 7.4593795,
+    "tags": {
+      "access": "no",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 488.55175482608473
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9572201,
+    "lon": 7.4584592,
+    "tags": {
+      "access": "no",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 443.670406998324
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9562038,
+    "lon": 7.4585158,
+    "tags": {
+      "access": "no",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 422.19125749547334
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9565164,
+    "lon": 7.4580595,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "22",
+      "fee": "no",
+      "maxstay": "1 hour",
+      "name": "BSM 15",
+      "operator": "BSM",
+      "parking": "surface",
+      "supervised": "yes",
+      "surface": "gravel"
+    },
+    "distance_to_station": 392.90920591767696
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9579802,
+    "lon": 7.4625761,
+    "tags": {
+      "access": "permit",
+      "amenity": "parking",
+      "capacity": "200",
+      "fee": "yes",
+      "maxstay": "1 day",
+      "name": "BSM P17",
+      "operator": "BSM",
+      "parking": "surface",
+      "supervised": "yes",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 767.4186549708135
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9570283,
+    "lon": 7.4618522,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "50",
+      "fee": "yes",
+      "maxstay": "1 day",
+      "name": "BSM P 17A",
+      "operator": "BSM",
+      "parking": "surface",
+      "supervised": "yes",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 687.1547338625395
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9559337,
+    "lon": 7.4603719,
+    "tags": {
+      "access": "no",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 561.5277227109981
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9588797,
+    "lon": 7.4632662,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "50",
+      "fee": "yes",
+      "maxstay": "1 day",
+      "name": "BSM P 17",
+      "operator": "BSM",
+      "parking": "surface",
+      "supervised": "yes",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 852.1343405927292
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9613267,
+    "lon": 7.4537731,
+    "tags": {
+      "amenity": "parking"
+    },
+    "distance_to_station": 614.1308987974621
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9630904,
+    "lon": 7.4565129,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "name": "Kirche",
+      "source": "local knowledge"
+    },
+    "distance_to_station": 850.5578026050346
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9621123,
+    "lon": 7.4476819,
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 807.2770453061744
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.953919,
+    "lon": 7.444648,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "74",
+      "charge": "2.20CHF/h. Max. 3h. 7-19:00 daily. Coins, CASH card",
+      "covered": "no",
+      "fee": "yes",
+      "park_ride": "no",
+      "parking": "surface",
+      "payment:coins": "yes",
+      "payment:credit_cards": "yes",
+      "supervised": "no"
+    },
+    "distance_to_station": 669.9913422443276
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9556359,
+    "lon": 7.4461299,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 523.1138611034778
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9648722,
+    "lon": 7.451554,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "fee": "yes",
+      "parking": "surface"
+    },
+    "distance_to_station": 1011.4100103125232
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9505312,
+    "lon": 7.4597135,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity:disabled": "no",
+      "capacity:parent": "no",
+      "capacity:women": "no",
+      "disc_parking": "yes",
+      "parking": "surface",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 779.8677055175025
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9552993,
+    "lon": 7.4611944,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "20",
+      "parking": "surface"
+    },
+    "distance_to_station": 626.7791557216617
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9549473,
+    "lon": 7.461793,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "10",
+      "parking": "surface"
+    },
+    "distance_to_station": 676.7050909791147
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9548433,
+    "lon": 7.4618938,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "10",
+      "parking": "surface"
+    },
+    "distance_to_station": 686.048544973252
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9549726,
+    "lon": 7.4611616,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "7",
+      "parking": "surface"
+    },
+    "distance_to_station": 628.755904000239
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9549212,
+    "lon": 7.4612875,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "7",
+      "parking": "surface"
+    },
+    "distance_to_station": 639.1074659622427
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9548163,
+    "lon": 7.4612335,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "3",
+      "parking": "surface"
+    },
+    "distance_to_station": 637.0049001216173
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9583738,
+    "lon": 7.4640043,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "capacity": "13",
+      "fee": "yes",
+      "name": "G\u00e4ste Kurzzeit",
+      "parking": "surface",
+      "source": "Orthofoto Bern"
+    },
+    "distance_to_station": 884.3830997049612
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9508618,
+    "lon": 7.4610743,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "operator": "Stucker",
+      "parking": "surface"
+    },
+    "distance_to_station": 826.3895311211188
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.950583,
+    "lon": 7.4611595,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "operator": "Stucker",
+      "parking": "surface"
+    },
+    "distance_to_station": 852.1292843780113
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9507824,
+    "lon": 7.4613173,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "operator": "Stucker",
+      "parking": "surface"
+    },
+    "distance_to_station": 846.0706145541567
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9507133,
+    "lon": 7.4614443,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "operator": "Stucker",
+      "parking": "surface"
+    },
+    "distance_to_station": 858.401547354373
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9507669,
+    "lon": 7.4616573,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "operator": "Stucker",
+      "parking": "surface"
+    },
+    "distance_to_station": 866.7342152115303
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9585105,
+    "lon": 7.4574174,
+    "tags": {
+      "access": "no",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 449.6220718754844
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9573635,
+    "lon": 7.4651352,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "description": "Mitarbeiterparking",
+      "parking": "surface"
+    },
+    "distance_to_station": 939.602411880929
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9576437,
+    "lon": 7.4653654,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "description": "Mitarbeiterparking",
+      "parking": "surface"
+    },
+    "distance_to_station": 962.8807813255692
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9541323,
+    "lon": 7.4400614,
+    "tags": {
+      "amenity": "parking",
+      "capacity": "2",
+      "source": "Orthofotos Bern"
+    },
+    "distance_to_station": 1002.5034419885015
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9542257,
+    "lon": 7.4399428,
+    "tags": {
+      "amenity": "parking",
+      "capacity": "11",
+      "name": "Bedag",
+      "parking": "surface",
+      "source": "Orthofotos Bern"
+    },
+    "distance_to_station": 1009.4868472338459
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.958272,
+    "lon": 7.4644832,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "capacity": "2",
+      "coach": "only",
+      "parking": "surface"
+    },
+    "distance_to_station": 915.5716803509608
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9585059,
+    "lon": 7.4653254,
+    "tags": {
+      "amenity": "parking",
+      "name": "Taxi",
+      "parking:capacity": "3"
+    },
+    "distance_to_station": 984.521155652965
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9583581,
+    "lon": 7.4655186,
+    "tags": {
+      "amenity": "parking",
+      "name": "Behinderte",
+      "parking": "street_side",
+      "parking:capacity": "3"
+    },
+    "distance_to_station": 993.7750161897915
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9540383,
+    "lon": 7.4618569,
+    "tags": {
+      "amenity": "parking",
+      "capacity": "12",
+      "capacity:disabled": "0",
+      "capacity:women": "0",
+      "parking": "surface"
+    },
+    "distance_to_station": 703.1903714729148
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9544378,
+    "lon": 7.4612899,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "40",
+      "name": "Verwaltung",
+      "parking": "surface"
+    },
+    "distance_to_station": 649.9358068917553
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9568341,
+    "lon": 7.4646625,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "description": "Mitarbeiterparking",
+      "parking": "surface"
+    },
+    "distance_to_station": 895.0068119773655
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9565329,
+    "lon": 7.4641371,
+    "tags": {
+      "amenity": "parking",
+      "name": "NPZ",
+      "parking": "surface",
+      "source": "Orthofotos Bern"
+    },
+    "distance_to_station": 851.6140159943077
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9565949,
+    "lon": 7.4630392,
+    "tags": {
+      "amenity": "parking",
+      "name": "NPZ",
+      "parking": "surface",
+      "source": "Orthofotos Bern"
+    },
+    "distance_to_station": 769.1697274259969
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9566962,
+    "lon": 7.4636763,
+    "tags": {
+      "amenity": "parking",
+      "name": "NPZ",
+      "parking": "surface",
+      "source": "Orthofotos Bern"
+    },
+    "distance_to_station": 818.6338284890985
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9564386,
+    "lon": 7.4634805,
+    "tags": {
+      "amenity": "parking",
+      "name": "VZ VBS",
+      "parking": "surface",
+      "source": "Orthofotos Bern"
+    },
+    "distance_to_station": 800.9042950198312
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9568525,
+    "lon": 7.4632352,
+    "tags": {
+      "amenity": "parking",
+      "name": "NPZ",
+      "parking": "surface",
+      "source": "Orthofotos Bern"
+    },
+    "distance_to_station": 787.6252703255327
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9562753,
+    "lon": 7.4639412,
+    "tags": {
+      "amenity": "parking",
+      "name": "VZ VBS",
+      "parking": "surface",
+      "source": "Orthofotos Bern"
+    },
+    "distance_to_station": 834.5744706699843
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9559118,
+    "lon": 7.4625983,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "capacity": "189",
+      "description": "Mitarbeiter",
+      "parking": "surface"
+    },
+    "distance_to_station": 730.9347831448397
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.957551,
+    "lon": 7.4654015,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "description": "Mitarbeiterparking",
+      "parking": "surface"
+    },
+    "distance_to_station": 963.4670158199891
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9574273,
+    "lon": 7.462669,
+    "tags": {
+      "access": "private",
+      "amenity": "parking"
+    },
+    "distance_to_station": 757.4074767069842
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.957246,
+    "lon": 7.464765,
+    "tags": {
+      "access": "visitors",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 909.5533750279119
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9599006,
+    "lon": 7.4560158,
+    "tags": {
+      "access": "no",
+      "amenity": "parking",
+      "park_ride": "no",
+      "parking": "surface"
+    },
+    "distance_to_station": 507.729232152452
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9598089,
+    "lon": 7.4554742,
+    "tags": {
+      "access": "no",
+      "amenity": "parking",
+      "fee": "yes",
+      "park_ride": "no"
+    },
+    "distance_to_station": 481.0547127205917
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9612566,
+    "lon": 7.4532403,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "fee": "no",
+      "park_ride": "no",
+      "parking": "street_side",
+      "supervised": "no",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 603.7717598026815
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9584348,
+    "lon": 7.445442,
+    "tags": {
+      "amenity": "parking"
+    },
+    "distance_to_station": 643.917324147425
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.961394,
+    "lon": 7.4489298,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 691.8655100659216
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9552672,
+    "lon": 7.4504148,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "capacity": "11",
+      "fee": "no",
+      "parking": "street_side"
+    },
+    "distance_to_station": 206.17210255605073
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9551413,
+    "lon": 7.4509737,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "capacity": "10",
+      "fee": "no",
+      "parking": "lane"
+    },
+    "distance_to_station": 171.86474317636444
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9554222,
+    "lon": 7.4513216,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 135.24155879152698
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9598764,
+    "lon": 7.4557158,
+    "tags": {
+      "access": "destination",
+      "amenity": "parking",
+      "fee": "no",
+      "park_ride": "no",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 495.36455280603167
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9581635,
+    "lon": 7.4617865,
+    "tags": {
+      "access": "no",
+      "amenity": "parking",
+      "operator": "BSM",
+      "parking": "surface",
+      "supervised": "yes"
+    },
+    "distance_to_station": 717.6757356319938
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9542436,
+    "lon": 7.4595908,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "operator": "Scherler AG",
+      "operator:type": "private",
+      "parking": "surface"
+    },
+    "distance_to_station": 531.9670116808929
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9551823,
+    "lon": 7.4582787,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 408.4357235889808
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9566071,
+    "lon": 7.4571314,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 326.43766218062
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9547345,
+    "lon": 7.456126,
+    "tags": {
+      "access": "private",
+      "amenity": "parking",
+      "orientation": "perpendicular",
+      "parking": "street_side"
+    },
+    "distance_to_station": 267.44597114309465
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9583583,
+    "lon": 7.4589063,
+    "tags": {
+      "access": "permit",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 530.5390468364644
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.957941,
+    "lon": 7.4464629,
+    "tags": {
+      "access": "customers",
+      "amenity": "parking",
+      "capacity": "5",
+      "parking": "surface"
+    },
+    "distance_to_station": 550.0000773818533
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9539751,
+    "lon": 7.4464025,
+    "tags": {
+      "amenity": "parking",
+      "parking": "lane"
+    },
+    "distance_to_station": 542.562424993514
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9538454,
+    "lon": 7.446909,
+    "tags": {
+      "amenity": "parking",
+      "parking": "lane"
+    },
+    "distance_to_station": 513.1328840765477
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.954516,
+    "lon": 7.4442995,
+    "tags": {
+      "amenity": "parking",
+      "capacity": "20",
+      "parking": "surface",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 677.8914972136654
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9550432,
+    "lon": 7.4437936,
+    "tags": {
+      "amenity": "parking",
+      "capacity": "15",
+      "parking": "surface",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 705.93103359306
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9549712,
+    "lon": 7.4435581,
+    "tags": {
+      "amenity": "parking",
+      "capacity": "10",
+      "parking": "surface",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 724.732118544735
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9543946,
+    "lon": 7.4430851,
+    "tags": {
+      "amenity": "parking",
+      "capacity": "5",
+      "capacity:disabled": "0",
+      "parking": "surface",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 771.0998113024174
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9542372,
+    "lon": 7.4431475,
+    "tags": {
+      "amenity": "parking",
+      "capacity": "7",
+      "capacity:disabled": "0",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 770.2826102619958
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9591749,
+    "lon": 7.4434522,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "3",
+      "capacity:disabled": "0",
+      "fee": "yes",
+      "maxstay": "6 hours",
+      "operator": "Stadt Bern",
+      "operator:type": "government",
+      "parking": "surface",
+      "surface": "asphalt"
+    },
+    "distance_to_station": 816.2106324088746
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9484956,
+    "lon": 7.4551513,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 831.4934648241023
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9483752,
+    "lon": 7.4547041,
+    "tags": {
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 838.6732101991819
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9485827,
+    "lon": 7.4574524,
+    "tags": {
+      "amenity": "parking",
+      "fee": "yes",
+      "orientation": "parallel",
+      "parking": "lane",
+      "surface": "sett"
+    },
+    "distance_to_station": 873.9790106950578
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9485133,
+    "lon": 7.4573036,
+    "tags": {
+      "amenity": "parking",
+      "fee": "yes",
+      "orientation": "parallel",
+      "parking": "lane",
+      "surface": "sett"
+    },
+    "distance_to_station": 876.7962154470413
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9525452,
+    "lon": 7.4416517,
+    "tags": {
+      "access": "unknown",
+      "amenity": "parking",
+      "parking": "surface"
+    },
+    "distance_to_station": 937.5294707279231
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9523785,
+    "lon": 7.4414852,
+    "tags": {
+      "amenity": "parking"
+    },
+    "distance_to_station": 956.4962407874406
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9522526,
+    "lon": 7.4416801,
+    "tags": {
+      "amenity": "parking"
+    },
+    "distance_to_station": 948.7030883127966
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9522623,
+    "lon": 7.4418618,
+    "tags": {
+      "amenity": "parking"
+    },
+    "distance_to_station": 935.7049232348959
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9495426,
+    "lon": 7.4452334,
+    "tags": {
+      "amenity": "parking",
+      "parking": "lane"
+    },
+    "distance_to_station": 915.143137770775
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9494399,
+    "lon": 7.4468074,
+    "tags": {
+      "amenity": "parking",
+      "parking": "lane"
+    },
+    "distance_to_station": 852.2421815489922
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9494506,
+    "lon": 7.446746,
+    "tags": {
+      "amenity": "parking",
+      "parking": "lane"
+    },
+    "distance_to_station": 853.8469099123877
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9491816,
+    "lon": 7.4473217,
+    "tags": {
+      "amenity": "parking",
+      "parking": "lane"
+    },
+    "distance_to_station": 855.9033968956629
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9504787,
+    "lon": 7.4438018,
+    "tags": {
+      "access": "unknown",
+      "amenity": "parking",
+      "parking": "street_side"
+    },
+    "distance_to_station": 918.4505405961206
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9509115,
+    "lon": 7.4430361,
+    "tags": {
+      "amenity": "parking",
+      "parking": "lane"
+    },
+    "distance_to_station": 934.6793302610276
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.9553619,
+    "lon": 7.4606405,
+    "tags": {
+      "access": "customers",
+      "access:conditional": "yes @ (Mo-Fr 00:00-06:00, 19:00-24:00; Sa, Su 00:00-24:00)",
+      "amenity": "parking",
+      "capacity": "40",
+      "fee": "yes",
+      "maxstay": "4 hours",
+      "operator": "BSM",
+      "parking": "surface",
+      "ref": "BSM 13A",
+      "supervised": "no",
+      "surface": "asphalt",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 584.1571960359475
+  },
+  {
+    "feature_type": "parking",
+    "lat": 46.949468,
+    "lon": 7.4447887,
+    "tags": {
+      "access": "yes",
+      "amenity": "parking",
+      "capacity": "425",
+      "contact:email": "info@metro-parking.ch",
+      "contact:fax": "+41 31 311 56 71",
+      "contact:phone": "+41 31 311 44 11",
+      "contact:website": "http://www.metro-parking.ch",
+      "fee": "yes",
+      "name": "Metro Parking Bern",
+      "opening_hours": "24/7",
+      "parking": "underground",
+      "site": "parking",
+      "supervised": "yes",
+      "type": "site",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 943.5581246941713
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "feature_type": "universities",
+    "lat": 46.5187544,
+    "lon": 6.5661742,
+    "tags": {
+      "amenity": "university",
+      "contact:mastodon": "@epfl@social.epfl.ch",
+      "contact:website": "https://www.epfl.ch/",
+      "internet_access": "yes",
+      "internet_access:ssid": "eduroam",
+      "name": "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne",
+      "name:zh": "\u6d1b\u6851\u8054\u90a6\u7406\u5de5\u5b66\u9662",
+      "plant:method": "photovoltaic",
+      "plant:output:electricity": "2 MW",
+      "plant:source": "solar",
+      "power": "plant",
+      "short_name": "EPFL",
+      "wikidata": "Q262760",
+      "wikipedia": "fr:\u00c9cole polytechnique f\u00e9d\u00e9rale de Lausanne"
+    },
+    "distance_to_station": 308.6550799515826
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.5225409,
+    "lon": 6.5798054,
+    "tags": {
+      "alt_name": "UNIL",
+      "amenity": "university",
+      "name": "Universit\u00e9 de Lausanne",
+      "name:de": "Universit\u00e4t Lausanne",
+      "name:en": "University of Lausanne",
+      "name:fr": "Universit\u00e9 de Lausanne",
+      "name:it": "Universit\u00e0 di Losanna",
+      "name:ru": "\u041b\u043e\u0437\u0430\u043d\u043d\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+      "website": "https://www.unil.ch/",
+      "wheelchair": "yes",
+      "wikidata": "Q658975",
+      "wikipedia": "fr:Universit\u00e9 de Lausanne"
+    },
+    "distance_to_station": 1411.4265524602645
+  }
+]

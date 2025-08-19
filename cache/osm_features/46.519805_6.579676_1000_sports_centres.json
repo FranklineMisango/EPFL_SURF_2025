@@ -1,0 +1,61 @@
+[
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.5270855,
+    "lon": 6.572032,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:country": "CH",
+      "addr:housenumber": "2",
+      "addr:postcode": "1022",
+      "addr:street": "Route de la Plaine",
+      "building": "school",
+      "leisure": "sports_centre",
+      "name": "Salles de sport de la Plaine",
+      "source": "EPFL ortho",
+      "sport": "gymnastics"
+    },
+    "distance_to_station": 999.4959484941313
+  },
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.5190715,
+    "lon": 6.5813807,
+    "tags": {
+      "addr:city": "Lausanne",
+      "addr:postcode": "1015",
+      "leisure": "sports_centre",
+      "name": "Centre sportif universitaire de Dorigny",
+      "website": "https://sport.unil.ch/?mid=127"
+    },
+    "distance_to_station": 154.14172663625587
+  },
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.5271342,
+    "lon": 6.5723591,
+    "tags": {
+      "addr:city": "Chavannes-pr\u00e8s-Renens",
+      "addr:housenumber": "2",
+      "addr:postcode": "1022",
+      "addr:street": "Route de la Plaine",
+      "building": "school",
+      "leisure": "sports_centre",
+      "name": "Piscine de la Plaine",
+      "operator": "commune",
+      "phone": "+41 21 633 32 30",
+      "sport": "swimming"
+    },
+    "distance_to_station": 989.4303051061268
+  },
+  {
+    "feature_type": "sports_centres",
+    "lat": 46.5245071,
+    "lon": 6.5863197,
+    "tags": {
+      "leisure": "sports_centre",
+      "sport": "multi"
+    },
+    "distance_to_station": 730.125757681616
+  }
+]

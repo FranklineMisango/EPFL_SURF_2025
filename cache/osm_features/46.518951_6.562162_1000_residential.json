@@ -1,0 +1,80 @@
+[
+  {
+    "feature_type": "residential",
+    "lat": 46.5273153,
+    "lon": 6.5697043,
+    "tags": {
+      "landuse": "residential",
+      "source": "Orthophoto Ville de Lausanne 2008"
+    },
+    "distance_to_station": 1095.1823679610072
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.5239924,
+    "lon": 6.5564583,
+    "tags": {
+      "addr:city": "Ecublens (VD)",
+      "addr:postcode": "1024",
+      "addr:street": "Chemin du Danube",
+      "landuse": "residential",
+      "residential": "apartments"
+    },
+    "distance_to_station": 711.0582345836957
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.5235227,
+    "lon": 6.5537927,
+    "tags": {
+      "landuse": "residential",
+      "source": "Bing 2007",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 818.9528429249222
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.5244024,
+    "lon": 6.5582871,
+    "tags": {
+      "landuse": "residential",
+      "source": "Bing 2007",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 674.9988564140907
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.5254872,
+    "lon": 6.5548205,
+    "tags": {
+      "landuse": "residential",
+      "source": "Orthophoto Ville de Lausanne 2008",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 919.3706632017355
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.5252531,
+    "lon": 6.5657454,
+    "tags": {
+      "landuse": "residential",
+      "source": "Orthophoto Ville de Lausanne 2008",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 752.5785420089001
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.513378,
+    "lon": 6.5631747,
+    "tags": {
+      "landuse": "residential",
+      "source": "Orthophoto Ville de Lausanne 2008",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 624.3579539865468
+  }
+]

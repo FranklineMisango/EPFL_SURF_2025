@@ -1,0 +1,61 @@
+[
+  {
+    "feature_type": "residential",
+    "lat": 46.9302393,
+    "lon": 7.41786,
+    "tags": {
+      "landuse": "residential"
+    },
+    "distance_to_station": 109.4113867356594
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.9350254,
+    "lon": 7.4197902,
+    "tags": {
+      "landuse": "residential",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 520.1572671717882
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.9292252,
+    "lon": 7.4180172,
+    "tags": {
+      "landuse": "residential",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 158.9448903761159
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.9285955,
+    "lon": 7.4253391,
+    "tags": {
+      "landuse": "residential",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 499.48616855263975
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.9312946,
+    "lon": 7.4126955,
+    "tags": {
+      "landuse": "residential",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 511.4097038272315
+  },
+  {
+    "feature_type": "residential",
+    "lat": 46.9273937,
+    "lon": 7.4176142,
+    "tags": {
+      "landuse": "residential",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 353.53373118493766
+  }
+]

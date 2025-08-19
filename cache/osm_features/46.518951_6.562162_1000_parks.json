@@ -1,0 +1,77 @@
+[
+  {
+    "feature_type": "parks",
+    "lat": 46.513532,
+    "lon": 6.5723753,
+    "tags": {
+      "leisure": "park",
+      "name": "Parc du P\u00e9lican"
+    },
+    "distance_to_station": 988.511531366423
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5200074,
+    "lon": 6.5683476,
+    "tags": {
+      "access": "yes",
+      "fee": "yes",
+      "leisure": "park",
+      "name": "Piccard",
+      "opening_hours": "24/7",
+      "operator": "EPFL Campus Pi\u00e9ton",
+      "parking": "surface"
+    },
+    "distance_to_station": 488.96380052316033
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5128947,
+    "lon": 6.5631142,
+    "tags": {
+      "leisure": "park",
+      "name": "Parc du Russel"
+    },
+    "distance_to_station": 677.1807587265956
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5227295,
+    "lon": 6.565989,
+    "tags": {
+      "description": "Cour & jardin",
+      "leisure": "park"
+    },
+    "distance_to_station": 512.4988101404498
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5194755,
+    "lon": 6.5634982,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 117.95171753196601
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5185479,
+    "lon": 6.5625326,
+    "tags": {
+      "leisure": "park"
+    },
+    "distance_to_station": 53.0717187465769
+  },
+  {
+    "feature_type": "parks",
+    "lat": 46.5234057,
+    "lon": 6.5595256,
+    "tags": {
+      "addr:city": "Ecublens (VD)",
+      "addr:postcode": "1024",
+      "leisure": "park",
+      "name": "Parc de Mon Repos"
+    },
+    "distance_to_station": 534.9194827593124
+  }
+]

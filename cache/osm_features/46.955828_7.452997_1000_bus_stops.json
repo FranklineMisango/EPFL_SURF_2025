@@ -1,0 +1,1006 @@
+[
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9492576,
+    "lon": 7.4577529,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "504",
+      "highway": "bus_stop",
+      "name": "L\u00e4uferplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, L\u00e4uferplatz",
+      "uic_ref": "8590120",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 815.2559278068996
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9483883,
+    "lon": 7.4595378,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "B\u00e4renpark",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 965.4108502012803
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9639097,
+    "lon": 7.4576869,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Markuskirche",
+      "network": "Libero",
+      "operator": "SVB;RBS",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Markuskirche",
+      "uic_ref": "8576997"
+    },
+    "distance_to_station": 966.7621288683848
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9578776,
+    "lon": 7.4627656,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "local_ref": "E",
+      "name": "Guisanplatz Expo",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Auto",
+      "public_transport": "stop_position",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Guisanplatz Expo",
+      "uic_ref": "8576990"
+    },
+    "distance_to_station": 777.7199152840252
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9546207,
+    "lon": 7.4511477,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "559",
+      "highway": "bus_stop",
+      "local_ref": "D",
+      "name": "Viktoriaplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Viktoriaplatz",
+      "uic_ref": "8590021"
+    },
+    "distance_to_station": 194.47789001008007
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9545787,
+    "lon": 7.4513322,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "559",
+      "highway": "bus_stop",
+      "local_ref": "C",
+      "name": "Viktoriaplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Viktoriaplatz",
+      "uic_ref": "8590021"
+    },
+    "distance_to_station": 187.99285141170446
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9538349,
+    "lon": 7.4546001,
+    "tags": {
+      "bus": "yes",
+      "ele": "560",
+      "highway": "bus_stop",
+      "name": "Salem",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Salem",
+      "uic_ref": "8587483"
+    },
+    "distance_to_station": 252.98141702386607
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.953709,
+    "lon": 7.4551555,
+    "tags": {
+      "bus": "yes",
+      "ele": "560",
+      "highway": "bus_stop",
+      "name": "Salem",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Salem",
+      "uic_ref": "8587483"
+    },
+    "distance_to_station": 287.24000499156006
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9535694,
+    "lon": 7.45732,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "537",
+      "highway": "bus_stop",
+      "name": "Sch\u00f6nburg",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Sch\u00f6nburg",
+      "uic_ref": "8587484"
+    },
+    "distance_to_station": 413.9585967808989
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9535814,
+    "lon": 7.4580096,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "537",
+      "highway": "bus_stop",
+      "name": "Sch\u00f6nburg",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Sch\u00f6nburg",
+      "uic_ref": "8587484"
+    },
+    "distance_to_station": 456.0703743041706
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.952145,
+    "lon": 7.4611405,
+    "tags": {
+      "bus": "yes",
+      "ele": "569",
+      "highway": "bus_stop",
+      "name": "Rosengarten",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Rosengarten",
+      "uic_ref": "8587485"
+    },
+    "distance_to_station": 742.9431485216523
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9479658,
+    "lon": 7.4489331,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Zytglogge",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Zytglogge",
+      "uic_ref": "8507110"
+    },
+    "distance_to_station": 927.1710846327704
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9480607,
+    "lon": 7.4526221,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Rathaus",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 863.9713378668495
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9486293,
+    "lon": 7.4562136,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Nydegg",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 836.9222815940582
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9548554,
+    "lon": 7.4462766,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Gewerbeschule",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Gewerbeschule",
+      "uic_ref": "8588994",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 522.8194391856081
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9576012,
+    "lon": 7.4469838,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Lorraine",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Lorraine",
+      "uic_ref": "8588996",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 498.3145166963584
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9604201,
+    "lon": 7.4478583,
+    "tags": {
+      "bench": "yes",
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "name": "Wyleregg",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Wyleregg",
+      "uic_ref": "8589008",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 643.0855728539636
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9610393,
+    "lon": 7.4490165,
+    "tags": {
+      "bench": "yes",
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "name": "Wyleregg",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Wyleregg",
+      "uic_ref": "8589008",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 653.7534362079907
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9622972,
+    "lon": 7.4515594,
+    "tags": {
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "name": "Breitfeld",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Breitfeld",
+      "uic_ref": "8588991",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 727.4410114851707
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9627237,
+    "lon": 7.452915,
+    "tags": {
+      "bench": "yes",
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "name": "Breitfeld",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Breitfeld",
+      "uic_ref": "8588991",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 766.6092751327614
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9634454,
+    "lon": 7.4556969,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Markuskirche",
+      "network": "Libero",
+      "operator": "SVB;RBS",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Markuskirche",
+      "uic_ref": "8576997"
+    },
+    "distance_to_station": 871.402258239279
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9594032,
+    "lon": 7.4547688,
+    "tags": {
+      "bus": "yes",
+      "ele": "564",
+      "highway": "bus_stop",
+      "name": "Breitenrain",
+      "network": "Libero",
+      "operator": "Bernmobil;RBS",
+      "public_transport": "stop_position",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Breitenrain",
+      "uic_ref": "8508075",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 419.7140004509638
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9633089,
+    "lon": 7.4516081,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "554",
+      "highway": "bus_stop",
+      "name": "Wylerhuus",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Wylerhuus",
+      "uic_ref": "8590085",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 838.3281031791229
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9592193,
+    "lon": 7.4548086,
+    "tags": {
+      "bus": "yes",
+      "ele": "564",
+      "highway": "bus_stop",
+      "name": "Breitenrain",
+      "network": "Libero",
+      "operator": "Bernmobil;RBS",
+      "public_transport": "stop_position",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Breitenrain",
+      "uic_ref": "8508075",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 401.4393690242509
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9626847,
+    "lon": 7.4548165,
+    "tags": {
+      "bench": "no",
+      "bin": "yes",
+      "bus": "yes",
+      "departures_board": "timetable",
+      "ele": "554",
+      "highway": "bus_stop",
+      "lit": "no",
+      "name": "Winkelriedstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Auto",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Winkelriedstrasse",
+      "uic_ref": "8576989",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 774.7338898070686
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9475797,
+    "lon": 7.456814,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "500",
+      "highway": "bus_stop",
+      "name": "M\u00fchlenplatz",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, M\u00fchlenplatz",
+      "uic_ref": "8590112",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 961.9211951464805
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9637415,
+    "lon": 7.4547254,
+    "tags": {
+      "bench": "no",
+      "bus": "yes",
+      "departures_board": "timetable",
+      "ele": "554",
+      "highway": "bus_stop",
+      "name": "Winkelriedstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Auto",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Winkelriedstrasse",
+      "uic_ref": "8576989",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 889.5205408884111
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9592892,
+    "lon": 7.464281,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Guisanplatz Expo",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "railway": "tram_stop",
+      "tram": "yes",
+      "uic_name": "Bern, Guisanplatz Expo",
+      "uic_ref": "8576990",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 941.1773322141407
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.962866,
+    "lon": 7.4519266,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "name": "Breitfeld",
+      "network": "Libero",
+      "operator": "SVB;RBS",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Breitfeld",
+      "uic_ref": "8588991",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 786.6301694931773
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9639056,
+    "lon": 7.4473203,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "544",
+      "highway": "bus_stop",
+      "name": "Grimselstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Grimselstrasse",
+      "uic_ref": "8590018",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 996.5003744082808
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9628521,
+    "lon": 7.4452086,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Haldenstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Haldenstrasse",
+      "uic_ref": "8590017",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 980.3627145099015
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9581203,
+    "lon": 7.4629525,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "local_ref": "F",
+      "name": "Guisanplatz Expo",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Auto",
+      "public_transport": "stop_position",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Guisanplatz Expo",
+      "uic_ref": "8576990"
+    },
+    "distance_to_station": 799.5174403353609
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9549562,
+    "lon": 7.4605243,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Kasernenstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Auto",
+      "public_transport": "stop_position",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Kasernenstrasse",
+      "uic_ref": "8576991"
+    },
+    "distance_to_station": 581.1510061973363
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9485892,
+    "lon": 7.4476199,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "B",
+      "name": "Zytglogge",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Zytglogge",
+      "uic_ref": "8507110",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 902.8483239303689
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9481802,
+    "lon": 7.4475165,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "A",
+      "name": "Zytglogge",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Zytglogge",
+      "uic_ref": "8507110",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 947.0428796250987
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.952869,
+    "lon": 7.4495934,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "551",
+      "highway": "bus_stop",
+      "name": "Kursaal",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Kursaal",
+      "uic_ref": "8590020"
+    },
+    "distance_to_station": 418.7144227245048
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9531751,
+    "lon": 7.4497437,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "ele": "551",
+      "highway": "bus_stop",
+      "name": "Kursaal",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Kursaal",
+      "uic_ref": "8590020"
+    },
+    "distance_to_station": 385.08983144982267
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9583803,
+    "lon": 7.4544867,
+    "tags": {
+      "bus": "yes",
+      "ele": "564",
+      "highway": "bus_stop",
+      "name": "Breitenrain",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "uic_name": "Bern, Breitenrain",
+      "uic_ref": "8508075",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 305.5615142154104
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9585416,
+    "lon": 7.4545673,
+    "tags": {
+      "bus": "yes",
+      "ele": "564",
+      "highway": "bus_stop",
+      "name": "Breitenrain",
+      "network": "Libero",
+      "operator": "RBS;SVB",
+      "public_transport": "stop_position",
+      "shelter": "no",
+      "source": "survey and BAV Bundesamt f\u00fcr Verkehr DIDOK 2014",
+      "uic_name": "Bern, Breitenrain",
+      "uic_ref": "8508075",
+      "wheelchair": "no"
+    },
+    "distance_to_station": 324.4907267912729
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9519266,
+    "lon": 7.4420194,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "kerb": "raised",
+      "lit": "yes",
+      "name": "Bollwerk",
+      "passenger_information_display": "no",
+      "public_transport": "platform",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 941.4542423183708
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9515892,
+    "lon": 7.4414074,
+    "tags": {
+      "bench": "no",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Bollwerk",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 1000.1548854160914
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9520353,
+    "lon": 7.461312,
+    "tags": {
+      "bus": "yes",
+      "ele": "569",
+      "highway": "bus_stop",
+      "name": "Rosengarten",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Rosengarten",
+      "uic_ref": "8587485",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 760.5638838896929
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9550337,
+    "lon": 7.4605842,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Kasernenstrasse",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Auto",
+      "public_transport": "stop_position",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Kasernenstrasse",
+      "uic_ref": "8576991"
+    },
+    "distance_to_station": 584.282591314223
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9592534,
+    "lon": 7.4642628,
+    "tags": {
+      "bench": "no",
+      "bin": "no",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "local_ref": "B",
+      "name": "Guisanplatz Expo",
+      "public_transport": "platform",
+      "shelter": "no",
+      "source": "yes",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Guisanplatz Expo",
+      "uic_ref": "8576990"
+    },
+    "distance_to_station": 938.2912908960262
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9622139,
+    "lon": 7.4525372,
+    "tags": {
+      "bench": "no",
+      "bin": "no",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "no",
+      "name": "Breitfeld",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Breitfeld",
+      "uic_ref": "8588991"
+    },
+    "distance_to_station": 710.7699102833261
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9607481,
+    "lon": 7.4537851,
+    "tags": {
+      "bench": "no",
+      "bin": "no",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Sch\u00fctzenweg",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Sch\u00fctzenweg",
+      "uic_ref": "8590079"
+    },
+    "distance_to_station": 550.2402971105586
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9610043,
+    "lon": 7.4536751,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "no",
+      "name": "Sch\u00fctzenweg",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "uic_name": "Bern, Sch\u00fctzenweg",
+      "uic_ref": "8590079"
+    },
+    "distance_to_station": 577.751798521064
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9479717,
+    "lon": 7.448757,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Zytglogge",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Zytglogge",
+      "uic_ref": "8507110"
+    },
+    "distance_to_station": 931.1138556824878
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9593941,
+    "lon": 7.4634908,
+    "tags": {
+      "bus": "yes",
+      "ele": "540",
+      "highway": "bus_stop",
+      "name": "Guisanplatz Expo",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "RBS Auto",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Guisanplatz Expo",
+      "uic_ref": "8576990"
+    },
+    "distance_to_station": 891.7492965896201
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.962552,
+    "lon": 7.4523666,
+    "tags": {
+      "bench": "no",
+      "bin": "yes",
+      "highway": "bus_stop",
+      "name": "Breitfeld",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 749.0322502038742
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9633972,
+    "lon": 7.4516068,
+    "tags": {
+      "bench": "no",
+      "bin": "no",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Wylerhus",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no"
+    },
+    "distance_to_station": 848.0793497446534
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "feature_type": "commercial",
+    "lat": 46.9419214,
+    "lon": 7.4651552,
+    "tags": {
+      "building": "yes",
+      "landuse": "commercial",
+      "source": "Orthofotos Bern"
+    },
+    "distance_to_station": 152.5772664044489
+  }
+]

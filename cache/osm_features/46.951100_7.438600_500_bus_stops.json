@@ -1,0 +1,740 @@
+[
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9481409,
+    "lon": 7.4399495,
+    "tags": {
+      "highway": "bus_stop",
+      "local_ref": "E",
+      "name": "Bern Bahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Bahnhof",
+      "uic_ref": "8576646"
+    },
+    "distance_to_station": 344.6132769248059
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9478728,
+    "lon": 7.4399954,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "F",
+      "name": "Bern Bahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Bahnhof",
+      "uic_ref": "8576646"
+    },
+    "distance_to_station": 374.15382963473513
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9473323,
+    "lon": 7.4410406,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "I",
+      "name": "Bern Bahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Bahnhof",
+      "uic_ref": "8576646"
+    },
+    "distance_to_station": 458.0818196930622
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9482082,
+    "lon": 7.4434062,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "B\u00e4renplatz",
+      "network": "Libero",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, B\u00e4renplatz",
+      "uic_ref": "8588989"
+    },
+    "distance_to_station": 486.3028977897723
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9473064,
+    "lon": 7.4405275,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "L",
+      "name": "Bern Bahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Bahnhof",
+      "uic_ref": "8576646"
+    },
+    "distance_to_station": 446.48236560317486
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9470379,
+    "lon": 7.4407742,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "K",
+      "name": "Bern Bahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Bahnhof",
+      "uic_ref": "8576646"
+    },
+    "distance_to_station": 480.8913415618268
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9486478,
+    "lon": 7.4405149,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "G",
+      "name": "Bern Bahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Bahnhof",
+      "uic_ref": "8576646"
+    },
+    "distance_to_station": 308.99414015358474
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.947258,
+    "lon": 7.4361318,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "F",
+      "name": "Hirschengraben",
+      "public_transport": "stop_position",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 466.4873246153089
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9539845,
+    "lon": 7.4390618,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Henkerbr\u00fcnnli",
+      "public_transport": "stop_position",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 322.65135059968225
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.94758,
+    "lon": 7.4406116,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "A",
+      "name": "Bern Bahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Bahnhof",
+      "uic_ref": "8576646"
+    },
+    "distance_to_station": 420.1358812423392
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9469748,
+    "lon": 7.4381176,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "C",
+      "name": "Hirschengraben",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Hirschengraben",
+      "uic_ref": "8579896"
+    },
+    "distance_to_station": 460.1605581133366
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.950576,
+    "lon": 7.4406233,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Bollwerk",
+      "public_transport": "stop_position",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 164.25900161580952
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9472289,
+    "lon": 7.4372083,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "E",
+      "name": "Hirschengraben",
+      "public_transport": "stop_position",
+      "trolleybus": "yes"
+    },
+    "distance_to_station": 443.2201160292796
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9474209,
+    "lon": 7.439663,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "M",
+      "name": "Bern Bahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Bahnhof",
+      "uic_ref": "8576646"
+    },
+    "distance_to_station": 416.97872544629183
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9491172,
+    "lon": 7.4403738,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "H",
+      "name": "Bern Bahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Bahnhof",
+      "uic_ref": "8576646"
+    },
+    "distance_to_station": 258.3379695011758
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9481155,
+    "lon": 7.4428535,
+    "tags": {
+      "brand": "Bernmobil",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "B\u00e4renplatz",
+      "network": "Libero",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, B\u00e4renplatz",
+      "uic_ref": "8588989"
+    },
+    "distance_to_station": 463.0066445507565
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9476776,
+    "lon": 7.4402542,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "D",
+      "name": "Bern Bahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "Bernmobil",
+      "public_transport": "stop_position",
+      "trolleybus": "yes",
+      "uic_name": "Bern, Bahnhof",
+      "uic_ref": "8576646"
+    },
+    "distance_to_station": 400.73364872014804
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9475649,
+    "lon": 7.4401859,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "C",
+      "name": "Bern Bahnhof",
+      "public_transport": "stop_position",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 411.1050842302081
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9476604,
+    "lon": 7.4405808,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "B",
+      "name": "Bern Bahnhof",
+      "public_transport": "stop_position"
+    },
+    "distance_to_station": 410.95881092434485
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9478094,
+    "lon": 7.4371194,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Schanzenstrasse",
+      "public_transport": "platform",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 382.7691597216094
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9480635,
+    "lon": 7.4372779,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Schanzenstrasse",
+      "public_transport": "platform",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 352.24186235022967
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9498685,
+    "lon": 7.4362928,
+    "tags": {
+      "bench": "no",
+      "bin": "no",
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "lit": "no",
+      "name": "Obergericht",
+      "operator": "PostAuto",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Obergericht",
+      "uic_ref": "8579748",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 222.30935426035526
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9500696,
+    "lon": 7.4364454,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "ele": "555",
+      "highway": "bus_stop",
+      "lit": "no",
+      "name": "Obergericht",
+      "operator": "PostAuto",
+      "public_transport": "platform",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, Obergericht",
+      "uic_ref": "8579748",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 199.685585960899
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9507358,
+    "lon": 7.4356297,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "departures_board": "timetable",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Universit\u00e4t",
+      "public_transport": "platform",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 229.0670282981812
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9511793,
+    "lon": 7.435352,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "no",
+      "name": "Universit\u00e4t",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 246.69409186878508
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.952755,
+    "lon": 7.4330232,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "kerb": "raised",
+      "lit": "no",
+      "name": "Mittelstrasse",
+      "passenger_information_display": "yes",
+      "passenger_information_display:speech_output": "yes",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 461.56836922636865
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9519266,
+    "lon": 7.4420194,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "kerb": "raised",
+      "lit": "yes",
+      "name": "Bollwerk",
+      "passenger_information_display": "no",
+      "public_transport": "platform",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 275.33894032956607
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9515892,
+    "lon": 7.4414074,
+    "tags": {
+      "bench": "no",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Bollwerk",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "yes",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 219.92569903996161
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9489781,
+    "lon": 7.4384454,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "layer": "2",
+      "level": "2",
+      "local_ref": "V",
+      "name": "Bern, Hauptbahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "PAG",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Hauptbahnhof",
+      "uic_ref": "8507785",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 236.23616275825268
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9490119,
+    "lon": 7.4385119,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "layer": "2",
+      "level": "2",
+      "local_ref": "U",
+      "name": "Bern, Hauptbahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "PAG",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Hauptbahnhof",
+      "uic_ref": "8507785",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 232.28240793703526
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9490466,
+    "lon": 7.4385809,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "layer": "2",
+      "level": "2",
+      "local_ref": "T",
+      "name": "Bern, Hauptbahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "PAG",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Hauptbahnhof",
+      "uic_ref": "8507785",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 228.33226516337194
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9490818,
+    "lon": 7.4386508,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "layer": "2",
+      "level": "2",
+      "local_ref": "S",
+      "name": "Bern, Hauptbahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "PAG",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Hauptbahnhof",
+      "uic_ref": "8507785",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 224.4467265317638
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9481664,
+    "lon": 7.443416,
+    "tags": {
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "B\u00e4renplatz",
+      "public_transport": "platform",
+      "shelter": "no",
+      "tactile_paving": "no",
+      "uic_name": "Bern, B\u00e4renplatz",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 489.9435302359992
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9481548,
+    "lon": 7.4428423,
+    "tags": {
+      "bench": "yes",
+      "bin": "no",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "B\u00e4renplatz",
+      "public_transport": "platform",
+      "shelter": "yes",
+      "tactile_paving": "yes",
+      "uic_name": "Bern, B\u00e4renplatz",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 459.2880181517386
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.949119,
+    "lon": 7.4387244,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "layer": "2",
+      "level": "2",
+      "local_ref": "R",
+      "name": "Bern, Hauptbahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "PAG",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Hauptbahnhof",
+      "uic_ref": "8507785",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 220.47944642973644
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9489422,
+    "lon": 7.4383748,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "layer": "2",
+      "level": "2",
+      "local_ref": "W",
+      "name": "Bern, Hauptbahnhof",
+      "network": "Libero",
+      "network:wikidata": "Q2394193",
+      "operator": "PAG",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Hauptbahnhof",
+      "uic_ref": "8507785",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 240.54456027870768
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9476166,
+    "lon": 7.4394666,
+    "tags": {
+      "bench": "no",
+      "bin": "no",
+      "bus": "yes",
+      "description": "Haltestelle f\u00fcr SBB/BLS-Bahnersatzbusse",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "local_ref": "Q",
+      "name": "Bern Bahnhof",
+      "public_transport": "platform",
+      "shelter": "yes",
+      "tactile_paving": "no"
+    },
+    "distance_to_station": 392.8824104516191
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9490603,
+    "lon": 7.440749,
+    "tags": {
+      "bus": "yes",
+      "description": "Haltestelle f\u00fcr RBS-Bahnersatzbusse",
+      "highway": "bus_stop",
+      "local_ref": "Z",
+      "name": "Bern Bahnhof",
+      "operator": "RBS",
+      "public_transport": "platform",
+      "uic_name": "Bern, Bahnhof",
+      "uic_ref": "8576646"
+    },
+    "distance_to_station": 279.3719368496231
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9470423,
+    "lon": 7.4407305,
+    "tags": {
+      "bench": "yes",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "K",
+      "name": "Bern Bahnhof",
+      "public_transport": "platform",
+      "shelter": "no"
+    },
+    "distance_to_station": 479.30245315058767
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9488633,
+    "lon": 7.4403554,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "level": "0",
+      "local_ref": "H",
+      "name": "Bern Bahnhof",
+      "public_transport": "platform"
+    },
+    "distance_to_station": 282.15370950545
+  },
+  {
+    "feature_type": "bus_stops",
+    "lat": 46.9488617,
+    "lon": 7.4404378,
+    "tags": {
+      "bus": "yes",
+      "highway": "bus_stop",
+      "local_ref": "H",
+      "name": "Bern Bahnhof",
+      "public_transport": "stop_position",
+      "uic_name": "Bern, Bahnhof"
+    },
+    "distance_to_station": 285.3158965419417
+  }
+]

@@ -1,0 +1,414 @@
+[
+  {
+    "feature_type": "universities",
+    "lat": 46.9526537,
+    "lon": 7.4350973,
+    "tags": {
+      "amenity": "university",
+      "contact:addr": "Hallerstrasse 8-10, 3012 Bern",
+      "name": "Berner Fachhochschule BFH - Soziale Arbeit",
+      "operator": "Berner Fachhochschule",
+      "operator:de": "Berner Fachhochschule",
+      "operator:fr": "Haute \u00e9cole sp\u00e9cialis\u00e9e bernoise",
+      "website": "http://www.soziale-arbeit.bfh.ch"
+    },
+    "distance_to_station": 317.0674095767987
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9540565,
+    "lon": 7.4382553,
+    "tags": {
+      "amenity": "university",
+      "name": "Institut Statistik",
+      "source": "local knowledge"
+    },
+    "distance_to_station": 329.78726725992806
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9536691,
+    "lon": 7.4405644,
+    "tags": {
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Engehaldenstrasse 4, 3012 Bern",
+      "contact:email": "iuc@iuc.unibe.ch",
+      "contact:phone": "+41 31 6313761",
+      "name": "Institut f\u00fcr Unternehmensrechnung und Controlling",
+      "operator": "Universit\u00e4t Bern",
+      "operator:wikidata": "Q659080",
+      "short_name": "IUC",
+      "website": "https://www.iuc.unibe.ch/"
+    },
+    "distance_to_station": 322.2412334988408
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9535013,
+    "lon": 7.4398028,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "10",
+      "addr:postcode": "3012",
+      "addr:street": "Neubr\u00fcckstrasse",
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Neubr\u00fcckstrasse 10, 3012 Bern",
+      "contact:email": "info@inf.unibe.ch",
+      "contact:phone": "+41 31 631 86 81",
+      "name": "Institut f\u00fcr Informatik",
+      "operator": "Universit\u00e4t Bern",
+      "operator:wikidata": "Q659080",
+      "short_name": "INF",
+      "website": "https://www.inf.unibe.ch/"
+    },
+    "distance_to_station": 282.188710419473
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9539396,
+    "lon": 7.4397015,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "8",
+      "addr:postcode": "3012",
+      "addr:street": "Engehaldenstrasse",
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Engehaldenstrasse 8, 3012 Bern",
+      "contact:fax": "+41 31 6314682",
+      "contact:phone": "+41 31 6314785",
+      "name": "Institut f\u00fcr Wirtschaftsinformatik",
+      "operator": "Universit\u00e4t Bern",
+      "operator:wikidata": "Q659080",
+      "short_name": "IWI",
+      "website": "https://www.iwi.unibe.ch/"
+    },
+    "distance_to_station": 326.6305213584953
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9540558,
+    "lon": 7.4401582,
+    "tags": {
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Engehaldenstrasse 4, 3012 Bern",
+      "contact:phone": "+41 31 6313775",
+      "name": "Abteilung Finanzmanagement",
+      "name:en": "Institute for Financial Management",
+      "operator": "Universit\u00e4t Bern",
+      "operator:wikidata": "Q659080",
+      "short_name": "IFM",
+      "website": "https://www.ifm.unibe.ch/"
+    },
+    "distance_to_station": 349.3019760719955
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9539591,
+    "lon": 7.4402597,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "4",
+      "addr:postcode": "3012",
+      "addr:street": "Engehaldenstrasse",
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Engehaldenstrasse 4, 3012 Bern",
+      "contact:phone": "+41 31 6318031",
+      "name": "Institut f\u00fcr Marketing und Unternehmensf\u00fchrung",
+      "operator": "Universit\u00e4t Bern",
+      "operator:wikidata": "Q659080",
+      "short_name": "IMU",
+      "website": "https://www.imu.unibe.ch/"
+    },
+    "distance_to_station": 341.96654104798125
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9537658,
+    "lon": 7.4404628,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "4",
+      "addr:postcode": "3012",
+      "addr:street": "Engehaldenstrasse",
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Engehaldenstrasse 4, 3012 Bern",
+      "contact:email": "iop@iop.unibe.ch",
+      "contact:phone": "+41 31 6318069",
+      "name": "Institut f\u00fcr Organisation und Personal",
+      "operator": "Universit\u00e4t Bern",
+      "operator:wikidata": "Q659080",
+      "short_name": "IOP",
+      "website": "https://www.iop.unibe.ch/"
+    },
+    "distance_to_station": 328.4176976692508
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9522263,
+    "lon": 7.4350215,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "6",
+      "addr:postcode": "3012",
+      "addr:street": "Hallerstrasse",
+      "amenity": "university",
+      "contact:addr": "Hallerstrasse 6, 3012 Bern",
+      "contact:email": "secretary@issibern.ch",
+      "contact:phone": "+41 31 63148 96",
+      "faculty": "aerospace",
+      "name": "International Space Science Institute",
+      "name:ca": "Institut Internacional de Ci\u00e8ncies Espacials",
+      "name:fr": "Institut international des sciences spatiales",
+      "name:ko": "\uad6d\uc81c\uc6b0\uc8fc\uacfc\ud559\uc5f0\uad6c\uc18c",
+      "office": "university",
+      "operator": "University of Bern",
+      "operator:de": "Universit\u00e4t Bern",
+      "operator:fr": "Universit\u00e9 de Berne",
+      "operator:type": "private_non_profit",
+      "short_name": "ISSI",
+      "website": "http://www.issibern.ch",
+      "wikidata": "Q6053561",
+      "wikipedia": "fr:Institut international des sciences spatiales"
+    },
+    "distance_to_station": 299.10239668532114
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9506279,
+    "lon": 7.4384753,
+    "tags": {
+      "alt_name": "Oeschger-Zentrum f\u00fcr Klimaforschung",
+      "amenity": "university",
+      "contact:addr": "Hochschulstrasse 4, 3012 Bern",
+      "contact:email": "info@oeschger.unibe.ch",
+      "contact:phone": "+41 31 6313145",
+      "name": "Oeschger Centre for Climate Change Research",
+      "operator": "University of Bern",
+      "operator:de": "Universit\u00e4t Bern",
+      "operator:fr": "Universit\u00e9 de Berne",
+      "short_name": "OCCR",
+      "website": "https://www.oeschger.unibe.ch/index_ger.html"
+    },
+    "distance_to_station": 53.341632924784555
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.952296,
+    "lon": 7.4350455,
+    "tags": {
+      "alt_name": "World Trade Institute, University of Bern",
+      "amenity": "university",
+      "contact:addr": "Hallerstrasse 6, 3012 Bern",
+      "email": "inquire@wti.org",
+      "fax": "+41 31 6313630",
+      "name": "World Trade Institute",
+      "name:fa": "\u0645\u0624\u0633\u0633\u0647 \u062a\u062c\u0627\u0631\u062a \u062c\u0647\u0627\u0646\u06cc",
+      "operator": "University of Bern",
+      "operator:de": "Universit\u00e4t Bern",
+      "operator:fr": "Universit\u00e9 de Berne",
+      "phone": "+41 31 6313270",
+      "short_name": "WTI",
+      "website": "https://www.wti.org/",
+      "wikidata": "Q4247417",
+      "wikipedia": "de:World Trade Institute"
+    },
+    "distance_to_station": 300.7942791460883
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9523324,
+    "lon": 7.4347805,
+    "tags": {
+      "alt_name": "Institut f\u00fcr Europa- und Wirtschaftsv\u00f6lkerrecht",
+      "amenity": "university",
+      "contact:addr": "Hallerstrasse 6, 3012 Bern",
+      "contact:phone": "+41 31 6313625",
+      "name": "Institut Europa- und Wirtschaftsv\u00f6lkerrecht",
+      "operator": "University of Bern",
+      "operator:de": "Universit\u00e4t Bern",
+      "operator:fr": "Universit\u00e9 de Berne",
+      "website": "https://www.iew.unibe.ch/"
+    },
+    "distance_to_station": 320.6685220389706
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9522798,
+    "lon": 7.4346227,
+    "tags": {
+      "amenity": "university",
+      "contact:addr": "Hallerstrasse 6, 3012 Bern",
+      "contact:email": "nccr@wti.org",
+      "contact:phone": "+41 31 6313270",
+      "name": "National Centres of Competence in Research Trade Regulation",
+      "operator": "University of Bern - World Trade Institute",
+      "operator:de": "Universit\u00e4t Bern - World Trade Institute",
+      "operator:fr": "Universit\u00e9 de Berne - World Trade Institute",
+      "short_name": "nccr trade regulation",
+      "website": "https://www.nccr-trade.org/"
+    },
+    "distance_to_station": 329.1624540626407
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9528806,
+    "lon": 7.4349994,
+    "tags": {
+      "amenity": "university",
+      "contact:addr": "Hallerstrasse 12, 3012 Bern",
+      "contact:email": "info@giub.unibe.ch",
+      "contact:fax": "+41 31 6318511",
+      "contact:phone": "+41 31 631 88 75",
+      "name": "Geographisches Institut",
+      "name:de": "Geographisches Institut",
+      "name:en": "Institute of Geography",
+      "name:fr": "Institut de G\u00e9ographie",
+      "operator": "Universit\u00e4t Bern",
+      "operator:de": "Universit\u00e4t Bern",
+      "operator:en": "University of Berne",
+      "operator:fr": "Universit\u00e9 de Berne",
+      "short_name": "GIUB",
+      "website": "https://www.geography.unibe.ch/"
+    },
+    "distance_to_station": 337.47909786086115
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9535814,
+    "lon": 7.4402725,
+    "tags": {
+      "alt_name": "Uni Bern",
+      "amenity": "university",
+      "contact:addr": "Sch\u00fctzenmattstrasse 14, 3012 Bern",
+      "contact:email": "fdn@inf.unibe.ch",
+      "contact:facebook": "https://www.facebook.com/digitalenachhaltigkeit/",
+      "contact:phone": "+41 31 6314771",
+      "contact:twitter": "https://twitter.com/researchdigisus",
+      "name": "Forschungsstelle Digitale Nachhaltigkeit",
+      "name:de": "Forschungsstelle Digitale Nachhaltigkeit",
+      "name:en": "Research center for digital sustainability",
+      "name:fr": "Centre de recherche sur la durabilit\u00e9 num\u00e9rique",
+      "short_name": "FDN",
+      "source": "survey and website",
+      "website": "https://www.digitale-nachhaltigkeit.unibe.ch",
+      "wikidata": "Q63558709"
+    },
+    "distance_to_station": 303.72160892482555
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9538625,
+    "lon": 7.4403613,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:postcode": "3012",
+      "addr:street": "Engehaldenstrasse 4",
+      "amenity": "university",
+      "name": "Departement Betriebswirtschaftslehre",
+      "operator": "Universit\u00e4t Bern",
+      "phone": "+41 31 684 80 50",
+      "website": "https://www.bwl.unibe.ch/index_ger.html"
+    },
+    "distance_to_station": 335.00621971779947
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9537197,
+    "lon": 7.4402815,
+    "tags": {
+      "amenity": "university"
+    },
+    "distance_to_station": 318.03062949317206
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9510276,
+    "lon": 7.4389542,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "5",
+      "addr:postcode": "3012",
+      "addr:street": "Sidlerstrasse",
+      "alt_name": "ExWi",
+      "amenity": "university",
+      "building": "public",
+      "building:levels": "4",
+      "layer": "-3",
+      "location": "surface",
+      "name": "Institute Exakte Wissenschaften",
+      "note": "http://www.hoerraeume.unibe.ch/hrz_medien_PDFStandorte/005_Plan_Exwi.pdf",
+      "roof:levels": "0",
+      "short_name": "ExWi"
+    },
+    "distance_to_station": 28.064713330960444
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9511875,
+    "lon": 7.4357569,
+    "tags": {
+      "amenity": "university",
+      "name": "Universit\u00e4t Bern",
+      "name:de": "Universit\u00e4t Bern",
+      "name:fr": "Universit\u00e9 de Berne",
+      "source": "local knowledge"
+    },
+    "distance_to_station": 216.02209242335257
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9540271,
+    "lon": 7.4383812,
+    "tags": {
+      "amenity": "university",
+      "area": "yes",
+      "name": "Universit\u00e4t Bern"
+    },
+    "distance_to_station": 325.9020853709919
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9499173,
+    "lon": 7.4354217,
+    "tags": {
+      "amenity": "university",
+      "name": "Universit\u00e4t Bern - UniS",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 274.76520494245636
+  },
+  {
+    "feature_type": "universities",
+    "lat": 46.9510344,
+    "lon": 7.4380302,
+    "tags": {
+      "amenity": "university",
+      "contact:phone": "+41 31 63 8111",
+      "contact:website": "http://www.unibe.ch/kontakt/kontakt.php",
+      "name": "Universit\u00e4t Bern",
+      "name:de": "Universit\u00e4t Bern",
+      "name:en": "University of Bern",
+      "name:fr": "Universit\u00e9 de Berne",
+      "name:he": "\u05d0\u05d5\u05e0\u05d9\u05d1\u05e8\u05e1\u05d9\u05d8\u05ea \u05d1\u05e8\u05df",
+      "name:it": "Universit\u00e0 di Berna",
+      "name:ko": "\ubca0\ub978 \ub300\ud559\uad50",
+      "name:la": "Universitas Bernensis",
+      "name:rm": "Universitad da Berna",
+      "name:ru": "\u0411\u0435\u0440\u043d\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442",
+      "name:zh": "\u4f2f\u5c14\u5c3c\u5927\u5b66",
+      "type": "multipolygon",
+      "website": "https://www.unibe.ch/",
+      "wheelchair": "yes",
+      "wikidata": "Q659080",
+      "wikipedia": "de:Universit\u00e4t Bern"
+    },
+    "distance_to_station": 43.86100972049177
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "feature_type": "train_stations",
+    "lat": 46.5233305,
+    "lon": 6.5901991,
+    "tags": {
+      "light_rail": "yes",
+      "name": "Bourdonnette",
+      "operator": "TL",
+      "public_transport": "station",
+      "railway": "station",
+      "station": "light_rail",
+      "uic_name": "Lausanne, Bourdonnette",
+      "uic_ref": "8501210",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 892.6350983899878
+  },
+  {
+    "feature_type": "train_stations",
+    "lat": 46.5279092,
+    "lon": 6.5666458,
+    "tags": {
+      "ele": "396",
+      "name": "Cerisaie",
+      "operator": "TL",
+      "public_transport": "station",
+      "railway": "station",
+      "railway:ref": "CERI",
+      "station": "light_rail",
+      "uic_name": "Ecublens VD, Cerisaie",
+      "uic_ref": "8501216",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 989.5725923994523
+  },
+  {
+    "feature_type": "train_stations",
+    "lat": 46.5241849,
+    "lon": 6.5847837,
+    "tags": {
+      "ele": "388",
+      "light_rail": "yes",
+      "name": "UNIL-Chamberonne",
+      "old_name": "UNIL-Dorigny",
+      "operator": "TL",
+      "public_transport": "station",
+      "railway": "station",
+      "railway:ref": "UNDO",
+      "station": "light_rail",
+      "uic_name": "Chavannes-R., UNIL-Chamberonne",
+      "uic_ref": "8501211",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 472.6877094858243
+  },
+  {
+    "feature_type": "train_stations",
+    "lat": 46.5249989,
+    "lon": 6.5791675,
+    "tags": {
+      "ele": "385",
+      "internet_access": "no",
+      "light_rail": "yes",
+      "name": "UNIL-Mouline",
+      "old_name": "Mouline",
+      "operator": "TL",
+      "public_transport": "station",
+      "railway": "station",
+      "railway:ref": "MOUI",
+      "station": "light_rail",
+      "uic_name": "Chavannes-R., UNIL-Mouline",
+      "uic_ref": "8501212",
+      "wheelchair": "yes",
+      "wikidata": "Q30745649"
+    },
+    "distance_to_station": 120.31298468095062
+  }
+]

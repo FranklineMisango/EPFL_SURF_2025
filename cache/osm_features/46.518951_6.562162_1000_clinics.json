@@ -1,0 +1,21 @@
+[
+  {
+    "feature_type": "clinics",
+    "lat": 46.5235488,
+    "lon": 6.5653497,
+    "tags": {
+      "addr:city": "Ecublens",
+      "addr:housenumber": "6A",
+      "addr:postcode": "1024",
+      "addr:street": "Route Louis Favre",
+      "amenity": "clinic",
+      "healthcare": "clinic",
+      "name": "Centre M\u00e9dical Arcades EPFL",
+      "opening_hours": "Mo-Fr 08:00-18:00",
+      "operator": "Ensemble Hospitalier de la C\u00f4te",
+      "phone": "+41 21 614 63 63",
+      "website": "https://www.ehc-vd.ch/centremedical-arcadesepfl"
+    },
+    "distance_to_station": 566.6136682170342
+  }
+]

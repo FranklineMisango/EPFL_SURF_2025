@@ -1,0 +1,33 @@
+[
+  {
+    "feature_type": "commercial",
+    "lat": 46.9589891,
+    "lon": 7.467103,
+    "tags": {
+      "landuse": "commercial",
+      "name": "BernExpo",
+      "website": "http://www.bernexpo.ch"
+    },
+    "distance_to_station": 720.7932391522917
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.9547309,
+    "lon": 7.4685153,
+    "tags": {
+      "landuse": "commercial"
+    },
+    "distance_to_station": 261.0833032086365
+  },
+  {
+    "feature_type": "commercial",
+    "lat": 46.9535058,
+    "lon": 7.4618016,
+    "tags": {
+      "landuse": "commercial",
+      "source": "Orthofotos Bern",
+      "type": "multipolygon"
+    },
+    "distance_to_station": 439.0430027837045
+  }
+]

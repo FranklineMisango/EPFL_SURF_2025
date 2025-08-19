@@ -1,0 +1,38 @@
+[
+  {
+    "feature_type": "libraries",
+    "lat": 46.9414833,
+    "lon": 7.4496208,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:housenumber": "15",
+      "addr:postcode": "3005",
+      "addr:street": "Hallwylstrasse",
+      "alt_name": "Sammlung Schweizerische Landesbibliothek",
+      "amenity": "library",
+      "contact:addr": "Hallwylstrasse 15, 3005 Bern",
+      "contact:email": "info@nb.admin.ch",
+      "contact:fax": "+41 58 462 84 08",
+      "contact:phone": "+41 58 462 89 35",
+      "contact:website": "http://www.nb.admin.ch",
+      "internet_access": "wlan",
+      "name": "Schweizerische Nationalbibliothek",
+      "name:de": "Schweizerische Nationalbibliothek",
+      "name:en": "Swiss National Library",
+      "name:fr": "Biblioth\u00e8que nationale suisse",
+      "name:it": "Biblioteca nazionale svizzera",
+      "name:rm": "Biblioteca naziunala svizra",
+      "note": "Sammlung - KGS-Nr: Nummer des Kulturgutes, zu finden in den KGS-Listen des Bundes und der Kantone. BABS: Bundesamt f\u00fcr Bev\u00f6lkerungsschutz",
+      "opening_hours": "Mo-Fr 09:00-18:00",
+      "operator": "Bundesamt f\u00fcr Kultur BAK",
+      "ref:isil": "CH-000015-0",
+      "ref:kgs": "9324",
+      "short_name": "NB",
+      "website": "https://www.nb.admin.ch/",
+      "wheelchair": "yes",
+      "wikidata": "Q201787",
+      "wikipedia": "de:Schweizerische Nationalbibliothek"
+    },
+    "distance_to_station": 86.43301973193111
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "feature_type": "banks",
+    "lat": 46.9601878,
+    "lon": 7.454822,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "83",
+      "addr:postcode": "3014",
+      "addr:street": "Wiesenstrasse",
+      "alt_name": "Berner Kantonalbank Bern-Breitenrain",
+      "amenity": "bank",
+      "atm": "yes",
+      "branch": "| BCBE",
+      "brand": "Berner Kantonalbank",
+      "brand:de": "Berner Kantonalbank",
+      "brand:fr": "Banque Cantonale Bernoise",
+      "brand:wikidata": "Q824579",
+      "check_date": "2025-08-06",
+      "contact:email": "bekb@bekb.ch",
+      "contact:fax": "+41 31 3484506",
+      "contact:phone": "+41 31 3484500",
+      "name": "Berner Kantonalbank",
+      "name:de": "Berner Kantonalbank",
+      "name:fr": "Banque Cantonale Bernoise",
+      "opening_hours": "Mo-Fr 09:00-12:00; Sa,Su off",
+      "operator": "Berner Kantonalbank AG",
+      "short_name": "BEKB",
+      "short_name:de": "BEKB",
+      "short_name:fr": "BCBE",
+      "source": "survey and website",
+      "website": "https://www.bekb.ch/de/pages/standorte?mode=detail&location=26AC2623A3234C89AB88A55C178BE0E8"
+    },
+    "distance_to_station": 504.19225852424165
+  },
+  {
+    "feature_type": "banks",
+    "lat": 46.949459,
+    "lon": 7.4438856,
+    "tags": {
+      "amenity": "bank",
+      "brand": "Raiffeisen",
+      "brand:wikidata": "Q681189",
+      "check_date": "2025-07-19",
+      "name": "Raiffeisen",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 991.1359882731514
+  },
+  {
+    "feature_type": "banks",
+    "lat": 46.9481261,
+    "lon": 7.4513782,
+    "tags": {
+      "alt_name": "Banca Popolare di Sondrio (Suisse) SA",
+      "amenity": "bank",
+      "atm": "yes",
+      "contact:addr": "Kramgasse 16, 3011 Bern",
+      "contact:email": "contact@bps-suisse.ch",
+      "contact:fax": "+41 58 8554465",
+      "contact:phone": "+41 58 8554450",
+      "name": "BPS (Suisse)",
+      "opening_hours": "Mo-Fr 09:00-12:00, 13:30-17:00; Sa-Su off; PH off",
+      "source": "survey and website",
+      "website": "https://www.bps-suisse.ch"
+    },
+    "distance_to_station": 865.0474183119553
+  },
+  {
+    "feature_type": "banks",
+    "lat": 46.9487713,
+    "lon": 7.4455342,
+    "tags": {
+      "addr:full": "Zeughausgasse 27, 3011 Bern",
+      "alt_name": "Migros Bank Bern",
+      "amenity": "bank",
+      "branch": "Bern",
+      "brand": "Migros Bank",
+      "brand:de": "Migros Bank",
+      "brand:fr": "Banque Migros",
+      "brand:it": "Banca Migros",
+      "brand:wikidata": "Q1593349",
+      "name": "Migros Bank",
+      "name:de": "Migros Bank",
+      "name:fr": "Banque Migros",
+      "name:it": "Banca Migros",
+      "opening_hours": "PH off; Mo-Fr 09:00-12:00,13:30-17:00",
+      "operator": "Migros Bank",
+      "website": "https://www.migrosbank.ch/de/standorte.html/migros-bank-niederlassung-bern"
+    },
+    "distance_to_station": 968.5740457063803
+  },
+  {
+    "feature_type": "banks",
+    "lat": 46.9484974,
+    "lon": 7.4468704,
+    "tags": {
+      "amenity": "bank",
+      "contact:phone": "+41 31 307 50 00",
+      "name": "Z\u00e4hringer Privatbank",
+      "operator": "Z\u00e4hringer Privatbank AG",
+      "website": "https://www.zaehringer-privatbank.ch/"
+    },
+    "distance_to_station": 938.9483359372736
+  }
+]

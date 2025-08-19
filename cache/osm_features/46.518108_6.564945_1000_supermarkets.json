@@ -1,0 +1,42 @@
+[
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.5229222,
+    "lon": 6.5656983,
+    "tags": {
+      "brand": "Migros",
+      "brand:wikidata": "Q680727",
+      "brand:wikipedia": "en:Migros",
+      "cash_withdrawal": "postfinance_card",
+      "cash_withdrawal:fee": "no",
+      "cash_withdrawal:purchase_required": "no",
+      "cash_withdrawal:type": "checkout",
+      "check_date:opening_hours": "2024-06-09",
+      "name": "Migros",
+      "opening_hours": "Mo-Fr 07:30-20:00; Sa 08:00-18:00",
+      "shop": "supermarket",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 538.2663282375985
+  },
+  {
+    "feature_type": "supermarkets",
+    "lat": 46.5228102,
+    "lon": 6.5657045,
+    "tags": {
+      "brand": "Denner",
+      "brand:wikidata": "Q379911",
+      "brand:wikipedia": "en:Denner (supermarket)",
+      "cash_withdrawal": "migros_bank;postfinance_card",
+      "cash_withdrawal:fee": "no",
+      "cash_withdrawal:purchase_required": "no",
+      "cash_withdrawal:type": "checkout",
+      "check_date:opening_hours": "2024-06-09",
+      "name": "Denner",
+      "opening_hours": "Mo-Fr 07:30-20:00; Sa 08:00-18:00",
+      "shop": "supermarket",
+      "wheelchair": "yes"
+    },
+    "distance_to_station": 525.9424448083575
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "feature_type": "train_stations",
+    "lat": 46.9687092,
+    "lon": 7.4443048,
+    "tags": {
+      "alt_name": "Felsenau",
+      "ele": "534",
+      "name": "Bern Felsenau",
+      "network": "Libero",
+      "operator": "RBS",
+      "public_transport": "station",
+      "railway": "station",
+      "railway:ref": "BNFE",
+      "uic_name": "Bern Felsenau",
+      "uic_ref": "8508051",
+      "wheelchair": "limited",
+      "wikidata": "Q33508961"
+    },
+    "distance_to_station": 842.1967410190997
+  }
+]

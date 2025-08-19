@@ -1,0 +1,37 @@
+[
+  {
+    "feature_type": "banks",
+    "lat": 46.9601878,
+    "lon": 7.454822,
+    "tags": {
+      "addr:city": "Bern",
+      "addr:country": "CH",
+      "addr:housenumber": "83",
+      "addr:postcode": "3014",
+      "addr:street": "Wiesenstrasse",
+      "alt_name": "Berner Kantonalbank Bern-Breitenrain",
+      "amenity": "bank",
+      "atm": "yes",
+      "branch": "| BCBE",
+      "brand": "Berner Kantonalbank",
+      "brand:de": "Berner Kantonalbank",
+      "brand:fr": "Banque Cantonale Bernoise",
+      "brand:wikidata": "Q824579",
+      "check_date": "2025-08-06",
+      "contact:email": "bekb@bekb.ch",
+      "contact:fax": "+41 31 3484506",
+      "contact:phone": "+41 31 3484500",
+      "name": "Berner Kantonalbank",
+      "name:de": "Berner Kantonalbank",
+      "name:fr": "Banque Cantonale Bernoise",
+      "opening_hours": "Mo-Fr 09:00-12:00; Sa,Su off",
+      "operator": "Berner Kantonalbank AG",
+      "short_name": "BEKB",
+      "short_name:de": "BEKB",
+      "short_name:fr": "BCBE",
+      "source": "survey and website",
+      "website": "https://www.bekb.ch/de/pages/standorte?mode=detail&location=26AC2623A3234C89AB88A55C178BE0E8"
+    },
+    "distance_to_station": 632.9975664515047
+  }
+]
