@@ -222,27 +222,30 @@ class GNNBaselineRunner:
         with torch.no_grad():
             # Get graph data
             graph_data = gnn_predictor.graph_data.to(gnn_predictor.device)
-            
+
             # Create batch from test samples
             source_indices = torch.tensor([sample['source_idx'] for sample in test_samples], dtype=torch.long).to(gnn_predictor.device)
             target_indices = torch.tensor([sample['target_idx'] for sample in test_samples], dtype=torch.long).to(gnn_predictor.device)
             flows = torch.tensor([sample['flow'] for sample in test_samples], dtype=torch.float32)
-            
+            # Prepare time features if present
+            time_feats = torch.tensor([sample.get('time_vec', [0.5, 0.5]) for sample in test_samples], dtype=torch.float32).to(gnn_predictor.device)
+
             # Get predictions
             pred_flows = gnn_predictor.model(
                 graph_data.x,
                 graph_data.edge_index,
                 graph_data.edge_attr,
                 source_indices,
-                target_indices
+                target_indices,
+                time_feats
             )
-            
+
             predictions = pred_flows.cpu().numpy().flatten()
             actuals = flows.numpy().flatten()
-            
+
             # Clear GPU memory
             if gnn_predictor.device.type == 'cuda':
-                del graph_data, source_indices, target_indices, pred_flows
+                del graph_data, source_indices, target_indices, pred_flows, time_feats
                 torch.cuda.empty_cache()
         
         # Calculate metrics
