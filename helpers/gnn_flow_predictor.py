@@ -1,12 +1,7 @@
-"""
-Graph Neural Network for Bike Flow Prediction
-Enhanced with comprehensive OSM features and spatial graph structure
-"""
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch_geometric.nn import GCNConv, GATConv, GraphConv, SAGEConv, global_mean_pool
+from torch_geometric.nn import GCNConv, GATConv, GraphConv, SAGEConv, GINConv, TransformerConv, global_mean_pool
 from torch_geometric.data import Data, DataLoader
 import numpy as np
 import pandas as pd
@@ -44,7 +39,7 @@ class GNNConfig:
     batch_size: int = 32
     epochs: int = 100
     attention_heads: int = 4
-    gnn_type: str = "GCN"  # Options: "GCN", "GAT", "GraphSAGE"
+    gnn_type: str = "GCN"  # Options: "GCN", "GAT", "GraphSAGE", "GIN", "Transformer", "GGNN", "DCRNN"
     edge_features: bool = True
     use_batch_norm: bool = True
     use_residual: bool = False
@@ -147,6 +142,46 @@ class BikeFlowGNN(nn.Module):
                 out_channels = config.hidden_dim
                 self.conv_layers.append(SAGEConv(in_channels, out_channels, aggr='mean'))
                 output_dims.append(out_channels)
+
+        elif self.gnn_type == "GGNN":
+            # Gated Graph Neural Network (requires DGL or custom implementation)
+            try:
+                from dgl.nn.pytorch import GatedGraphConv
+            except ImportError:
+                raise ImportError("DGL is required for GGNN. Please install dgl.")
+            for i in range(config.num_layers):
+                in_channels = config.hidden_dim
+                out_channels = config.hidden_dim
+                # GGNN uses a single GatedGraphConv layer with n_steps
+                self.conv_layers.append(GatedGraphConv(out_channels, n_steps=3))
+                output_dims.append(out_channels)
+
+        elif self.gnn_type == "DCRNN":
+            # DCRNN is a spatio-temporal model and requires a custom implementation or pytorch-dcrnn
+            # This is a stub for future integration.
+            raise NotImplementedError("DCRNN integration requires sequence data and a custom model. See pytorch-dcrnn.")
+
+        elif self.gnn_type == "GIN":
+            # Graph Isomorphism Network
+            for i in range(config.num_layers):
+                in_channels = config.hidden_dim
+                out_channels = config.hidden_dim
+                nn_func = nn.Sequential(
+                    nn.Linear(in_channels, out_channels),
+                    nn.ReLU(),
+                    nn.Linear(out_channels, out_channels)
+                )
+                self.conv_layers.append(GINConv(nn_func))
+                output_dims.append(out_channels)
+
+        elif self.gnn_type == "Transformer":
+            # Graph Transformer
+            for i in range(config.num_layers):
+                in_channels = config.hidden_dim
+                out_channels = config.hidden_dim
+                heads = config.attention_heads
+                self.conv_layers.append(TransformerConv(in_channels, out_channels, heads=heads, dropout=config.dropout))
+                output_dims.append(out_channels * heads)
 
         else:
             raise ValueError(f"Unknown GNN type: {self.gnn_type}")
