@@ -1,3 +1,4 @@
+from .minimal_dcrnn import MinimalDCRNN
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -68,14 +69,78 @@ class BikeFlowGNN(nn.Module):
         
         # Graph convolution layers based on type
         self.conv_layers = nn.ModuleList()
-        # conv_output_dims will store the output feature size of each conv layer
-        # (needed so BatchNorm1d can be created with the correct number of features)
-        self.conv_output_dims: List[int] = self._build_conv_layers()
+        self.conv_output_dims: List[int] = []
+        config = self.config
+        if self.gnn_type == "GCN":
+            for i in range(config.num_layers):
+                in_channels = config.hidden_dim
+                out_channels = config.hidden_dim
+                self.conv_layers.append(GCNConv(in_channels, out_channels))
+                self.conv_output_dims.append(out_channels)
+        elif self.gnn_type == "GAT":
+            for i in range(config.num_layers):
+                if i == 0:
+                    in_channels = config.hidden_dim
+                else:
+                    prev_concat = True if i - 1 < config.num_layers - 1 else False
+                    in_channels = config.hidden_dim * config.attention_heads if prev_concat else config.hidden_dim
+                out_channels = config.hidden_dim
+                concat = True if i < config.num_layers - 1 else False
+                heads = config.attention_heads if concat else 1
+                self.conv_layers.append(
+                    GATConv(in_channels, out_channels, heads=heads, dropout=config.dropout, concat=concat)
+                )
+                out_dim = out_channels * heads if concat else out_channels
+                self.conv_output_dims.append(out_dim)
+        elif self.gnn_type == "GraphSAGE":
+            for i in range(config.num_layers):
+                in_channels = config.hidden_dim
+                out_channels = config.hidden_dim
+                self.conv_layers.append(SAGEConv(in_channels, out_channels, aggr='mean'))
+                self.conv_output_dims.append(out_channels)
+        elif self.gnn_type == "GIN":
+            for i in range(config.num_layers):
+                in_channels = config.hidden_dim
+                out_channels = config.hidden_dim
+                nn_func = nn.Sequential(
+                    nn.Linear(in_channels, out_channels),
+                    nn.ReLU(),
+                    nn.Linear(out_channels, out_channels)
+                )
+                self.conv_layers.append(GINConv(nn_func))
+                self.conv_output_dims.append(out_channels)
+        elif self.gnn_type == "Transformer":
+            # For TransformerConv, the output dim is out_channels * heads, so we must chain the layers accordingly
+            heads = config.attention_heads
+            for i in range(config.num_layers):
+                if i == 0:
+                    in_channels = config.hidden_dim
+                else:
+                    in_channels = config.hidden_dim * heads
+                out_channels = config.hidden_dim
+                self.conv_layers.append(TransformerConv(in_channels, out_channels, heads=heads, dropout=config.dropout))
+                self.conv_output_dims.append(out_channels * heads)
+        elif self.gnn_type == "GGNN":
+            try:
+                from dgl.nn.pytorch import GatedGraphConv
+            except ImportError:
+                raise ImportError("DGL is required for GGNN. Please install dgl.")
+            for i in range(config.num_layers):
+                in_channels = config.hidden_dim
+                out_channels = config.hidden_dim
+                self.conv_layers.append(GatedGraphConv(out_channels, n_steps=3))
+                self.conv_output_dims.append(out_channels)
+        elif self.gnn_type == "DCRNN":
+            # Minimal DCRNN: expects input as [batch, seq_len, node_features]
+            seq_len = getattr(config, 'seq_len', 4)
+            self.dcrnn = MinimalDCRNN(node_features, config.hidden_dim, seq_len=seq_len, out_dim=1)
+            self.seq_len = seq_len
+        else:
+            raise ValueError(f"Unknown GNN type: {self.gnn_type}")
 
         # Batch normalization layers (if enabled).
-        # Create them after conv layers so sizes match (important for GAT concat heads)
         self.batch_norms = nn.ModuleList()
-        if config.use_batch_norm:
+        if config.use_batch_norm and self.gnn_type != "DCRNN":
             for dim in self.conv_output_dims:
                 self.batch_norms.append(nn.BatchNorm1d(dim))
         
@@ -84,18 +149,19 @@ class BikeFlowGNN(nn.Module):
         # the last entry in conv_output_dims if conv layers exist, otherwise fall
         # back to config.hidden_dim. This ensures the predictor input size matches
         # the runtime node embedding size (important for GAT with concat heads).
-        final_node_dim = self.conv_output_dims[-1] if len(self.conv_output_dims) > 0 else config.hidden_dim
-        # *2 for source + target concatenation, plus time embedding dim if present
-        predictor_input_dim = final_node_dim * 2 + getattr(config, 'time_emb_dim', 0)
-        self.flow_predictor = nn.Sequential(
-            nn.Linear(predictor_input_dim, config.hidden_dim),
-            nn.ReLU(),
-            nn.Dropout(config.dropout),
-            nn.Linear(config.hidden_dim, config.hidden_dim // 2),
-            nn.ReLU(),
-            nn.Dropout(config.dropout),
-            nn.Linear(config.hidden_dim // 2, 1)  # Single output for flow prediction
-        )
+        if self.gnn_type != "DCRNN":
+            final_node_dim = self.conv_output_dims[-1] if len(self.conv_output_dims) > 0 else config.hidden_dim
+            # *2 for source + target concatenation, plus time embedding dim if present
+            predictor_input_dim = final_node_dim * 2 + getattr(config, 'time_emb_dim', 0)
+            self.flow_predictor = nn.Sequential(
+                nn.Linear(predictor_input_dim, config.hidden_dim),
+                nn.ReLU(),
+                nn.Dropout(config.dropout),
+                nn.Linear(config.hidden_dim, config.hidden_dim // 2),
+                nn.ReLU(),
+                nn.Dropout(config.dropout),
+                nn.Linear(config.hidden_dim // 2, 1)  # Single output for flow prediction
+            )
 
         self.dropout = nn.Dropout(config.dropout)
         
@@ -188,71 +254,70 @@ class BikeFlowGNN(nn.Module):
 
         return output_dims
     
-    def forward(self, x, edge_index, edge_attr=None, source_nodes=None, target_nodes=None, time_feats=None):
+    def forward(self, x, edge_index, edge_attr=None, source_nodes=None, target_nodes=None, time_feats=None, x_seq=None):
         """
         Forward pass with support for different GNN architectures
         """
-        # Node embedding
-        x = self.node_embedding(x)
-        x = F.relu(x)
-        x = self.dropout(x)
-        
-        # Store input for residual connections
-        residual_input = x if self.config.use_residual else None
-        
-        # Graph convolution layers
-        for i, conv in enumerate(self.conv_layers):
-            x_prev = x
-            
-            # Apply convolution based on type
-            if self.gnn_type == "GCN":
-                x = conv(x, edge_index)
-            elif self.gnn_type == "GAT":
-                x = conv(x, edge_index)
-            elif self.gnn_type == "GraphSAGE":
-                x = conv(x, edge_index)
-            
-            # Apply batch normalization if enabled
-            if self.config.use_batch_norm and i < len(self.batch_norms):
-                x = self.batch_norms[i](x)
-            
-            # Apply activation and dropout (except on last layer)
-            if i < len(self.conv_layers) - 1:
-                x = F.relu(x)
-                
-                # Residual connection
-                if self.config.use_residual and x.shape == x_prev.shape:
-                    x = x + x_prev
-                    
-                x = self.dropout(x)
-        
-        # If predicting flows between specific node pairs
-        if source_nodes is not None and target_nodes is not None:
-            source_embeddings = x[source_nodes]  # [batch_size, hidden_dim]
-            target_embeddings = x[target_nodes]  # [batch_size, hidden_dim]
-            
-            # Concatenate source and target embeddings
-            if time_feats is not None:
-                # time_feats expected shape: [batch_size, time_emb_dim]
-                flow_input = torch.cat([source_embeddings, target_embeddings, time_feats], dim=1)
-            else:
-                flow_input = torch.cat([source_embeddings, target_embeddings], dim=1)
-            
-            # Predict flow
-            # Sanity check: ensure flow_input width matches predictor's expected in_features
-            try:
-                expected_in = self.flow_predictor[0].in_features
-            except Exception:
-                expected_in = None
-
-            if expected_in is not None and flow_input.size(1) != expected_in:
-                logger.error(f"Flow predictor input mismatch: flow_input.shape={flow_input.shape}, expected_in={expected_in}")
-                raise RuntimeError(f"Flow predictor input width ({flow_input.size(1)}) does not match expected ({expected_in}).")
-
-            flow_prediction = self.flow_predictor(flow_input)
-            return flow_prediction.squeeze(-1)  # [batch_size]
-        
-        return x  # Return node embeddings
+        if self.gnn_type == "DCRNN":
+            # For demonstration, expects x_seq: [batch, seq_len, node_features]
+            if x_seq is None:
+                raise ValueError("DCRNN requires x_seq argument: [batch, seq_len, node_features]")
+            return self.dcrnn(x_seq)
+        else:
+            # Node embedding
+            x = self.node_embedding(x)
+            x = F.relu(x)
+            x = self.dropout(x)
+            # Store input for residual connections
+            residual_input = x if self.config.use_residual else None
+            # Graph convolution layers
+            for i, conv in enumerate(self.conv_layers):
+                x_prev = x
+                # Apply convolution based on type
+                if self.gnn_type == "GCN":
+                    x = conv(x, edge_index)
+                elif self.gnn_type == "GAT":
+                    x = conv(x, edge_index)
+                elif self.gnn_type == "GraphSAGE":
+                    x = conv(x, edge_index)
+                elif self.gnn_type == "GIN":
+                    x = conv(x, edge_index)
+                elif self.gnn_type == "Transformer":
+                    x = conv(x, edge_index)
+                elif self.gnn_type == "GGNN":
+                    x = conv(x, edge_index)
+                # Apply batch normalization if enabled
+                if self.config.use_batch_norm and i < len(self.batch_norms):
+                    x = self.batch_norms[i](x)
+                # Apply activation and dropout (except on last layer)
+                if i < len(self.conv_layers) - 1:
+                    x = F.relu(x)
+                    # Residual connection
+                    if self.config.use_residual and x.shape == x_prev.shape:
+                        x = x + x_prev
+                    x = self.dropout(x)
+            # If predicting flows between specific node pairs
+            if source_nodes is not None and target_nodes is not None:
+                source_embeddings = x[source_nodes]  # [batch_size, hidden_dim]
+                target_embeddings = x[target_nodes]  # [batch_size, hidden_dim]
+                # Concatenate source and target embeddings
+                if time_feats is not None:
+                    # time_feats expected shape: [batch_size, time_emb_dim]
+                    flow_input = torch.cat([source_embeddings, target_embeddings, time_feats], dim=1)
+                else:
+                    flow_input = torch.cat([source_embeddings, target_embeddings], dim=1)
+                # Predict flow
+                # Sanity check: ensure flow_input width matches predictor's expected in_features
+                try:
+                    expected_in = self.flow_predictor[0].in_features
+                except Exception:
+                    expected_in = None
+                if expected_in is not None and flow_input.size(1) != expected_in:
+                    logger.error(f"Flow predictor input mismatch: flow_input.shape={flow_input.shape}, expected_in={expected_in}")
+                    raise RuntimeError(f"Flow predictor input width ({flow_input.size(1)}) does not match expected ({expected_in}).")
+                flow_prediction = self.flow_predictor(flow_input)
+                return flow_prediction.squeeze(-1)  # [batch_size]
+            return x  # Return node embeddings
 
 class GNNFlowPredictor:
     """Enhanced GNN-based bike flow predictor with comprehensive OSM caching"""
