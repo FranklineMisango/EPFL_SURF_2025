@@ -546,47 +546,58 @@ class CrossCityTransferPredictor:
         return metrics
     
     def predict_target_flows(self, source_station: str, target_station: str, 
-                           hour: int = 17, day_of_week: int = 1) -> Tuple[float, float]:
-        """Predict flow between stations in target city"""
+                           hour: int = 17, day_of_week: int = 1) -> Union[Tuple[float, float], Dict]:
+        """Predict flow between stations in target city and return top features and all features used"""
         if self.transfer_model is None:
             raise ValueError("Transfer model not available. Run transfer_to_target_city() first.")
-        
+
         if source_station not in self.target_data['station_features']:
             raise ValueError(f"Source station {source_station} not found in target city")
-        
+
         if target_station not in self.target_data['station_features']:
             raise ValueError(f"Target station {target_station} not found in target city")
-        
+
         # Get station features
-        source_features = self._prepare_station_features(
-            self.target_data['station_features'][source_station], hour, day_of_week
-        )
-        target_features = self._prepare_station_features(
-            self.target_data['station_features'][target_station], hour, day_of_week
-        )
-        
+        source_feat_dict = self.target_data['station_features'][source_station]
+        target_feat_dict = self.target_data['station_features'][target_station]
+        source_features = self._prepare_station_features(source_feat_dict, hour, day_of_week)
+        target_features = self._prepare_station_features(target_feat_dict, hour, day_of_week)
+
+        # Feature names in order
+        feature_names = []
+        if self.transfer_config.use_temporal_features:
+            feature_names.extend([
+                'hour', 'sin_hour', 'cos_hour', 'day_of_week', 'sin_dow', 'cos_dow', 'is_weekend'
+            ])
+        feature_names.extend(sorted(source_feat_dict.keys()))
+
         # Convert to tensors
         source_tensor = torch.FloatTensor(source_features).unsqueeze(0)
         target_tensor = torch.FloatTensor(target_features).unsqueeze(0)
-        
-        # Get embeddings
+
+        # Get embeddings and prediction
         with torch.no_grad():
             self.transfer_model.eval()
-            
-            # Create dummy edge index for single nodes
             edge_index = torch.LongTensor([[0], [0]])
-            
             source_embedding = self.transfer_model(source_tensor, edge_index, return_embeddings=True)
             target_embedding = self.transfer_model(target_tensor, edge_index, return_embeddings=True)
-            
-            # Predict flow
             predicted_flow = self.transfer_model.predict_flow(source_embedding, target_embedding)
             predicted_flow = max(0, predicted_flow.item())
-            
-            # Estimate confidence based on feature similarity and model training
             confidence = self._estimate_prediction_confidence(source_features, target_features)
-        
-        return predicted_flow, confidence
+
+        # Feature importance: use absolute difference between source and target features as a proxy
+        feat_diffs = np.abs(np.array(source_features) - np.array(target_features))
+        top_idx = np.argsort(-feat_diffs)[:5]  # Top 5 most different features
+        top_features = {feature_names[i]: feat_diffs[i] for i in top_idx if i < len(feature_names)}
+
+        # Return all features used for training
+        result = {
+            'predicted_flow': predicted_flow,
+            'confidence': confidence,
+            'top_features': top_features,
+            'all_features': feature_names
+        }
+        return result
     
     def _prepare_station_features(self, station_features: Dict[str, float], 
                                 hour: int, day_of_week: int) -> List[float]:

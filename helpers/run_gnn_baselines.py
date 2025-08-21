@@ -1439,11 +1439,14 @@ def main():
             for i, name in enumerate(model_names, 1):
                 print(f"  {i}. {name}")
             selection = input("Enter the number of the model to run (or 'All' to run all): ").strip()
-            if selection.lower() == 'all' or selection == str(model_names.index('All')+1):
+            # Accept 'All' (case-insensitive) or any number corresponding to 'All' in the menu
+            all_index = [i for i, name in enumerate(model_names, 1) if name.lower() == 'all']
+            if selection.lower() == 'all' or (all_index and selection == str(all_index[0])):
                 runner.run_all_baselines(device)
                 logger.info("🎉 GNN baseline testing completed!")
                 return
-            if selection == str(model_names.index('Clear Screen & Return to Menu')+1):
+            clear_index = [i for i, name in enumerate(model_names, 1) if 'clear' in name.lower()]
+            if clear_index and selection == str(clear_index[0]):
                 import os
                 os.system('clear' if os.name == 'posix' else 'cls')
                 continue
@@ -1455,7 +1458,11 @@ def main():
             except Exception:
                 print("Invalid selection. Exiting.")
                 return
-            if selected_model == 'Clear Screen & Return to Menu':
+            if selected_model.lower() == 'all':
+                runner.run_all_baselines(device)
+                logger.info("🎉 GNN baseline testing completed!")
+                return
+            if 'clear' in selected_model.lower():
                 import os
                 os.system('clear' if os.name == 'posix' else 'cls')
                 continue

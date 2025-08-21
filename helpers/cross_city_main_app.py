@@ -17,11 +17,25 @@ from typing import Dict, List, Tuple, Optional
 import json
 import os
 
-# Import our enhanced modules
+
+
+# Import always-required modules
+from helpers.interactive_city_database import InteractiveCityDatabase
+
+# Set optional modules to None by default
+CrossCityTransferPredictor = None
+TransferConfig = None
+GNNConfig = None
+create_enhanced_transfer_map = None
+EnhancedOSMRouter = None
+InteractiveFlowMap = None
+OSMFeatureExtractor = None
+PopulationFeatureExtractor = None
+
+# Import optional enhanced modules
 try:
     from cross_city_transfer_predictor import CrossCityTransferPredictor, TransferConfig, GNNConfig
     from enhanced_osm_integration import create_enhanced_transfer_map, EnhancedOSMRouter, InteractiveFlowMap
-    from interactive_transfer_app import InteractiveCityDatabase
     from osm_feature_extractor import OSMFeatureExtractor
     from population_feature_extractor import PopulationFeatureExtractor
 except ImportError as e:
@@ -107,13 +121,14 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+
 class CrossCityFlowApp:
     """Integrated Cross-City Transfer Learning and Flow Prediction Application"""
     
     def __init__(self):
         """Initialize the application"""
         self.city_db = InteractiveCityDatabase()
-        self.osm_router = EnhancedOSMRouter()
+        self.osm_router = EnhancedOSMRouter() if EnhancedOSMRouter is not None else None
         
         # Initialize logger
         self.logger = logging.getLogger(__name__)
@@ -123,8 +138,8 @@ class CrossCityFlowApp:
         
         # Initialize predictor and other components
         self.transfer_predictor = None
-        self.osm_extractor = OSMFeatureExtractor()
-        self.population_extractor = PopulationFeatureExtractor()
+        self.osm_extractor = OSMFeatureExtractor() if OSMFeatureExtractor is not None else None
+        self.population_extractor = PopulationFeatureExtractor() if PopulationFeatureExtractor is not None else None
         
     def _initialize_session_state(self):
         """Initialize Streamlit session state variables"""
@@ -177,24 +192,24 @@ class CrossCityFlowApp:
             self._render_action_buttons()
     
     def _render_city_selection(self):
-        """Render city selection interface"""
+        """Render city selection interface with multi-select for training cities"""
         st.markdown("""
         <div class="city-selection-card">
             <h3>🏙️ City Selection</h3>
         </div>
         """, unsafe_allow_html=True)
-        
-        # Source city selection
+
         available_cities = self.city_db.get_available_cities()
-        
-        source_city = st.selectbox(
-            "Source City (for training):",
+
+        # Multi-select for training cities
+        source_cities = st.multiselect(
+            "Training Cities (select one or more):",
             available_cities,
-            index=0,
-            key="source_city",
-            help="City to train the initial model on"
+            default=[available_cities[0]] if available_cities else [],
+            key="source_cities",
+            help="Cities to use for model training (multi-select allowed)"
         )
-        
+
         # Target city selection
         target_city = st.selectbox(
             "Target City (for prediction):",
@@ -203,16 +218,12 @@ class CrossCityFlowApp:
             key="target_city",
             help="City to apply transfer learning and make predictions"
         )
-        
+
         # Display city information
-        if source_city and target_city:
-            source_info = self.city_db.get_city_info(source_city)
+        if source_cities and target_city:
+            st.markdown(f"**📍 Training Cities:** {', '.join(source_cities)}")
             target_info = self.city_db.get_city_info(target_city)
-            
-            st.markdown(f"""
-            **📍 Source:** {source_info['name']} ({source_info['stations']} stations)
-            **🎯 Target:** {target_info['name']} ({target_info['stations']} stations)
-            """)
+            st.markdown(f"**🎯 Target:** {target_info['name']} ({target_info['stations']} stations)")
     
     def _render_transfer_config(self):
         """Render transfer learning configuration"""
@@ -358,23 +369,23 @@ class CrossCityFlowApp:
                         st.rerun()
     
     def _initialize_transfer_system(self):
-        """Initialize the transfer learning system"""
-        source_city = st.session_state.get('source_city', '')
+        """Initialize the transfer learning system with multiple training cities support"""
+        source_cities = st.session_state.get('source_cities', [])
         target_city = st.session_state.get('target_city', '')
-        
-        if not source_city or not target_city:
-            st.error("Please select both source and target cities.")
+
+        if not source_cities or not target_city:
+            st.error("Please select at least one training city and a target city.")
             return
-        
-        if source_city == target_city:
-            st.warning("Source and target cities should be different for transfer learning.")
+
+        if target_city in source_cities:
+            st.warning("Target city should not be among the training cities.")
             return
-        
+
         with st.spinner("🔄 Initializing transfer learning system..."):
             try:
                 # Create configurations
                 config = st.session_state.get('transfer_config', {})
-                
+
                 # Create GNN configuration
                 gnn_config = GNNConfig(
                     gnn_type=config.get('architecture', 'GAT'),
@@ -382,41 +393,44 @@ class CrossCityFlowApp:
                     learning_rate=config.get('learning_rate', 0.001),
                     epochs=config.get('epochs', 50)
                 )
-                
+
                 # Create transfer configuration
                 transfer_config = TransferConfig(
-                    source_city=source_city,
+                    source_city=','.join(source_cities),
                     target_city=target_city,
                     fine_tune_epochs=config.get('fine_tune_epochs', 50),
                     adaptation_weight=config.get('adaptation_weight', 0.1),
                     domain_adaptation=config.get('domain_adaptation', True)
                 )
-                
+
                 # Initialize predictor
                 self.transfer_predictor = CrossCityTransferPredictor(gnn_config, transfer_config)
-                
-                # Generate mock training data for demonstration
-                source_trips, target_trips = self._generate_mock_training_data(source_city, target_city)
-                
-                # Initialize transfer learning sequence
-                # 1. Load source city data
-                source_stations = self.city_db.get_city_stations(source_city)
-                self.transfer_predictor.load_source_city_data(source_trips, source_stations)
-                
-                # 2. Train source model
-                self.transfer_predictor.train_source_model()
-                
-                # 3. Prepare target city
+
+                # Aggregate training data from all selected source cities
+                all_source_trips = []
+                all_source_stations = {}
+                for city in source_cities:
+                    trips, _ = self._generate_mock_training_data(city, target_city)
+                    all_source_trips.append(trips)
+                    stations = self.city_db.get_city_stations(city)
+                    all_source_stations.update(stations)
+                # Concatenate all trips
+                import pandas as pd
+                source_trips = pd.concat(all_source_trips, ignore_index=True) if all_source_trips else None
+
+                # Target city data
                 target_stations = self.city_db.get_city_stations(target_city)
+
+                # Initialize transfer learning sequence
+                self.transfer_predictor.load_source_city_data(source_trips, all_source_stations)
+                self.transfer_predictor.train_source_model()
                 self.transfer_predictor.prepare_target_city(target_stations, target_city)
-                
-                # 4. Perform transfer learning
                 self.transfer_predictor.transfer_to_target_city()
-                
+
                 st.session_state.transfer_initialized = True
                 st.success("✅ Transfer system initialized successfully!")
-                logger.info(f"Transfer system initialized: {source_city} → {target_city}")
-                    
+                logger.info(f"Transfer system initialized: {source_cities} → {target_city}")
+
             except Exception as e:
                 st.error(f"Initialization failed: {str(e)}")
                 logger.error(f"Transfer initialization error: {e}")
@@ -531,26 +545,36 @@ class CrossCityFlowApp:
         
         try:
             with st.spinner("🔮 Predicting spatial flow..."):
-                predicted_flow, confidence = self.transfer_predictor.predict_target_flows(
+                result = self.transfer_predictor.predict_target_flows(
                     source_station, dest_station, hour, day_of_week
                 )
-            
-            # Store prediction
-            prediction_result = {
-                'source': source_station,
-                'target': dest_station,
-                'predicted_flow': predicted_flow,
-                'confidence': confidence,
-                'hour': hour,
-                'day_of_week': day_of_week,
-                'timestamp': datetime.now()
-            }
-            
+            # If result is a tuple, fallback to old style
+            if isinstance(result, tuple):
+                predicted_flow, confidence = result
+                prediction_result = {
+                    'source': source_station,
+                    'target': dest_station,
+                    'predicted_flow': predicted_flow,
+                    'confidence': confidence,
+                    'hour': hour,
+                    'day_of_week': day_of_week,
+                    'timestamp': datetime.now()
+                }
+            else:
+                prediction_result = {
+                    'source': source_station,
+                    'target': dest_station,
+                    'predicted_flow': result.get('predicted_flow', 0.0),
+                    'confidence': result.get('confidence', 0.0),
+                    'hour': hour,
+                    'day_of_week': day_of_week,
+                    'timestamp': datetime.now(),
+                    'top_features': result.get('top_features', {}),
+                    'all_features': result.get('all_features', [])
+                }
             st.session_state.current_prediction = prediction_result
             st.session_state.prediction_history.append(prediction_result)
-            
-            st.success(f"✨ Prediction complete! Flow: {predicted_flow:.2f} trips (Confidence: {confidence:.1%})")
-            
+            st.success(f"✨ Prediction complete! Flow: {prediction_result['predicted_flow']:.2f} trips (Confidence: {prediction_result['confidence']:.1%})")
         except Exception as e:
             st.error(f"Prediction failed: {str(e)}")
             logger.error(f"Prediction error: {e}")
@@ -662,6 +686,18 @@ class CrossCityFlowApp:
         </div>
         """, unsafe_allow_html=True)
         
+        # Show top features influencing the result (if available)
+        if 'top_features' in current_pred:
+            st.markdown("**🔬 Top Features Influencing This Prediction:**")
+            top_feats = current_pred['top_features']
+            for feat, val in top_feats.items():
+                st.markdown(f"- **{feat}**: {val:.3f}")
+
+        # Show all features used for training (if available)
+        if 'all_features' in current_pred:
+            with st.expander("🧩 All Features Used for Training", expanded=False):
+                st.markdown(", ".join(current_pred['all_features']))
+
         # Additional analysis button
         if st.button("📊 Detailed Route Analysis"):
             self._show_detailed_route_analysis(current_pred)
@@ -732,17 +768,21 @@ class CrossCityFlowApp:
     
     def _display_citywide_analysis(self, predictions: List[Dict]):
         """Display city-wide analysis results"""
-        st.markdown("### 🌐 City-wide Flow Analysis")
-        
+        st.markdown("### 🌐 City-wide Flow Analysis (Intra-city Flows)")
+
         if not predictions:
             return
-        
-        # Create DataFrame for analysis
+
+        # Only keep flows where both source and target are in the target city
+        target_city = st.session_state.get('target_city', '')
+        stations = set(self.city_db.get_city_stations(target_city).keys())
         df = pd.DataFrame(predictions)
-        
+        if not df.empty:
+            df = df[df['source'].isin(stations) & df['target'].isin(stations)]
+
         # Summary statistics
         col1, col2, col3, col4 = st.columns(4)
-        
+
         with col1:
             st.metric("Total Flows", len(df))
         with col2:
@@ -751,19 +791,19 @@ class CrossCityFlowApp:
             st.metric("Max Flow", f"{df['predicted_flow'].max():.2f}")
         with col4:
             st.metric("Avg Confidence", f"{df['confidence'].mean():.1%}")
-        
+
         # Top flows table
         st.markdown("**🏆 Top Predicted Flows:**")
         display_df = df[['source', 'target', 'predicted_flow', 'confidence']].copy()
         display_df.columns = ['Source Station', 'Target Station', 'Predicted Flow', 'Confidence']
         display_df['Confidence'] = display_df['Confidence'].apply(lambda x: f"{x:.1%}")
         display_df['Predicted Flow'] = display_df['Predicted Flow'].apply(lambda x: f"{x:.2f}")
-        
+
         st.dataframe(display_df.head(10), use_container_width=True)
-        
+
         # Visualizations
         tab1, tab2 = st.tabs(["📊 Flow Distribution", "🎯 Confidence Analysis"])
-        
+
         with tab1:
             fig_hist = px.histogram(
                 df, x='predicted_flow',
@@ -772,7 +812,7 @@ class CrossCityFlowApp:
                 color_discrete_sequence=['#1f77b4']
             )
             st.plotly_chart(fig_hist, use_container_width=True)
-        
+
         with tab2:
             fig_scatter = px.scatter(
                 df, x='confidence', y='predicted_flow',
