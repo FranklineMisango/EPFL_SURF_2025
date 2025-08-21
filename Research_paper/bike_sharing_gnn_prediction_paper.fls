@@ -1,8 +1,8 @@
-PWD /Users/misango/codechest/EPFL_SURF_2025
+PWD /Users/misango/codechest/EPFL_SURF_2025/Research_paper
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex
+INPUT /Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex
 OUTPUT bike_sharing_gnn_prediction_paper.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
@@ -367,9 +367,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsptm.fd
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsptm.fd
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsptm.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
@@ -418,6 +415,9 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsptm.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsptm.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsptm.fd
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
@@ -441,12 +441,12 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmb8c.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
 INPUT bike_sharing_gnn_prediction_paper.aux

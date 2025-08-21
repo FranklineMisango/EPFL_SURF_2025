@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.7.18)  14 AUG 2025 14:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.7.18)  21 AUG 2025 14:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex
-(/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex
+**/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex
+(/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
@@ -100,7 +100,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \c@IEEEbiography=\count276
 \@IEEEtranrubishbin=\box53
 )
-** ATTENTION: Overriding command lockouts (line 2).
+** ATTENTION: Overriding command lockouts (line 3).
 (/usr/local/texlive/2025/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
@@ -658,24 +658,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (./bike_sharing_gnn_prediction_paper.aux)
 \openout1 = `bike_sharing_gnn_prediction_paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 -- Lines per column: 41 (approximate, difference = 7.70805pt).
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -732,7 +732,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count361
-Package hyperref Info: Link coloring OFF on input line 26.
+Package hyperref Info: Link coloring OFF on input line 27.
 \@outlinefile=\write4
 \openout4 = `bike_sharing_gnn_prediction_paper.out'.
 
@@ -748,14 +748,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 ** WARNING: \and is valid only when in conference or peerreviewca
 modes (line 43).
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 43.
-(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 43.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 45.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 Underfull \hbox (badness 2393) in paragraph at lines 44--46
@@ -846,7 +840,7 @@ Underfull \hbox (badness 1540) in paragraph at lines 82--83
  []
 
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:99: LaTeX Error: Environment theorem undefined.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:99: LaTeX Error: Environment theorem undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -859,9 +853,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-
-
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:101: LaTeX Error: \begin{document} ended by \end{theorem}.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:101: LaTeX Error: \begin{document} ended by \end{theorem}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -887,6 +879,8 @@ Underfull \hbox (badness 2393) in paragraph at lines 105--106
 Underfull \hbox (badness 1675) in paragraph at lines 105--106
 \OT1/ptm/m/n/11 dresses the crit-i-cal chal-lenge of cap-tur-ing
  []
+
+
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 108.
 
@@ -919,7 +913,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--122
 [] []$\OML/cmm/m/it/10.95 F[] \OMS/cmsy/m/n/10.95  $
  []
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:124: Missing number, treated as zero.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:124: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
 l.124 \end{algorithmic}
@@ -928,14 +922,14 @@ A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:124: Missing = inserted for \ifnum.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:124: Missing = inserted for \ifnum.
 <to be read again> 
                    \ALG@currentblock@0 
 l.124 \end{algorithmic}
                        
 I was expecting to see `<', `=', or `>'. Didn't.
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:124: Missing number, treated as zero.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:124: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
 l.124 \end{algorithmic}
@@ -945,13 +939,13 @@ A number should have been here; I inserted `0'.
 look up `weird error' in the index to The TeXbook.)
 
 
-
-[3]
 Underfull \hbox (badness 1418) in paragraph at lines 131--132
 []\OT1/ptm/b/n/11 Recreational Fa-cil-i-ties \OT1/ptm/m/n/11 (23 fea-tures):
  []
 
 
+
+[3]
 Underfull \hbox (badness 1975) in paragraph at lines 140--141
 []\OT1/ptm/m/n/11 Our Graph-SAGE en-hance-ment ad-dresses
  []
@@ -966,6 +960,10 @@ Underfull \hbox (badness 2547) in paragraph at lines 143--143
 []\OT1/ptm/b/n/11 Algorithm 2 \OT1/ptm/m/n/11 En-hanced Graph-SAGE with
  []
 
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 148.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <11> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 148.
 
@@ -988,7 +986,7 @@ Underfull \hbox (badness 1668) in paragraph at lines 157--158
 [] []$[] \OMS/cmsy/m/n/10.95  $ \OT1/ptm/m/n/11 BilinearDecoder$\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 h[]\OT1/cmr/m/n/10.95 )$ \OMS/cmsy/m/n/10.95 f\OT1/ptm/m/n/11 Pairwise
  []
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:159: Missing number, treated as zero.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:159: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
 l.159 \end{algorithmic}
@@ -997,14 +995,14 @@ A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:159: Missing = inserted for \ifnum.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:159: Missing = inserted for \ifnum.
 <to be read again> 
                    \ALG@currentblock@0 
 l.159 \end{algorithmic}
                        
 I was expecting to see `<', `=', or `>'. Didn't.
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:159: Missing number, treated as zero.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:159: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
 l.159 \end{algorithmic}
@@ -1022,8 +1020,6 @@ Underfull \hbox (badness 1571) in paragraph at lines 165--166
 Underfull \hbox (badness 10000) in paragraph at lines 167--168
 []\OT1/ptm/m/n/11 extbfRegularization Strat-egy: Dropout
  []
-
-
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 179--180
@@ -1045,7 +1041,7 @@ Overfull \hbox (10.2723pt too wide) in paragraph at lines 184--185
 \OT1/ptm/m/n/11 HaversineDistance$\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 lat[]; lon[]; lat[]; lon[]\OT1/cmr/m/n/10.95 )$
  []
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:191: Missing number, treated as zero.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:191: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
 l.191 \end{algorithmic}
@@ -1054,14 +1050,14 @@ A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:191: Missing = inserted for \ifnum.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:191: Missing = inserted for \ifnum.
 <to be read again> 
                    \ALG@currentblock@0 
 l.191 \end{algorithmic}
                        
 I was expecting to see `<', `=', or `>'. Didn't.
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:191: Missing number, treated as zero.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:191: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
 l.191 \end{algorithmic}
@@ -1076,11 +1072,13 @@ Underfull \hbox (badness 2856) in paragraph at lines 194--195
  []
 
 
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 210--211
 [] []$\OML/cmm/m/it/10.95 h[] \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 ^^[\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 W[] \OMS/cmsy/m/n/10.95 ^^A
  []
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:217: Missing number, treated as zero.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:217: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
 l.217 \end{algorithmic}
@@ -1089,14 +1087,14 @@ A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:217: Missing = inserted for \ifnum.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:217: Missing = inserted for \ifnum.
 <to be read again> 
                    \ALG@currentblock@0 
 l.217 \end{algorithmic}
                        
 I was expecting to see `<', `=', or `>'. Didn't.
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:217: Missing number, treated as zero.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:217: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
 l.217 \end{algorithmic}
@@ -1108,11 +1106,11 @@ look up `weird error' in the index to The TeXbook.)
 
 
 [4]
+
+
 Underfull \hbox (badness 2894) in paragraph at lines 237--238
 []\OT1/ptm/b/n/11 Geographic Dis-tri-bu-tion: \OT1/ptm/m/n/11 Ur-ban and
  []
-
-
 
 
 Underfull \hbox (badness 7522) in paragraph at lines 249--250
@@ -1120,13 +1118,13 @@ Underfull \hbox (badness 7522) in paragraph at lines 249--250
  []
 
 
-
-[5]
 Underfull \hbox (badness 3407) in paragraph at lines 252--253
 []\OT1/ptm/b/n/11 Random For-est: \OT1/ptm/m/n/11 Non-graph ma-chine
  []
 
 
+
+[5]
 Underfull \hbox (badness 1418) in paragraph at lines 264--266
 []\OT1/ptm/b/n/11 Hyperparameter Op-ti-miza-tion: \OT1/ptm/m/n/11 Sys-tem-
  []
@@ -1143,9 +1141,6 @@ Underfull \hbox (badness 2050) in paragraph at lines 276--277
 Overfull \hbox (91.95338pt too wide) in paragraph at lines 282--296
  [][] 
  []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: Reference `tab:multiscale_analysis' on page 6 undefined on input line 302.
@@ -1165,18 +1160,9 @@ LaTeX Warning: Reference `fig:feature_importance' on page 6 undefined on input l
 
 Package pgfplots info on input line 342: Using 'lua backend=false' for axis: x coord trafo unsupported.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 359--360
 []\OT1/ptm/m/n/11 Transportation in-fras-truc-ture fea-tures
  []
-
-
-LaTeX Warning: Reference `tab:ablation' on page 6 undefined on input line 366.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
@@ -1184,19 +1170,27 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.387 \subsection
-                 {GraphSAGE Refinement Results}
+l.362 \end{itemize}
+                   
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.387 \subsection
-                 {GraphSAGE Refinement Results}]
+l.362 \end{itemize}
+                   
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.362 \end{itemize}
+                   ]
+
+LaTeX Warning: Reference `tab:ablation' on page 7 undefined on input line 366.
+
 
 LaTeX Warning: Reference `tab:refined_results' on page 7 undefined on input line 389.
 
-
-
 Package pgfplots info on input line 434: Using 'lua backend=false' for axis: x coord trafo unsupported.
+
+
 
 LaTeX Warning: Reference `fig:spatial_analysis' on page 7 undefined on input line 452.
 
@@ -1204,7 +1198,7 @@ LaTeX Warning: Reference `fig:spatial_analysis' on page 7 undefined on input lin
 LaTeX Warning: File `spatial_prediction_accuracy_map.png' not found on input line 456.
 
 
-/Users/misango/codechest/EPFL_SURF_2025/bike_sharing_gnn_prediction_paper.tex:456: Package pdftex.def Error: File `spatial_prediction_accuracy_map.png' not found: using draft setting.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:456: Package pdftex.def Error: File `spatial_prediction_accuracy_map.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
@@ -1225,32 +1219,27 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 [7
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.467 \item W
-             eekend recreational usage differences
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.467 \item W
-             eekend recreational usage differences
+l.476 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.467 \item W
-             eekend recreational usage differences
+l.476 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.467 \item W
-             eekend recreational usage differences]
+l.476 
+      ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \vbox (14.29633pt too high) has occurred while \output is active []
 
 
 
@@ -1350,14 +1339,14 @@ Package rerunfilecheck Info: Checksums for `bike_sharing_gnn_prediction_paper.ou
  ) 
 Here is how much of TeX's memory you used:
  34848 strings out of 473190
- 794983 string characters out of 5715800
- 1328793 words of memory out of 5000000
+ 795022 string characters out of 5715800
+ 1326793 words of memory out of 5000000
  57438 multiletter control sequences out of 15000+600000
  609536 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,19n,87p,1514b,2283s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,19n,87p,1529b,2283s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bike_sharing_gnn_prediction_paper.pdf (11 pages, 200693 bytes).
+Output written on bike_sharing_gnn_prediction_paper.pdf (11 pages, 201604 bytes).
 PDF statistics:
  269 PDF objects out of 1000 (max. 8388607)
  225 compressed objects within 3 object streams

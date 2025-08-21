@@ -1,0 +1,8 @@
+2025-08-21 14:02:37.165 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+Traceback (most recent call last):
+  File "/Users/misango/codechest/EPFL_SURF_2025/app.py", line 25, in <module>
+    from helpers.run_gnn_baselines import GNNBaselineRunner
+  File "/Users/misango/codechest/EPFL_SURF_2025/helpers/run_gnn_baselines.py", line 11, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+ERROR conda.cli.main_run:execute(127): `conda run python app.py` failed. (See above for error)
