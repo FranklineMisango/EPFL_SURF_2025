@@ -1,3 +1,4 @@
+flask
 streamlit
 pandas
 numpy
@@ -32,3 +33,4 @@ lightgbm
 contextily
 rasterio
 fiona
+streamlit-components-template

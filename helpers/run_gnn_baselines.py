@@ -15,11 +15,19 @@ import os
 import argparse
 from typing import Dict, List
 
+# Add the project root to Python path to handle imports
+import sys
+from pathlib import Path
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
 # Import GNN components with robust import logic
 try:
     from helpers.gnn_flow_predictor import GNNFlowPredictor, GNNConfig, BikeFlowGNN
     from helpers.gnn_testing_framework import GNNTester
 except ImportError:
+    # Change to current directory for relative imports
+    sys.path.insert(0, str(Path(__file__).parent))
     from gnn_flow_predictor import GNNFlowPredictor, GNNConfig, BikeFlowGNN
     from gnn_testing_framework import GNNTester
 
@@ -892,29 +900,58 @@ class GNNBaselineRunner:
         logger.info(f"XGBoost (radius={radius}m): RMSE={rmse:.2f}, MAE={mae:.2f}, R²={r2:.3f}")
         return {'model': best_model, 'rmse': rmse, 'mae': mae, 'r2': r2, 'radius': radius}
     def prepare_basic_flow_samples(self, radius):
-        """Prepare training samples from aggregated flows (no time granularity)."""
+        """Prepare training samples with gravity-weighted features."""
         if not hasattr(self, 'flow_df') or self.flow_df is None:
             logger.error("Aggregated flow data not available.")
             return []
         if radius not in self.osm_features:
             logger.error(f"No OSM features for radius {radius}")
             return []
+        
         osm_features_df = self.osm_features[radius]
         station_ids = list(osm_features_df['station_id'])
         station_to_idx = {station_id: idx for idx, station_id in enumerate(station_ids)}
+        
+        # Create station coordinates mapping
+        station_coords = {}
+        for _, row in osm_features_df.iterrows():
+            station_coords[row['station_id']] = (row['lat'], row['lon'])
+        
         samples = []
         for _, row in self.flow_df.iterrows():
             s = row['start_station_id']
             t = row['end_station_id']
             flow = row['flow']
-            if s in station_to_idx and t in station_to_idx:
+            
+            if s in station_to_idx and t in station_to_idx and s in station_coords and t in station_coords:
+                # Calculate gravity features
+                import math
+                lat1, lon1 = station_coords[s]
+                lat2, lon2 = station_coords[t]
+                
+                # Haversine distance
+                R = 6371000
+                dlat = math.radians(lat2 - lat1)
+                dlon = math.radians(lon2 - lon1)
+                a = (math.sin(dlat/2)**2 + math.cos(math.radians(lat1)) * 
+                     math.cos(math.radians(lat2)) * math.sin(dlon/2)**2)
+                distance = R * 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
+                
+                # Gravity score
+                d_threshold = 100
+                alpha = 1.0
+                gravity_score = 1 / (max(d_threshold, distance) ** alpha) if distance > 0 else 1.0
+                
                 samples.append({
                     'source_idx': station_to_idx[s],
                     'target_idx': station_to_idx[t],
                     'flow': flow,
-                    'time_vec': [0.5, 0.5]  # dummy if not using time
+                    'distance': distance,
+                    'gravity_score': gravity_score,
+                    'time_vec': [0.5, 0.5]
                 })
-        logger.info(f"Prepared {len(samples)} basic flow samples for radius {radius}")
+        
+        logger.info(f"Prepared {len(samples)} gravity-weighted flow samples for radius {radius}")
         return samples
     def aggregate_flows(self, by_time=False):
         """Aggregate trips to compute flows between station pairs. Optionally by hour/day."""

@@ -21,6 +21,7 @@ The codebase is modular and supports both city-specific and cross-city transfer 
 - **Advanced Evaluation:** RMSE, MAE, R², MAPE, cross-validation, time-based splits, and feature importance analysis.
 - **Interactive Apps:** Streamlit UIs for interactive prediction, feature exploration, and transfer learning demos.
 - **Cross-City Transfer:** Tools for domain adaptation and transfer learning between cities or regions.
+- **🌊 Flowmap.gl Integration:** Beautiful animated flow visualizations with interactive clustering and real-time flow animations.
 
 ## Example Use Cases
 
@@ -54,7 +55,15 @@ python helpers/run_gnn_baselines.py
 Launch the interactive app:
 
 ```bash
-streamlit run cross_city_main_app.py
+streamlit run helpers/cross_city_main_app.py
+```
+
+Or try the beautiful Flowmap.gl demo:
+
+```bash
+./run_flowmap_demo.sh
+# or
+streamlit run flowmap_demo.py
 ```
 
 ## Model Support

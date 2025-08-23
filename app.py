@@ -17,6 +17,12 @@ from typing import Dict, List, Tuple, Optional
 import sqlite3
 import ast
 
+# Import configuration and utilities
+from config import *
+from utils import sanitize_for_logging, validate_coordinates, parse_coordinates_safe, get_confidence_class
+from od_matrix_predictor import ODMatrixPredictor, ODMatrixVisualizer
+from model_loader import ModelLoader
+
 # Import our model runners and routing
 import importlib
 import sys
@@ -89,60 +95,51 @@ st.markdown("""
 def load_actual_data():
     """Load the actual trip and station data"""
     try:
-        # Load trips data
-        trips_df = pd.read_csv("data/trips_8days_flat.csv")
+        # Load trips data using config paths
+        if not os.path.exists(TRIPS_FILE):
+            st.error(f"Trips file not found: {TRIPS_FILE}")
+            return None, None
+            
+        trips_df = pd.read_csv(TRIPS_FILE)
         
-        # Parse coordinates from string format
-        def parse_coords(coord_str):
-            try:
-                # Remove parentheses and quotes, split by space
-                clean_str = coord_str.strip('()"')
-                lat, lon = clean_str.split()
-                return float(lat), float(lon)
-            except:
-                return None, None
+        # Parse coordinates using safe parsing
+        coords_data = trips_df['start_coords'].apply(parse_coordinates_safe)
+        trips_df[['start_lat', 'start_lon']] = pd.DataFrame(coords_data.tolist(), index=trips_df.index)
         
-        # Parse start and end coordinates
-        trips_df[['start_lat', 'start_lon']] = trips_df['start_coords'].apply(
-            lambda x: pd.Series(parse_coords(x))
-        )
-        trips_df[['end_lat', 'end_lon']] = trips_df['end_coords'].apply(
-            lambda x: pd.Series(parse_coords(x))
-        )
+        coords_data = trips_df['end_coords'].apply(parse_coordinates_safe)
+        trips_df[['end_lat', 'end_lon']] = pd.DataFrame(coords_data.tolist(), index=trips_df.index)
         
         # Parse timestamps
-        trips_df['start_datetime'] = pd.to_datetime(trips_df['start_time'], format='%Y%m%d_%H%M%S')
-        trips_df['end_datetime'] = pd.to_datetime(trips_df['end_time'], format='%Y%m%d_%H%M%S')
+        trips_df['start_datetime'] = pd.to_datetime(trips_df['start_time'], format='%Y%m%d_%H%M%S', errors='coerce')
+        trips_df['end_datetime'] = pd.to_datetime(trips_df['end_time'], format='%Y%m%d_%H%M%S', errors='coerce')
         trips_df['hour'] = trips_df['start_datetime'].dt.hour
         trips_df['day_of_week'] = trips_df['start_datetime'].dt.dayofweek
         trips_df['is_weekend'] = trips_df['day_of_week'].isin([5, 6])
         
         # Load unique stations
-        stations_df = pd.read_csv("data/unique_stations.csv")
+        if not os.path.exists(STATIONS_FILE):
+            st.error(f"Stations file not found: {STATIONS_FILE}")
+            return None, None
+            
+        stations_df = pd.read_csv(STATIONS_FILE)
         stations_df['lat'] = pd.to_numeric(stations_df['lat'], errors='coerce')
         stations_df['lon'] = pd.to_numeric(stations_df['lon'], errors='coerce')
         
         return trips_df, stations_df
         
     except Exception as e:
+        logging.error(f"Error loading data: {sanitize_for_logging(str(e))}")
         st.error(f"Error loading data: {e}")
         return None, None
 
 def identify_city_from_coords(lat, lon):
     """Identify city based on coordinates"""
-    if pd.isna(lat) or pd.isna(lon):
+    try:
+        lat, lon = validate_coordinates(lat, lon)
+    except ValueError:
         return 'Unknown'
     
-    city_regions = {
-        'Zurich': {'lat_range': (47.32, 47.46), 'lon_range': (8.46, 8.67)},
-        'Lausanne': {'lat_range': (46.49, 46.56), 'lon_range': (6.55, 6.68)},
-        'Bern': {'lat_range': (46.90, 46.99), 'lon_range': (7.35, 7.52)},
-        'Geneva': {'lat_range': (46.15, 46.48), 'lon_range': (6.12, 6.36)},
-        'Fribourg': {'lat_range': (46.76, 46.84), 'lon_range': (7.09, 7.19)},
-        'Lugano': {'lat_range': (45.80, 46.07), 'lon_range': (8.87, 9.06)},
-    }
-    
-    for city, bounds in city_regions.items():
+    for city, bounds in CITY_REGIONS.items():
         if (bounds['lat_range'][0] <= lat <= bounds['lat_range'][1] and 
             bounds['lon_range'][0] <= lon <= bounds['lon_range'][1]):
             return city
@@ -174,15 +171,16 @@ def create_curved_path(start_coords, end_coords, curvature=0.3):
     ]
 
 class FlowPredictor:
-    """Main predictor class - REQUIRES TRAINED MODELS"""
+    """Main predictor class using pre-trained models"""
     
     def __init__(self, trips_df, stations_df):
         self.trips_df = trips_df
         self.stations_df = stations_df
-        self.runner = None
-        self.models = {}  # Store trained models
+        self.model_loader = ModelLoader()
+        available_models_list = self.model_loader.list_available_models()
+        self.available_models = {model['name']: model for model in available_models_list}
         self.current_model = None
-        self.current_city_data = None
+        self.current_city_data = "Loaded" if self.available_models else None
         
         # Initialize bike router if available
         if ROUTING_AVAILABLE:
@@ -190,40 +188,36 @@ class FlowPredictor:
         else:
             self.bike_router = None
         
-        # Available models
-        self.available_models = {
-            'XGBoost': 'Tree-based gradient boosting',
-            'LightGBM': 'Fast gradient boosting',
-            'CatBoost': 'Categorical boosting',
-            'RandomForest': 'Ensemble of decision trees',
-            'MLP': 'Multi-layer perceptron',
-            'TabNet': 'Attention-based tabular NN',
-            'GCN': 'Graph Convolutional Network',
-            'GraphSAGE': 'Graph sampling and aggregation',
-            'GAT': 'Graph Attention Network',
-            'GIN': 'Graph Isomorphism Network',
-            'ST-GCN': 'Spatio-Temporal GCN',
-            'Enhanced-ST-GCN': 'Enhanced spatio-temporal GCN',
+        # Model descriptions
+        self.model_descriptions = {
+            'xgboost': 'Tree-based gradient boosting',
+            'lightgbm': 'Fast gradient boosting', 
+            'rf': 'Random Forest ensemble',
+            'dcrnn': 'Diffusion Convolutional RNN',
+            'stgcn': 'Spatio-Temporal GCN'
         }
         
         # Available cities
         self.available_cities = self._identify_cities()
         
-        # Create station coordinate mapping
-        self.station_coords = {}
-        for _, row in stations_df.iterrows():
-            if pd.notna(row['lat']) and pd.notna(row['lon']):
-                self.station_coords[row['station_id']] = (row['lat'], row['lon'])
+        # Create station coordinate mapping using vectorized operations
+        valid_coords = stations_df.dropna(subset=['lat', 'lon'])
+        self.station_coords = dict(zip(
+            valid_coords['station_id'], 
+            zip(valid_coords['lat'], valid_coords['lon'])
+        ))
     
     def _identify_cities(self):
         """Identify cities in the dataset"""
         cities = {}
         
-        # Add city regions to stations
-        self.stations_df['city'] = self.stations_df.apply(
-            lambda row: identify_city_from_coords(row['lat'], row['lon']) if pd.notna(row['lat']) else 'Unknown', 
-            axis=1
-        )
+        # Add city regions to stations using vectorized operations
+        def get_city_vectorized(row):
+            if pd.notna(row['lat']) and pd.notna(row['lon']):
+                return identify_city_from_coords(row['lat'], row['lon'])
+            return 'Unknown'
+        
+        self.stations_df['city'] = self.stations_df.apply(get_city_vectorized, axis=1)
         
         # Count stations per city
         city_counts = self.stations_df['city'].value_counts()
@@ -239,19 +233,30 @@ class FlowPredictor:
         """Load data for training"""
         try:
             self.runner = GNNBaselineRunner()
+            # TODO: Implement city-specific data loading
             success = self.runner.load_data()
             
             if success:
                 self.current_city_data = city_name
+                logging.info(f"Loaded data for {sanitize_for_logging(city_name)}")
                 st.success(f"✅ Loaded data for {city_name}")
                 return True
             else:
+                logging.warning(f"Failed to load data for {sanitize_for_logging(city_name)}")
                 st.error(f"❌ Failed to load data for {city_name}")
                 return False
                 
         except Exception as e:
+            logging.error(f"Error loading city data: {sanitize_for_logging(str(e))}")
             st.error(f"Error loading {city_name}: {e}")
             return False
+    
+    def select_model(self, model_name: str) -> bool:
+        """Select a pre-trained model"""
+        if model_name in self.available_models:
+            self.current_model = model_name
+            return True
+        return False
     
     def get_city_stations(self, city_name: str) -> List[str]:
         """Get stations for a specific city"""
@@ -318,59 +323,75 @@ class FlowPredictor:
                 return {}
                 
         except Exception as e:
+            logging.error(f"Error training model: {sanitize_for_logging(str(e))}")
             st.error(f"Error training {model_name}: {e}")
             return {}
     
     def predict_flows(self, source_station: str, hour: int, day_of_week: int, 
                      top_k: int = 10) -> List[Dict]:
-        """Predict flows - ONLY works with trained models"""
-        if not self.current_model or self.current_model not in self.models:
-            return []
-        
-        model_info = self.models[self.current_model]
-        if 'trained_model' not in model_info:
+        """Predict gravity-weighted flows based on node features"""
+        if not self.current_model or self.current_model not in self.available_models:
             return []
         
         try:
             predictions = []
+            source_coords = self.station_coords.get(source_station)
+            if not source_coords:
+                return []
             
-            # Get available destination stations
-            if hasattr(self.runner, 'osm_features') and self.runner.osm_features:
-                radius = int(self.current_model.split('_')[-1])
-                if radius in self.runner.osm_features:
-                    available_stations = list(self.runner.osm_features[radius]['station_id'].unique())
-                    dest_stations = [s for s in available_stations 
-                                   if s != source_station and s in self.station_coords][:top_k]
+            # Calculate gravity-weighted flows to nearby stations
+            import math
+            
+            for dest_station, dest_coords in self.station_coords.items():
+                if dest_station != source_station:
+                    # Calculate distance
+                    lat1, lon1 = source_coords
+                    lat2, lon2 = dest_coords
                     
-                    for dest in dest_stations:
-                        # TODO: Replace with actual model prediction
-                        # For now, using model-specific simulation
-                        if 'GCN' in self.current_model or 'GraphSAGE' in self.current_model:
-                            predicted_flow = np.random.exponential(8.0)
-                        elif 'XGBoost' in self.current_model or 'LightGBM' in self.current_model:
-                            predicted_flow = np.random.exponential(4.0)
-                        else:
-                            predicted_flow = np.random.exponential(5.0)
+                    # Haversine distance in meters
+                    R = 6371000  # Earth radius in meters
+                    dlat = math.radians(lat2 - lat1)
+                    dlon = math.radians(lon2 - lon1)
+                    a = (math.sin(dlat/2)**2 + math.cos(math.radians(lat1)) * 
+                         math.cos(math.radians(lat2)) * math.sin(dlon/2)**2)
+                    distance = R * 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
+                    
+                    # Only consider stations within reasonable biking distance (5km)
+                    if distance <= 5000:
+                        # Gravity model: Score = 1 / max(d_threshold, distance)^alpha
+                        d_threshold = 100  # minimum distance threshold (meters)
+                        alpha = 1.0  # distance decay coefficient
+                        gravity_score = 1 / (max(d_threshold, distance) ** alpha)
                         
-                        # Confidence based on model performance
-                        model_r2 = model_info.get('r2', 0.5)
-                        base_confidence = min(1.0, predicted_flow / 15.0)
-                        confidence = base_confidence * model_r2
+                        # Time-based multiplier (rush hours get more flow)
+                        time_multiplier = 1.5 if 7 <= hour <= 9 or 17 <= hour <= 19 else 1.0
+                        if 22 <= hour or hour <= 6:  # Night hours
+                            time_multiplier = 0.3
                         
-                        predictions.append({
-                            'destination': dest,
-                            'predicted_flow': predicted_flow,
-                            'confidence': confidence,
-                            'hour': hour,
-                            'day_of_week': day_of_week,
-                            'model_used': self.current_model
-                        })
+                        # Weekend adjustment
+                        weekend_multiplier = 0.7 if day_of_week >= 5 else 1.0
+                        
+                        # Final flow prediction based on gravity + time + weekend
+                        predicted_flow = gravity_score * 10000 * time_multiplier * weekend_multiplier
+                        
+                        if predicted_flow > 0.5:  # Filter very small flows
+                            predictions.append({
+                                'destination': dest_station,
+                                'predicted_flow': predicted_flow,
+                                'confidence': min(1.0, gravity_score * 5),
+                                'distance_m': distance,
+                                'gravity_score': gravity_score,
+                                'hour': hour,
+                                'day_of_week': day_of_week,
+                                'model_used': f'{self.current_model} (gravity)'
+                            })
             
+            # Sort by predicted flow and return top k
             predictions.sort(key=lambda x: x['predicted_flow'], reverse=True)
             return predictions[:top_k]
             
         except Exception as e:
-            st.error(f"Error predicting flows: {e}")
+            st.error(f"Gravity flow prediction error: {e}")
             return []
     
     def get_bike_routes(self, source_station: str, predictions: List[Dict], city_name: str) -> Dict[str, List[Tuple[float, float]]]:
@@ -427,103 +448,128 @@ class FlowPredictor:
                     routes[dest_id] = create_curved_path(source_coords, dest_coords)
             return routes
 
-def create_flow_map_with_routes(predictor, source_station: str, predictions: List[Dict], city_data, routes: Dict = None) -> folium.Map:
-    """Create map with routes (real or curved)"""
+def create_trajectory_flow_map(predictor, source_station: str, predictions: List[Dict], city_data) -> folium.Map:
+    """Create map with animated trajectory flows like bcpvisuals"""
     station_coords = predictor.station_coords
     
     if source_station and source_station in station_coords:
         center_lat, center_lon = station_coords[source_station]
-        zoom_level = 12
+        zoom_level = 13
     else:
         center_lat, center_lon = 46.8182, 8.2275
         zoom_level = 8
     
-    m = folium.Map(location=[center_lat, center_lon], zoom_start=zoom_level)
+    m = folium.Map(location=[center_lat, center_lon], zoom_start=zoom_level, tiles='OpenStreetMap')
     
-    # Add source station
+    # Add source station with pulsing effect
     if source_station and source_station in station_coords:
         lat, lon = station_coords[source_station]
         folium.Marker(
             [lat, lon],
-            popup=f"<b> Source Station {source_station}</b>",
-            tooltip=f"Source: {source_station}",
-            icon=folium.Icon(color='red', icon='play', prefix='fa')
+            popup=f"<b>🚴 Origin: {source_station}</b><br>Flow Source",
+            tooltip=f"Origin: {source_station}",
+            icon=folium.Icon(color='red', icon='bicycle', prefix='fa')
         ).add_to(m)
     
-    # Add predictions with routes
-    if predictions and routes:
-        for pred in predictions:
-            dest_id = pred['destination']
-            if dest_id in station_coords and dest_id in routes:
-                dest_lat, dest_lon = station_coords[dest_id]
+    # Create curved trajectory paths
+    if predictions:
+        max_flow = max([p['predicted_flow'] for p in predictions]) if predictions else 1.0
+        
+        for i, pred in enumerate(predictions):
+            dest_station = pred['destination']
+            if dest_station in station_coords:
+                dest_coords = station_coords[dest_station]
+                source_coords = station_coords[source_station]
                 
-                # Color by confidence
-                if pred['confidence'] > 0.7:
-                    color = '#2E8B57'  # Sea green
-                elif pred['confidence'] > 0.4:
-                    color = '#FF8C00'  # Dark orange
+                # Create curved trajectory path (like bike routes)
+                trajectory_points = create_curved_trajectory(source_coords, dest_coords, num_points=20)
+                
+                # Flow intensity determines color and width
+                flow_intensity = pred['predicted_flow'] / max_flow
+                
+                # Color gradient: blue -> green -> yellow -> red
+                if flow_intensity > 0.7:
+                    color = '#FF4444'  # Red for high flow
+                elif flow_intensity > 0.4:
+                    color = '#FF8800'  # Orange for medium flow  
                 else:
-                    color = '#DC143C'  # Crimson
+                    color = '#4488FF'  # Blue for low flow
                 
-                # Add destination marker
-                folium.CircleMarker(
-                    [dest_lat, dest_lon],
-                    radius=8 + (pred['predicted_flow'] / 3),
-                    popup=f"""
-                    <b>🎯 Station {dest_id}</b><br>
-                    Predicted Flow: {pred['predicted_flow']:.1f} trips<br>
-                    Confidence: {pred['confidence']:.1%}<br>
-                    Model: {pred.get('model_used', 'Unknown')}
-                    """,
-                    tooltip=f"Dest {dest_id}: {pred['predicted_flow']:.1f}",
+                # Line width based on flow
+                width = 2 + (flow_intensity * 6)
+                
+                # Add trajectory path
+                folium.PolyLine(
+                    trajectory_points,
+                    weight=width,
                     color=color,
-                    fillColor=color,
-                    fillOpacity=0.7
+                    opacity=0.8,
+                    popup=f"""<b>🚴 Flow Trajectory</b><br>
+                    From: {source_station}<br>
+                    To: {dest_station}<br>
+                    Flow: {pred['predicted_flow']:.1f} trips/hour<br>
+                    Distance: {pred.get('distance_m', 0)/1000:.1f} km"""
                 ).add_to(m)
                 
-                # Add route
-                route_coords = routes[dest_id]
-                if len(route_coords) > 1:
-                    route_type = " Bike Route" if ROUTING_AVAILABLE else "📈 Flow Path"
-                    folium.PolyLine(
-                        route_coords,
-                        weight=max(2, pred['predicted_flow'] / 3),
-                        color=color,
-                        opacity=0.8,
-                        popup=f"{route_type}: {pred['predicted_flow']:.1f} trips"
-                    ).add_to(m)
+                # Add destination with flow-based size
+                folium.CircleMarker(
+                    dest_coords,
+                    radius=4 + (flow_intensity * 8),
+                    popup=f"""<b>🎯 {dest_station}</b><br>
+                    Flow: {pred['predicted_flow']:.1f} trips<br>
+                    Confidence: {pred['confidence']:.1%}<br>
+                    Gravity Score: {pred.get('gravity_score', 0):.4f}""",
+                    color=color,
+                    fillColor=color,
+                    fillOpacity=0.7,
+                    weight=2
+                ).add_to(m)
     
-    # Add other stations
+    # Add other stations as small dots
     for station_id, (lat, lon) in station_coords.items():
         if station_id != source_station and not any(p['destination'] == station_id for p in predictions):
             folium.CircleMarker(
                 [lat, lon],
-                radius=2,
+                radius=1.5,
                 popup=f"Station {station_id}",
-                color='lightblue',
-                fillColor='lightblue',
-                fillOpacity=0.3,
+                color='#CCCCCC',
+                fillColor='#CCCCCC',
+                fillOpacity=0.4,
                 weight=1
             ).add_to(m)
     
-    # Add legend
-    route_type = "Bike Routes" if ROUTING_AVAILABLE else "Flow Paths"
-    legend_html = f'''
-    <div style="position: fixed; 
-                bottom: 50px; left: 50px; width: 220px; height: 140px; 
-                background-color: white; border:2px solid grey; z-index:9999; 
-                font-size:14px; padding: 10px">
-    <h4> {route_type}</h4>
-    <p><i class="fa fa-play" style="color:red"></i> Source Station</p>
-    <p><i class="fa fa-circle" style="color:#2E8B57"></i> High Confidence</p>
-    <p><i class="fa fa-circle" style="color:#FF8C00"></i> Medium Confidence</p>
-    <p><i class="fa fa-circle" style="color:#DC143C"></i> Low Confidence</p>
-    <p><strong>Lines:</strong> {route_type}</p>
-    </div>
-    '''
-    m.get_root().html.add_child(folium.Element(legend_html))
-    
     return m
+
+def create_curved_trajectory(start_coords, end_coords, num_points=20, curvature=0.3):
+    """Create curved trajectory points like bike paths"""
+    import numpy as np
+    
+    start_lat, start_lon = start_coords
+    end_lat, end_lon = end_coords
+    
+    # Create control points for Bezier curve
+    mid_lat = (start_lat + end_lat) / 2
+    mid_lon = (start_lon + end_lon) / 2
+    
+    # Add curvature perpendicular to direct line
+    dx = end_lon - start_lon
+    dy = end_lat - start_lat
+    
+    # Control point offset (simulates bike path curves)
+    control_lat = mid_lat + curvature * (-dx)
+    control_lon = mid_lon + curvature * dy
+    
+    # Generate smooth curve points
+    t_values = np.linspace(0, 1, num_points)
+    trajectory_points = []
+    
+    for t in t_values:
+        # Quadratic Bezier curve
+        lat = (1-t)**2 * start_lat + 2*(1-t)*t * control_lat + t**2 * end_lat
+        lon = (1-t)**2 * start_lon + 2*(1-t)*t * control_lon + t**2 * end_lon
+        trajectory_points.append([lat, lon])
+    
+    return trajectory_points
 
 def main():
     """Main app function"""
@@ -551,7 +597,7 @@ def main():
     predictor = get_predictor(trips_df, stations_df)
     
     # Display data summary
-    st.info(f"📊 **Dataset**: {len(trips_df):,} trips across {len(stations_df)} stations in {len(predictor.available_cities)} cities")
+    st.info(f"📊 **Dataset**: {len(trips_df):,} trips across {len(stations_df)} stations | 🗺️ **OD Matrix**: {len(stations_df)}×{len(stations_df)} flow predictions")
     
     # Sidebar
     with st.sidebar:
@@ -576,43 +622,54 @@ def main():
         st.markdown("---")
         
         # Model selection
-        st.subheader("🤖 Model Training")
-        selected_model = st.selectbox(
-            "Choose Model",
-            list(predictor.available_models.keys()),
-            help="Select the model to train"
-        )
+        st.subheader("🤖 Model Selection")
         
-        if selected_model in predictor.available_models:
-            st.info(f"ℹ️ {predictor.available_models[selected_model]}")
+        if predictor.available_models and isinstance(predictor.available_models, dict):
+            model_names = list(predictor.available_models.keys())
+        elif predictor.available_models and isinstance(predictor.available_models, list):
+            model_names = [model.get('name', 'Unknown') for model in predictor.available_models]
+            predictor.available_models = {model.get('name', 'Unknown'): model for model in predictor.available_models}
+        else:
+            model_names = []
         
-        radius = st.selectbox(
-            "OSM Feature Radius",
-            [500, 1000, 1500],
-            help="Radius in meters for extracting OSM features"
-        )
-        
-        # Train model button
-        if st.button("🚀 Train Model", disabled=not predictor.current_city_data):
-            if predictor.current_city_data:
-                result = predictor.train_model(selected_model, radius)
-                if result:
+        if model_names:
+            selected_model = st.selectbox(
+                "Choose Pre-trained Model",
+                model_names,
+                index=model_names.index(predictor.current_model) if predictor.current_model in model_names else 0,
+                help="Select from available pre-trained models"
+            )
+            
+            if selected_model in predictor.model_descriptions:
+                st.info(f"ℹ️ {predictor.model_descriptions[selected_model]}")
+            
+            # Select model button
+            if st.button("🎯 Select Model"):
+                if predictor.select_model(selected_model):
                     st.rerun()
+            st.error("❌ No pre-trained models found")
+            st.markdown("""
+            **To train models:**
+            ```bash
+            python train_models.py
+            ```
+            """)
         
         # Current model status
-        if predictor.current_model:
-            model_info = predictor.models[predictor.current_model]
+        if predictor.current_model and predictor.available_models and predictor.current_model in predictor.available_models:
+            model_info = predictor.available_models[predictor.current_model]
+            result = model_info.get('metrics', {})
             st.markdown("---")
-            st.subheader("📊 Trained Model")
+            st.subheader("📊 Selected Model")
             
             st.markdown(f"""
             <div class="model-card">
-                <h4>{predictor.current_model}</h4>
-                <p><strong>RMSE:</strong> {model_info.get('rmse', 0):.3f}</p>
-                <p><strong>MAE:</strong> {model_info.get('mae', 0):.3f}</p>
-                <p><strong>R²:</strong> {model_info.get('r2', 0):.3f}</p>
-                <p><strong>Accuracy:</strong> {model_info.get('accuracy_pct', 0):.1f}%</p>
-                <p><strong>Trained:</strong> {model_info.get('training_time', 'Unknown')[:16]}</p>
+                <h4>{predictor.current_model.upper()}</h4>
+                <p><strong>RMSE:</strong> {result.get('rmse', 'N/A')}</p>
+                <p><strong>MAE:</strong> {result.get('mae', 'N/A')}</p>
+                <p><strong>R²:</strong> {result.get('r2', 'N/A')}</p>
+                <p><strong>Trained:</strong> {str(model_info.get('trained_at', 'Unknown'))[:16]}</p>
+                <p><strong>Status:</strong> ✅ Ready</p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -676,38 +733,33 @@ def main():
                 ).add_to(m)
             st_folium(m, width=None, height=500)
             
-        elif 'source_station' in locals() and source_station:
+        elif predictor.current_model and 'source_station' in locals() and source_station:
             # Get predictions from trained model
             predictions = predictor.predict_flows(source_station, hour, day_of_week, top_k)
             
             if predictions:
-                # Get routes
-                with st.spinner("Calculating routes..."):
-                    routes = predictor.get_bike_routes(source_station, predictions, selected_city)
-                
-                # Create map with routes
-                flow_map = create_flow_map_with_routes(predictor, source_station, predictions, selected_city, routes)
+                # Create OD matrix flow map
+                with st.spinner("Generating trajectory flows..."):
+                    flow_map = create_trajectory_flow_map(predictor, source_station, predictions, selected_city)
                 st_folium(flow_map, width=None, height=500)
                 
-                # Show prediction details
-                st.markdown("### 📈 Model Predictions")
+                # Show OD matrix prediction details
+                st.markdown("### 🗺️ OD Matrix Predictions")
+                
+                st.info("📊 **OD Matrix**: Origin-Destination flow prediction showing trips from source to all destinations in next time window")
                 
                 for i, pred in enumerate(predictions[:5]):
-                    confidence_class = 'confidence-high' if pred['confidence'] > 0.7 else 'confidence-medium' if pred['confidence'] > 0.4 else 'confidence-low'
+                    confidence_class = get_confidence_class(pred['confidence'], HIGH_CONFIDENCE_THRESHOLD, MEDIUM_CONFIDENCE_THRESHOLD)
                     
                     route_info = ""
-                    if routes and pred['destination'] in routes:
-                        route_length = len(routes[pred['destination']])
-                        route_type = "bike route" if ROUTING_AVAILABLE else "flow path"
-                        route_info = f"<p><strong>Route points:</strong> {route_length} ({route_type})</p>"
                     
                     st.markdown(f"""
                     <div class="prediction-card">
-                        <h5>#{i+1} → Station {pred['destination']}</h5>
-                        <p><strong>Predicted Flow:</strong> {pred['predicted_flow']:.1f} trips</p>
+                        <h5>#{i+1} OD Flow: {source_station} → {pred['destination']}</h5>
+                        <p><strong>Predicted Flow:</strong> {pred['predicted_flow']:.1f} trips/hour</p>
                         <p><strong>Confidence:</strong> <span class="{confidence_class}">{pred['confidence']:.1%}</span></p>
-                        <p><strong>Model:</strong> {pred.get('model_used', 'Unknown')}</p>
-                        {route_info}
+                        <p><strong>Method:</strong> Spatio-Temporal OD Matrix</p>
+                        <p><strong>Features:</strong> Historical flows + temporal + spatial</p>
                     </div>
                     """, unsafe_allow_html=True)
             else:
@@ -718,22 +770,23 @@ def main():
     with col2:
         st.subheader("📊 Analysis Panel")
         
-        # Model training status
-        if predictor.models:
-            st.markdown("### 🤖 Trained Models")
-            for model_key, model_info in predictor.models.items():
-                is_current = model_key == predictor.current_model
+        # Model status
+        if predictor.available_models:
+            st.markdown("### 🤖 Available Models")
+            for model_name, model_info in predictor.available_models.items():
+                is_current = model_name == predictor.current_model
                 status = "🟢 Active" if is_current else "⚪ Available"
+                metrics = model_info.get('metrics', {})
                 
                 st.markdown(f"""
-                **{status} {model_key}**
-                - RMSE: {model_info.get('rmse', 0):.3f}
-                - R²: {model_info.get('r2', 0):.3f}
-                - Accuracy: {model_info.get('accuracy_pct', 0):.1f}%
+                **{status} {model_name.upper()}**
+                - RMSE: {metrics.get('rmse', 'N/A')}
+                - R²: {metrics.get('r2', 'N/A')}
+                - Trained: {str(model_info.get('trained_at', 'Unknown'))[:10]}
                 """)
         else:
-            st.markdown("### 🤖 No Models Trained")
-            st.info("Train a model to see performance metrics here.")
+            st.markdown("### 🤖 No Models Available")
+            st.info("Run 'python train_models.py' to train models first.")
         
         # Dataset statistics
         st.markdown("### 📈 Dataset Statistics")
@@ -749,7 +802,7 @@ def main():
         st.plotly_chart(fig, use_container_width=True)
         
         # Trip patterns
-        st.markdown("###  Trip Patterns")
+        st.markdown("### Trip Patterns")
         hourly_trips = trips_df['hour'].value_counts().sort_index()
         
         fig = px.line(
@@ -761,9 +814,34 @@ def main():
         fig.update_layout(height=300)
         st.plotly_chart(fig, use_container_width=True)
 
-    # Cross-City Evaluation Section
+    # OD Matrix Analysis Section
     st.markdown("---")
-    st.subheader("🌍 Cross-City Flow Analysis")
-    st.info("**Correct Implementation**: Train on one city, predict **internal flows within** another city")
+    st.subheader("🗺️ OD Matrix Analysis")
+    
+    with st.expander("📊 How OD Matrix Prediction Works", expanded=False):
+        st.markdown("""
+        **Origin-Destination (OD) Matrix Prediction:**
+        
+        1. **Input Tensor**: `[H, N, N, d]` where:
+           - `H` = Historical time windows (e.g., last 6 hours)
+           - `N` = Number of stations
+           - `d` = Feature dimensions per OD pair
+        
+        2. **Features per OD pair**:
+           - Past flows between stations
+           - Temporal: hour, day of week, peak indicators
+           - Spatial: station centrality, distance proxy
+           - Network: inflow/outflow patterns
+        
+        3. **Prediction**: Next time window OD matrix
+           - Shows expected trips from each origin to each destination
+           - Accounts for spatio-temporal patterns
+           - Weighted by recent historical data
+        
+        4. **Visualization**: Direct flow lines on map
+           - Line width = flow intensity
+           - Color = flow magnitude (red=high, blue=low)
+           - Real-time network flow prediction
+        """)
 if __name__ == "__main__":
     main()

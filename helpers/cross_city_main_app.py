@@ -16,6 +16,13 @@ import logging
 from typing import Dict, List, Tuple, Optional
 import json
 import os
+import sys
+sys.path.append('..')
+
+# Import configuration and utilities
+from config import *
+from utils import sanitize_for_logging, validate_coordinates, parse_coordinates_safe, get_confidence_class
+from flowmap_integration import FlowmapVisualizer, integrate_with_existing_predictions
 
 
 
@@ -129,6 +136,7 @@ class CrossCityFlowApp:
         """Initialize the application"""
         self.city_db = InteractiveCityDatabase()
         self.osm_router = EnhancedOSMRouter() if EnhancedOSMRouter is not None else None
+        self.flowmap_visualizer = FlowmapVisualizer()
         
         # Initialize logger
         self.logger = logging.getLogger(__name__)
@@ -173,6 +181,9 @@ class CrossCityFlowApp:
         
         # Analysis dashboard at the bottom
         self._render_analysis_dashboard()
+        
+        # Flowmap.gl visualization
+        self._render_flowmap_visualization()
     
     def _render_sidebar(self):
         """Render the sidebar with configuration options"""
@@ -327,7 +338,7 @@ class CrossCityFlowApp:
         target_city = st.session_state.get('target_city', '')
         if target_city:
             stations = self.city_db.get_city_stations(target_city)
-            city_center = list(stations.values())[0] if stations else [46.9481, 7.4474]
+            city_center = next(iter(stations.values())) if stations else [46.9481, 7.4474]
             
             # Create the map
             m = create_enhanced_transfer_map(
@@ -588,7 +599,7 @@ class CrossCityFlowApp:
         target_city = st.session_state.get('target_city', '')
         stations = list(self.city_db.get_city_stations(target_city).keys())
         
-        if len(stations) < 2:
+        if not stations:
             st.warning("Not enough stations for prediction.")
             return
         
@@ -780,17 +791,21 @@ class CrossCityFlowApp:
         if not df.empty:
             df = df[df['source'].isin(stations) & df['target'].isin(stations)]
 
-        # Summary statistics
-        col1, col2, col3, col4 = st.columns(4)
+        # Summary statistics with empty check
+        if not df.empty:
+            col1, col2, col3, col4 = st.columns(4)
 
-        with col1:
-            st.metric("Total Flows", len(df))
-        with col2:
-            st.metric("Avg Flow", f"{df['predicted_flow'].mean():.2f}")
-        with col3:
-            st.metric("Max Flow", f"{df['predicted_flow'].max():.2f}")
-        with col4:
-            st.metric("Avg Confidence", f"{df['confidence'].mean():.1%}")
+            with col1:
+                st.metric("Total Flows", len(df))
+            with col2:
+                st.metric("Avg Flow", f"{df['predicted_flow'].mean():.2f}")
+            with col3:
+                st.metric("Max Flow", f"{df['predicted_flow'].max():.2f}")
+            with col4:
+                st.metric("Avg Confidence", f"{df['confidence'].mean():.1%}")
+        else:
+            st.warning("No flows found for analysis.")
+            return
 
         # Top flows table
         st.markdown("**🏆 Top Predicted Flows:**")
@@ -859,6 +874,63 @@ class CrossCityFlowApp:
             - **🔄 Domain Adaptation:** Reduces bias between different cities
             - **⏰ Temporal Modeling:** Hour-of-day and day-of-week patterns
             - **🛣️ Route Optimization:** Multiple path alternatives with OSRM
+            """)
+    
+    def _render_flowmap_visualization(self):
+        """Render Flowmap.gl visualization for current predictions"""
+        st.markdown("---")
+        st.markdown("### 🌊 Interactive Flow Visualization (Flowmap.gl)")
+        
+        # Check if we have predictions to visualize
+        citywide = st.session_state.get('citywide_analysis')
+        current_pred = st.session_state.get('current_prediction')
+        
+        if not citywide and not current_pred:
+            st.info("🎯 Generate predictions first to see Flowmap.gl visualization")
+            return
+        
+        # Prepare data for visualization
+        target_city = st.session_state.get('target_city', '')
+        stations = self.city_db.get_city_stations(target_city)
+        
+        # Use citywide analysis if available, otherwise current prediction
+        flows_to_visualize = []
+        
+        if citywide:
+            flows_to_visualize = citywide
+            viz_title = f"City-wide Flow Analysis - {target_city}"
+        elif current_pred:
+            flows_to_visualize = [{
+                'source': current_pred['source'],
+                'target': current_pred['target'],
+                'predicted_flow': current_pred['predicted_flow']
+            }]
+            viz_title = f"Single Flow Prediction - {target_city}"
+        
+        if flows_to_visualize:
+            # Generate Flowmap.gl HTML
+            html_content = integrate_with_existing_predictions(flows_to_visualize, stations)
+            
+            # Display the visualization
+            st.components.v1.html(html_content, height=600)
+            
+            # Show summary
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.metric("Flows Visualized", len(flows_to_visualize))
+            with col2:
+                total_flow = sum(f['predicted_flow'] for f in flows_to_visualize)
+                st.metric("Total Flow", f"{total_flow:.1f}")
+            with col3:
+                avg_flow = total_flow / len(flows_to_visualize) if flows_to_visualize else 0
+                st.metric("Average Flow", f"{avg_flow:.1f}")
+            
+            st.markdown("""
+            **🌊 Flowmap.gl Features:**
+            - **Animated Flows:** Watch flows move between stations in real-time
+            - **Clustering:** Automatically groups nearby stations for better visualization
+            - **Interactive:** Click on flows and stations for details
+            - **Adaptive Scaling:** Flow thickness represents prediction magnitude
             """)
 
 def main():
