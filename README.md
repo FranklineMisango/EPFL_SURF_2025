@@ -15,10 +15,12 @@ The codebase is modular and supports both city-specific and cross-city transfer 
 
 ## Key Features
 
+- **Gravity-Based Features:** Novel feature scoring that combines count and distance using physics-inspired gravity equations
 - **External Feature Extraction:** Automated OSM and population feature extraction at multiple radii for each node/location.
 - **Flexible ML Pipeline:** Supports XGBoost, LightGBM, CatBoost, Random Forest, MLP, TabNet, GNNs (GCN, GAT, GraphSAGE, GIN, Transformer), spatio-temporal models (DCRNN, ST-GCN, TFT), and ensemble methods (stacking, blending).
 - **Multi-Path Routing:** Integrates OSRM/OpenRouteService for shortest, fastest, safest, and scenic path features.
 - **Advanced Evaluation:** RMSE, MAE, R², MAPE, cross-validation, time-based splits, and feature importance analysis.
+- **🚴 Interactive Flow Visualization:** JavaScript-based maps showing flows following actual bike paths and road networks
 - **Interactive Apps:** Streamlit UIs for interactive prediction, feature exploration, and transfer learning demos.
 - **Cross-City Transfer:** Tools for domain adaptation and transfer learning between cities or regions.
 - **🌊 Flowmap.gl Integration:** Beautiful animated flow visualizations with interactive clustering and real-time flow animations.
@@ -39,6 +41,34 @@ pip install -r requirements.txt
 # (Optional) conda create -n surf2025 python=3.10 -y && conda activate surf2025
 # Install PyTorch Geometric and other extras as needed
 ```
+
+### 🚀 Try the Complete Demo (Recommended)
+
+```bash
+python run_complete_demo.py
+```
+
+This will:
+- Generate gravity-based features for sample stations
+- Create realistic flow data
+- Launch interactive visualizations in your browser
+- Show flows following actual bike paths and roads
+
+### 🧲 Gravity-Based Features Only
+
+```bash
+python demo_gravity_features.py
+```
+
+### 🚴 Flow Visualization Only
+
+```bash
+python serve_visualization.py bike    # Bike network visualization
+python serve_visualization.py enhanced # Enhanced routing
+python serve_visualization.py basic    # Basic visualization
+```
+
+### Traditional ML Pipeline
 
 Prepare OSM/population features:
 
