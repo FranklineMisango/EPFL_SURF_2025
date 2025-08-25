@@ -339,14 +339,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.st
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-INPUT ./bike_sharing_gnn_prediction_paper.out
-INPUT ./bike_sharing_gnn_prediction_paper.out
-INPUT bike_sharing_gnn_prediction_paper.out
-INPUT bike_sharing_gnn_prediction_paper.out
-OUTPUT bike_sharing_gnn_prediction_paper.pdf
-INPUT ./bike_sharing_gnn_prediction_paper.out
-INPUT ./bike_sharing_gnn_prediction_paper.out
 OUTPUT bike_sharing_gnn_prediction_paper.out
+OUTPUT bike_sharing_gnn_prediction_paper.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr6.tfm

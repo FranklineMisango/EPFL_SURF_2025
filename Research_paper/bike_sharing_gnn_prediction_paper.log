@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.7.18)  26 AUG 2025 00:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.7.18)  26 AUG 2025 00:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -721,10 +721,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 \c@lstlisting=\count360
 Package hyperref Info: Link coloring OFF on input line 25.
-(./bike_sharing_gnn_prediction_paper.out) (./bike_sharing_gnn_prediction_paper.out)
 \@outlinefile=\write4
 \openout4 = `bike_sharing_gnn_prediction_paper.out'.
-
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
@@ -745,6 +743,9 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+
+
+LaTeX Warning: Citation `li2018' on page 1 undefined on input line 51.
 
 
 
@@ -769,6 +770,33 @@ Underfull \hbox (badness 1472) in paragraph at lines 68--69
  []
 
 
+
+
+LaTeX Warning: Citation `flowml1' on page 2 undefined on input line 73.
+
+
+LaTeX Warning: Citation `convlstm2015' on page 2 undefined on input line 73.
+
+
+LaTeX Warning: Citation `zhang2017' on page 2 undefined on input line 73.
+
+
+LaTeX Warning: Citation `li2018' on page 2 undefined on input line 76.
+
+
+LaTeX Warning: Citation `wu2019' on page 2 undefined on input line 76.
+
+
+LaTeX Warning: Citation `guo2020' on page 2 undefined on input line 76.
+
+
+LaTeX Warning: Citation `boeing2017' on page 2 undefined on input line 79.
+
+
+LaTeX Warning: Citation `haklay2010' on page 2 undefined on input line 79.
+
+
+LaTeX Warning: Citation `barrington2017' on page 2 undefined on input line 79.
 
 
 
@@ -890,9 +918,19 @@ Underfull \hbox (badness 3460) in paragraph at lines 195--197
 
 
 [4]
+
+LaTeX Warning: Citation `chen2016' on page 5 undefined on input line 221.
+
+
+LaTeX Warning: Citation `xingjian2015' on page 5 undefined on input line 222.
+
+
 Underfull \hbox (badness 1533) in paragraph at lines 222--223
 []\OT1/ptm/b/n/11 ConvLSTM\OT1/ptm/m/n/11 : Con-vo-lu-tional LSTM for
  []
+
+
+LaTeX Warning: Citation `yu2018' on page 5 undefined on input line 223.
 
 
 Underfull \vbox (badness 3323) has occurred while \output is active []
@@ -946,6 +984,9 @@ L3 programming layer <2025-01-18>
  ***********
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
@@ -954,22 +995,22 @@ Package rerunfilecheck Warning: File `bike_sharing_gnn_prediction_paper.out' has
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `bike_sharing_gnn_prediction_paper.out':
-(rerunfilecheck)             Before: 389A19BB7E0598A3EEB9ED8B2F36A906;2723
+(rerunfilecheck)             Before: <no file>
 (rerunfilecheck)             After:  CB9D0D06EFDD09940855B1DE9FF9A2B3;2818.
  ) 
 Here is how much of TeX's memory you used:
- 33831 strings out of 473190
- 772945 string characters out of 5715800
+ 33809 strings out of 473190
+ 772514 string characters out of 5715800
  1314943 words of memory out of 5000000
- 56488 multiletter control sequences out of 15000+600000
+ 56470 multiletter control sequences out of 15000+600000
  607219 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,11n,87p,1265b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bike_sharing_gnn_prediction_paper.pdf (7 pages, 191535 bytes).
+Output written on bike_sharing_gnn_prediction_paper.pdf (7 pages, 189769 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
+ 189 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
  69 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
