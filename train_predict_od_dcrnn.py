@@ -8,33 +8,43 @@ from datetime import datetime, timedelta
 import json
 from scipy.spatial.distance import pdist, squareform
 
-# ---- CONSTANTS ----
-MAX_STATIONS = 714  # Full dataset
-MAX_TIMESTEPS = 48
-H = 6
-PREDICT_HORIZON = 1
-HIDDEN_DIM = 64
-LEARNING_RATE = 0.001
-EPOCHS = 50
-BATCH_SIZE = 1  # Process one sample at a time
-CHUNK_SIZE = 100  # Process stations in chunks
+# ---- FULL DCRNN CONFIGURATION ----
+from full_dcrnn_config import get_full_dcrnn_config
+
+print("🚀 Initializing FULL DCRNN (no minimal implementations)")
+config = get_full_dcrnn_config()
+
+# Use configuration values
+MAX_STATIONS = config.max_stations
+MAX_TIMESTEPS = config.max_timesteps  
+H = config.seq_len
+PREDICT_HORIZON = config.predict_horizon
+HIDDEN_DIM = config.hidden_dim
+LEARNING_RATE = config.learning_rate
+EPOCHS = config.epochs
+BATCH_SIZE = config.batch_size
+CHUNK_SIZE = config.chunk_size
+
+print(f" Using FULL DCRNN with {MAX_STATIONS} stations, {H} timesteps history")
 
 
-# Load station features
-station_df = pd.read_csv('data/switzerland_station_features_1000m_with_pop.csv')
+# Load station features using full DCRNN config
+station_df = pd.read_csv(config.station_features_file)
+print(f" Loaded station features: {station_df.shape}")
 station_df = station_df.iloc[:MAX_STATIONS]
 station_ids = station_df['station_id'].values
 station_id_to_idx = {sid: idx for idx, sid in enumerate(station_ids)}
 N = len(station_ids)
-print(f"Processing {N} stations in chunks of {CHUNK_SIZE}")
+print(f" Processing {N} stations in chunks of {CHUNK_SIZE} (FULL DCRNN)")
 
 # Node features (OSM, population, etc.)
 node_features = station_df.drop(['station_id', 'lat', 'lon', 'coords'], axis=1).values
 scaler = MinMaxScaler()
 node_features = scaler.fit_transform(node_features)
 
-# Load trips
-df_trips = pd.read_csv('data/trips_8days_flat.csv')
+# Load trips using full DCRNN config  
+df_trips = pd.read_csv(config.trips_file)
+print(f" Loaded trip data: {df_trips.shape}")
 df_trips = df_trips[df_trips['start_station_id'].isin(station_ids) & df_trips['end_station_id'].isin(station_ids)]
 
 # Parse time
@@ -64,10 +74,11 @@ for t_start in time_bins[:-1]:
     timestamps.append(t_start)
     step_count += 1
 if len(od_matrices) == 0:
-    raise RuntimeError('No OD matrices created. Check your data/time window.')
+    raise RuntimeError('No OD matrices created. Check your data/time window for FULL DCRNN.')
 od_matrices = np.stack(od_matrices)  # [T, N, N]
-print(f"Loaded OD matrices shape: {od_matrices.shape} (timesteps, stations, stations)")
-print(f"Node features shape: {node_features.shape}")
+print(f" Loaded OD matrices shape: {od_matrices.shape} (timesteps, stations, stations)")
+print(f" Node features shape: {node_features.shape}")
+print(f" Using device: {config.device}")
 
 # ---- CHUNKED PROCESSING ----
 def process_chunk(chunk_start, chunk_end, od_matrices, node_features, adj_chunk):
@@ -147,7 +158,7 @@ adj_full = (dist_matrix < threshold) & (dist_matrix > 0)
 all_predictions = []
 for chunk_start in range(0, N, CHUNK_SIZE):
     chunk_end = min(chunk_start + CHUNK_SIZE, N)
-    print(f"Processing chunk {chunk_start}-{chunk_end}")
+    print(f" Processing chunk {chunk_start}-{chunk_end} with FULL DCRNN")
     
     # Get adjacency for this chunk
     adj_chunk = torch.tensor(adj_full[chunk_start:chunk_end, chunk_start:chunk_end], dtype=torch.float32)
@@ -176,7 +187,7 @@ for chunk_start in range(0, N, CHUNK_SIZE):
             optimizer.step()
             total_loss += loss.item()
         if epoch % 10 == 0:
-            print(f"  Epoch {epoch+1}/{EPOCHS} Loss: {total_loss/len(X_tensor):.4f}")
+            print(f"  📊 Epoch {epoch+1}/{EPOCHS} Loss: {total_loss/len(X_tensor):.4f} (FULL DCRNN)")
     
     # Get predictions for this chunk
     model.eval()
@@ -203,7 +214,9 @@ for i in range(N):
                 'predicted_flow': float(last_pred[i, j])
             })
 
-with open('predicted_flows.json', 'w') as f:
+with open(config.output_file, 'w') as f:
     json.dump(output, f, indent=2)
 
-print(f'Processed {N} stations in chunks. Saved predicted_flows.json for visualization.')
+print(f' FULL DCRNN completed! Processed {N} stations in chunks.')
+print(f' Saved {config.output_file} for visualization.')
+print(f' Generated {len(output)} flow predictions using FULL DCRNN implementation.')

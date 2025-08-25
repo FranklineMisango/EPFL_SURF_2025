@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.7.18)  21 AUG 2025 14:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.7.18)  26 AUG 2025 00:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -100,7 +100,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \c@IEEEbiography=\count276
 \@IEEEtranrubishbin=\box53
 )
-** ATTENTION: Overriding command lockouts (line 3).
+** ATTENTION: Overriding command lockouts (line 2).
 (/usr/local/texlive/2025/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
@@ -386,34 +386,22 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 \@float@every@algorithm=\toks28
 \c@algorithm=\count317
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/natbib/natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-
-
-Package natbib Warning: The `cite' package should not be used
-(natbib)                with natbib. Use option `sort' instead.
-
-\bibhang=\skip58
-\bibsep=\skip59
-LaTeX Info: Redefining \cite on input line 694.
-LaTeX Info: Redefining \citenum on input line 708.
-\c@NAT@ctr=\count318
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
  (/usr/local/texlive/2025/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count319
-\c@ALG@rem=\count320
-\c@ALG@nested=\count321
-\ALG@tlm=\skip60
-\ALG@thistlm=\skip61
-\c@ALG@Lnr=\count322
-\c@ALG@blocknr=\count323
-\c@ALG@storecount=\count324
-\c@ALG@tmpcounter=\count325
-\ALG@tmplength=\skip62
+\c@ALG@line=\count318
+\c@ALG@rem=\count319
+\c@ALG@nested=\count320
+\ALG@tlm=\skip58
+\ALG@thistlm=\skip59
+\c@ALG@Lnr=\count321
+\c@ALG@blocknr=\count322
+\c@ALG@storecount=\count323
+\c@ALG@tmpcounter=\count324
+\ALG@tmplength=\skip60
 
 /usr/local/texlive/2025/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty:112: LaTeX Error: Command \algorithmic already defined.
                Or name \end... illegal, see p.192 of the manual.
@@ -460,14 +448,14 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yd=\dimen259
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count326
-\c@pgf@countb=\count327
-\c@pgf@countc=\count328
-\c@pgf@countd=\count329
+\c@pgf@counta=\count325
+\c@pgf@countb=\count326
+\c@pgf@countc=\count327
+\c@pgf@countd=\count328
 \t@pgf@toka=\toks33
 \t@pgf@tokb=\toks34
 \t@pgf@tokc=\toks35
-\pgf@sys@id@count=\count330
+\pgf@sys@id@count=\count329
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -478,21 +466,21 @@ File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count331
-\pgfsyssoftpath@bigbuffer@items=\count332
+\pgfsyssoftpath@smallbuffer@items=\count330
+\pgfsyssoftpath@bigbuffer@items=\count331
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen260
-\pgfmath@count=\count333
+\pgfmath@count=\count332
 \pgfmath@box=\box61
 \pgfmath@toks=\toks36
 \pgfmath@stack@operand=\toks37
 \pgfmath@stack@operation=\toks38
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count334
+\c@pgfmathroundto@lastzeros=\count333
 )) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picminx=\dimen261
@@ -522,7 +510,7 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box62
 \pgf@hbox=\box63
 \pgf@layerbox@main=\box64
-\pgf@picture@serial@count=\count335
+\pgf@picture@serial@count=\count334
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen279
@@ -543,8 +531,8 @@ File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen284
-\pgf@sys@shading@range@num=\count336
-\pgf@shadingcount=\count337
+\pgf@sys@shading@range@num=\count335
+\pgf@shadingcount=\count336
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
@@ -579,7 +567,7 @@ Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count338
+\pgf@plot@mark@count=\count337
 \pgfplotmarksize=\dimen289
 )
 \tikz@lastx=\dimen290
@@ -594,17 +582,17 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@figbox@bg=\box68
 \tikz@tempbox=\box69
 \tikz@tempbox@bg=\box70
-\tikztreelevel=\count339
-\tikznumberofchildren=\count340
-\tikznumberofcurrentchild=\count341
-\tikz@fig@count=\count342
+\tikztreelevel=\count338
+\tikznumberofchildren=\count339
+\tikznumberofcurrentchild=\count340
+\tikz@fig@count=\count341
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count343
-\pgfmatrixcurrentcolumn=\count344
-\pgf@matrix@numberofcolumns=\count345
+\pgfmatrixcurrentrow=\count342
+\pgfmatrixcurrentcolumn=\count343
+\pgf@matrix@numberofcolumns=\count344
 )
-\tikz@expandcount=\count346
+\tikz@expandcount=\count345
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
@@ -614,33 +602,33 @@ Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 \t@pgfplots@tokb=\toks42
 \t@pgfplots@tokc=\toks43
 \pgfplots@tmpa=\dimen298
-\c@pgfplots@coordindex=\count347
-\c@pgfplots@scanlineindex=\count348
+\c@pgfplots@coordindex=\count346
+\c@pgfplots@scanlineindex=\count347
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
 \t@pgf@toka=\toks44
 \t@pgf@tokb=\toks45
 \t@pgf@tokc=\toks46
 (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count349
+\c@pgfplotsarray@tmp=\count348
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count350
+\c@pgfplotstable@counta=\count349
 \t@pgfplotstable@a=\toks47
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count351
+\c@pgfplotslibrarysurf@no=\count350
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
 \pgfdecoratedcompleteddistance=\dimen299
 \pgfdecoratedremainingdistance=\dimen300
 \pgfdecoratedinputsegmentcompleteddistance=\dimen301
 \pgfdecoratedinputsegmentremainingdistance=\dimen302
 \pgf@decorate@distancetomove=\dimen303
-\pgf@decorate@repeatstate=\count352
+\pgf@decorate@repeatstate=\count351
 \pgfdecorationsegmentamplitude=\dimen304
 \pgfdecorationsegmentlength=\dimen305
 )
 \tikz@lib@dec@box=\box71
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count353
+\pgfplots@numplots=\count352
 \pgfplots@xmin@reg=\dimen306
 \pgfplots@xmax@reg=\dimen307
 \pgfplots@ymin@reg=\dimen308
@@ -653,43 +641,43 @@ File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count354
+\l__color_backend_stack_int=\count353
 \l__pdf_internal_box=\box72
 ) (./bike_sharing_gnn_prediction_paper.aux)
 \openout1 = `bike_sharing_gnn_prediction_paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 -- Lines per column: 41 (approximate, difference = 7.70805pt).
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count355
+\scratchcounter=\count354
 \scratchdimen=\dimen312
 \scratchbox=\box73
-\nofMPsegments=\count356
-\nofMParguments=\count357
+\nofMPsegments=\count355
+\nofMParguments=\count356
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count358
+\MPscratchCnt=\count357
 \MPscratchDim=\dimen313
-\MPnumerator=\count359
-\makeMPintoPDFobject=\count360
+\MPnumerator=\count358
+\makeMPintoPDFobject=\count359
 \everyMPtoPDFconversion=\toks49
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -731,38 +719,32 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count361
-Package hyperref Info: Link coloring OFF on input line 27.
+\c@lstlisting=\count360
+Package hyperref Info: Link coloring OFF on input line 25.
+(./bike_sharing_gnn_prediction_paper.out) (./bike_sharing_gnn_prediction_paper.out)
 \@outlinefile=\write4
 \openout4 = `bike_sharing_gnn_prediction_paper.out'.
 
+
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 ** WARNING: \and is valid only when in conference or peerreviewca
-modes (line 43).
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 45.
+modes (line 40).
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 42.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 2393) in paragraph at lines 44--46
-\OT1/ptm/b/n/10 mains a fun-da-men-tal chal-lenge in spatial-
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-
-
-Package natbib Warning: Citation `flowref1' on page 1 undefined on input line 54.
 
 
 
@@ -770,560 +752,198 @@ Package natbib Warning: Citation `flowref1' on page 1 undefined on input line 54
 
 
 ]
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 61.
 
-Package natbib Warning: Citation `gnnref1' on page 2 undefined on input line 58.
-
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 64.
-
-Underfull \hbox (badness 2744) in paragraph at lines 64--65
-[]\OT1/ptm/b/n/11 Methodological In-no-va-tion: \OT1/ptm/m/n/11 A novel
+Underfull \hbox (badness 2165) in paragraph at lines 62--63
+\OT1/ptm/m/n/11 pre-hen-sive OSM fea-ture ex-trac-tion at
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
-\OT1/ptm/m/n/11 multi-scale OSM fea-ture ex-trac-tion
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+[]\OT1/ptm/b/n/11 Spatio-Temporal Mod-el-ing: \OT1/ptm/m/n/11 Uni-fied
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
-\OT1/ptm/m/n/11 method-ol-ogy that cap-tures ur-ban
+Underfull \hbox (badness 1472) in paragraph at lines 68--69
+\OT1/ptm/m/n/11 short-term flow pre-dic-tion for bike-sharing
  []
 
 
-Underfull \hbox (badness 4543) in paragraph at lines 64--65
-\OT1/ptm/m/n/11 in-fras-truc-ture char-ac-ter-is-tics at 500m,
- []
-
-
-Underfull \hbox (badness 6445) in paragraph at lines 64--65
-\OT1/ptm/m/n/11 1000m, and 1500m radii, pro-vid-ing
- []
-
-
-
-
-Package natbib Warning: Citation `flowml1' on page 2 undefined on input line 76.
-
-
-Package natbib Warning: Citation `wilson1967' on page 2 undefined on input line 76.
-
-
-Underfull \hbox (badness 2635) in paragraph at lines 76--77
-\OT1/ptm/m/n/11 tra-di-tional grav-ity mod-els to so-phis-ti-cated
- []
-
-
-Underfull \hbox (badness 2221) in paragraph at lines 76--77
-\OT1/ptm/m/n/11 ma-chine learn-ing ap-proaches. Early meth-
- []
-
-
-Underfull \hbox (badness 1789) in paragraph at lines 76--77
-\OT1/ptm/m/n/11 de-mo-graphic fea-tures \OT1/ptm/b/n/11 ?\OT1/ptm/m/n/11 . Wil-son's entropy-
- []
-
-
-Package natbib Warning: Citation `li2018' on page 2 undefined on input line 79.
-
-
-Package natbib Warning: Citation `yu2018' on page 2 undefined on input line 79.
 
 
 
 [2]
-
-Package natbib Warning: Citation `boeing2017' on page 3 undefined on input line 82.
-
-
-Underfull \hbox (badness 1540) in paragraph at lines 82--83
-[]\OT1/ptm/m/n/11 OSM data has gained recog-ni-tion as a
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+[]\OT1/ptm/m/n/11 Multi-scale OSM fea-tures
  []
 
 
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:99: LaTeX Error: Environment theorem undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.99 \begin{theorem}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:101: LaTeX Error: \begin{document} ended by \end{theorem}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101 \end{theorem}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--102
-[]\OT1/ptm/m/n/11 Under Lip-s-chitz con-ti-nu-ity of spa-tial
+Underfull \hbox (badness 5217) in paragraph at lines 88--89
+\OML/cmm/m/it/10.95 X[] \OMS/cmsy/m/n/10.95 2 \U/msb/m/n/11 R[]$ \OT1/ptm/m/n/11 ag-gre-gated across radii
  []
 
 
-Underfull \hbox (badness 2393) in paragraph at lines 105--106
-[]\OT1/ptm/m/n/11 Our fea-ture ex-trac-tion method-ol-ogy ad-
+Underfull \hbox (badness 1484) in paragraph at lines 89--90
+[]\OT1/ptm/m/n/11 Historical flow se-quences $\OML/cmm/m/it/10.95 H[] \OMS/cmsy/m/n/10.95 2
  []
 
 
-Underfull \hbox (badness 1675) in paragraph at lines 105--106
-\OT1/ptm/m/n/11 dresses the crit-i-cal chal-lenge of cap-tur-ing
+Overfull \hbox (20.32799pt too wide) detected at line 97
+[][][]\OMS/cmsy/m/n/10.95 D[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X; \OT1/cmr/m/n/10.95 ^^B) = [] ^^B[](\OML/cmm/m/it/10.95 D[]A\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 X \OT1/cmr/m/n/10.95 + ^^B[](\OML/cmm/m/it/10.95 D[]A[]\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 X
  []
 
 
 
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 108.
 
-Underfull \hbox (badness 2080) in paragraph at lines 114--114
-[] []\OT1/ptm/b/n/11 for \OT1/ptm/m/n/11 each lo-ca-tion $\OML/cmm/m/it/10.95 v[]$ \OT1/ptm/m/n/11 with co-or-di-nates
+Overfull \hbox (5.72879pt too wide) detected at line 131
+[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
-[] []$\OML/cmm/m/it/10.95 bbox \OMS/cmsy/m/n/10.95  $
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
-\OT1/ptm/m/n/11 CreateBoundingBox$\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 lat[]; lon[]; r\OT1/cmr/m/n/10.95 )$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
-[] []$\OML/cmm/m/it/10.95 features[] \OMS/cmsy/m/n/10.95  $
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
-[] []$\OML/cmm/m/it/10.95 F[] \OMS/cmsy/m/n/10.95  $
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
-[] []$\OML/cmm/m/it/10.95 F[] \OMS/cmsy/m/n/10.95  $
- []
-
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:124: Missing number, treated as zero.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.124 \end{algorithmic}
-                       
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:124: Missing = inserted for \ifnum.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.124 \end{algorithmic}
-                       
-I was expecting to see `<', `=', or `>'. Didn't.
-
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:124: Missing number, treated as zero.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.124 \end{algorithmic}
-                       
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-Underfull \hbox (badness 1418) in paragraph at lines 131--132
-[]\OT1/ptm/b/n/11 Recreational Fa-cil-i-ties \OT1/ptm/m/n/11 (23 fea-tures):
- []
+Underfull \vbox (badness 1147) has occurred while \output is active []
 
 
 
 [3]
-Underfull \hbox (badness 1975) in paragraph at lines 140--141
-[]\OT1/ptm/m/n/11 Our Graph-SAGE en-hance-ment ad-dresses
+Overfull \hbox (12.42987pt too wide) detected at line 136
+[][][]\OML/cmm/m/it/10.95 X[] \OT1/cmr/m/n/10.95 = [\OML/cmm/m/it/10.95 X[]; X[]; X[]; [][]; [][]\OT1/cmr/m/n/10.95 ]
  []
 
 
-Underfull \hbox (badness 2376) in paragraph at lines 140--141
-\OT1/ptm/m/n/11 pre-dic-tion ar-chi-tec-tures. Tra-di-tional Graph-
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
+[]\OT1/ptm/b/n/11 Encoder-Decoder Frame-work: \OT1/ptm/m/n/11 The
  []
 
 
-Underfull \hbox (badness 2547) in paragraph at lines 143--143
-[]\OT1/ptm/b/n/11 Algorithm 2 \OT1/ptm/m/n/11 En-hanced Graph-SAGE with
- []
-
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 148.
-(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <11> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 148.
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
-[] []$\OML/cmm/m/it/10.95 h[] \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 ^^[\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 W[]\OMS/cmsy/m/n/10.95 ^^A$
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
+\OT1/ptm/m/n/11 DCRNN em-ploys an encoder-decoder
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
-[] []$\OML/cmm/m/it/10.95 h[] \OMS/cmsy/m/n/10.95  $ \OT1/ptm/m/n/11 LayerNorm$\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 h[]\OT1/cmr/m/n/10.95 )$
+Underfull \hbox (badness 7168) in paragraph at lines 141--143
+\OT1/ptm/m/n/11 ar-chi-tec-ture where both com-po-nents use
  []
 
 
-Underfull \hbox (badness 7379) in paragraph at lines 155--156
-[] []$\OML/cmm/m/it/10.95 h[] \OMS/cmsy/m/n/10.95  $ \OT1/ptm/m/n/11 Dropout$\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 h[]; p \OT1/cmr/m/n/10.95 = 0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 1)$
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
+\OT1/ptm/m/n/11 Dif-fu-sion Con-vo-lu-tional Gated Re-cur-rent
  []
 
 
-Underfull \hbox (badness 1668) in paragraph at lines 157--158
-[] []$[] \OMS/cmsy/m/n/10.95  $ \OT1/ptm/m/n/11 BilinearDecoder$\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 h[]\OT1/cmr/m/n/10.95 )$ \OMS/cmsy/m/n/10.95 f\OT1/ptm/m/n/11 Pairwise
+Underfull \hbox (badness 7273) in paragraph at lines 141--143
+\OT1/ptm/m/n/11 Units (DC-GRU). The en-coder pro-cesses
  []
 
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:159: Missing number, treated as zero.
+
+
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 168.
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
+[] []$\OML/cmm/m/it/10.95 H[] \OT1/cmr/m/n/10.95 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+[] []$[] \OT1/cmr/m/n/10.95 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H[]; X; A\OT1/cmr/m/n/10.95 )$
+ []
+
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:181: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
-l.159 \end{algorithmic}
+l.181 \end{algorithmic}
                        
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:159: Missing = inserted for \ifnum.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:181: Missing = inserted for \ifnum.
 <to be read again> 
                    \ALG@currentblock@0 
-l.159 \end{algorithmic}
+l.181 \end{algorithmic}
                        
 I was expecting to see `<', `=', or `>'. Didn't.
 
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:159: Missing number, treated as zero.
+/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:181: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
-l.159 \end{algorithmic}
+l.181 \end{algorithmic}
                        
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Underfull \hbox (badness 1571) in paragraph at lines 165--166
-[]\OT1/ptm/m/n/11 extbfStabilized Train-ing: Learn-ing rate
+Underfull \hbox (badness 1533) in paragraph at lines 186--189
+\OT1/ptm/m/n/11 dis-tinct OSM fea-tures across three spa-tial
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-[]\OT1/ptm/m/n/11 extbfRegularization Strat-egy: Dropout
+Underfull \hbox (badness 3460) in paragraph at lines 195--197
+[]\OT1/ptm/b/n/11 Hierarchical Fea-ture Fu-sion: \OT1/ptm/m/n/11 Fea-tures
  []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
-[] []\OT1/ptm/m/n/11 Location co-or-di-nates
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
-[] []\OT1/ptm/m/n/11 Adjacency ma-trix $\OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.95 2
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
-[] []$\OML/cmm/m/it/10.95 d[] \OMS/cmsy/m/n/10.95  $
- []
-
-
-Overfull \hbox (10.2723pt too wide) in paragraph at lines 184--185
-\OT1/ptm/m/n/11 HaversineDistance$\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 lat[]; lon[]; lat[]; lon[]\OT1/cmr/m/n/10.95 )$
- []
-
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:191: Missing number, treated as zero.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.191 \end{algorithmic}
-                       
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:191: Missing = inserted for \ifnum.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.191 \end{algorithmic}
-                       
-I was expecting to see `<', `=', or `>'. Didn't.
-
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:191: Missing number, treated as zero.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.191 \end{algorithmic}
-                       
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-Underfull \hbox (badness 2856) in paragraph at lines 194--195
-[]\OT1/ptm/m/n/11 Our spa-tial graph con-struc-tion em-ploys
- []
-
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
-[] []$\OML/cmm/m/it/10.95 h[] \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 ^^[\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 W[] \OMS/cmsy/m/n/10.95 ^^A
- []
-
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:217: Missing number, treated as zero.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.217 \end{algorithmic}
-                       
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:217: Missing = inserted for \ifnum.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.217 \end{algorithmic}
-                       
-I was expecting to see `<', `=', or `>'. Didn't.
-
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:217: Missing number, treated as zero.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.217 \end{algorithmic}
-                       
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
 
 
 
 [4]
-
-
-Underfull \hbox (badness 2894) in paragraph at lines 237--238
-[]\OT1/ptm/b/n/11 Geographic Dis-tri-bu-tion: \OT1/ptm/m/n/11 Ur-ban and
+Underfull \hbox (badness 1533) in paragraph at lines 222--223
+[]\OT1/ptm/b/n/11 ConvLSTM\OT1/ptm/m/n/11 : Con-vo-lu-tional LSTM for
  []
 
 
-Underfull \hbox (badness 7522) in paragraph at lines 249--250
-[]\OT1/ptm/b/n/11 Graph At-ten-tion Net-work (GAT):
- []
-
-
-Underfull \hbox (badness 3407) in paragraph at lines 252--253
-[]\OT1/ptm/b/n/11 Random For-est: \OT1/ptm/m/n/11 Non-graph ma-chine
- []
+Underfull \vbox (badness 3323) has occurred while \output is active []
 
 
 
-[5]
-Underfull \hbox (badness 1418) in paragraph at lines 264--266
-[]\OT1/ptm/b/n/11 Hyperparameter Op-ti-miza-tion: \OT1/ptm/m/n/11 Sys-tem-
- []
 
-
-LaTeX Warning: Reference `tab:main_results' on page 6 undefined on input line 276.
-
-
-Underfull \hbox (badness 2050) in paragraph at lines 276--277
-[]\OT1/ptm/m/n/11 Table [] presents our pri-mary find-ings
- []
-
-
-Overfull \hbox (91.95338pt too wide) in paragraph at lines 282--296
+Overfull \hbox (45.83391pt too wide) in paragraph at lines 259--269
  [][] 
  []
 
 
-LaTeX Warning: Reference `tab:multiscale_analysis' on page 6 undefined on input line 302.
 
-
-Overfull \hbox (9.10558pt too wide) in paragraph at lines 308--318
- [][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-
-LaTeX Warning: Reference `fig:feature_importance' on page 6 undefined on input line 324.
-
-Package pgfplots info on input line 342: Using 'lua backend=false' for axis: x coord trafo unsupported.
-
-Underfull \hbox (badness 10000) in paragraph at lines 359--360
-[]\OT1/ptm/m/n/11 Transportation in-fras-truc-ture fea-tures
- []
-
-
-
-[6
+[5
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.362 \end{itemize}
-                   
+l.277 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.362 \end{itemize}
-                   
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.362 \end{itemize}
-                   ]
-
-LaTeX Warning: Reference `tab:ablation' on page 7 undefined on input line 366.
-
-
-LaTeX Warning: Reference `tab:refined_results' on page 7 undefined on input line 389.
-
-Package pgfplots info on input line 434: Using 'lua backend=false' for axis: x coord trafo unsupported.
-
-
-
-LaTeX Warning: Reference `fig:spatial_analysis' on page 7 undefined on input line 452.
-
-
-LaTeX Warning: File `spatial_prediction_accuracy_map.png' not found on input line 456.
-
-
-/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex:456: Package pdftex.def Error: File `spatial_prediction_accuracy_map.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.456 ...dth]{spatial_prediction_accuracy_map.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 456.
-(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-[7
-pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.476 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.476 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.476 
+l.277 
       ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-
-
-Overfull \vbox (14.29633pt too high) has occurred while \output is active []
-
-
-
-[8
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.476 
-      ]
-Underfull \hbox (badness 1496) in paragraph at lines 479--480
-\OT1/ptm/m/n/11 dimensional fea-ture vec-tors, our op-ti-mized
+Underfull \hbox (badness 1577) in paragraph at lines 302--303
+[]\OT1/ptm/m/n/11 Cross-city trans-fer learn-ing for model
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
-\OT1/ptm/m/n/11 Graph-SAGE main-tains lin-ear scal-a-bil-ity
+
+[6]
+Underfull \hbox (badness 3439) in paragraph at lines 327--328
+\OT1/ptm/m/n/9 fu-sion con-vo-lu-tional re-cur-rent neu-ral net-work:
+ []
+
+
+Underfull \hbox (badness 3250) in paragraph at lines 327--328
+\OT1/ptm/m/n/9 Data-driven traf-fic fore-cast-ing,'' \OT1/ptm/m/it/9 arXiv preprint
  []
 
 
 
 
-Underfull \hbox (badness 3826) in paragraph at lines 513--514
-[]\OT1/ptm/m/n/11 Transparency in al-go-rith-mic decision-
- []
 
-
-
-[9]
-
-
-Underfull \hbox (badness 4036) in paragraph at lines 570--571
-\OT1/ptm/m/n/11 scale OSM fea-tures with op-ti-mized
- []
-
-
-Underfull \hbox (badness 1584) in paragraph at lines 578--579
-[]\OT1/ptm/b/n/11 Research Tra-jec-tory: \OT1/ptm/m/n/11 Fu-ture work will
- []
-
-
-Underfull \hbox (badness 1412) in paragraph at lines 578--579
-\OT1/ptm/m/n/11 fo-cus on in-cor-po-rat-ing dy-namic con-tex-tual
- []
-
-
-
-[10]
-Underfull \hbox (badness 1596) in paragraph at lines 586--587
-\OT1/ptm/m/n/11 able at []$https : / / github . com / FranklineMisango /
- []
-
-
-
-
-Package natbib Warning: There were undefined citations.
-
-
-
-[11] (./bike_sharing_gnn_prediction_paper.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-
-./bike_sharing_gnn_prediction_paper.aux:77: Package natbib Error: Bibliography not compatible with author-year citations.
-(natbib)                Press <return> to continue in numerical citation style.
-
-See the natbib package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.77 ...mand\NAT@force@numbers{}\NAT@force@numbers
-                                                  
-Check the bibliography entries for non-compliant syntax,
-or select author-year BibTeX style, e.g. plainnat
-
-)
+[7] (./bike_sharing_gnn_prediction_paper.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
@@ -1334,22 +954,22 @@ Package rerunfilecheck Warning: File `bike_sharing_gnn_prediction_paper.out' has
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `bike_sharing_gnn_prediction_paper.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  F6009EA516D6A561CDF04866EA55F7F8;6538.
+(rerunfilecheck)             Before: 389A19BB7E0598A3EEB9ED8B2F36A906;2723
+(rerunfilecheck)             After:  CB9D0D06EFDD09940855B1DE9FF9A2B3;2818.
  ) 
 Here is how much of TeX's memory you used:
- 34848 strings out of 473190
- 795022 string characters out of 5715800
- 1326793 words of memory out of 5000000
- 57438 multiletter control sequences out of 15000+600000
- 609536 words of font info for 141 fonts, out of 8000000 for 9000
+ 33831 strings out of 473190
+ 772945 string characters out of 5715800
+ 1314943 words of memory out of 5000000
+ 56488 multiletter control sequences out of 15000+600000
+ 607219 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,19n,87p,1529b,2283s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bike_sharing_gnn_prediction_paper.pdf (11 pages, 201604 bytes).
+ 84i,11n,87p,1265b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on bike_sharing_gnn_prediction_paper.pdf (7 pages, 191535 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
- 225 compressed objects within 3 object streams
- 123 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 249 PDF objects out of 1000 (max. 8388607)
+ 209 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
