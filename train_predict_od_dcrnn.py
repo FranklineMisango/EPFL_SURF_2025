@@ -32,7 +32,7 @@ scaler = MinMaxScaler()
 node_features = scaler.fit_transform(node_features)
 
 # Load trips
-df_trips = pd.read_csv('Data/trips_8days_flat.csv')
+df_trips = pd.read_csv('data/trips_8days_flat.csv')
 df_trips = df_trips[df_trips['start_station_id'].isin(station_ids) & df_trips['end_station_id'].isin(station_ids)]
 
 # Parse time
