@@ -2,7 +2,6 @@
 \IEEEoverridecommandlockouts
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
@@ -70,7 +69,7 @@ Our main contributions include:
 \section{Related Work}
 
 \subsection{Spatio-Temporal Flow Prediction}
-Spatio-temporal prediction has evolved from traditional time series methods to sophisticated deep learning approaches. Early gravity models captured basic distance-decay relationships but failed to model complex temporal dynamics \cite{flowml1}. Recent work has explored various neural architectures: ConvLSTM combines convolutional and recurrent mechanisms \cite{convlstm2015}, while ST-ResNet integrates residual networks with temporal modeling \cite{zhang2017}. However, these approaches treat spatial relationships as Euclidean, ignoring graph-structured dependencies.
+Spatio-temporal prediction has evolved from traditional time series methods to sophisticated deep learning approaches. Early gravity models captured basic distance-decay relationships but failed to model complex temporal dynamics \cite{flowml1}. Recent work has explored various neural architectures: ConvLSTM combines convolutional and recurrent mechanisms \cite{xingjian2015}, while ST-ResNet integrates residual networks with temporal modeling \cite{zhang2017}. However, these approaches treat spatial relationships as Euclidean, ignoring graph-structured dependencies.
 
 \subsection{Diffusion Convolutional Recurrent Neural Networks}
 Li~et~al. introduced DCRNN for traffic forecasting, combining graph diffusion convolution with gated recurrent units \cite{li2018}. The architecture models spatial dependencies through random walk diffusion processes while capturing temporal dynamics via encoder-decoder RNN structures. Subsequent work has applied DCRNN variants to various domains: Wu~et~al. enhanced the framework with attention mechanisms \cite{wu2019}, while Guo~et~al. integrated multi-scale temporal patterns \cite{guo2020}. Unlike prior work focusing on traffic networks, our approach adapts DCRNN for bike-sharing systems with comprehensive OSM feature integration.
@@ -316,9 +315,6 @@ Y. Li, R. Yu, C. Shahabi, and Y. Liu, ``Diffusion convolutional recurrent neural
 
 \bibitem{flowml1}
 A. Simini, C. González, A. Maritan, and A.-L. Barabási, ``A universal model for mobility and migration patterns,'' \textit{Nature}, vol. 484, no. 7392, pp. 96--100, 2012.
-
-\bibitem{convlstm2015}
-X. Shi, Z. Chen, H. Wang, D.-Y. Yeung, W.-K. Wong, and W.-c. Woo, ``Convolutional LSTM network: A machine learning approach for precipitation nowcasting,'' in \textit{Advances in Neural Information Processing Systems}, 2015, pp. 802--810.
 
 \bibitem{zhang2017}
 J. Zhang, Y. Zheng, and D. Qi, ``Deep spatio-temporal residual networks for citywide crowd flows prediction,'' in \textit{Proceedings of the AAAI Conference on Artificial Intelligence}, vol. 31, 2017.
