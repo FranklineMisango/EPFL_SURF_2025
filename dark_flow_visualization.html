@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dark Flow Visualization with OSRM</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body { margin: 0; background: #1a1a1a; color: white; font-family: Arial, sans-serif; }
+    #map { height: 100vh; }
+    .flow-particle { 
+      width: 6px; 
+      height: 6px; 
+      background: #00ff88; 
+      border-radius: 50%; 
+      position: absolute; 
+      z-index: 1000;
+      box-shadow: 0 0 8px rgba(0,255,136,0.8);
+    }
+    .controls {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1001;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+    button {
+      background: #00ff88;
+      color: black;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { background: #00cc6a; }
+    input[type="range"] { width: 100px; }
+    #status { margin-top: 10px; font-size: 12px; color: #aaa; }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<div class="controls">
+  <button id="toggleBtn" onclick="toggleAnimation()">Start Animation</button><br><br>
+  Speed: <input type="range" id="speedSlider" min="0.5" max="5" step="0.5" value="2" onchange="updateSpeed()"><br>
+  <label><input type="checkbox" id="routingCheck" checked> OSRM Routing</label><br>
+  <div id="status">Loading...</div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+let map, stationCoords = {}, flows = [], routes = {};
+let animationRunning = false, animationSpeed = 2;
+let particles = [], useRouting = true;
+
+// Dark theme map
+map = L.map('map').setView([46.95, 7.44], 10);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  subdomains: 'abcd',
+  maxZoom: 19
+}).addTo(map);
+
+// Load data
+Promise.all([
+  fetch('stations.json').then(r => r.json()),
+  fetch('predicted_flows.json').then(r => r.json())
+]).then(([stations, flowData]) => {
+  stations.forEach(station => {
+    stationCoords[station.station_id] = [station.lat, station.lon];
+  });
+  
+  flows = flowData.filter(f => f.predicted_flow > 0.001);
+  console.log(`Loaded ${flows.length} flows`);
+  
+  initializeVisualization();
+});
+
+function initializeVisualization() {
+  // Add glowing station markers
+  Object.keys(stationCoords).forEach(stationId => {
+    const coord = stationCoords[stationId];
+    const outFlow = flows.filter(f => f.origin == stationId).reduce((sum, f) => sum + f.predicted_flow, 0);
+    const inFlow = flows.filter(f => f.destination == stationId).reduce((sum, f) => sum + f.predicted_flow, 0);
+    
+    if (outFlow > 0 || inFlow > 0) {
+      const radius = Math.max(3, Math.min(12, (outFlow + inFlow) * 50));
+      let color = '#666';
+      if (outFlow > inFlow * 1.2) color = '#ff6b6b';
+      else if (inFlow > outFlow * 1.2) color = '#4ecdc4';
+      else if (outFlow + inFlow > 0.01) color = '#00ff88';
+      
+      L.circleMarker(coord, {
+        radius: radius,
+        fillColor: color,
+        color: color,
+        weight: 1,
+        opacity: 0.8,
+        fillOpacity: 0.6
+      }).addTo(map).bindPopup(`
+        <div style="color: black;">
+        <b>Station ${stationId}</b><br>
+        Out: ${outFlow.toFixed(4)}<br>
+        In: ${inFlow.toFixed(4)}<br>
+        Net: ${(outFlow - inFlow).toFixed(4)}
+        </div>
+      `);
+    }
+  });
+  
+  // Pre-calculate routes
+  calculateRoutes().then(() => {
+    document.getElementById('status').textContent = `${flows.length} flows ready`;
+  });
+}
+
+async function calculateRoutes() {
+  document.getElementById('status').textContent = 'Calculating routes...';
+  const routePromises = flows.slice(0, 100).map(async (flow, index) => {  // Limit to top 100 for speed
+    const orig = stationCoords[flow.origin];
+    const dest = stationCoords[flow.destination];
+    if (!orig || !dest) return;
+    
+    const key = `${flow.origin}-${flow.destination}`;
+    if (routes[key]) return;
+    
+    try {
+      const url = `https://router.project-osrm.org/route/v1/bicycle/${orig[1]},${orig[0]};${dest[1]},${dest[0]}?overview=full&geometries=geojson`;
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      if (data.routes && data.routes[0]) {
+        routes[key] = data.routes[0].geometry.coordinates.map(c => [c[1], c[0]]);
+      } else {
+        routes[key] = [orig, dest];
+      }
+    } catch (err) {
+      routes[key] = [orig, dest];
+    }
+    
+    if (index % 10 === 0) {
+      document.getElementById('status').textContent = `Routes: ${index}/${flows.length}`;
+    }
+    
+    await new Promise(resolve => setTimeout(resolve, 50));
+  });
+  
+  await Promise.all(routePromises);
+  
+  // Add remaining flows as straight lines
+  flows.forEach(flow => {
+    const key = `${flow.origin}-${flow.destination}`;
+    if (!routes[key]) {
+      const orig = stationCoords[flow.origin];
+      const dest = stationCoords[flow.destination];
+      if (orig && dest) {
+        routes[key] = [orig, dest];
+      }
+    }
+  });
+}
+
+function createParticle(flow) {
+  const key = `${flow.origin}-${flow.destination}`;
+  const route = useRouting ? routes[key] : null;
+  const orig = stationCoords[flow.origin];
+  const dest = stationCoords[flow.destination];
+  
+  if (!orig || !dest) return null;
+  
+  const particle = document.createElement('div');
+  particle.className = 'flow-particle';
+  document.body.appendChild(particle);
+  
+  return {
+    element: particle,
+    route: route || [orig, dest],
+    progress: 0,
+    speed: Math.max(0.01, flow.predicted_flow * 2) * animationSpeed,
+    flow: flow
+  };
+}
+
+function updateParticle(particle) {
+  if (!particle || !particle.route) return false;
+  
+  particle.progress += particle.speed;
+  
+  if (particle.progress >= 1) {
+    if (particle.element.parentNode) {
+      particle.element.parentNode.removeChild(particle.element);
+    }
+    return false;
+  }
+  
+  // Interpolate position along route
+  const route = particle.route;
+  if (route.length < 2) return false;
+  
+  const segmentLength = 1 / (route.length - 1);
+  const segmentIndex = Math.floor(particle.progress / segmentLength);
+  const segmentProgress = (particle.progress % segmentLength) / segmentLength;
+  
+  let lat, lng;
+  if (segmentIndex >= route.length - 1) {
+    const lastPoint = route[route.length - 1];
+    lat = lastPoint[0];
+    lng = lastPoint[1];
+  } else {
+    const start = route[segmentIndex];
+    const end = route[segmentIndex + 1];
+    lat = start[0] + (end[0] - start[0]) * segmentProgress;
+    lng = start[1] + (end[1] - start[1]) * segmentProgress;
+  }
+  
+  const pixelPos = map.latLngToContainerPoint([lat, lng]);
+  particle.element.style.left = pixelPos.x + 'px';
+  particle.element.style.top = pixelPos.y + 'px';
+  
+  return true;
+}
+
+function toggleAnimation() {
+  animationRunning = !animationRunning;
+  const btn = document.getElementById('toggleBtn');
+  const status = document.getElementById('status');
+  
+  if (animationRunning) {
+    btn.textContent = 'Stop Animation';
+    startAnimation();
+  } else {
+    btn.textContent = 'Start Animation';
+    particles.forEach(p => {
+      if (p.element.parentNode) {
+        p.element.parentNode.removeChild(p.element);
+      }
+    });
+    particles = [];
+    status.textContent = `${flows.length} flows ready`;
+  }
+}
+
+function updateSpeed() {
+  animationSpeed = parseFloat(document.getElementById('speedSlider').value);
+}
+
+function startAnimation() {
+  let lastSpawn = 0;
+  let frameCount = 0;
+  
+  function animate() {
+    if (!animationRunning) return;
+    
+    frameCount++;
+    const now = Date.now();
+    
+    // Spawn particles
+    if (now - lastSpawn > 300 / animationSpeed) {
+      flows.forEach(flow => {
+        if (Math.random() < Math.min(0.8, flow.predicted_flow * 100)) {
+          const particle = createParticle(flow);
+          if (particle) particles.push(particle);
+        }
+      });
+      lastSpawn = now;
+    }
+    
+    // Update particles
+    particles = particles.filter(updateParticle);
+    
+    // Update status
+    if (frameCount % 60 === 0) {
+      document.getElementById('status').textContent = `${particles.length} particles active`;
+    }
+    
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+}
+
+// Update routing preference
+document.getElementById('routingCheck').onchange = function() {
+  useRouting = this.checked;
+};
+
+// Update particles on map move
+map.on('move', () => {
+  particles.forEach(updateParticle);
+});
+</script>
+</body>
+</html>

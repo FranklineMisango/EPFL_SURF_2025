@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OD Matrix Flow Visualization</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map { height: 70vh; }
+    #matrix { height: 30vh; overflow: auto; background: #f5f5f5; padding: 10px; }
+    .matrix-cell { 
+      display: inline-block; 
+      width: 20px; 
+      height: 20px; 
+      margin: 1px; 
+      text-align: center; 
+      font-size: 8px;
+      cursor: pointer;
+    }
+    .flow-line { stroke-width: 2; stroke: #ff4444; fill: none; opacity: 0.7; }
+    .station-in { fill: #4ecdc4; }
+    .station-out { fill: #ff6b6b; }
+    .station-both { fill: #9b59b6; }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<div id="matrix">
+  <h3>OD Matrix (Origin → Destination)</h3>
+  <div id="matrix-grid"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+let map, stationCoords = {}, flows = [], odMatrix = {};
+let stationList = [];
+
+// Initialize map
+map = L.map('map').setView([46.95, 7.44], 11);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+}).addTo(map);
+
+// Load data
+Promise.all([
+  fetch('stations.json').then(r => r.json()),
+  fetch('predicted_flows.json').then(r => r.json())
+]).then(([stations, flowData]) => {
+  // Build station coordinates lookup
+  stations.forEach(station => {
+    stationCoords[station.station_id] = [station.lat, station.lon];
+  });
+  
+  flows = flowData.filter(f => f.predicted_flow > 0.005);
+  
+  // Get unique stations from flows
+  const stationSet = new Set();
+  flows.forEach(f => {
+    stationSet.add(f.origin);
+    stationSet.add(f.destination);
+  });
+  stationList = Array.from(stationSet).sort((a, b) => a - b);
+  
+  // Build OD matrix
+  stationList.forEach(orig => {
+    odMatrix[orig] = {};
+    stationList.forEach(dest => {
+      odMatrix[orig][dest] = 0;
+    });
+  });
+  
+  flows.forEach(f => {
+    odMatrix[f.origin][f.destination] = f.predicted_flow;
+  });
+  
+  console.log(`Loaded ${flows.length} flows for ${stationList.length} stations`);
+  initializeVisualization();
+});
+
+function initializeVisualization() {
+  // Calculate station flow totals
+  const stationStats = {};
+  stationList.forEach(sid => {
+    const outFlow = flows.filter(f => f.origin == sid).reduce((sum, f) => sum + f.predicted_flow, 0);
+    const inFlow = flows.filter(f => f.destination == sid).reduce((sum, f) => sum + f.predicted_flow, 0);
+    stationStats[sid] = { outFlow, inFlow, total: outFlow + inFlow };
+  });
+  
+  // Add station markers
+  stationList.forEach(stationId => {
+    const coord = stationCoords[stationId];
+    if (!coord) return;
+    
+    const stats = stationStats[stationId];
+    const radius = Math.max(4, Math.min(20, stats.total * 200));
+    
+    let color = '#95a5a6';
+    if (stats.outFlow > stats.inFlow * 1.2) color = '#ff6b6b'; // More outgoing
+    else if (stats.inFlow > stats.outFlow * 1.2) color = '#4ecdc4'; // More incoming
+    else if (stats.total > 0.1) color = '#9b59b6'; // Balanced
+    
+    L.circleMarker(coord, {
+      radius: radius,
+      fillColor: color,
+      color: 'white',
+      weight: 2,
+      opacity: 1,
+      fillOpacity: 0.8
+    }).addTo(map).bindPopup(`
+      <b>Station ${stationId}</b><br>
+      Outgoing: ${stats.outFlow.toFixed(3)}<br>
+      Incoming: ${stats.inFlow.toFixed(3)}<br>
+      Net: ${(stats.outFlow - stats.inFlow).toFixed(3)}
+    `);
+  });
+  
+  // Draw flow lines (top flows only)
+  const topFlows = flows.sort((a, b) => b.predicted_flow - a.predicted_flow).slice(0, 50);
+  topFlows.forEach(flow => {
+    const orig = stationCoords[flow.origin];
+    const dest = stationCoords[flow.destination];
+    if (!orig || !dest) return;
+    
+    const weight = Math.max(1, flow.predicted_flow * 100);
+    const opacity = Math.min(0.8, flow.predicted_flow * 20);
+    
+    L.polyline([orig, dest], {
+      color: '#e74c3c',
+      weight: weight,
+      opacity: opacity
+    }).addTo(map).bindPopup(`
+      Flow: ${flow.predicted_flow.toFixed(4)}<br>
+      ${flow.origin} → ${flow.destination}
+    `);
+  });
+  
+  // Create matrix visualization
+  createMatrixVisualization();
+}
+
+function createMatrixVisualization() {
+  const grid = document.getElementById('matrix-grid');
+  
+  // Find max value for color scaling
+  let maxFlow = 0;
+  stationList.forEach(orig => {
+    stationList.forEach(dest => {
+      maxFlow = Math.max(maxFlow, odMatrix[orig][dest]);
+    });
+  });
+  
+  // Create header row
+  const headerRow = document.createElement('div');
+  headerRow.innerHTML = '<div class="matrix-cell" style="background:#333;color:white;">O\\D</div>';
+  stationList.forEach(dest => {
+    const cell = document.createElement('div');
+    cell.className = 'matrix-cell';
+    cell.style.background = '#333';
+    cell.style.color = 'white';
+    cell.style.transform = 'rotate(-45deg)';
+    cell.style.fontSize = '6px';
+    cell.textContent = dest;
+    headerRow.appendChild(cell);
+  });
+  grid.appendChild(headerRow);
+  
+  // Create matrix rows
+  stationList.forEach(orig => {
+    const row = document.createElement('div');
+    
+    // Origin label
+    const originCell = document.createElement('div');
+    originCell.className = 'matrix-cell';
+    originCell.style.background = '#333';
+    originCell.style.color = 'white';
+    originCell.style.fontWeight = 'bold';
+    originCell.textContent = orig;
+    row.appendChild(originCell);
+    
+    // Flow cells
+    stationList.forEach(dest => {
+      const flow = odMatrix[orig][dest];
+      const cell = document.createElement('div');
+      cell.className = 'matrix-cell';
+      
+      if (flow > 0) {
+        const intensity = flow / maxFlow;
+        const red = Math.floor(255 * intensity);
+        cell.style.background = `rgb(${red}, ${Math.floor(100 * (1-intensity))}, ${Math.floor(100 * (1-intensity))})`;
+        cell.style.color = intensity > 0.5 ? 'white' : 'black';
+        cell.textContent = flow.toFixed(2);
+      } else {
+        cell.style.background = '#f8f9fa';
+        cell.textContent = '0';
+      }
+      
+      cell.title = `${orig} → ${dest}: ${flow.toFixed(4)}`;
+      cell.onclick = () => highlightFlow(orig, dest, flow);
+      row.appendChild(cell);
+    });
+    
+    grid.appendChild(row);
+  });
+}
+
+function highlightFlow(orig, dest, flow) {
+  const origCoord = stationCoords[orig];
+  const destCoord = stationCoords[dest];
+  
+  if (origCoord && destCoord && flow > 0) {
+    // Remove previous highlight
+    map.eachLayer(layer => {
+      if (layer.options && layer.options.className === 'highlight-flow') {
+        map.removeLayer(layer);
+      }
+    });
+    
+    // Add highlight
+    L.polyline([origCoord, destCoord], {
+      color: '#f39c12',
+      weight: Math.max(3, flow * 200),
+      opacity: 0.9,
+      className: 'highlight-flow'
+    }).addTo(map);
+    
+    // Pan to flow
+    map.fitBounds([origCoord, destCoord], { padding: [50, 50] });
+  }
+}
+</script>
+</body>
+</html>

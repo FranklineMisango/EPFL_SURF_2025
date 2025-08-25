@@ -1010,24 +1010,30 @@ class GNNBaselineRunner:
         self.results = {}
         
     def load_data(self):
-        """Load trip data and OSM features"""
+        """Load trip data and OSM+population features"""
         logger.info("Loading datasets for GNN testing...")
-        
+
         # Load trips
         self.trips_df = pd.read_csv('data/trips_8days_flat.csv')
         logger.info(f"Loaded {len(self.trips_df)} trip records")
-        
-        # Load OSM features for different radii
+
+        # Load OSM+population features for different radii
         radii = [500, 1000, 1500]
         for radius in radii:
             try:
-                osm_file = f'cache/ml_ready/switzerland_station_features_{radius}m.csv'
+                # Use the new merged files with population
+                osm_file = f'Data/switzerland_station_features_{radius}m_with_pop.csv'
                 osm_df = pd.read_csv(osm_file)
                 self.osm_features[radius] = osm_df
-                logger.info(f"Loaded OSM features for {radius}m radius: {len(osm_df)} stations")
+                # Optionally, also store population features separately if needed
+                pop_cols = [col for col in osm_df.columns if 'population' in col]
+                if not hasattr(self, 'population_features'):
+                    self.population_features = {}
+                self.population_features[radius] = osm_df[['station_id'] + pop_cols]
+                logger.info(f"Loaded OSM+population features for {radius}m radius: {len(osm_df)} stations")
             except FileNotFoundError:
-                logger.warning(f"OSM features file not found for {radius}m radius")
-        
+                logger.warning(f"OSM+population features file not found for {radius}m radius")
+
         # Aggregate flows and store as attribute for use as target
         self.flow_df = self.aggregate_flows(by_time=False)
         return True
@@ -1395,17 +1401,22 @@ class GNNBaselineRunner:
         return all_results
     
     def save_results(self, results: List[Dict]):
-        """Save results to CSV"""
+        """Save results to CSV and JSON for visualization"""
+        import json
         if not results:
             logger.warning("No results to save")
             return
-            
-        results_df = pd.DataFrame(results)
-        results_file = f"results/gnn_baseline_results_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.csv"
-        
         os.makedirs('results', exist_ok=True)
-        results_df.to_csv(results_file, index=False)
-        logger.info(f"Results saved to {results_file}")
+        results_df = pd.DataFrame(results)
+        timestamp = pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')
+        results_file_csv = f"results/gnn_baseline_results_{timestamp}.csv"
+        results_file_json = f"results/gnn_baseline_results_{timestamp}.json"
+        results_df.to_csv(results_file_csv, index=False)
+        # Save as JSON (records for JS visualization)
+        with open(results_file_json, 'w') as f_json:
+            json.dump(results, f_json, indent=2)
+        logger.info(f"Results saved to {results_file_csv} and {results_file_json}")
+        print(f"\n[INFO] Results saved to: {results_file_csv}\n[INFO] JSON for JS: {results_file_json}\n")
     
     def print_summary(self, results: List[Dict]):
         """Print summary of results"""

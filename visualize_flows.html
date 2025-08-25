@@ -1,0 +1,111 @@
+// Visualization of predicted OD flows using Leaflet and OSRM routing
+// Place this in a file like visualize_flows.html and open in your browser
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OD Flow Visualization</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>#map { height: 100vh; }</style>
+</head>
+<body>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+// Load station coordinates
+const stationCoords = {};
+fetch('stations.json')
+  .then(r => r.json())
+  .then(stations => {
+    stations.forEach(station => {
+      stationCoords[station.station_id] = [station.lat, station.lon];
+    });
+    loadFlows();
+  });
+
+function loadFlows() {
+  fetch('predicted_flows.json')
+    .then(r => r.json())
+    .then(flows => {
+      console.log('Loaded flows:', flows);
+      visualizeFlows(flows);
+    });
+}
+
+const map = L.map('map').setView([46.95, 7.44], 10);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+}).addTo(map);
+
+function visualizeFlows(flows) {
+  console.log(`Visualizing ${flows.length} flows`);
+  
+  // Add station markers first
+  Object.keys(stationCoords).forEach(stationId => {
+    const coord = stationCoords[stationId];
+    const isDestination = flows.some(f => f.destination == stationId);
+    const isOrigin = flows.some(f => f.origin == stationId);
+    
+    let color = 'blue';
+    if (isDestination && isOrigin) color = 'purple';
+    else if (isDestination) color = 'red';
+    else if (isOrigin) color = 'green';
+    
+    L.circleMarker(coord, {
+      radius: 4,
+      fillColor: color,
+      color: 'white',
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.8
+    }).addTo(map).bindPopup(`Station ${stationId}`);
+  });
+  
+  flows.forEach((flow, index) => {
+    const orig = stationCoords[flow.origin];
+    const dest = stationCoords[flow.destination];
+    if (!orig || !dest) {
+      console.log(`Missing coordinates for flow ${flow.origin} -> ${flow.destination}`);
+      return;
+    }
+    
+    // Scale the flow value for better visibility (multiply by 50)
+    const scaledFlow = flow.predicted_flow * 50;
+    const weight = Math.max(1, scaledFlow);
+    
+    console.log(`Flow ${index}: ${flow.origin} -> ${flow.destination}, value: ${flow.predicted_flow}, weight: ${weight}`);
+    
+    // Create a simple straight line first, then try OSRM
+    const straightLine = L.polyline([orig, dest], {
+      color: 'red',
+      weight: weight,
+      opacity: 0.7
+    }).addTo(map).bindPopup(`Flow: ${flow.predicted_flow.toFixed(4)}<br>From: ${flow.origin}<br>To: ${flow.destination}`);
+    
+    // Try to get bicycle route from OSRM
+    const url = `https://router.project-osrm.org/route/v1/bicycle/${orig[1]},${orig[0]};${dest[1]},${dest[0]}?overview=full&geometries=geojson`;
+    fetch(url)
+      .then(r => r.json())
+      .then(data => {
+        if (data.routes && data.routes[0]) {
+          // Remove straight line and add routed line
+          map.removeLayer(straightLine);
+          const coords = data.routes[0].geometry.coordinates.map(c => [c[1], c[0]]);
+          L.polyline(coords, {
+            color: 'red',
+            weight: weight,
+            opacity: 0.7
+          }).addTo(map).bindPopup(`Flow: ${flow.predicted_flow.toFixed(4)}<br>From: ${flow.origin}<br>To: ${flow.destination}`);
+        }
+      })
+      .catch(err => {
+        console.log(`OSRM routing failed for ${flow.origin} -> ${flow.destination}:`, err);
+        // Keep the straight line
+      });
+  });
+}
+</script>
+</body>
+</html>

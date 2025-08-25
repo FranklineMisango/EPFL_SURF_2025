@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animated OD Flow Visualization</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map { height: 100vh; }
+    .flow-particle { 
+      width: 6px; 
+      height: 6px; 
+      background: #ff4444; 
+      border-radius: 50%; 
+      position: absolute; 
+      z-index: 1000;
+      box-shadow: 0 0 4px rgba(255,68,68,0.8);
+    }
+    .controls {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1001;
+      background: white;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<div class="controls">
+  <button onclick="toggleAnimation()">Start Animation</button>
+  <br>Speed: <input type="range" id="speedSlider" min="0.5" max="5" step="0.5" value="2" onchange="updateSpeed()">
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+let map, stationCoords = {}, flows = [], routes = {}, animationRunning = false, animationSpeed = 2;
+let particles = [], animationId = null;
+
+// Initialize map
+map = L.map('map').setView([46.95, 7.44], 11);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+}).addTo(map);
+
+// Load data
+Promise.all([
+  fetch('stations.json').then(r => r.json()),
+  fetch('predicted_flows.json').then(r => r.json())
+]).then(([stations, flowData]) => {
+  // Build station coordinates lookup
+  stations.forEach(station => {
+    stationCoords[station.station_id] = [station.lat, station.lon];
+  });
+  
+  flows = flowData.filter(f => f.predicted_flow > 0.01);
+  console.log(`Loaded ${flows.length} flows`);
+  
+  initializeVisualization();
+});
+
+function initializeVisualization() {
+  // Add station markers
+  Object.keys(stationCoords).forEach(stationId => {
+    const coord = stationCoords[stationId];
+    const outFlow = flows.filter(f => f.origin == stationId).reduce((sum, f) => sum + f.predicted_flow, 0);
+    const inFlow = flows.filter(f => f.destination == stationId).reduce((sum, f) => sum + f.predicted_flow, 0);
+    
+    const radius = Math.max(3, Math.min(15, (outFlow + inFlow) * 100));
+    
+    L.circleMarker(coord, {
+      radius: radius,
+      fillColor: outFlow > inFlow ? '#ff6b6b' : '#4ecdc4',
+      color: 'white',
+      weight: 2,
+      opacity: 1,
+      fillOpacity: 0.7
+    }).addTo(map).bindPopup(`
+      Station ${stationId}<br>
+      Out: ${outFlow.toFixed(3)}<br>
+      In: ${inFlow.toFixed(3)}
+    `);
+  });
+  
+  // Pre-calculate routes
+  calculateRoutes().then(() => {
+    startAnimation();
+    console.log(`Ready! ${flows.length} flows loaded. Click 'Start Animation' to begin.`);
+  });
+}
+
+async function calculateRoutes() {
+  console.log('Calculating routes...');
+  const routePromises = flows.map(async (flow) => {
+    const orig = stationCoords[flow.origin];
+    const dest = stationCoords[flow.destination];
+    if (!orig || !dest) return;
+    
+    const key = `${flow.origin}-${flow.destination}`;
+    if (routes[key]) return;
+    
+    try {
+      const url = `https://router.project-osrm.org/route/v1/bicycle/${orig[1]},${orig[0]};${dest[1]},${dest[0]}?overview=full&geometries=geojson`;
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      if (data.routes && data.routes[0]) {
+        routes[key] = data.routes[0].geometry.coordinates.map(c => [c[1], c[0]]);
+      } else {
+        // Fallback to straight line
+        routes[key] = [orig, dest];
+      }
+    } catch (err) {
+      console.log(`Route failed for ${key}, using straight line`);
+      routes[key] = [orig, dest];
+    }
+    
+    // Small delay to avoid overwhelming OSRM
+    await new Promise(resolve => setTimeout(resolve, 100));
+  });
+  
+  await Promise.all(routePromises);
+  console.log('Routes calculated');
+}
+
+function createParticle(flow) {
+  const route = routes[`${flow.origin}-${flow.destination}`];
+  if (!route || route.length < 2) return null;
+  
+  const particle = document.createElement('div');
+  particle.className = 'flow-particle';
+  document.body.appendChild(particle);
+  
+  return {
+    element: particle,
+    route: route,
+    progress: 0,
+    speed: Math.max(0.005, flow.predicted_flow * 0.1) * animationSpeed,
+    flow: flow
+  };
+}
+
+function updateParticle(particle) {
+  if (!particle || !particle.route) return false;
+  
+  particle.progress += particle.speed;
+  
+  if (particle.progress >= 1) {
+    // Remove particle when it reaches destination
+    if (particle.element.parentNode) {
+      particle.element.parentNode.removeChild(particle.element);
+    }
+    return false;
+  }
+  
+  // Interpolate position along route
+  const route = particle.route;
+  const segmentLength = 1 / (route.length - 1);
+  const segmentIndex = Math.floor(particle.progress / segmentLength);
+  const segmentProgress = (particle.progress % segmentLength) / segmentLength;
+  
+  if (segmentIndex >= route.length - 1) {
+    // At destination
+    const lastPoint = route[route.length - 1];
+    const pixelPos = map.latLngToContainerPoint(lastPoint);
+    particle.element.style.left = pixelPos.x + 'px';
+    particle.element.style.top = pixelPos.y + 'px';
+  } else {
+    // Interpolate between two points
+    const start = route[segmentIndex];
+    const end = route[segmentIndex + 1];
+    const lat = start[0] + (end[0] - start[0]) * segmentProgress;
+    const lng = start[1] + (end[1] - start[1]) * segmentProgress;
+    const pixelPos = map.latLngToContainerPoint([lat, lng]);
+    particle.element.style.left = pixelPos.x + 'px';
+    particle.element.style.top = pixelPos.y + 'px';
+  }
+  
+  return true;
+}
+
+function startAnimation() {
+  let lastSpawn = 0;
+  
+  function animate() {
+    const now = Date.now();
+    
+    if (animationRunning) {
+      // Spawn new particles more frequently
+      if (now - lastSpawn > 500 / animationSpeed) {
+        flows.forEach(flow => {
+          // Higher spawn probability
+          if (Math.random() < Math.min(0.3, flow.predicted_flow * 50)) {
+            const particle = createParticle(flow);
+            if (particle) {
+              particles.push(particle);
+              console.log(`Spawned particle: ${flow.origin} -> ${flow.destination}`);
+            }
+          }
+        });
+        lastSpawn = now;
+      }
+      
+      // Update existing particles
+      particles = particles.filter(updateParticle);
+    }
+    
+    animationId = requestAnimationFrame(animate);
+  }
+  
+  animate();
+  console.log('Animation loop started');
+}
+
+function toggleAnimation() {
+  animationRunning = !animationRunning;
+  const btn = document.querySelector('button');
+  btn.textContent = animationRunning ? 'Pause Animation' : 'Start Animation';
+  console.log('Animation:', animationRunning ? 'Started' : 'Paused');
+}
+
+function updateSpeed() {
+  animationSpeed = parseFloat(document.getElementById('speedSlider').value);
+}
+
+// Update particle positions when map moves
+map.on('move', () => {
+  particles.forEach(particle => {
+    if (particle.route && particle.progress < 1) {
+      updateParticle(particle);
+    }
+  });
+});
+</script>
+</body>
+</html>

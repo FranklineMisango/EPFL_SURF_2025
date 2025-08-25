@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Flow Animation</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map { height: 100vh; }
+    .flow-particle { 
+      width: 8px; 
+      height: 8px; 
+      background: #ff4444; 
+      border-radius: 50%; 
+      position: absolute; 
+      z-index: 1000;
+      box-shadow: 0 0 6px rgba(255,68,68,0.8);
+      transition: none;
+    }
+    .controls {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1001;
+      background: white;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    #status {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<div class="controls">
+  <button id="toggleBtn" onclick="toggleAnimation()">Start Animation</button>
+  <div id="status">Ready</div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+let map, stationCoords = {}, flows = [];
+let animationRunning = false;
+let particles = [];
+
+// Initialize map
+map = L.map('map').setView([46.95, 7.44], 11);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+}).addTo(map);
+
+// Load data
+Promise.all([
+  fetch('stations.json').then(r => r.json()),
+  fetch('predicted_flows.json').then(r => r.json())
+]).then(([stations, flowData]) => {
+  // Build station coordinates lookup
+  stations.forEach(station => {
+    stationCoords[station.station_id] = [station.lat, station.lon];
+  });
+  
+  flows = flowData.filter(f => f.predicted_flow > 0.01);
+  console.log(`Loaded ${flows.length} flows`);
+  
+  initializeVisualization();
+});
+
+function initializeVisualization() {
+  // Add station markers
+  Object.keys(stationCoords).forEach(stationId => {
+    const coord = stationCoords[stationId];
+    const outFlow = flows.filter(f => f.origin == stationId).reduce((sum, f) => sum + f.predicted_flow, 0);
+    const inFlow = flows.filter(f => f.destination == stationId).reduce((sum, f) => sum + f.predicted_flow, 0);
+    
+    if (outFlow > 0 || inFlow > 0) {
+      const radius = Math.max(4, Math.min(15, (outFlow + inFlow) * 200));
+      
+      L.circleMarker(coord, {
+        radius: radius,
+        fillColor: outFlow > inFlow ? '#ff6b6b' : '#4ecdc4',
+        color: 'white',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.7
+      }).addTo(map).bindPopup(`
+        Station ${stationId}<br>
+        Out: ${outFlow.toFixed(3)}<br>
+        In: ${inFlow.toFixed(3)}
+      `);
+    }
+  });
+  
+  // Draw flow lines for reference
+  flows.slice(0, 20).forEach(flow => {
+    const orig = stationCoords[flow.origin];
+    const dest = stationCoords[flow.destination];
+    if (orig && dest) {
+      L.polyline([orig, dest], {
+        color: '#e74c3c',
+        weight: 2,
+        opacity: 0.3
+      }).addTo(map);
+    }
+  });
+  
+  document.getElementById('status').textContent = `${flows.length} flows ready`;
+}
+
+function createParticle(flow) {
+  const orig = stationCoords[flow.origin];
+  const dest = stationCoords[flow.destination];
+  if (!orig || !dest) return null;
+  
+  const particle = document.createElement('div');
+  particle.className = 'flow-particle';
+  document.body.appendChild(particle);
+  
+  // Start at origin
+  const startPos = map.latLngToContainerPoint(orig);
+  particle.style.left = startPos.x + 'px';
+  particle.style.top = startPos.y + 'px';
+  
+  return {
+    element: particle,
+    origin: orig,
+    destination: dest,
+    progress: 0,
+    speed: 0.02, // Fixed speed for testing
+    flow: flow
+  };
+}
+
+function updateParticle(particle) {
+  if (!particle) return false;
+  
+  particle.progress += particle.speed;
+  
+  if (particle.progress >= 1) {
+    // Remove particle
+    if (particle.element.parentNode) {
+      particle.element.parentNode.removeChild(particle.element);
+    }
+    return false;
+  }
+  
+  // Linear interpolation between origin and destination
+  const lat = particle.origin[0] + (particle.destination[0] - particle.origin[0]) * particle.progress;
+  const lng = particle.origin[1] + (particle.destination[1] - particle.origin[1]) * particle.progress;
+  const pixelPos = map.latLngToContainerPoint([lat, lng]);
+  
+  particle.element.style.left = pixelPos.x + 'px';
+  particle.element.style.top = pixelPos.y + 'px';
+  
+  return true;
+}
+
+function toggleAnimation() {
+  animationRunning = !animationRunning;
+  const btn = document.getElementById('toggleBtn');
+  const status = document.getElementById('status');
+  
+  if (animationRunning) {
+    btn.textContent = 'Stop Animation';
+    status.textContent = 'Animation running...';
+    startAnimation();
+  } else {
+    btn.textContent = 'Start Animation';
+    status.textContent = 'Animation stopped';
+    // Clear existing particles
+    particles.forEach(p => {
+      if (p.element.parentNode) {
+        p.element.parentNode.removeChild(p.element);
+      }
+    });
+    particles = [];
+  }
+}
+
+function startAnimation() {
+  let lastSpawn = 0;
+  let frameCount = 0;
+  
+  function animate() {
+    if (!animationRunning) return;
+    
+    frameCount++;
+    const now = Date.now();
+    
+    // Spawn particles every 500ms
+    if (now - lastSpawn > 500) {
+      // Spawn from top 10 flows
+      const topFlows = flows.slice(0, 10);
+      topFlows.forEach(flow => {
+        if (Math.random() < 0.5) { // 50% chance
+          const particle = createParticle(flow);
+          if (particle) {
+            particles.push(particle);
+            console.log(`Spawned particle ${particles.length}: ${flow.origin} -> ${flow.destination}`);
+          }
+        }
+      });
+      lastSpawn = now;
+    }
+    
+    // Update particles
+    particles = particles.filter(updateParticle);
+    
+    // Update status
+    if (frameCount % 60 === 0) {
+      document.getElementById('status').textContent = `Running... ${particles.length} particles`;
+    }
+    
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+}
+
+// Update particles when map moves
+map.on('move', () => {
+  particles.forEach(particle => {
+    if (particle.progress < 1) {
+      updateParticle(particle);
+    }
+  });
+});
+</script>
+</body>
+</html>
