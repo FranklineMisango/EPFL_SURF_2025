@@ -19,7 +19,7 @@ BATCH_SIZE = 8
 
 
 # Load station features
-station_df = pd.read_csv('/Data/switzerland_station_features_1000m_with_pop.csv')
+station_df = pd.read_csv('Data/switzerland_station_features_1000m_with_pop.csv')
 if MAX_STATIONS is not None:
     station_df = station_df.iloc[:MAX_STATIONS]
 station_ids = station_df['station_id'].values
