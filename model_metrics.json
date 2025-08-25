@@ -1,0 +1,9 @@
+{
+  "rmse": 0.005,
+  "mae": 0.003,
+  "r2": 0.913,
+  "total_flows": 27098,
+  "max_flow": 1.042,
+  "min_flow": 0.01,
+  "avg_flow": 0.018
+}

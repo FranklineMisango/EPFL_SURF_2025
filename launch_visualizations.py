@@ -25,12 +25,12 @@ if __name__ == "__main__":
     time.sleep(1)  # Wait for server to start
     
     print("\nAvailable visualizations:")
-    print(f"1. Animated Flow Particles: http://localhost:{PORT}/animated_flow_visualization.html")
-    print(f"2. OD Matrix Visualization: http://localhost:{PORT}/od_matrix_visualization.html")
-    print(f"3. Original Visualization: http://localhost:{PORT}/visualize_flows.html")
+    print(f"1. Flows Only: http://localhost:{PORT}/flows_only_viz.html")
+    print(f"2. All Flows Viz: http://localhost:{PORT}/all_flows_viz.html")
+    print(f"3. Simple Flow Viz: http://localhost:{PORT}/simple_flow_viz.html")
     
-    # Open the animated visualization
-    webbrowser.open(f"http://localhost:{PORT}/animated_flow_visualization.html")
+    # Open the flows only visualization
+    webbrowser.open(f"http://localhost:{PORT}/flows_only_viz.html")
     
     try:
         while True:

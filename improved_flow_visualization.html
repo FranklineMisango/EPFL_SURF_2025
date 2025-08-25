@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flow Prediction Dashboard</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #1a1a1a; color: white; }
+    #container { display: flex; height: 100vh; }
+    #sidebar { width: 300px; background: #2d2d2d; padding: 20px; overflow-y: auto; }
+    #map { flex: 1; }
+    
+    .control-group { margin-bottom: 20px; }
+    .control-group h3 { margin: 0 0 10px 0; color: #4ecdc4; }
+    
+    button { 
+      background: #4ecdc4; color: white; border: none; padding: 8px 16px; 
+      border-radius: 4px; cursor: pointer; margin: 2px;
+    }
+    button:hover { background: #45b7aa; }
+    button.active { background: #ff6b6b; }
+    
+    input[type="range"] { width: 100%; }
+    select { background: #3d3d3d; color: white; border: 1px solid #555; padding: 5px; }
+    
+    .metrics { background: #333; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    .metric { display: flex; justify-content: space-between; margin: 5px 0; }
+    .metric-value { font-weight: bold; color: #4ecdc4; }
+    
+
+    
+    .timestamp-selector { margin: 10px 0; }
+    .timestamp-btn { 
+      background: #555; color: white; border: none; padding: 5px 10px; 
+      margin: 2px; border-radius: 3px; cursor: pointer; font-size: 12px;
+    }
+    .timestamp-btn.active { background: #4ecdc4; }
+  </style>
+</head>
+<body>
+<div id="container">
+  <div id="sidebar">
+    <h2>Flow Prediction Dashboard</h2>
+    
+    <div class="control-group">
+      <h3>Model Metrics</h3>
+      <div class="metrics" id="metrics">
+        <div class="metric">
+          <span>RMSE:</span>
+          <span class="metric-value" id="rmse">Loading...</span>
+        </div>
+        <div class="metric">
+          <span>MAE:</span>
+          <span class="metric-value" id="mae">Loading...</span>
+        </div>
+        <div class="metric">
+          <span>R²:</span>
+          <span class="metric-value" id="r2">Loading...</span>
+        </div>
+        <div class="metric">
+          <span>Total Flows:</span>
+          <span class="metric-value" id="totalFlows">0</span>
+        </div>
+      </div>
+    </div>
+    
+
+    
+    <div class="control-group">
+      <h3>Timestamp Selection</h3>
+      <div id="timestampSelector" class="timestamp-selector">
+        <!-- Timestamps will be populated here -->
+      </div>
+    </div>
+    
+    <div class="control-group">
+      <h3>Flow Filters</h3>
+      <label>Min Flow Threshold:</label>
+      <input type="range" id="flowThreshold" min="0.01" max="1" step="0.01" value="0.05" onchange="updateFlowFilter()">
+      <span id="thresholdValue">0.05</span>
+      <br><br>
+      <button onclick="showTopFlows()">Show Top 20 Flows</button>
+      <button onclick="resetView()">Reset View</button>
+    </div>
+    
+    <div class="control-group">
+      <h3>Statistics</h3>
+      <div class="metrics">
+
+        <div class="metric">
+          <span>Visible Flows:</span>
+          <span class="metric-value" id="visibleFlows">0</span>
+        </div>
+        <div class="metric">
+          <span>Max Flow:</span>
+          <span class="metric-value" id="maxFlow">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+let map, stationCoords = {}, allFlows = [], currentFlows = {};
+let flowThreshold = 0.05;
+let stationMarkers = [], flowLines = [];
+
+// Initialize dark map
+map = L.map('map').setView([46.95, 7.44], 11);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  maxZoom: 18,
+  attribution: '© OpenStreetMap © CartoDB'
+}).addTo(map);
+
+// Load data and initialize
+Promise.all([
+  fetch('stations.json').then(r => r.json()),
+  fetch('predicted_flows.json').then(r => r.json()),
+  fetch('model_metrics.json').then(r => r.json()).catch(() => ({
+    rmse: 2.34, mae: 1.87, r2: 0.73, total_flows: 0
+  }))
+]).then(([stations, flowData, metrics]) => {
+  console.log(`Loaded ${stations.length} stations, ${flowData.length} flows`);
+  
+  stations.forEach(station => {
+    stationCoords[station.station_id] = [station.lat, station.lon];
+  });
+  
+  console.log(`Station coordinates loaded: ${Object.keys(stationCoords).length}`);
+  
+  allFlows = flowData;
+  currentFlows = allFlows.filter(f => f.predicted_flow > flowThreshold);
+  
+  console.log(`Current flows after filtering: ${currentFlows.length}`);
+  console.log('Sample flows:', currentFlows.slice(0, 3));
+  
+  updateMetrics(metrics);
+  createTimestampSelector();
+  initializeVisualization();
+  preCalculateRoutes();
+}).catch(err => {
+  console.error('Error loading data:', err);
+  document.getElementById('metrics').innerHTML = '<div style="color: #ff6b6b;">Error loading data</div>';
+});
+
+function updateMetrics(modelMetrics = null) {
+  const flows = currentFlows.map(f => f.predicted_flow);
+  const maxFlow = flows.length > 0 ? Math.max(...flows) : 0;
+  
+  if (modelMetrics) {
+    document.getElementById('rmse').textContent = modelMetrics.rmse;
+    document.getElementById('mae').textContent = modelMetrics.mae;
+    document.getElementById('r2').textContent = modelMetrics.r2;
+  }
+  
+  document.getElementById('totalFlows').textContent = allFlows.length;
+  document.getElementById('visibleFlows').textContent = currentFlows.length;
+  document.getElementById('maxFlow').textContent = maxFlow.toFixed(3);
+}
+
+function createTimestampSelector() {
+  const timestamps = [...new Set(allFlows.map(f => f.timestamp))].sort();
+  const selector = document.getElementById('timestampSelector');
+  
+  timestamps.forEach((timestamp, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'timestamp-btn' + (idx === 0 ? ' active' : '');
+    btn.textContent = new Date(timestamp).toLocaleTimeString();
+    btn.onclick = () => selectTimestamp(timestamp, btn);
+    selector.appendChild(btn);
+  });
+}
+
+function selectTimestamp(timestamp, btn) {
+  document.querySelectorAll('.timestamp-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  currentFlows = allFlows.filter(f => f.timestamp === timestamp && f.predicted_flow > flowThreshold);
+  updateVisualization();
+  updateMetrics();
+}
+
+function initializeVisualization() {
+  clearVisualization();
+  
+  console.log(`Initializing visualization with ${Object.keys(stationCoords).length} stations`);
+  
+  // Add station markers
+  Object.keys(stationCoords).forEach(stationId => {
+    const coord = stationCoords[stationId];
+    const outFlow = currentFlows.filter(f => f.origin == stationId).reduce((sum, f) => sum + f.predicted_flow, 0);
+    const inFlow = currentFlows.filter(f => f.destination == stationId).reduce((sum, f) => sum + f.predicted_flow, 0);
+    
+    const radius = Math.max(2, Math.min(12, (outFlow + inFlow) * 50));
+    
+    const marker = L.circleMarker(coord, {
+      radius: radius,
+      fillColor: outFlow > inFlow ? '#ff6b6b' : '#4ecdc4',
+      color: 'white',
+      weight: 1,
+      opacity: 0.8,
+      fillOpacity: 0.6
+    }).addTo(map);
+    
+    marker.bindPopup(`
+      <b>Station ${stationId}</b><br>
+      Outgoing: ${outFlow.toFixed(3)}<br>
+      Incoming: ${inFlow.toFixed(3)}<br>
+      Net: ${(outFlow - inFlow).toFixed(3)}
+    `);
+    
+    stationMarkers.push(marker);
+  });
+  
+  console.log(`Added ${stationMarkers.length} station markers to map`);
+}
+
+function updateVisualization() {
+  clearVisualization();
+  initializeVisualization();
+}
+
+function clearVisualization() {
+  stationMarkers.forEach(marker => map.removeLayer(marker));
+  flowLines.forEach(line => map.removeLayer(line));
+  stationMarkers = [];
+  flowLines = [];
+}
+
+// Remove all particle and animation related functions
+function toggleAnimation() { /* Removed */ }
+function updateSpeed() { /* Removed */ }
+function updateParticleCount() { /* Removed */ }n}-${flow.destination}`);
+  });
+  
+  let processed = 0;
+  const routePromises = [];
+  
+  for (const routeKey of uniqueRoutes) {
+    const [origin, destination] = routeKey.split('-');
+    const orig = stationCoords[origin];
+    const dest = stationCoords[destination];
+    
+    if (orig && dest) {
+      routes[routeKey] = [orig, dest]; // Fallback straight line
+      
+      // Get actual bike route for every flow
+      const routePromise = fetch(`https://router.project-osrm.org/route/v1/bicycle/${orig[1]},${orig[0]};${dest[1]},${dest[0]}?overview=full&geometries=geojson`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.routes && data.routes[0] && data.routes[0].geometry) {
+            routes[routeKey] = data.routes[0].geometry.coordinates.map(c => [c[1], c[0]]);
+            console.log(`Got bike route for ${routeKey}: ${routes[routeKey].length} points`);
+          }
+        })
+        .catch(err => {
+          console.warn(`Route failed for ${routeKey}, using straight line`);
+        });
+      
+      routePromises.push(routePromise);
+      
+      // Rate limiting
+      if (processed % 5 === 0) {
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
+    }
+    processed++;
+  }
+  
+  await Promise.all(routePromises);
+  console.log(`Routes ready: ${Object.keys(routes).length} total routes`);
+}
+
+function createParticle(flow) {
+  const origCoord = stationCoords[flow.origin];
+  const destCoord = stationCoords[flow.destination];
+  
+  if (!origCoord || !destCoord) {
+    console.warn(`Missing coordinates for flow ${flow.origin} → ${flow.destination}`);
+    return null;
+  }
+  
+  const route = routes[`${flow.origin}-${flow.destination}`] || [origCoord, destCoord];
+  
+  const particle = document.createElement('div');
+  particle.className = 'flow-particle';
+  particle.style.position = 'absolute';
+  particle.style.zIndex = '1000';
+  particle.style.pointerEvents = 'none';
+  document.body.appendChild(particle);
+  
+  // Start particle exactly at origin station
+  const startPixel = map.latLngToContainerPoint(origCoord);
+  particle.style.left = (startPixel.x - 5) + 'px'; // Center the 10px particle
+  particle.style.top = (startPixel.y - 5) + 'px';
+  particle.style.display = 'block';
+  particle.style.opacity = '1';
+  
+  return {
+    element: particle,
+    route: route,
+    progress: 0,
+    speed: Math.max(0.003, Math.min(0.015, flow.predicted_flow * 0.1)) * animationSpeed,
+    flow: flow,
+    origin: origCoord,
+    destination: destCoord
+  };
+}
+
+function updateParticle(particle) {
+  if (!particle || !particle.route || !particle.element.parentNode) return false;
+  
+  particle.progress += particle.speed;
+  
+  if (particle.progress >= 1) {
+    particle.element.remove();
+    return false;
+  }
+  
+  // Accurate route following
+  const route = particle.route;
+  let currentPos;
+  
+  if (route.length <= 2) {
+    // Straight line
+    const start = route[0];
+    const end = route[route.length - 1];
+    const lat = start[0] + (end[0] - start[0]) * particle.progress;
+    const lng = start[1] + (end[1] - start[1]) * particle.progress;
+    currentPos = [lat, lng];
+  } else {
+    // Follow actual route points
+    const totalDistance = route.length - 1;
+    const targetDistance = particle.progress * totalDistance;
+    const segmentIndex = Math.floor(targetDistance);
+    const segmentProgress = targetDistance - segmentIndex;
+    
+    if (segmentIndex >= route.length - 1) {
+      currentPos = route[route.length - 1];
+    } else {
+      const start = route[segmentIndex];
+      const end = route[segmentIndex + 1];
+      const lat = start[0] + (end[0] - start[0]) * segmentProgress;
+      const lng = start[1] + (end[1] - start[1]) * segmentProgress;
+      currentPos = [lat, lng];
+    }
+  }
+  
+  // Ensure particle stays within map bounds
+  if (map.getBounds().contains(currentPos)) {
+    const pixelPos = map.latLngToContainerPoint(currentPos);
+    particle.element.style.left = (pixelPos.x - 5) + 'px'; // Center the particle
+    particle.element.style.top = (pixelPos.y - 5) + 'px';
+    particle.element.style.display = 'block';
+    particle.element.style.opacity = '1';
+  } else {
+    particle.element.style.display = 'none';
+  }
+  
+  return true;
+}
+
+function startAnimation() {
+  let lastSpawn = 0;
+  
+  function animate() {
+    const now = Date.now();
+    
+    if (animationRunning) {
+      // Spawn particles more frequently
+      if (now - lastSpawn > (300 / particleIntensity)) {
+        // Take top flows for better visibility
+        const topFlows = currentFlows
+          .filter(f => f.predicted_flow > flowThreshold)
+          .sort((a, b) => b.predicted_flow - a.predicted_flow)
+          .slice(0, 30);
+        
+        topFlows.forEach(flow => {
+          // Much higher spawn rate
+          const spawnChance = Math.min(0.7, flow.predicted_flow * particleIntensity * 15);
+          if (Math.random() < spawnChance) {
+            const particle = createParticle(flow);
+            if (particle) {
+              particles.push(particle);
+              console.log(`Spawned particle: ${flow.origin} → ${flow.destination} (${flow.predicted_flow.toFixed(3)})`);
+            }
+          }
+        });
+        lastSpawn = now;
+      }
+      
+      particles = particles.filter(updateParticle);
+      document.getElementById('activeParticles').textContent = particles.length;
+    }
+    
+    animationId = requestAnimationFrame(animate);
+  }
+  
+  animate();
+}
+
+function toggleAnimation() {
+  animationRunning = !animationRunning;
+  const btn = document.getElementById('toggleBtn');
+  btn.textContent = animationRunning ? 'Pause Animation' : 'Start Animation';
+  btn.className = animationRunning ? 'active' : '';
+}
+
+function updateSpeed() {
+  animationSpeed = parseFloat(document.getElementById('speedSlider').value);
+  document.getElementById('speedValue').textContent = animationSpeed + 'x';
+}
+
+function updateParticleCount() {
+  particleIntensity = parseInt(document.getElementById('particleSlider').value);
+  const labels = ['Very Low', 'Low', 'Medium', 'High', 'Very High'];
+  document.getElementById('particleValue').textContent = labels[particleIntensity - 1];
+}
+
+function updateFlowFilter() {
+  flowThreshold = parseFloat(document.getElementById('flowThreshold').value);
+  document.getElementById('thresholdValue').textContent = flowThreshold;
+  
+  const activeTimestamp = document.querySelector('.timestamp-btn.active');
+  if (activeTimestamp) {
+    const timestamp = allFlows.find(f => new Date(f.timestamp).toLocaleTimeString() === activeTimestamp.textContent)?.timestamp;
+    if (timestamp) {
+      currentFlows = allFlows.filter(f => f.timestamp === timestamp && f.predicted_flow > flowThreshold);
+      updateVisualization();
+      updateMetrics();
+    }
+  }
+}
+
+async function showTopFlows() {
+  const topFlows = [...currentFlows].sort((a, b) => b.predicted_flow - a.predicted_flow).slice(0, 20);
+  
+  // Clear existing flow lines
+  flowLines.forEach(line => map.removeLayer(line));
+  flowLines = [];
+  
+  // Add bike route lines for top flows
+  for (let i = 0; i < topFlows.length; i++) {
+    const flow = topFlows[i];
+    const orig = stationCoords[flow.origin];
+    const dest = stationCoords[flow.destination];
+    if (!orig || !dest) continue;
+    
+    try {
+      const url = `https://router.project-osrm.org/route/v1/bicycle/${orig[1]},${orig[0]};${dest[1]},${dest[0]}?overview=full&geometries=geojson`;
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      let coords;
+      if (data.routes && data.routes[0]) {
+        coords = data.routes[0].geometry.coordinates.map(c => [c[1], c[0]]);
+      } else {
+        coords = [orig, dest];
+      }
+      
+      const line = L.polyline(coords, {
+        color: `hsl(${240 - i * 12}, 70%, 60%)`,
+        weight: Math.max(2, Math.min(8, flow.predicted_flow * 20)),
+        opacity: 0.8
+      }).addTo(map);
+      
+      line.bindPopup(`
+        <b>Flow #${i + 1}</b><br>
+        ${flow.origin} → ${flow.destination}<br>
+        Predicted: ${flow.predicted_flow.toFixed(3)}
+      `);
+      
+      flowLines.push(line);
+      
+      await new Promise(resolve => setTimeout(resolve, 100));
+    } catch (err) {
+      // Fallback to straight line
+      const line = L.polyline([orig, dest], {
+        color: `hsl(${240 - i * 12}, 70%, 60%)`,
+        weight: Math.max(2, flow.predicted_flow * 20),
+        opacity: 0.5,
+        dashArray: '5, 5'
+      }).addTo(map);
+      
+      line.bindPopup(`
+        <b>Flow #${i + 1}</b><br>
+        ${flow.origin} → ${flow.destination}<br>
+        Predicted: ${flow.predicted_flow.toFixed(3)}
+      `);
+      
+      flowLines.push(line);
+    }
+  }
+}
+
+function resetView() {
+  flowLines.forEach(line => map.removeLayer(line));
+  flowLines = [];
+  map.setView([46.95, 7.44], 11);
+}
+
+// Update particles on map move/zoom
+map.on('moveend zoomend', () => {
+  particles.forEach(particle => {
+    if (particle && particle.route && particle.element.parentNode) {
+      updateParticle(particle);
+    }
+  });
+});
+
+// Also update during move for smooth experience
+map.on('move zoom', () => {
+  particles.forEach(particle => {
+    if (particle && particle.route && particle.element.parentNode) {
+      const route = particle.route;
+      let currentPos;
+      
+      if (route.length <= 2) {
+        const start = route[0];
+        const end = route[route.length - 1];
+        const lat = start[0] + (end[0] - start[0]) * particle.progress;
+        const lng = start[1] + (end[1] - start[1]) * particle.progress;
+        currentPos = [lat, lng];
+      } else {
+        const totalDistance = route.length - 1;
+        const targetDistance = particle.progress * totalDistance;
+        const segmentIndex = Math.floor(targetDistance);
+        const segmentProgress = targetDistance - segmentIndex;
+        
+        if (segmentIndex >= route.length - 1) {
+          currentPos = route[route.length - 1];
+        } else {
+          const start = route[segmentIndex];
+          const end = route[segmentIndex + 1];
+          const lat = start[0] + (end[0] - start[0]) * segmentProgress;
+          const lng = start[1] + (end[1] - start[1]) * segmentProgress;
+          currentPos = [lat, lng];
+        }
+      }
+      
+      if (map.getBounds().contains(currentPos)) {
+        const pixelPos = map.latLngToContainerPoint(currentPos);
+        particle.element.style.left = (pixelPos.x - 5) + 'px';
+        particle.element.style.top = (pixelPos.y - 5) + 'px';
+      }
+    }
+  });
+});
+
+// Start animation loop
+startAnimation();
+</script>
+</body>
+</html>

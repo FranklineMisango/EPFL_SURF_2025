@@ -9,6 +9,21 @@ from typing import Dict, List, Tuple, Optional
 from datetime import datetime, timedelta
 
 class ODMatrixPredictor:
+    def export_od_matrix(self, od_matrix: np.ndarray, stations_df: pd.DataFrame, out_csv: str = None, out_json: str = None):
+        """Export OD matrix to CSV and/or JSON with station labels"""
+        n = od_matrix.shape[0]
+        # Try to get station labels from stations_df
+        if 'station_id' in stations_df.columns:
+            labels = list(stations_df['station_id'])
+        else:
+            labels = [str(i) for i in range(n)]
+
+        df = pd.DataFrame(od_matrix, index=labels, columns=labels)
+        if out_csv:
+            df.to_csv(out_csv)
+        if out_json:
+            df.to_json(out_json, orient='split')
+        return df
     """Minimal OD matrix predictor using spatio-temporal features"""
     
     def __init__(self, n_stations: int, history_length: int = 6, feature_dim: int = 16):

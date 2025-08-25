@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OD Matrix Table</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+  <style>
+    body { background: #222; color: #eee; font-family: Arial, sans-serif; }
+    h2 { color: #4ecdc4; text-align: center; }
+    #od-matrix-table_wrapper { margin: 2rem auto; width: 95vw; }
+    table.dataTable { background: #333; color: #eee; }
+    table.dataTable thead th { background: #444; color: #4ecdc4; }
+    table.dataTable tbody td { background: #222; }
+  </style>
+</head>
+<body>
+  <h2>Origin-Destination (OD) Matrix Table</h2>
+  <div style="overflow-x:auto;">
+    <table id="od-matrix-table" class="display" style="width:100%"></table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script>
+    // Load the OD matrix JSON (exported with orient='split')
+    fetch('od_matrix.json')
+      .then(r => r.json())
+      .then(data => {
+        const columns = [{ title: 'Origin/Destination' }].concat(data.columns.map(c => ({ title: c })));
+        const tableData = data.index.map((rowLabel, i) => [rowLabel].concat(data.data[i]));
+        $('#od-matrix-table').DataTable({
+          data: tableData,
+          columns: columns,
+          scrollX: true,
+          pageLength: 25,
+          lengthMenu: [10, 25, 50, 100],
+          order: [],
+        });
+      });
+  </script>
+</body>
+</html>
