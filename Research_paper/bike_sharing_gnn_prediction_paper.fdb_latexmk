@@ -1,6 +1,14 @@
 # Fdb version 4
-["pdflatex"] 1756161075.62115 "/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex" "bike_sharing_gnn_prediction_paper.pdf" "bike_sharing_gnn_prediction_paper" 1756161077.51822 2
-  "/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex" 1756161075.1758 22388 88ac3bd640309d751e2284678a773e92 ""
+["bibtex bike_sharing_gnn_prediction_paper"] 1756199815.25966 "bike_sharing_gnn_prediction_paper.aux" "bike_sharing_gnn_prediction_paper.bbl" "bike_sharing_gnn_prediction_paper" 1756199817.57248 0
+  "./references.bib" 1756199000.12485 3380 749c8cd6b83d17f21c773e3930a134b7 ""
+  "/usr/local/texlive/2025/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1440712899 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
+  "bike_sharing_gnn_prediction_paper.aux" 1756199816.91245 6175 a6901149aabe67fcc31acd1d58d7410e "pdflatex"
+  (generated)
+  "bike_sharing_gnn_prediction_paper.bbl"
+  "bike_sharing_gnn_prediction_paper.blg"
+  (rewritten before read)
+["pdflatex"] 1756199815.50044 "/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex" "bike_sharing_gnn_prediction_paper.pdf" "bike_sharing_gnn_prediction_paper" 1756199817.57277 0
+  "/Users/misango/codechest/EPFL_SURF_2025/Research_paper/bike_sharing_gnn_prediction_paper.tex" 1756199812.53741 23280 3530824e5aff27fdf855894bfda44e81 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -171,7 +179,6 @@
   "/usr/local/texlive/2025/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty" 1160617237 26750 ce139c05a983e19ddca355b43e29c395 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty" 1160617237 3457 d9077efe6b74c5a094199256af8d7d9a ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/algorithms/algorithm.sty" 1251330371 3249 15763257e50278eef5db1952ccde229c ""
-  "/usr/local/texlive/2025/texmf-dist/tex/latex/algorithms/algorithmic.sty" 1251330371 9318 793e9d5a71e74e730d97f6bf5d7e2bca ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1359763108 13829 94730e64147574077f8ecfea9bb69af4 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd" 1359763108 961 6518c6525a34feb5e8250ffa91731cff ""
@@ -233,12 +240,18 @@
   "/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty" 1727642399 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1739380943 42148 61becc7c670cd061bb319c643c27fdd4 ""
-  "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1752848328 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
-  "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1752847962 3345733 294f19b4565b23089c214188f99576a4 ""
+  "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1756199749 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
+  "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1756199529 3345735 597833fc58f53f2cf5deca24027b804b ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "bike_sharing_gnn_prediction_paper.aux" 1756161077.30618 3292 4a3ce9daf44b70648ea52804f25e6693 "pdflatex"
-  "bike_sharing_gnn_prediction_paper.out" 1756161077.30723 2818 cb9d0d06efdd09940855b1de9ff9a2b3 "pdflatex"
-  "bike_sharing_gnn_prediction_paper.tex" 1756161075.1758 22388 88ac3bd640309d751e2284678a773e92 ""
+  "bike_sharing_gnn_prediction_paper.aux" 1756199816.91245 6175 a6901149aabe67fcc31acd1d58d7410e "pdflatex"
+  "bike_sharing_gnn_prediction_paper.bbl" 1756199815.49119 3385 03d19edb143670ce8dabf381be534a91 "bibtex bike_sharing_gnn_prediction_paper"
+  "bike_sharing_gnn_prediction_paper.out" 1756199816.91348 2818 060f53938e25b4da9d0f5b61c88400b4 "pdflatex"
+  "bike_sharing_gnn_prediction_paper.tex" 1756199812.53741 23280 3530824e5aff27fdf855894bfda44e81 ""
+  "figures/ablation_study.pdf" 1756198167.2951 26118 cdfb91f40ef10f4d244a2796d0cfa52c ""
+  "figures/attention_weights.pdf" 1756198168.15941 37705 f13f33dec6dcefed63a0e2a302da9975 ""
+  "figures/dcrnn_architecture.pdf" 1756198166.47621 37569 d1730ebf9841a310b4db7b33a7414598 ""
+  "figures/multiscale_features.pdf" 1756198166.70235 23745 f1341ea469f0194be277051fd73b3295 ""
+  "figures/performance_comparison.pdf" 1756198167.07057 21375 59d65fe0ece606237a92dc58bcbcd272 ""
   (generated)
   "bike_sharing_gnn_prediction_paper.aux"
   "bike_sharing_gnn_prediction_paper.log"
