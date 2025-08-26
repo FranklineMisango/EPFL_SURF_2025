@@ -1,132 +1,173 @@
 
-# Flow Prediction with External Features (EPFL SURF 2025)
-**Last updated:** August 2025
+# DCRNN Flow Prediction Framework (EPFL SURF 2025)
+**Last updated:** January 2025
 
 ## Overview
 
-This repository provides a comprehensive framework for spatio-temporal flow prediction using external features. It is designed for research and experimentation on predicting flows (e.g., people, vehicles, bikes, or goods) between locations, leveraging:
+This repository implements a Diffusion Convolutional Recurrent Neural Network (DCRNN) framework for spatio-temporal flow prediction in bike-sharing systems. The framework combines graph neural networks with recurrent architectures to capture both spatial dependencies between stations and temporal patterns in flow data.
 
-- Rich external features (OpenStreetMap, population, POIs, demographics, etc.)
-- Multi-path routing and network-based features
-- A wide range of machine learning models: tree ensembles, neural networks, GNNs, spatio-temporal models, and ensembles
-- Robust evaluation, feature engineering, and reproducible experiments
+**Core Features:**
+- Full DCRNN implementation with diffusion convolution and GRU cells
+- Chunked processing for scalability to large station networks
+- Rich external features from OpenStreetMap, population data, and POIs
+- Interactive web-based visualization dashboard
+- Comprehensive evaluation metrics and model diagnostics
 
-The codebase is modular and supports both city-specific and cross-city transfer learning scenarios. While originally developed for bike-sharing flows, it is general and can be adapted to any flow prediction task with tabular, spatial, or temporal features.
+The system processes historical flow data and station features to predict future bike flows between stations, making it valuable for demand forecasting and system optimization.
 
 ## Key Features
 
-- **Gravity-Based Features:** Novel feature scoring that combines count and distance using physics-inspired gravity equations
-- **External Feature Extraction:** Automated OSM and population feature extraction at multiple radii for each node/location.
-- **Flexible ML Pipeline:** Supports XGBoost, LightGBM, CatBoost, Random Forest, MLP, TabNet, GNNs (GCN, GAT, GraphSAGE, GIN, Transformer), spatio-temporal models (DCRNN, ST-GCN, TFT), and ensemble methods (stacking, blending).
-- **Multi-Path Routing:** Integrates OSRM/OpenRouteService for shortest, fastest, safest, and scenic path features.
-- **Advanced Evaluation:** RMSE, MAE, R², MAPE, cross-validation, time-based splits, and feature importance analysis.
-- **🚴 Interactive Flow Visualization:** JavaScript-based maps showing flows following actual bike paths and road networks
-- **Interactive Apps:** Streamlit UIs for interactive prediction, feature exploration, and transfer learning demos.
-- **Cross-City Transfer:** Tools for domain adaptation and transfer learning between cities or regions.
-- **🌊 Flowmap.gl Integration:** Beautiful animated flow visualizations with interactive clustering and real-time flow animations.
+**DCRNN Architecture:**
+- Diffusion Convolutional layers for spatial message passing
+- GRU cells for temporal sequence modeling
+- Adjacency matrix based on station proximity
+- Chunked processing for memory efficiency
 
-## Example Use Cases
+**Data Processing:**
+- External feature integration (OSM, population, POIs)
+- Multi-radius feature extraction around stations
+- Automated OD matrix generation from trip data
+- Temporal windowing with configurable history length
 
-- Predicting demand or flows for bike/scooter sharing, ride-hailing, logistics, or public transport
-- Modeling flows between any spatial nodes (stations, stops, warehouses, etc.)
-- Benchmarking ML, GNN, and ensemble models on real-world spatio-temporal data
-- Studying the impact of external features (POIs, population, OSM) on flows
+**Visualization Dashboard:**
+- Interactive web-based flow visualization
+- Real-time filtering and threshold adjustment
+- Station markers sized by flow volume
+- Flow lines colored by prediction magnitude
+- Live performance metrics display
+
+**Evaluation Framework:**
+- RMSE, MAE, and R² metrics
+- Model performance tracking
+- Prediction quality assessment
+- Comprehensive logging and diagnostics
+
+## Use Cases
+
+- **Bike-sharing demand forecasting:** Predict hourly flows between stations
+- **System optimization:** Identify high-demand routes and station imbalances
+- **Capacity planning:** Forecast future demand for infrastructure decisions
+- **Real-time operations:** Support dynamic bike redistribution strategies
+- **Research applications:** Benchmark spatio-temporal prediction methods
 
 ## Quick Start
+
+### Installation
 
 ```bash
 git clone <repository-url>
 cd EPFL_SURF_2025
 pip install -r requirements.txt
-# (Optional) conda create -n surf2025 python=3.10 -y && conda activate surf2025
-# Install PyTorch Geometric and other extras as needed
 ```
 
-### 🚀 Try the Complete Demo (Recommended)
+### Run DCRNN Training
 
 ```bash
-python run_complete_demo.py
+# Train DCRNN model and generate predictions
+python train_predict_od_dcrnn.py
+
+# Or use the full DCRNN runner (ensures no minimal fallbacks)
+python run_full_dcrnn_only.py
 ```
 
-This will:
-- Generate gravity-based features for sample stations
-- Create realistic flow data
-- Launch interactive visualizations in your browser
-- Show flows following actual bike paths and roads
-
-### 🧲 Gravity-Based Features Only
+### Launch Visualization Dashboard
 
 ```bash
-python demo_gravity_features.py
+# Start the enhanced visualization server
+python serve_enhanced_viz.py
 ```
 
-### 🚴 Flow Visualization Only
+This opens an interactive dashboard at `http://localhost:8001/enhanced_flow_viz.html` showing:
+- Predicted flow patterns between stations
+- Model performance metrics
+- Interactive filtering and exploration tools
+- Real-time statistics
+
+### Generate OD Matrix
 
 ```bash
-python serve_visualization.py bike    # Bike network visualization
-python serve_visualization.py enhanced # Enhanced routing
-python serve_visualization.py basic    # Basic visualization
+# Create origin-destination matrix for analysis
+python generate_od_matrix.py
 ```
 
-### Traditional ML Pipeline
+## DCRNN Architecture
 
-Prepare OSM/population features:
+**Core Components:**
+- **Diffusion Convolution:** Captures spatial dependencies using graph structure
+- **GRU Cells:** Model temporal sequences and maintain memory
+- **Adjacency Matrix:** Defines station connectivity based on geographic proximity
+- **Feature Integration:** Combines temporal flows with static station features
 
-```bash
-python setup_osm_cache.py download
+**Model Configuration:**
+- Hidden dimensions: 64
+- Sequence length: 6 timesteps (6 hours history)
+- Prediction horizon: 1 timestep (1 hour ahead)
+- Batch processing with chunked station handling
+- Adam optimizer with configurable learning rate
+
+## Data Pipeline
+
+**Input Data:**
+- `trips_8days_flat.csv`: Historical trip records with timestamps
+- `switzerland_station_features_1000m_with_pop.csv`: Station features (OSM, population)
+- `unique_stations.csv`: Station coordinates and metadata
+
+**Feature Engineering:**
+- Temporal OD matrices generated from trip data
+- Station features: OSM amenities, population density, POI counts
+- Multi-radius feature extraction (500m, 1000m, 1500m)
+- Gravity-based scoring combining distance and feature density
+
+**Output:**
+- `predicted_flows.json`: Flow predictions for visualization
+- `model_metrics.json`: Performance metrics and diagnostics
+- `od_matrix.json`: Origin-destination flow matrices
+
+## Evaluation Metrics
+
+**Model Performance:**
+- **RMSE:** Root Mean Square Error for prediction accuracy
+- **MAE:** Mean Absolute Error for average prediction deviation
+- **R²:** Coefficient of determination for variance explained
+
+**Visualization Metrics:**
+- Flow threshold filtering for noise reduction
+- Top-K flow identification for pattern analysis
+- Station activity levels and flow imbalances
+- Real-time prediction statistics in dashboard
+
+## Configuration
+
+**Model Parameters:**
+Edit `full_dcrnn_config.py` to modify:
+- Network architecture (hidden dimensions, layers)
+- Training parameters (learning rate, epochs, batch size)
+- Data processing (sequence length, prediction horizon)
+- Station limits and chunking for memory management
+
+**Data Sources:**
+Replace input files in `Data/` folder:
+- Trip records: Update `trips_file` path in config
+- Station features: Update `station_features_file` path
+- Ensure consistent station IDs across all data files
+
+## File Structure
+
 ```
-
-Run a baseline or advanced model:
-
-```bash
-python helpers/run_gnn_baselines.py
+EPFL_SURF_2025/
+├── train_predict_od_dcrnn.py    # Main DCRNN training script
+├── full_dcrnn_config.py         # Model configuration
+├── run_full_dcrnn_only.py       # Full DCRNN runner
+├── serve_enhanced_viz.py        # Visualization server
+├── enhanced_flow_viz.html       # Interactive dashboard
+├── generate_od_matrix.py        # OD matrix generation
+├── Data/                        # Input datasets
+│   ├── trips_8days_flat.csv
+│   ├── switzerland_station_features_*.csv
+│   └── unique_stations.csv
+├── helpers/                     # Utility scripts
+└── results/                     # Output directory
 ```
-
-Launch the interactive app:
-
-```bash
-streamlit run helpers/cross_city_main_app.py
-```
-
-Or try the beautiful Flowmap.gl demo:
-
-```bash
-./run_flowmap_demo.sh
-# or
-streamlit run flowmap_demo.py
-```
-
-## Model Support
-
-The framework supports the following model families:
-
-- **Tree Ensembles:** XGBoost, LightGBM, CatBoost, Random Forest
-- **Neural Networks:** MLP, TabNet
-- **Graph Neural Networks:** GCN, GAT, GraphSAGE, GIN, Transformer
-- **Spatio-Temporal Models:** DCRNN, ST-GCN, Temporal Fusion Transformer (TFT)
-- **Ensembles:** Stacking, Blending (combine any of the above)
-
-All models can use the same feature pipeline, and results are logged and summarized for easy comparison.
-
-## Data & Features
-
-- **Input:** Trip/flow records (CSV), OSM features, population/demographics, routing features
-- **Feature Engineering:** Automated, multi-radius, supports custom features
-- **Cache:** All features are cached for reproducibility and fast iteration
-
-## Evaluation & Results
-
-After training, the script logs RMSE, MAE, and R² for each model and radius. Results can be printed, saved, or visualized. The framework supports robust validation and comparison across models and feature sets.
-
-## Extending & Customizing
-
-- Add new features by editing the feature extraction scripts
-- Add new models by implementing a new baseline in `helpers/run_gnn_baselines.py`
-- Use your own data by placing it in the `data/` folder and updating the config/scripts
-
-## Documentation
-
-See the original markdown files in the repo for detailed guides on OSM caching, location-based downloads, cross-city transfer, and experimental reports. This README provides a technical summary; for full details, consult the respective docs.
 
 ## License
 
