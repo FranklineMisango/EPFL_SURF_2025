@@ -23,11 +23,11 @@ def calculate_flow_metrics(predictions_file='predicted_flows_with_hours.json'):
             with open('predicted_flows.json', 'r') as f:
                 predictions = json.load(f)
         except FileNotFoundError:
-            print("❌ No prediction files found")
+            print("No prediction files found")
             return None
     
     if not predictions:
-        print("❌ No predictions to analyze")
+        print("No predictions to analyze")
         return None
     
     flows = [p['predicted_flow'] for p in predictions]
@@ -127,7 +127,7 @@ def print_metrics_summary(metrics):
     if not metrics:
         return
     
-    print("📊 DCRNN Model Metrics Summary")
+    print("DCRNN Model Metrics Summary")
     print("=" * 50)
     
     # Model Performance

@@ -1,32 +1,32 @@
 {
   "model_performance": {
-    "rmse": 2.52,
-    "mae": 1.74,
-    "r2": 0.723,
-    "mape": 20.6
+    "rmse": 2.84,
+    "mae": 1.992,
+    "r2": 0.676,
+    "mape": 34.0
   },
   "flow_statistics": {
-    "total_predictions": 19267,
-    "total_predicted_flow": 355.11,
-    "average_flow": 0.018,
-    "max_flow": 0.733,
+    "total_predictions": 22887,
+    "total_predicted_flow": 431.905,
+    "average_flow": 0.019,
+    "max_flow": 0.8,
     "min_flow": 0.01,
-    "std_flow": 0.017,
+    "std_flow": 0.016,
     "flow_distribution": {
       "high_flows_gt_1": 0,
       "medium_flows_0.5_to_1": 3,
-      "low_flows_lt_0.5": 19264
+      "low_flows_lt_0.5": 22884
     }
   },
   "network_statistics": {
-    "unique_stations": 695,
-    "origin_stations": 506,
-    "destination_stations": 682,
-    "station_coverage": 101.9
+    "unique_stations": 698,
+    "origin_stations": 600,
+    "destination_stations": 659,
+    "station_coverage": 105.9
   },
   "temporal_analysis": {},
   "metadata": {
-    "generated_at": "2025-08-25T23:09:20.220358",
+    "generated_at": "2025-09-02T04:37:09.400648",
     "data_source": "predicted_flows.json",
     "model_type": "DCRNN",
     "prediction_horizon": "1_hour"
