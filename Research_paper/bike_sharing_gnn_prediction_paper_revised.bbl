@@ -1,0 +1,48 @@
+\begin{thebibliography}{1}
+
+\bibitem{barrington2017}
+Christopher Barrington-Leigh and Adam Millard-Ball.
+\newblock The world's user-generated road map is more than 80\% complete.
+\newblock {\em PloS one}, 12(8):e0180698, 2017.
+
+\bibitem{boeing2017}
+Geoff Boeing.
+\newblock Osmnx: New methods for acquiring, constructing, analyzing, and visualizing complex street networks.
+\newblock {\em Computers, Environment and Urban Systems}, 65:126--139, 2017.
+
+\bibitem{chen2016}
+Tianqi Chen and Carlos Guestrin.
+\newblock Xgboost: A scalable tree boosting system.
+\newblock In {\em Proceedings of the 22nd acm sigkdd international conference on knowledge discovery and data mining}, pages 785--794, 2016.
+
+\bibitem{guo2020}
+Shengnan Guo, Youfang Lin, Ning Feng, Chao Song, and Huaiyu Wan.
+\newblock Attention based spatial-temporal graph convolutional networks for traffic flow forecasting.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial Intelligence}, volume~33, pages 922--929, 2019.
+
+\bibitem{haklay2010}
+Mordechai Haklay.
+\newblock How good is volunteered geographical information? a comparative study of openstreetmap and ordnance survey datasets.
+\newblock {\em Environment and planning B: Planning and design}, 37(4):682--703, 2010.
+
+\bibitem{li2018}
+Yaguang Li, Rose Yu, Cyrus Shahabi, and Yan Liu.
+\newblock Diffusion convolutional recurrent neural network: Data-driven traffic forecasting.
+\newblock {\em arXiv preprint arXiv:1707.01926}, 2017.
+
+\bibitem{wu2019}
+Zonghan Wu, Shirui Pan, Guodong Long, Jing Jiang, and Chengqi Zhang.
+\newblock Graph wavenet for deep spatial-temporal graph modeling.
+\newblock In {\em Proceedings of the 28th International Joint Conference on Artificial Intelligence}, pages 1907--1913, 2019.
+
+\bibitem{xingjian2015}
+SHI Xingjian, Zhourong Chen, Hao Wang, Dit-Yan Yeung, Wai-Kin Wong, and Wang-chun Woo.
+\newblock Convolutional lstm network: A machine learning approach for precipitation nowcasting.
+\newblock In {\em Advances in neural information processing systems}, pages 802--810, 2015.
+
+\bibitem{yu2018}
+Bing Yu, Haoteng Yin, and Zhanxing Zhu.
+\newblock Spatio-temporal graph convolutional networks: A deep learning framework for traffic forecasting.
+\newblock In {\em Proceedings of the 27th International Joint Conference on Artificial Intelligence}, pages 3634--3640, 2018.
+
+\end{thebibliography}
