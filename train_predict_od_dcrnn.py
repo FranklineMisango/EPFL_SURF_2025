@@ -8,10 +8,8 @@ from datetime import datetime, timedelta
 import json
 from scipy.spatial.distance import pdist, squareform
 
-# ---- FULL DCRNN CONFIGURATION ----
 from full_dcrnn_config import get_full_dcrnn_config
-
-print("🚀 Initializing FULL DCRNN (no minimal implementations)")
+print("Initializing FULL DCRNN (no minimal implementations)")
 config = get_full_dcrnn_config()
 
 # Use configuration values
@@ -187,7 +185,7 @@ for chunk_start in range(0, N, CHUNK_SIZE):
             optimizer.step()
             total_loss += loss.item()
         if epoch % 10 == 0:
-            print(f"  📊 Epoch {epoch+1}/{EPOCHS} Loss: {total_loss/len(X_tensor):.4f} (FULL DCRNN)")
+            print(f" Epoch {epoch+1}/{EPOCHS} Loss: {total_loss/len(X_tensor):.4f} (FULL DCRNN)")
     
     # Get predictions for this chunk
     model.eval()

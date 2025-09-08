@@ -57,10 +57,10 @@ def generate_od_matrix():
     with open('od_matrix.json', 'w') as f:
         f.write(od_json)
     
-    print(f"✅ Generated od_matrix.json with {n_stations}x{n_stations} matrix")
-    print(f"   Total non-zero flows: {np.count_nonzero(od_matrix)}")
-    print(f"   Max flow value: {od_matrix.max():.4f}")
-    print(f"   Average flow value: {od_matrix.mean():.4f}")
+    print(f"Generated od_matrix.json with {n_stations}x{n_stations} matrix")
+    print(f"Total non-zero flows: {np.count_nonzero(od_matrix)}")
+    print(f"Max flow value: {od_matrix.max():.4f}")
+    print(f"Average flow value: {od_matrix.mean():.4f}")
 
 if __name__ == "__main__":
     generate_od_matrix()

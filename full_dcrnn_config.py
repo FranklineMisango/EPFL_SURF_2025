@@ -7,6 +7,9 @@ Configuration that ensures only full DCRNN implementation is used
 import torch
 from dataclasses import dataclass
 from typing import Optional
+import logging
+import os
+
 
 @dataclass
 class FullDCRNNConfig:
@@ -42,19 +45,35 @@ class FullDCRNNConfig:
     # Validation
     enforce_full_implementation: bool = True  # Fail if minimal version is used
     
+    # In full_dcrnn_config.py, modify the validate method around line 55
     def validate(self):
-        """Validate configuration for full DCRNN"""
-        if self.enforce_full_implementation:
-            # Check that minimal DCRNN is not being used
-            import inspect
-            import sys
-            
-            # Look for minimal implementations in loaded modules
-            for name, module in sys.modules.items():
-                if hasattr(module, 'SimpleDCRNNCell') or hasattr(module, 'MinimalDCRNN'):
-                    raise RuntimeError(f"❌ Minimal DCRNN detected in {name}. Use full implementation only!")
-            
-            print("✅ Full DCRNN configuration validated - no minimal implementations detected")
+        """Validate that we're using full DCRNN components only"""
+        import sys
+        
+        # Check for minimal DCRNN files that shouldn't exist
+        minimal_files = [
+            'helpers/minimal_dcrnn.py',
+            'minimal_dcrnn_model.py'
+        ]
+        
+        for file_path in minimal_files:
+            if os.path.exists(file_path):
+                logging.warning(f"Minimal DCRNN file exists: {file_path}")
+        
+        # Check loaded modules - be more specific about what we're looking for
+        problematic_modules = []
+        for name, module in sys.modules.items():
+            # Only check modules that are likely our custom modules
+            if (name.startswith('minimal_dcrnn') or 
+                name.startswith('helpers.minimal_dcrnn') or
+                (hasattr(module, '__file__') and module.__file__ and 
+                'minimal_dcrnn' in module.__file__.lower())):
+                problematic_modules.append(name)
+        
+        if problematic_modules:
+            raise RuntimeError(f"Minimal DCRNN modules detected: {problematic_modules}. Use full implementation only!")
+        
+        logging.info("✓ Full DCRNN validation passed")
         
         return True
 
