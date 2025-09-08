@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  9 SEP 2025 01:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  9 SEP 2025 01:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -417,35 +417,7 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count312
 \l__pdf_internal_box=\box58
 )
-(./bike_sharing_gnn_prediction_paper_revised.aux
-
-LaTeX Warning: Label `li2018' multiply defined.
-
-
-LaTeX Warning: Label `xingjian2015' multiply defined.
-
-
-LaTeX Warning: Label `yu2018' multiply defined.
-
-
-LaTeX Warning: Label `chen2016' multiply defined.
-
-
-LaTeX Warning: Label `boeing2017' multiply defined.
-
-
-LaTeX Warning: Label `wu2019' multiply defined.
-
-
-LaTeX Warning: Label `haklay2010' multiply defined.
-
-
-LaTeX Warning: Label `barrington2017' multiply defined.
-
-
-LaTeX Warning: Label `guo2020' multiply defined.
-
-)
+(./bike_sharing_gnn_prediction_paper_revised.aux)
 \openout1 = `bike_sharing_gnn_prediction_paper_revised.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -616,89 +588,33 @@ ontext---
 
 
 
-(./bike_sharing_gnn_prediction_paper_revised.bbl)
+
 
 [4]
-pdfTeX warning (ext4): destination with the same identifier (name{cite.xingjian
-2015}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.239 \bibitem{xingjian2015}
-                            
-pdfTeX warning (ext4): destination with the same identifier (name{cite.yu2018})
- has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.244 \bibitem{yu2018}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{cite.chen2016
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.249 \bibitem{chen2016}
-                        
-pdfTeX warning (ext4): destination with the same identifier (name{cite.boeing20
-17}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.254 \bibitem{boeing2017}
-                          
-pdfTeX warning (ext4): destination with the same identifier (name{cite.wu2019})
- has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.259 \bibitem{wu2019}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{cite.haklay20
-10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.269 \bibitem{haklay2010}
-                          
-pdfTeX warning (ext4): destination with the same identifier (name{cite.barringt
-on2017}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.274 \bibitem{barrington2017}
-                              
-pdfTeX warning (ext4): destination with the same identifier (name{cite.guo2020}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.279 \bibitem{guo2020}
-                       
 
 
 
-[5
-pdfTeX warning (ext4): destination with the same identifier (name{cite.li2018})
- has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.286 \end{document}
-                    
+[5]
 
-] (./bike_sharing_gnn_prediction_paper_revised.aux)
+
+
+[6] (./bike_sharing_gnn_prediction_paper_revised.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `bike_sharing_gnn_prediction_paper_revised.ou
 t' has not changed.
-(rerunfilecheck)             Checksum: 6EABBD39879CDE679E28C3E007966E33;3093.
+(rerunfilecheck)             Checksum: A203A8FE56E9B1BE05CA762F67AD11A5;5608.
  ) 
 Here is how much of TeX's memory you used:
- 13803 strings out of 473190
- 215062 string characters out of 5715800
- 677927 words of memory out of 5000000
- 36582 multiletter control sequences out of 15000+600000
- 585941 words of font info for 207 fonts, out of 8000000 for 9000
+ 13839 strings out of 473190
+ 215300 string characters out of 5715800
+ 677891 words of memory out of 5000000
+ 36589 multiletter control sequences out of 15000+600000
+ 586485 words of font info for 218 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,1188b,570s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,1188b,468s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -722,11 +638,11 @@ f-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-
 dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2025/texmf-di
 st/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2025/texmf-dist
 /fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on bike_sharing_gnn_prediction_paper_revised.pdf (5 pages, 38582
-4 bytes).
+Output written on bike_sharing_gnn_prediction_paper_revised.pdf (6 pages, 39558
+6 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
- 201 compressed objects within 3 object streams
- 44 named destinations out of 1000 (max. 500000)
- 47737 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 299 PDF objects out of 1000 (max. 8388607)
+ 241 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 47809 words of extra memory for PDF output out of 51595 (max. 10000000)
 
