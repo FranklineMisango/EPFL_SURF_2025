@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.10)  10 SEP 2025 23:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.11)  11 SEP 2025 23:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -996,6 +996,31 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 100.
 
+
+Package natbib Warning: Citation `li2018' on page 1 undefined on input line 104
+.
+
+
+Package natbib Warning: Citation `xingjian2015' on page 1 undefined on input li
+ne 114.
+
+
+Package natbib Warning: Citation `yu2018' on page 1 undefined on input line 114
+.
+
+
+Package natbib Warning: Citation `li2018' on page 1 undefined on input line 116
+.
+
+
+Package natbib Warning: Citation `wu2019' on page 1 undefined on input line 116
+.
+
+
+Package natbib Warning: Citation `guo2020' on page 1 undefined on input line 11
+6.
+
+
 Overfull \hbox (2.2486pt too wide) in paragraph at lines 128--129
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) show-ing ap-prox-i-mately 13% RMSE im-prove
 -ment over strong
@@ -1027,10 +1052,22 @@ sive Swiss bike-sharing dataset
  []
 
 
+Package natbib Warning: Citation `boeing2017' on page 2 undefined on input line
+ 193.
+
+
 Overfull \hbox (2.73158pt too wide) in paragraph at lines 193--194
 []\T1/LinuxLibertineT-TLF/m/n/9 (-20) The Open-StreetMap fea-ture ex-trac-tion 
 em-ploys the OSMnx frame-
  []
+
+
+Package natbib Warning: Citation `chen2016' on page 2 undefined on input line 2
+03.
+
+
+Package natbib Warning: Citation `xingjian2015' on page 2 undefined on input li
+ne 204.
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 9.0pt on input line 205.
@@ -1038,10 +1075,9 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 7.0pt on input line 205.
 [2.2{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/
 usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_fygcup.enc}]
-Overfull \hbox (2.04105pt too wide) in paragraph at lines 205--206
-[]\T1/LinuxLibertineT-TLF/b/n/9 (-20) ST-GCN: \T1/LinuxLibertineT-TLF/m/n/9 (-2
-0) Spatio-temporal graph con-vo-lu-tional net-works [[]] 
- []
+
+Package natbib Warning: Citation `yu2018' on page 3 undefined on input line 205
+.
 
 
 Overfull \hbox (2.84793pt too wide) in paragraph at lines 208--209
@@ -1049,8 +1085,15 @@ Overfull \hbox (2.84793pt too wide) in paragraph at lines 208--209
 -proaches to spatio-temporal
  []
 
+
+LaTeX Warning: Reference `tab:main_results' on page 3 undefined on input line 2
+12.
+
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 9.0pt on input line 220.
+
+LaTeX Warning: Reference `tab:ablation' on page 3 undefined on input line 238.
+
 [3.3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7f4ce4.enc}]
 Overfull \hbox (5.96764pt too wide) in paragraph at lines 307--308
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) for ur-ban plan-ners and trans-porta-tion o
@@ -1069,29 +1112,53 @@ Underfull \vbox (badness 3049) has occurred while \output is active []
 
 )
 
+Package natbib Warning: There were undefined citations.
+
+
 Package balance Warning: You have called \balance in second column
 (balance)                Columns might not be balanced.
 
-(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+[4.4] (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [4.4]
-(./urban_ai_paper.aux)
+) [5.4]
+(./urban_ai_paper.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `urban_ai_paper.out' has not changed.
-(rerunfilecheck)             Checksum: A3384D37801106BFDAB99DDE89C93311;4944.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+LaTeX Warning: Temporary extra page added at the end. Rerun to get it removed.
+
+
+Package rerunfilecheck Warning: File `urban_ai_paper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `urban_ai_paper.out':
+(rerunfilecheck)             Before: 6ADFE73BF24296253212A8009AB0B473;84
+(rerunfilecheck)             After:  A3384D37801106BFDAB99DDE89C93311;4944.
  ) 
 Here is how much of TeX's memory you used:
- 21671 strings out of 476106
- 348135 string characters out of 5793933
- 1965975 words of memory out of 5000000
- 42663 multiletter control sequences out of 15000+600000
- 717765 words of font info for 387 fonts, out of 8000000 for 9000
+ 21652 strings out of 476106
+ 347922 string characters out of 5793933
+ 1964975 words of memory out of 5000000
+ 42641 multiletter control sequences out of 15000+600000
+ 718030 words of font info for 389 fonts, out of 8000000 for 9000
  220 hyphenation exceptions out of 8191
  90i,16n,131p,1155b,632s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/LibertineMathBRM.pfb>
@@ -1108,10 +1175,10 @@ e/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share
 f-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /newtx/txsys.pfb>
-Output written on urban_ai_paper.pdf (4 pages, 528050 bytes).
+Output written on urban_ai_paper.pdf (5 pages, 526990 bytes).
 PDF statistics:
- 268 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
+ 186 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
  55 named destinations out of 1000 (max. 500000)
- 86233 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 86041 words of extra memory for PDF output out of 89155 (max. 10000000)
 
