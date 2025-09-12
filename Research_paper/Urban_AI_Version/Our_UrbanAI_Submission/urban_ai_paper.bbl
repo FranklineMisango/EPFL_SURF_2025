@@ -38,80 +38,51 @@
 
 \bibitem[Boeing(2017)]%
         {boeing2017}
-\bibfield{author}{\bibinfo{person}{Geoff Boeing}.}
-  \bibinfo{year}{2017}\natexlab{}.
-\newblock \showarticletitle{{OSMnx}: New methods for acquiring, constructing,
-  analyzing, and visualizing complex street networks}.
-\newblock \bibinfo{journal}{\emph{Computers, Environment and Urban Systems}}
-  \bibinfo{volume}{65} (\bibinfo{year}{2017}), \bibinfo{pages}{126--139}.
+\bibfield{author}{\bibinfo{person}{Geoff Boeing}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{{OSMnx}: New methods for acquiring, constructing, analyzing, and visualizing complex street networks}.
+\newblock \bibinfo{journal}{\emph{Computers, Environment and Urban Systems}}  \bibinfo{volume}{65} (\bibinfo{year}{2017}), \bibinfo{pages}{126--139}.
 \newblock
 
 
 \bibitem[Chen and Guestrin(2016)]%
         {chen2016}
-\bibfield{author}{\bibinfo{person}{Tianqi Chen} {and} \bibinfo{person}{Carlos
-  Guestrin}.} \bibinfo{year}{2016}\natexlab{}.
-\newblock \showarticletitle{{XGBoost}: A scalable tree boosting system}. In
-  \bibinfo{booktitle}{\emph{Proceedings of the 22nd ACM SIGKDD International
-  Conference on Knowledge Discovery and Data Mining}}.
-  \bibinfo{pages}{785--794}.
+\bibfield{author}{\bibinfo{person}{Tianqi Chen} {and} \bibinfo{person}{Carlos Guestrin}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{{XGBoost}: A scalable tree boosting system}. In \bibinfo{booktitle}{\emph{Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}}. \bibinfo{pages}{785--794}.
 \newblock
 
 
 \bibitem[Guo et~al\mbox{.}(2020)]%
         {guo2020}
-\bibfield{author}{\bibinfo{person}{Shengnan Guo}, \bibinfo{person}{Youfang
-  Lin}, \bibinfo{person}{Ning Feng}, \bibinfo{person}{Chao Song}, {and}
-  \bibinfo{person}{Huaiyu Wan}.} \bibinfo{year}{2020}\natexlab{}.
-\newblock \showarticletitle{Attention based spatial-temporal graph
-  convolutional networks for traffic flow forecasting}. In
-  \bibinfo{booktitle}{\emph{Proceedings of the 33rd AAAI Conference on
-  Artificial Intelligence}}. \bibinfo{pages}{922--929}.
+\bibfield{author}{\bibinfo{person}{Shengnan Guo}, \bibinfo{person}{Youfang Lin}, \bibinfo{person}{Ning Feng}, \bibinfo{person}{Chao Song}, {and} \bibinfo{person}{Huaiyu Wan}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Attention based spatial-temporal graph convolutional networks for traffic flow forecasting}. In \bibinfo{booktitle}{\emph{Proceedings of the 33rd AAAI Conference on Artificial Intelligence}}. \bibinfo{pages}{922--929}.
 \newblock
 
 
 \bibitem[Li et~al\mbox{.}(2018)]%
         {li2018}
-\bibfield{author}{\bibinfo{person}{Yaguang Li}, \bibinfo{person}{Rose Yu},
-  \bibinfo{person}{Cyrus Shahabi}, {and} \bibinfo{person}{Yan Liu}.}
-  \bibinfo{year}{2018}\natexlab{}.
-\newblock \showarticletitle{Diffusion convolutional recurrent neural network:
-  Data-driven traffic forecasting}. In \bibinfo{booktitle}{\emph{Proceedings of
-  the International Conference on Learning Representations (ICLR)}}.
+\bibfield{author}{\bibinfo{person}{Yaguang Li}, \bibinfo{person}{Rose Yu}, \bibinfo{person}{Cyrus Shahabi}, {and} \bibinfo{person}{Yan Liu}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Diffusion convolutional recurrent neural network: Data-driven traffic forecasting}. In \bibinfo{booktitle}{\emph{Proceedings of the International Conference on Learning Representations (ICLR)}}.
 \newblock
 
 
 \bibitem[Shi et~al\mbox{.}(2015)]%
         {xingjian2015}
-\bibfield{author}{\bibinfo{person}{Xingjian Shi}, \bibinfo{person}{Zhourong
-  Chen}, \bibinfo{person}{Hao Wang}, \bibinfo{person}{Dit-Yan Yeung},
-  \bibinfo{person}{Wai-Kin Wong}, {and} \bibinfo{person}{Wang-chun Woo}.}
-  \bibinfo{year}{2015}\natexlab{}.
-\newblock \showarticletitle{Convolutional {LSTM} network: A machine learning
-  approach for precipitation nowcasting}. In \bibinfo{booktitle}{\emph{Advances
-  in Neural Information Processing Systems}}. \bibinfo{pages}{802--810}.
+\bibfield{author}{\bibinfo{person}{Xingjian Shi}, \bibinfo{person}{Zhourong Chen}, \bibinfo{person}{Hao Wang}, \bibinfo{person}{Dit-Yan Yeung}, \bibinfo{person}{Wai-Kin Wong}, {and} \bibinfo{person}{Wang-chun Woo}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Convolutional {LSTM} network: A machine learning approach for precipitation nowcasting}. In \bibinfo{booktitle}{\emph{Advances in Neural Information Processing Systems}}. \bibinfo{pages}{802--810}.
 \newblock
 
 
 \bibitem[Wu et~al\mbox{.}(2019)]%
         {wu2019}
-\bibfield{author}{\bibinfo{person}{Zonghan Wu}, \bibinfo{person}{Shirui Pan},
-  \bibinfo{person}{Guodong Long}, \bibinfo{person}{Jing Jiang}, {and}
-  \bibinfo{person}{Chengqi Zhang}.} \bibinfo{year}{2019}\natexlab{}.
-\newblock \showarticletitle{Graph wavenet for deep spatial-temporal graph
-  modeling}. In \bibinfo{booktitle}{\emph{Proceedings of the 28th International
-  Joint Conference on Artificial Intelligence}}. \bibinfo{pages}{1907--1913}.
+\bibfield{author}{\bibinfo{person}{Zonghan Wu}, \bibinfo{person}{Shirui Pan}, \bibinfo{person}{Guodong Long}, \bibinfo{person}{Jing Jiang}, {and} \bibinfo{person}{Chengqi Zhang}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Graph wavenet for deep spatial-temporal graph modeling}. In \bibinfo{booktitle}{\emph{Proceedings of the 28th International Joint Conference on Artificial Intelligence}}. \bibinfo{pages}{1907--1913}.
 \newblock
 
 
 \bibitem[Yu et~al\mbox{.}(2018)]%
         {yu2018}
-\bibfield{author}{\bibinfo{person}{Bing Yu}, \bibinfo{person}{Haoteng Yin},
-  {and} \bibinfo{person}{Zhanxing Zhu}.} \bibinfo{year}{2018}\natexlab{}.
-\newblock \showarticletitle{Spatio-temporal graph convolutional networks: A
-  deep learning framework for traffic forecasting}. In
-  \bibinfo{booktitle}{\emph{Proceedings of the 27th International Joint
-  Conference on Artificial Intelligence}}. \bibinfo{pages}{3634--3640}.
+\bibfield{author}{\bibinfo{person}{Bing Yu}, \bibinfo{person}{Haoteng Yin}, {and} \bibinfo{person}{Zhanxing Zhu}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Spatio-temporal graph convolutional networks: A deep learning framework for traffic forecasting}. In \bibinfo{booktitle}{\emph{Proceedings of the 27th International Joint Conference on Artificial Intelligence}}. \bibinfo{pages}{3634--3640}.
 \newblock
 
 
