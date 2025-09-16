@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex urban_ai_paper"] 1758028310.84204 "urban_ai_paper.aux" "urban_ai_paper.bbl" "urban_ai_paper" 1758028315.28127 0
+["bibtex urban_ai_paper"] 1758028977.48261 "urban_ai_paper.aux" "urban_ai_paper.bbl" "urban_ai_paper" 1758028981.43788 0
   "./ACM-Reference-Format.bst" 1757676542.89872 93560 12e0ced1522ea2bfa9b2fb12855c7e9e ""
   "./references.bib" 1757676542.94416 2919 7dceae0b8c17a9626f2dc1522d1be565 ""
-  "urban_ai_paper.aux" 1758028314.10113 9032 768820731b3fa848da555e5f179982c0 "pdflatex"
+  "urban_ai_paper.aux" 1758028980.34429 9034 04a1e3c71ab74f026eb719849f557c81 "pdflatex"
   (generated)
   "urban_ai_paper.bbl"
   "urban_ai_paper.blg"
   (rewritten before read)
-["pdflatex"] 1758028311.15727 "/Users/misango/codechest/EPFL_SURF_2025/Research_paper/Urban_AI_Version/Our_UrbanAI_Submission/urban_ai_paper.tex" "urban_ai_paper.pdf" "urban_ai_paper" 1758028315.28162 0
-  "/Users/misango/codechest/EPFL_SURF_2025/Research_paper/Urban_AI_Version/Our_UrbanAI_Submission/urban_ai_paper.tex" 1758028305.84986 50808 fcb5c7a0e517c3262f6428b665d7941a ""
+["pdflatex"] 1758028977.79234 "/Users/misango/codechest/EPFL_SURF_2025/Research_paper/Urban_AI_Version/Our_UrbanAI_Submission/urban_ai_paper.tex" "urban_ai_paper.pdf" "urban_ai_paper" 1758028981.43823 0
+  "/Users/misango/codechest/EPFL_SURF_2025/Research_paper/Urban_AI_Version/Our_UrbanAI_Submission/urban_ai_paper.tex" 1758028973.13015 50819 31499925806021c0f6d2067cf78cf34f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc" 1490131464 2921 8ca0eb0831f9bc5da080d3697cfe67bf ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc" 1490131464 2933 9ad527ce78d7c5fa0a642dead095f172 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/libertine/lbtn_7f4ce4.enc" 1490131464 3361 167488583337936b4a6376846148c8a9 ""
@@ -236,15 +236,15 @@
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1756199529 3345735 597833fc58f53f2cf5deca24027b804b ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "acmart.cls" 1757676542.93347 122400 54cc4edcc7b9cb1bf0a23c528626957c ""
-  "comment.cut" 1758028313.89402 341 0014c26783c723a8a3de886e3e4d6143 "pdflatex"
+  "comment.cut" 1758028980.21069 341 0014c26783c723a8a3de886e3e4d6143 "pdflatex"
   "figures/attention_weights.pdf" 1757680947.84905 37705 754409776e5905595e975b9b38ddea38 ""
   "figures/dcrnn_architecture.pdf" 1757680947.85006 37569 d38e48a84384c3ce5bd4422da4b640f3 ""
   "figures/multiscale_features.pdf" 1757680947.85122 23745 49ea2021171a792fd5f62663edcce433 ""
   "figures/performance_comparison.pdf" 1757680947.8522 21375 2477d8b1beaa0cb457fc138f95cacf5f ""
-  "urban_ai_paper.aux" 1758028314.10113 9032 768820731b3fa848da555e5f179982c0 "pdflatex"
-  "urban_ai_paper.bbl" 1758028311.1465 5065 7383558e11831f8e283417b510aeaedc "bibtex urban_ai_paper"
-  "urban_ai_paper.out" 1758028314.104 8640 25d39c73afa01239777257bd05ef0380 "pdflatex"
-  "urban_ai_paper.tex" 1758028305.84986 50808 fcb5c7a0e517c3262f6428b665d7941a ""
+  "urban_ai_paper.aux" 1758028980.34429 9034 04a1e3c71ab74f026eb719849f557c81 "pdflatex"
+  "urban_ai_paper.bbl" 1758028977.78069 5065 7383558e11831f8e283417b510aeaedc "bibtex urban_ai_paper"
+  "urban_ai_paper.out" 1758028980.34633 8640 25d39c73afa01239777257bd05ef0380 "pdflatex"
+  "urban_ai_paper.tex" 1758028973.13015 50819 31499925806021c0f6d2067cf78cf34f ""
   (generated)
   "comment.cut"
   "urban_ai_paper.aux"

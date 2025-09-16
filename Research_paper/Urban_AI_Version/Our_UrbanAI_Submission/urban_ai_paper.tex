@@ -150,12 +150,12 @@ X_i^{(r)} &= \text{OSMExtract}(\text{lat}_i, \text{lon}_i, \text{radius}=r) \\
 
 For $r \in \{500\text{m}, 1000\text{m}, 1500\text{m}\}$, this yields 47 features per scale encompassing transportation infrastructure (road density, intersection count), points-of-interest diversity (restaurants, retail, education), land use patterns (residential, commercial ratios), and network connectivity metrics.
 
-\begin{figure}[h]
+\begin{figure*}[htb]
 \centering
-\includegraphics[width=0.75\textwidth]{figures/dcrnn_architecture.pdf}
+\includegraphics[width=0.85\textwidth]{figures/dcrnn_architecture.pdf}
 \caption{DCRNN Architecture with Multi-Scale OSM Feature Integration. The encoder processes historical flow sequences with spatial diffusion convolution while the decoder generates future predictions using attention-fused multi-scale urban features.}
 \label{fig:dcrnn_architecture}
-\end{figure}
+\end{figure*}
 
 Figure~\ref{fig:dcrnn_architecture} illustrates our enhanced DCRNN architecture that systematically integrates multi-scale urban context through attention-based feature fusion mechanisms.
 
@@ -171,12 +171,12 @@ Rather than simple concatenation of multi-scale features, we employ learnable at
 
 Here, $\mathbf{c}_i$ captures station centrality characteristics and $\text{degree}_i$ represents the node degree in the spatial graph. This design enables urban core stations (high centrality) to emphasize fine-grained walkability features (500m) while peripheral stations (low centrality) focus on broader accessibility patterns (1500m).
 
-\begin{figure}[h]
+\begin{figure*}[htb]
 \centering
-\includegraphics[width=0.75\textwidth]{figures/multiscale_features.pdf}
+\includegraphics[width=0.85\textwidth]{figures/multiscale_features.pdf}
 \caption{Multi-Scale OSM Feature Extraction and Attention-Based Fusion. Shows how different spatial scales (500m, 1000m, 1500m) capture varied urban context and how attention weights adapt based on station characteristics.}
 \label{fig:multiscale_features}
-\end{figure}
+\end{figure*}
 
 \subsection{Enhanced DCRNN Architecture}
 
@@ -375,16 +375,16 @@ DCRNN baseline & 3.21 & 2.34 & 0.598 \\
 
 The ablation study demonstrates that OpenStreetMap features provide the largest performance gain (13.4\% RMSE reduction), multi-scale integration adds $\approx$5.0\% additional RMSE reduction over single-scale, and attention fusion yields a further $\approx$4.5\%.
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
-\includegraphics[width=0.75\textwidth]{figures/performance_comparison.pdf}
+\includegraphics[width=\columnwidth]{figures/performance_comparison.pdf}
 \caption{Performance comparison across all baseline methods showing consistent improvements from our multi-scale approach. Error bars indicate 95\% confidence intervals from 5-fold cross-validation.}
 \label{fig:performance_comparison}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
-\includegraphics[width=0.75\textwidth]{figures/attention_weights.pdf}
+\includegraphics[width=0.8\columnwidth]{figures/attention_weights.pdf}
 \caption{Learned attention weights visualization showing adaptive spatial scale selection. Downtown stations (red) emphasize 500m features while peripheral stations (blue) focus on 1500m context.}
 \label{fig:attention_weights}
 \end{figure}

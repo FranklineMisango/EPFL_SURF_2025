@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  16 SEP 2025 21:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  16 SEP 2025 21:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -944,35 +944,20 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 File: figures/dcrnn_architecture.pdf Graphic file (type pdf)
 <use figures/dcrnn_architecture.pdf>
 Package pdftex.def Info: figures/dcrnn_architecture.pdf  used on input line 155.
-(pdftex.def)             Requested size: 379.72124pt x 252.01183pt.
-
-Overfull \hbox (138.57375pt too wide) in paragraph at lines 155--156
- [][] 
- []
+(pdftex.def)             Requested size: 430.35384pt x 285.61224pt.
 
 
 Class acmart Warning: A possible image without description on input line 158.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 <figures/multiscale_features.pdf, id=178, 715.47299pt x 570.77303pt>
 File: figures/multiscale_features.pdf Graphic file (type pdf)
 <use figures/multiscale_features.pdf>
 Package pdftex.def Info: figures/multiscale_features.pdf  used on input line 176.
-(pdftex.def)             Requested size: 379.72124pt x 302.91759pt.
-
-Overfull \hbox (138.57375pt too wide) in paragraph at lines 176--177
- [][] 
- []
-
+(pdftex.def)             Requested size: 430.35384pt x 343.31125pt.
 
 Class acmart Warning: A possible image without description on input line 179.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 
 LaTeX Font Info:    Font shape `OML/nxlmi/b/it' will be
 (Font)              scaled to size 9.0pt on input line 189.
@@ -1017,17 +1002,9 @@ LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
 LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
 (Font)              scaled to size 5.5pt on input line 189.
 
-
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 208.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 208.
-[2.2{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/libertine/lbtn_fygcup.enc} <./figures/dcrnn_architecture.pdf>]
 Overfull \hbox (15.83409pt too wide) in paragraph at lines 221--223
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) where $\OT1/LinuxLibertineT-TLF/sb/n/9 (-20) W[]\OML/nxlmi/m/it/9 ; \OT1/LinuxLibertineT-TLF/sb/n/9 (-20) W[] \LMS/ntxsy/m/n/9 2 \U/ntxsym/m/n/9 R[]$ \T1/LinuxLibertineT-TLF/m/n/9 (-20) project hid-den states to ori-gin/destination
  []
-
-
 
 
 Overfull \hbox (4.18867pt too wide) in paragraph at lines 230--231
@@ -1035,9 +1012,17 @@ Overfull \hbox (4.18867pt too wide) in paragraph at lines 230--231
  []
 
 
+
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 234.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 7.0pt on input line 234.
+[2.2{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/libertine/lbtn_fygcup.enc}]
 Overfull \hbox (1.08011pt too wide) in paragraph at lines 244--245
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) den-sity, in-ter-sec-tion count, high-way ac-cess, bike lane length,
  []
+
+
 
 
 Overfull \hbox (3.40385pt too wide) in paragraph at lines 254--255
@@ -1046,8 +1031,14 @@ Overfull \hbox (3.40385pt too wide) in paragraph at lines 254--255
 
 
 
-[3.3 <./figures/multiscale_features.pdf>]
+[3.3 <./figures/dcrnn_architecture.pdf>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 280.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
 
 Overfull \hbox (10.76637pt too wide) in paragraph at lines 313--314
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) Validation RMSE guides se-lec-tion with 5-fold tem-po-ral cross-validation. 
@@ -1059,8 +1050,6 @@ Overfull \hbox (3.62503pt too wide) in paragraph at lines 315--317
  []
 
 
-
-
 Overfull \hbox (2.04105pt too wide) in paragraph at lines 325--326
 []\T1/LinuxLibertineT-TLF/b/n/9 (-20) ST-GCN: \T1/LinuxLibertineT-TLF/m/n/9 (-20) Spatio-temporal graph con-vo-lu-tional net-works [[]]
  []
@@ -1070,65 +1059,48 @@ Overfull \hbox (2.84793pt too wide) in paragraph at lines 328--329
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) ing, and state-of-the-art deep learn-ing ap-proaches to spatio-temporal
  []
 
+
+
+[4.4 <./figures/multiscale_features.pdf>]
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 9.0pt on input line 340.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/performance_comparison.pdf, id=407, 1076.47984pt x 352.88272pt>
+<figures/performance_comparison.pdf, id=412, 1076.47984pt x 352.88272pt>
 File: figures/performance_comparison.pdf Graphic file (type pdf)
 <use figures/performance_comparison.pdf>
 Package pdftex.def Info: figures/performance_comparison.pdf  used on input line 380.
-(pdftex.def)             Requested size: 379.72124pt x 124.47462pt.
-
-Overfull \hbox (138.57375pt too wide) in paragraph at lines 380--381
- [][] 
- []
-
+(pdftex.def)             Requested size: 241.14749pt x 79.05057pt.
 
 Class acmart Warning: A possible image without description on input line 383.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/attention_weights.pdf, id=408, 557.5185pt x 425.41371pt>
+<figures/attention_weights.pdf, id=413, 557.5185pt x 425.41371pt>
 File: figures/attention_weights.pdf Graphic file (type pdf)
 <use figures/attention_weights.pdf>
 Package pdftex.def Info: figures/attention_weights.pdf  used on input line 387.
-(pdftex.def)             Requested size: 379.72124pt x 289.75134pt.
-
-Overfull \hbox (138.57375pt too wide) in paragraph at lines 387--388
- [][] 
- []
-
+(pdftex.def)             Requested size: 192.91872pt x 147.20279pt.
 
 Class acmart Warning: A possible image without description on input line 390.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-
-[4.4{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/libertine/lbtn_7f4ce4.enc}]
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[5.5 <./figures/performance_comparison.pdf> <./figures/attention_weights.pdf>]
-Underfull \vbox (badness 1286) has occurred while \output is active []
-
-
+[5.5{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/libertine/lbtn_7f4ce4.enc} <./figures/performance_comparison.pdf> <./figures/attention_weights.pdf>]
 
 
 
 [6.6]
+Underfull \vbox (badness 4096) has occurred while \output is active []
+
+
+
+
 Overfull \hbox (4.4239pt too wide) in paragraph at lines 514--515
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) The multi-scale at-ten-tion mech-a-nism rep-re-sents a sig-nif-i-cant method-
  []
-
-
 
 
 Overfull \hbox (1.43803pt too wide) in paragraph at lines 518--520
@@ -1136,8 +1108,13 @@ Overfull \hbox (1.43803pt too wide) in paragraph at lines 518--520
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [7.7]
+
+
 Overfull \hbox (5.96764pt too wide) in paragraph at lines 553--554
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) for ur-ban plan-ners and trans-porta-tion op-er-a-tors, sup-port-ing evidence-
  []
@@ -1147,7 +1124,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-
+[8.8]
 Overfull \hbox (11.33131pt too wide) in paragraph at lines 593--594
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) through three key tech-ni-cal in-no-va-tions: (1) sys-tem-atic Open-StreetMap
  []
@@ -1157,17 +1134,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[8.8]
 
-Processing 'acks' comment.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[9.9] Processing 'acks' comment.
 \openout3 = `comment.cut'.
 
  Comment 'acks' writing to comment.cut. Straight input of comment.cut. (./comment.cut) (./urban_ai_paper.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 7.0pt on input line 43.
-
-
-[9.9])
+)
 
 Class acmart Warning: Some images may lack descriptions.
 (acmart)              ACM is committed to complying with the upcoming US ADA https://accessiblyapp.com/accessibility-compliance/ada/ and European Accessibility Act (EAA) https://accessiblyapp.com/accessibility-compliance/eaa/ regulations by actively working to ensure our publications and application services are accessible to individuals with disabilities, adhering to the WCAG guidelines to provide a seamless experience for all users, and regularly reviewing our accessibility practices to maintain compliance with evolving standards. 
@@ -1178,10 +1156,7 @@ Class acmart Warning: Some images may lack descriptions.
 
 
 
-Overfull \vbox (5.5pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (7.16599pt too high) has occurred while \output is active []
+Overfull \vbox (1.424pt too high) has occurred while \output is active []
 
  (/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
@@ -1196,15 +1171,15 @@ Package rerunfilecheck Info: File `urban_ai_paper.out' has not changed.
 (rerunfilecheck)             Checksum: 25D39C73AFA01239777257BD05EF0380;8640.
  ) 
 Here is how much of TeX's memory you used:
- 22064 strings out of 473190
- 358517 string characters out of 5715800
- 851383 words of memory out of 5000000
- 44189 multiletter control sequences out of 15000+600000
+ 22065 strings out of 473190
+ 358536 string characters out of 5715800
+ 862394 words of memory out of 5000000
+ 44190 multiletter control sequences out of 15000+600000
  729485 words of font info for 445 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,17n,131p,1250b,724s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,17n,131p,1250b,697s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/LibertineMathBRM.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/LibertineMathMI5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/LibertineMathMI7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/LibertineMathRM.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/libertine/LinLibertineTZ.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on urban_ai_paper.pdf (10 pages, 680312 bytes).
+Output written on urban_ai_paper.pdf (10 pages, 678619 bytes).
 PDF statistics:
  690 PDF objects out of 1000 (max. 8388607)
  382 compressed objects within 4 object streams
