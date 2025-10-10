@@ -16,23 +16,24 @@ class FullDCRNNConfig:
     """Configuration for Full DCRNN only - no minimal fallbacks"""
     
     # Model Architecture
-    hidden_dim: int = 64
+    hidden_dim: int = 128  # Increased from 64 for better capacity
     num_layers: int = 2
-    seq_len: int = 6  # Historical timesteps
+    seq_len: int = 12  # Increased from 6 for longer temporal context
     predict_horizon: int = 1
     
-    # Training
-    learning_rate: float = 0.001
-    epochs: int = 50
+    # Training - Optimized parameters
+    learning_rate: float = 0.0005  # Reduced from 0.001 for better convergence
+    epochs: int = 100  # Increased from 50 for better training
     batch_size: int = 1
+    weight_decay: float = 1e-4  # Added L2 regularization
     
     # Data Processing
     max_stations: int = 714
     max_timesteps: int = 48
     chunk_size: int = 100  # Process stations in chunks
     
-    # Graph Structure
-    adjacency_threshold_percentile: int = 5  # Connect closest 5% of stations
+    # Graph Structure - Optimized
+    adjacency_threshold_percentile: int = 10  # Increased from 5% for better connectivity
     
     # Device
     device: str = "cuda" if torch.cuda.is_available() else "cpu"

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Full DCRNN Only Runner
-======================
-Ensures only the complete DCRNN implementation is used, no fallbacks to minimal versions.
+Optimized DCRNN Only Runner
+===========================
+Ensures only the optimized DCRNN implementation is used with enhanced performance.
 """
 
 import subprocess
@@ -15,13 +15,13 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def run_full_dcrnn_only():
-    """Run only the full DCRNN implementation"""
-    logger.info(" Starting FULL DCRNN Training (No Minimal Fallbacks)")
+    """Run only the optimized DCRNN implementation"""
+    logger.info("🚀 Starting OPTIMIZED DCRNN Training (Enhanced Performance)")
     
     # Ensure we're using the full implementation
     dcrnn_script = Path('train_predict_od_dcrnn.py')
     if not dcrnn_script.exists():
-        logger.error(" Full DCRNN script not found: train_predict_od_dcrnn.py")
+        logger.error("❌ Optimized DCRNN script not found: train_predict_od_dcrnn.py")
         return False
     
     # Remove any minimal DCRNN files to prevent fallbacks
@@ -45,15 +45,15 @@ def run_full_dcrnn_only():
         )
         
         if result.returncode == 0:
-            logger.info(" Full DCRNN training completed successfully!")
-            logger.info(f" Output:\n{result.stdout}")
+            logger.info("✅ OPTIMIZED DCRNN training completed successfully!")
+            logger.info(f"📊 Output:\n{result.stdout}")
             
             # Verify predictions were generated
             pred_file = Path('predicted_flows.json')
             if pred_file.exists():
                 with open(pred_file, 'r') as f:
                     predictions = json.load(f)
-                logger.info(f" Generated {len(predictions)} flow predictions")
+                logger.info(f"🔢 Generated {len(predictions)} optimized flow predictions")
                 
                 # Show sample predictions
                 if predictions:

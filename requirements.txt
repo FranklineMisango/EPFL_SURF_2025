@@ -33,4 +33,3 @@ lightgbm
 contextily
 rasterio
 fiona
-streamlit-components-template

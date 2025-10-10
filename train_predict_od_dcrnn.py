@@ -23,7 +23,7 @@ EPOCHS = config.epochs
 BATCH_SIZE = config.batch_size
 CHUNK_SIZE = config.chunk_size
 
-print(f" Using FULL DCRNN with {MAX_STATIONS} stations, {H} timesteps history")
+print(f" Using OPTIMIZED DCRNN with {MAX_STATIONS} stations, {H} timesteps history, hidden_dim={HIDDEN_DIM}")
 
 
 # Load station features using full DCRNN config
@@ -156,7 +156,7 @@ adj_full = (dist_matrix < threshold) & (dist_matrix > 0)
 all_predictions = []
 for chunk_start in range(0, N, CHUNK_SIZE):
     chunk_end = min(chunk_start + CHUNK_SIZE, N)
-    print(f" Processing chunk {chunk_start}-{chunk_end} with FULL DCRNN")
+    print(f" Processing chunk {chunk_start}-{chunk_end} with OPTIMIZED DCRNN")
     
     # Get adjacency for this chunk
     adj_chunk = torch.tensor(adj_full[chunk_start:chunk_end, chunk_start:chunk_end], dtype=torch.float32)
@@ -166,8 +166,9 @@ for chunk_start in range(0, N, CHUNK_SIZE):
     
     # Train model for this chunk
     model = DCRNN(input_dim=X_chunk.shape[-1], hidden_dim=HIDDEN_DIM, output_dim=1, adj=adj_chunk, horizon=1)
-    optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
-    loss_fn = nn.MSELoss()
+    optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE, weight_decay=config.weight_decay)
+    loss_fn = nn.HuberLoss()  # More robust than MSE for outliers
+    scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=30, gamma=0.5)  # Learning rate decay
     
     X_tensor = torch.tensor(X_chunk, dtype=torch.float32)
     Y_tensor = torch.tensor(Y_chunk, dtype=torch.float32)
@@ -184,8 +185,13 @@ for chunk_start in range(0, N, CHUNK_SIZE):
             loss.backward()
             optimizer.step()
             total_loss += loss.item()
-        if epoch % 10 == 0:
-            print(f" Epoch {epoch+1}/{EPOCHS} Loss: {total_loss/len(X_tensor):.4f} (FULL DCRNN)")
+        
+        # Step the scheduler
+        scheduler.step()
+        
+        if epoch % 20 == 0:  # Log every 20 epochs since we have more epochs
+            current_lr = optimizer.param_groups[0]['lr']
+            print(f" Epoch {epoch+1}/{EPOCHS} Loss: {total_loss/len(X_tensor):.4f} LR: {current_lr:.6f} (OPTIMIZED DCRNN)")
     
     # Get predictions for this chunk
     model.eval()
@@ -215,6 +221,7 @@ for i in range(N):
 with open(config.output_file, 'w') as f:
     json.dump(output, f, indent=2)
 
-print(f' FULL DCRNN completed! Processed {N} stations in chunks.')
+print(f' OPTIMIZED DCRNN completed! Processed {N} stations in chunks.')
 print(f' Saved {config.output_file} for visualization.')
-print(f' Generated {len(output)} flow predictions using FULL DCRNN implementation.')
+print(f' Generated {len(output)} flow predictions using OPTIMIZED DCRNN implementation.')
+print(f' Optimization: Hidden dim {HIDDEN_DIM}, Seq len {H}, LR {LEARNING_RATE}, Epochs {EPOCHS}')
